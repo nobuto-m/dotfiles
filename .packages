@@ -1,0 +1,80 @@
+## $ sudo apt-get install etckeeper
+## $ check-language-support | xargs sudo apt-get install -y
+## $ grep -v ^# ~/.packages | xargs sudo apt-get install -y
+
+# dev
+ubuntu-dev-tools
+packaging-dev
+bikeshed
+
+# encryption
+encfs
+enigmail
+
+# vpn
+network-manager-openvpn-gnome
+
+# virt
+uvtool
+lxc
+virt-manager
+python-spice-client-gtk
+virt-top
+
+# doc
+python-sphinx
+python-sphinxcontrib.blockdiag
+python-sphinxcontrib.nwdiag
+pandoc
+texlive-latex-recommended
+
+# fonts
+fonts-dejavu
+fonts-linex
+
+# messenger
+pidgin
+pidgin-plugin-pack
+
+# utils - apt
+apt-listchanges
+dlocate
+
+# utils - terminal
+colordiff
+dwdiff
+tree
+xclip
+nautilus-open-terminal
+
+# utils - network
+ssh
+sshuttle
+nmap
+ipcalc
+jnettop
+httping
+zsync
+
+# utils - indicator
+indicator-multiload
+diodon
+
+# other
+ibus-mozc
+googlecl
+dconf-editor
+gimp
+inkscape
+chromium-browser
+vlc
+yubikey-personalization-gui
+
+# juju
+juju-core
+juju-deployer
+charm-tools
+
+# multiverse
+nautilus-dropbox
+flashplugin-installer
