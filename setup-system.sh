@@ -22,6 +22,9 @@ sudo touch /etc/default/google-talkplugin
 # /tmp as tmpfs
 echo 'tmpfs /tmp tmpfs rw,nosuid,nodev 0 0' | sudo tee -a /etc/fstab
 
+# format swap as a workaround for LP: #1320702
+sudo mkswap /dev/mapper/ubuntu--vg-swap_1
+
 # set swappiness
 echo 'vm.swappiness = 20' | sudo tee /etc/sysctl.d/99-local.conf
 
