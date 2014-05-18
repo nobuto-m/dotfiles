@@ -13,6 +13,9 @@ check-language-support | xargs sudo apt-get install -y
 # install other packages
 grep -v ^# ~/.packages | xargs sudo apt-get install -y
 
+# prevent google repository from being added
+sudo touch /etc/default/google-talkplugin
+
 # /tmp as tmpfs
 echo 'tmpfs /tmp tmpfs rw,nosuid,nodev 0 0' | sudo tee -a /etc/fstab
 
