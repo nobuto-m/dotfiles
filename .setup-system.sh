@@ -3,8 +3,11 @@
 set -e
 set -u
 
-# install etckeeper
+# sytem update
 sudo apt-get update
+sudo apt-get dist-upgrade -y
+
+# install etckeeper
 sudo apt-get install -y etckeeper
 
 # install language support
