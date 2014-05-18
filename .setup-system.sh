@@ -29,3 +29,7 @@ apt-listchanges apt-listchanges/confirm boolean true
 EOF
 
 sudo dpkg-reconfigure -fnoninteractive apt-listchanges
+
+# change cryptsetup passphrase to stronger one
+echo 'cryptsetup passphrase for /dev/sda3'
+sudo cryptsetup luksChangeKey /dev/sda3
