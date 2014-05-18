@@ -29,6 +29,9 @@ echo ~/{Desktop,Downloads,Templates,Public,Documents,Documents/Music,Documents/P
 rmdir ~/{デスクトップ,ダウンロード,テンプレート,公開,ドキュメント,ミュージック,ピクチャ,ビデオ}
 rm examples.desktop
 
+# clear gtk bookmarks
+rm -f ~/.config/gtk-3.0/bookmarks
+
 # import dconf settings
 dconf load / < ~/.config/dconf/dump.txt
 
