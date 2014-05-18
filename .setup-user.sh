@@ -33,7 +33,7 @@ rm examples.desktop
 dconf load / < ~/.config/dconf/dump.txt
 
 # clear /var/crash, sometimes ibus-daemon crashes during `dconf load`
-rm -f /var/crash/*.crash
+rm -f /var/crash/*.crash || true
 
 # create ICC profile
 # after this step, .icc needs to be chosen manually in gnome-control-center
