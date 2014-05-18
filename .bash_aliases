@@ -1,0 +1,8 @@
+alias C='LC_MESSAGES=C'
+alias cdtemp='cd $(mktemp -d)'
+alias check-connectivity='httping -sGb -c5 -t5 www.google.co.jp'
+alias xclips='xclip -selection clip'
+alias xclips-indent='xclips -o | sed -e "s/^/    /" | xclips'
+alias xclips-blockquote='xclips -o | sed -e "s/^/> /" | xclips'
+alias encmount='encfs ROOT_DIR MOUNT_POINT'
+alias encumount='fusermount -u MOUNT_POINT'
