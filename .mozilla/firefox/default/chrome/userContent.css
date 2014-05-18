@@ -1,0 +1,18 @@
+@-moz-document domain("www.tumblr.com") {
+  input#post_one, textarea#post_two {
+    font-family: monospace !important;
+  }
+}
+
+@-moz-document domain("mail.google.com") {
+  input, textarea {
+    font-family: monospace !important;
+  }
+}
+
+/* gmail iframe */
+@-moz-document domain("") {
+  body.LW-avf {
+    font-family: monospace !important;
+  }
+}
