@@ -1,0 +1,150 @@
+## $ dconf load / < ~/.config/dconf/dump.txt
+
+[net/launchpad/diodon/keybindings]
+history-accelerator='<Ctrl><Alt>C'
+
+[net/launchpad/diodon/plugins]
+active-plugins=@as []
+
+[net/launchpad/diodon/clipboard]
+clipboard-size=uint32 10
+instant-paste=false
+use-primary=false
+
+[org/gnome/settings-daemon/plugins/power]
+button-power='suspend'
+critical-battery-action='shutdown'
+lid-close-ac-action='nothing'
+sleep-inactive-ac-timeout=0
+sleep-inactive-battery-timeout=1800
+
+[org/gnome/settings-daemon/peripherals/touchpad]
+motion-threshold=30
+scroll-method='edge-scrolling'
+motion-acceleration=100.0
+
+[org/gnome/deja-dup]
+periodic-period=7
+backend='file'
+periodic=true
+delete-after=182
+exclude-list=['/home/nobuto/.local/share/Trash', '/home/nobuto/Downloads', '/home/nobuto/Dropbox', '/home/nobuto/dev/+junk', '/home/nobuto/pbuilder', '/home/nobuto/charms', '/home/nobuto/.juju/local']
+
+[org/gnome/deja-dup/file]
+path='smb://WORKGROUP;backup-samba@10.0.5.12/user/lifebook/'
+
+[org/gnome/desktop/interface]
+gtk-key-theme='Emacs'
+
+[org/gnome/desktop/input-sources]
+sources=[('ibus', 'mozc-jp'), ('xkb', 'jp')]
+xkb-options=['ctrl:nocaps']
+
+[org/gnome/desktop/session]
+idle-delay=uint32 300
+
+[org/compiz/profiles/unity/plugins/scale]
+initiate-edge='BottomLeft'
+overlay-icon=1
+
+[org/compiz/profiles/unity/plugins/unityshell]
+show-minimized-windows=false
+icon-size=24
+launcher-minimize-window=true
+launcher-capture-mouse=false
+
+[org/compiz/profiles/unity/plugins/core]
+hsize=2
+vsize=2
+
+[apps/indicators/multiload/general]
+speed=uint16 5000
+autostart=true
+height=uint16 18
+settings-version=uint32 2
+
+[apps/indicators/multiload/graphs/cpu/cpu1]
+color='#b3b3b3'
+
+[apps/indicators/multiload/graphs/cpu/cpu4]
+color='#3d3d3d'
+
+[apps/indicators/multiload/graphs/cpu/cpu3]
+color='#f8f8f8'
+
+[apps/indicators/multiload/graphs/cpu]
+alpha=uint16 6553
+enabled=true
+
+[apps/indicators/multiload/graphs/cpu/cpu2]
+color='#dfdfdf'
+
+[apps/indicators/multiload/graphs/net/net1]
+color='#dfdfdf'
+
+[apps/indicators/multiload/graphs/net]
+alpha=uint16 6553
+enabled=true
+
+[apps/indicators/multiload/graphs/net/net3]
+color='#aaaaaa'
+
+[apps/indicators/multiload/graphs/net/net2]
+color='#cccccc'
+
+[apps/indicators/multiload/graphs/disk/disk2]
+color='#dfdfdf'
+
+[apps/indicators/multiload/graphs/disk/disk1]
+color='#c6c6c6'
+
+[apps/indicators/multiload/graphs/disk]
+alpha=uint16 6553
+enabled=true
+
+[apps/indicators/multiload/graphs/mem/mem4]
+color='#dfdfdf'
+
+[apps/indicators/multiload/graphs/mem/mem3]
+color='#f8f8f8'
+
+[apps/indicators/multiload/graphs/mem]
+alpha=uint16 6553
+enabled=true
+
+[apps/indicators/multiload/graphs/mem/mem2]
+color='#cccccc'
+
+[apps/indicators/multiload/graphs/mem/mem1]
+color='#b3b3b3'
+
+[com/canonical/indicator/power]
+show-time=true
+
+[com/canonical/indicator/datetime]
+show-date=true
+locations=['America/New_York Boston', 'America/Montreal Montreal', 'UTC UTC', 'Europe/London London', 'Asia/Shanghai Shanghai', 'Asia/Taipei Taipei', 'Asia/Tokyo Tokyo']
+show-day=true
+show-locations=true
+show-auto-detected-location=true
+show-seconds=true
+
+[com/canonical/indicator/keyboard]
+migrated=true
+visible=false
+
+[com/canonical/unity/launcher]
+favorites=['application://nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
+
+[com/canonical/unity/lenses]
+remote-content-search='none'
+
+[com/ubuntu/update-notifier]
+regular-auto-launch-interval=3
+
+[desktop/ibus/general]
+preload-engine-mode=0
+preload-engines=['mozc-jp', 'xkb:jp::jpn']
+
+[desktop/ibus/panel]
+auto-hide-timeout=500
