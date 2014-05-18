@@ -1,3 +1,7 @@
+## $ echo ~/{Desktop,Downloads,Templates,Public,Documents,Documents/Music,Documents/Pictures,Documents/Videos} | xargs mkdir
+## $ rmdir デスクトップ/ ダウンロード/ テンプレート/ 公開/ ドキュメント/ ミュージック/ ピクチャ/ ビデオ/
+## $ rm examples.desktop
+
 XDG_DESKTOP_DIR="$HOME/Desktop"
 XDG_DOWNLOAD_DIR="$HOME/Downloads"
 XDG_TEMPLATES_DIR="$HOME/Templates"
