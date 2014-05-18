@@ -1,0 +1,13 @@
+case "$DIST" in
+    precise|trusty)
+        export http_proxy='http://10.0.7.2:8000/'
+        # LP: 1309366
+        APTCACHE=''
+        APTCACHEHARDLINK=yes
+    ;;
+    *)
+        APTCACHEHARDLINK=no
+    ;;
+esac
+
+BUILDPLACE=`mktemp -d`
