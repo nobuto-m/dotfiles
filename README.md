@@ -1,23 +1,30 @@
 dot-files
 =========
 
-to setup my laptop
+for setting up my laptop
 
-## install Ubuntu
+## install Ubuntu Desktop
 
-1. get the latest daily-live
+1. get the latest daily-live image
+
+   http://cdimage.ubuntu.com/daily-live/current/
 
 1. create a USB startup disk
+
+   * http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu
+   * http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows
 
 1. copy SHA256SUM and SHA256SUM.gpg into the USB stick to verify signature later 
 
 1. boot up with the USB stick
 
-1. install with those options below
-   * enable encrypted LVM (LUKS+dm-crypt)
-   * enable encrypted home directory (eCryptfs)
+1. install Ubuntu Desktop with the options below
+
+   * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
+   * Encrypt my home folder (eCryptfs)
 
 1. reboot
+
 
 ## Use this repository
 
