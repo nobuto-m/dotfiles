@@ -23,13 +23,19 @@ to setup my laptop
 
 1. install git first
 
+    ```bash
 $ sudo apt-get update && sudo apt-get install git
+```
 
 1. clone the repo
 
+    ```bash
 $ git clone https://github.com/nobuto-m/dot-files.git
+```
 
 1. execute
 
+    ```bash
 $ dot-files/setup-system.sh
 $ dot-files/setup-user.sh
+```
