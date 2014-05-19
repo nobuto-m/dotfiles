@@ -10,7 +10,6 @@ for setting up my laptop
    http://cdimage.ubuntu.com/daily-live/current/
 
 1. create a USB startup disk
-
    * http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu
    * http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows
 
@@ -19,7 +18,6 @@ for setting up my laptop
 1. boot up with the USB stick
 
 1. install Ubuntu Desktop with the options below
-
    * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
    * Encrypt my home folder (eCryptfs)
 
