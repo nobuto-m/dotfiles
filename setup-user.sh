@@ -3,31 +3,31 @@
 set -e
 set -u
 
+cd `dirname "$0"`
+
 # set DEBEMAIL and DEBFULLNAME in ~/.bashrc
 setup-packaging-environment
 
-# get user's full name and e-mail address
-FULLNAME=`getent passwd "$USER" | cut -d: -f5 | cut -d, -f1`
-echo 'Your e-mail address:'
-read -sr EMAIL
+# get DEBFULLNAME and DEBEMAIL to setup bzr and git
+DEBFULLNAME=`grep -w DEBFULLNAME | cut -d'"' -f2`
+DEBEMAIL=`grep -w DEBEMAIL | cut -d'"' -f2`
 
 # set id for bzr command
-bzr whoami "$FULLNAME <$EMAIL>"
+bzr whoami "$DEBFULLNAME <$DEBEMAIL>"
 
 # set login name for launchpad.net
 bzr lp-login nobuto
 
 # git config
-git config --global user.name "$FULLNAME"
-git config --global user.email "$EMAIL"
-git config --global color.ui true
+git config --global user.name "$DEBFULLNAME"
+git config --global user.email "$DEBEMAIL"
 
 # create C locale XDG user dirs
-echo ~/{Desktop,Downloads,Templates,Public,Documents,Documents/Music,Documents/Pictures,Documents/Videos} | xargs mkdir
+echo ~/{Desktop,Downloads,Templates,Public,Documents,Documents/Music,Documents/Pictures,Documents/Videos} | xargs mkdir -p
 
 # remove ja locale XDG user dirs and examples.desktop
-rmdir ~/{デスクトップ,ダウンロード,テンプレート,公開,ドキュメント,ミュージック,ピクチャ,ビデオ}
-rm examples.desktop
+rmdir ~/{デスクトップ,ダウンロード,テンプレート,公開,ドキュメント,ミュージック,ピクチャ,ビデオ} 2>/dev/null || true
+rm -f examples.desktop
 
 # clear gtk bookmarks
 rm -f ~/.config/gtk-3.0/bookmarks

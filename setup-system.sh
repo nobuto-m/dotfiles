@@ -3,24 +3,28 @@
 set -e
 set -u
 
+cd `dirname "$0"`
+
 # sytem update
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
 # install etckeeper
-sudo apt-get install -y etckeeper
+sudo apt-get install -y etckeeper bzr
 
 # install language support
 check-language-support | xargs sudo apt-get install -y
 
 # install other packages
-grep -v ^# ~/.packages | xargs sudo apt-get install -y
+grep -v ^# ./packages.list | xargs sudo apt-get install -y
 
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
 
 # /tmp as tmpfs
-echo 'tmpfs /tmp tmpfs rw,nosuid,nodev 0 0' | sudo tee -a /etc/fstab
+if ! grep -qw /tmp /etc/fstab; then
+    echo 'tmpfs /tmp tmpfs rw,nosuid,nodev 0 0' | sudo tee -a /etc/fstab
+fi
 
 # format swap as a workaround for LP: #1320702
 sudo mkswap /dev/mapper/ubuntu--vg-swap_1
@@ -41,4 +45,6 @@ sudo dpkg-reconfigure -fnoninteractive apt-listchanges
 
 # change cryptsetup passphrase to stronger one
 echo 'cryptsetup passphrase for /dev/sda3'
+echo '1. old passphrase'
+echo '2. new one'
 sudo cryptsetup luksChangeKey /dev/sda3
