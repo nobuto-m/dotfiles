@@ -2,8 +2,11 @@
 
 user_pref("browser.startup.homepage", "about:home");
 
-user_pref("plugins.click_to_play", true);
 user_pref("plugin.default.state", 1);
+user_pref("plugin.state.flash", 1);
+user_pref("plugin.state.libnpgoogletalk", 2);
+user_pref("plugin.state.libnpo1d", 2);
+
 user_pref("image.animation_mode", "once");
 user_pref("media.autoplay.enabled", false);
 

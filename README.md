@@ -52,3 +52,13 @@ remaining manual steps
 
 * install third party packages listed in `packages-thirdparty.txt`
 * select color profile from gnome-control-center
+
+### Firefox add-ons
+
+* https://addons.mozilla.org/firefox/addon/password-hasher/
+* https://addons.mozilla.org/firefox/addon/click-to-play-per-element/
+* https://addons.mozilla.org/firefox/addon/searchwp/
+* https://addons.mozilla.org/firefox/addon/searchbox-sync/
+* https://addons.mozilla.org/firefox/addon/eijiro-on-the-web/
+* https://addons.mozilla.org/firefox/addon/markdown-here/
+* https://github.com/mooz/keysnail/wiki/keysnail-japanese
