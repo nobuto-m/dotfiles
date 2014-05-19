@@ -12,11 +12,11 @@ sudo apt-get dist-upgrade -y
 # install etckeeper
 sudo apt-get install -y etckeeper bzr
 
-# install language support
-check-language-support | xargs sudo apt-get install -y
-
 # install other packages
 grep -v ^# ./packages.list | xargs sudo apt-get install -y
+
+# install language support
+check-language-support | xargs sudo apt-get install -y
 
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
@@ -27,6 +27,7 @@ if ! grep -qw /tmp /etc/fstab; then
 fi
 
 # format swap as a workaround for LP: #1320702
+sudo swapoff -a
 sudo mkswap /dev/mapper/ubuntu--vg-swap_1
 
 # set swappiness
@@ -48,3 +49,5 @@ echo 'cryptsetup passphrase for /dev/sda3'
 echo '1. old passphrase'
 echo '2. new one'
 sudo cryptsetup luksChangeKey /dev/sda3
+
+echo 'Done!'

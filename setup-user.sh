@@ -5,12 +5,17 @@ set -u
 
 cd `dirname "$0"`
 
+# copy repository contents
+rsync -rv --exclude '/[^.]*' --exclude '/.git/' . ~/
+
 # set DEBEMAIL and DEBFULLNAME in ~/.bashrc
-setup-packaging-environment
+if ! grep -qw DEBEMAIL ~/.bashrc; then
+    setup-packaging-environment
+fi
 
 # get DEBFULLNAME and DEBEMAIL to setup bzr and git
-DEBFULLNAME=`grep -w DEBFULLNAME | cut -d'"' -f2`
-DEBEMAIL=`grep -w DEBEMAIL | cut -d'"' -f2`
+DEBFULLNAME=`grep -w DEBFULLNAME ~/.bashrc | cut -d'"' -f2`
+DEBEMAIL=`grep -w DEBEMAIL ~/.bashrc | cut -d'"' -f2`
 
 # set id for bzr command
 bzr whoami "$DEBFULLNAME <$DEBEMAIL>"
@@ -27,7 +32,7 @@ echo ~/{Desktop,Downloads,Templates,Public,Documents,Documents/Music,Documents/P
 
 # remove ja locale XDG user dirs and examples.desktop
 rmdir ~/{デスクトップ,ダウンロード,テンプレート,公開,ドキュメント,ミュージック,ピクチャ,ビデオ} 2>/dev/null || true
-rm -f examples.desktop
+rm -f ~/examples.desktop
 
 # clear gtk bookmarks
 rm -f ~/.config/gtk-3.0/bookmarks
@@ -35,13 +40,16 @@ rm -f ~/.config/gtk-3.0/bookmarks
 # import dconf settings
 dconf load / < ~/.config/dconf/dump.txt
 
-# clear /var/crash, sometimes ibus-daemon crashes during `dconf load`
+# clear /var/crash, sometimes ibus-dconf crashes during `dconf load`
+sleep 5
 rm -f /var/crash/*.crash || true
 
 # create ICC profile
 # after this step, .icc needs to be chosen manually in gnome-control-center
 cd-create-profile --output ~/.local/share/icc/Gamma6200K.icc \
     ~/.local/share/icc/Gamma6200K.xml
+
+echo 'Done!'
 
 # propose reboot
 gnome-session-quit --reboot
