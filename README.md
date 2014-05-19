@@ -44,3 +44,10 @@ $ git clone https://github.com/nobuto-m/dot-files.git
 $ dot-files/setup-system.sh
 $ dot-files/setup-user.sh
 ```
+
+## manual setup
+
+remaining manual steps
+
+* select color profile from gnome-control-center
+

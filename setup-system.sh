@@ -5,6 +5,12 @@ set -u
 
 cd `dirname "$0"`
 
+# change cryptsetup passphrase to stronger one
+echo 'cryptsetup passphrase for /dev/sda3'
+echo '1. old passphrase'
+echo '2. new one'
+sudo cryptsetup luksChangeKey /dev/sda3
+
 # sytem update
 sudo apt-get update
 sudo apt-get dist-upgrade -y
@@ -44,10 +50,38 @@ EOF
 
 sudo dpkg-reconfigure -fnoninteractive apt-listchanges
 
-# change cryptsetup passphrase to stronger one
-echo 'cryptsetup passphrase for /dev/sda3'
-echo '1. old passphrase'
-echo '2. new one'
-sudo cryptsetup luksChangeKey /dev/sda3
+# create squid-deb-proxy lxc instance
+## prepare lxc-net
+sudo sed -i \
+    -e 's|\(LXC_ADDR=\).*|\1"10.0.7.1"|' \
+    -e 's|\(LXC_NETWORK=\).*|\1"10.0.7.0/24"|' \
+    -e 's|\(LXC_DHCP_RANGE=\).*|\1"10.0.7.2,10.0.7.254"|' \
+    /etc/default/lxc-net
+sudo restart lxc-net
+
+## prepare ssh key
+[ -e ~/.ssh/id_rsa.pub ] || ssh-keygen -N '' -f ~/.ssh/id_rsa
+
+## prepare userdata
+USERDATA=`mktemp`
+SSH_KEY=`cat ~/.ssh/id_rsa.pub`
+sed -e "s|{{SSH_KEY}}|$SSH_KEY|" ./cloud-config_squid-deb-proxy.txt > "$USERDATA"
+
+if ! (sudo lxc-ls --running | grep -q -w squid-deb-proxy); then
+    ## create
+    sudo lxc-create -n squid-deb-proxy -t ubuntu-cloud -- \
+        --release trusty --userdata "$USERDATA"
+
+    ## set static IP address and autostart
+    cat <<EOF | sudo tee -a /var/lib/lxc/squid-deb-proxy/config
+
+lxc.network.ipv4 = 10.0.7.2/24
+lxc.network.ipv4.gateway = 10.0.7.1
+lxc.start.auto = 1
+EOF
+fi
+
+## launch
+sudo lxc-autostart
 
 echo 'Done!'
