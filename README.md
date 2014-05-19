@@ -43,11 +43,12 @@ $ git clone https://github.com/nobuto-m/dot-files.git
     ```bash
 $ dot-files/setup-system.sh
 $ dot-files/setup-user.sh
+$ dot-files/setup-pbuilder.sh
 ```
 
 ## manual setup
 
 remaining manual steps
 
+* install third party packages listed in `packages-thirdparty.txt`
 * select color profile from gnome-control-center
-

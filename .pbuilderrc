@@ -9,5 +9,3 @@ case "$DIST" in
         APTCACHEHARDLINK=no
     ;;
 esac
-
-BUILDPLACE=`mktemp -d`
