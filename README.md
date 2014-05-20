@@ -3,15 +3,11 @@ dot-files
 
 for setting up my laptop
 
-## install Ubuntu Desktop
+## Install Ubuntu Desktop
 
-1. get the latest daily-live image
+1. get [the latest daily-live image](http://cdimage.ubuntu.com/daily-live/current/)
 
-   http://cdimage.ubuntu.com/daily-live/current/
-
-1. create a USB startup disk
-   * http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu
-   * http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows
+1. create a USB startup disk ([Ubuntu](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu), [Windows](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows))
 
 1. copy SHA256SUM and SHA256SUM.gpg into the USB stick to verify signature later 
 
@@ -46,12 +42,19 @@ $ dot-files/setup-user.sh
 $ dot-files/setup-pbuilder.sh
 ```
 
-## manual setup
+## Manual setup
 
-remaining manual steps
+### copy files from deja-dup backup
 
-* install third party packages listed in `packages-thirdparty.txt`
-* select color profile from gnome-control-center
+* `~/.vpn/`
+* `~/.ssh/config`
+* `~/.ssh/id_rsa*`
+* `~/.gnupg/pubring.gpg`
+* `~/.gnupg/secring.gpg`
+* `~/.gnupg/trustdb.gpg`
+* `~/.local/share/keyrings/login.keyring`
+* `~/.purple/accounts.xml`
+* `~/.purple/blist.xml`
 
 ### Firefox add-ons
 
@@ -62,3 +65,11 @@ remaining manual steps
 * https://addons.mozilla.org/firefox/addon/eijiro-on-the-web/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://github.com/mooz/keysnail/wiki/keysnail-japanese
+
+### remaining manual steps
+
+* install third party packages listed in `packages-thirdparty.txt`
+* create VPN config in network-manager
+* select color profile from gnome-control-center
+* set background trancparency of gnome-terminal
+* enable markerline and joinpart plugin in Pidgin

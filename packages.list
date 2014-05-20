@@ -34,7 +34,6 @@ fonts-linex
 
 # messenger
 pidgin
-pidgin-plugin-pack
 
 # utils - apt
 apt-listchanges
