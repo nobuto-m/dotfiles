@@ -1,4 +1,4 @@
-## $ sudo apt-get install etckeeper
+## $ sudo apt-get install etckeeper bzr
 ## $ check-language-support | xargs sudo apt-get install -y
 ## $ grep -v ^# ~/.packages | xargs sudo apt-get install -y
 
