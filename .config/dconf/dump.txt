@@ -43,6 +43,25 @@ xkb-options=['ctrl:nocaps']
 [org/gnome/desktop/session]
 idle-delay=uint32 300
 
+[org/gnome/gedit/preferences/editor]
+display-right-margin=true
+highlight-current-line=true
+bracket-matching=true
+auto-save=true
+scheme='cobalt'
+create-backup-copy=false
+tabs-size=uint32 4
+display-line-numbers=true
+insert-spaces=true
+auto-indent=true
+auto-save-interval=uint32 5
+
+[org/gnome/gedit/plugins/drawspaces]
+draw-spaces=['space', 'tab', 'newline', 'leading', 'text', 'trailing']
+
+[org/gnome/gedit/plugins]
+active-plugins=['time', 'spell', 'modelines', 'filebrowser', 'bracketcompletion', 'codecomment', 'textsize', 'joinlines', 'terminal', 'zeitgeistplugin', 'docinfo', 'drawspaces']
+
 [org/compiz/profiles/unity/plugins/scale]
 initiate-edge='BottomLeft'
 overlay-icon=1
