@@ -10,6 +10,9 @@ user_pref("plugin.state.libnpo1d", 2);
 user_pref("image.animation_mode", "once");
 user_pref("media.autoplay.enabled", false);
 
+user_pref("layout.spellcheckDefault", 2);
+user_pref("spellchecker.dictionary", "en_US");
+
 user_pref("passhash.optHashWordSizeDefault", 16);
 
 user_pref("font.default.x-unicode", "sans-serif");
