@@ -26,6 +26,7 @@ bzr lp-login nobuto
 # git config
 git config --global user.name "$DEBFULLNAME"
 git config --global user.email "$DEBEMAIL"
+git config --global push.default simple
 
 # create C locale XDG user dirs
 echo ~/{Desktop,Downloads,Templates,Public,Documents,Documents/Music,Documents/Pictures,Documents/Videos} | xargs mkdir -p
