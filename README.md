@@ -73,3 +73,4 @@ $ dotfiles/setup-pbuilder.sh
 * select color profile from gnome-control-center
 * set background trancparency of gnome-terminal
 * enable markerline and joinpart plugin in Pidgin
+* add `~/Downloads/` and encfs directories to exclude list in "Security & Privacy" setting
