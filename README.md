@@ -73,4 +73,7 @@ $ dotfiles/setup-pbuilder.sh
 * select color profile from gnome-control-center
 * set background trancparency of gnome-terminal
 * enable markerline and joinpart plugin in Pidgin
+* forcibly enable gtkspell for Pidgin in ja_JP locale
+  - `ln -s en_US.aff /usr/share/hunspell/ja_JP.aff`
+  - `ln -s en_US.dic /usr/share/hunspell/ja_JP.dic`
 * add `~/Downloads/` and encfs directories to exclude list in "Security & Privacy" setting
