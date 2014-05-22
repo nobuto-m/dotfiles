@@ -1,6 +1,6 @@
 ## $ sudo apt-get install etckeeper bzr
 ## $ check-language-support | xargs sudo apt-get install -y
-## $ grep -v ^# ~/.packages | xargs sudo apt-get install -y
+## $ grep -v ^# dotfiles/packages.list | xargs sudo apt-get install -y
 
 # dev
 ubuntu-dev-tools
