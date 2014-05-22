@@ -71,6 +71,7 @@ yubikey-personalization-gui
 
 # juju
 juju-core
+juju-local
 juju-deployer
 charm-tools
 

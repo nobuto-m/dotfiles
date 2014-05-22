@@ -67,7 +67,7 @@ settings-version=uint32 2
 color='#b3b3b3'
 
 [apps/indicators/multiload/graphs/cpu/cpu4]
-color='#3d3d3d'
+color='#555555'
 
 [apps/indicators/multiload/graphs/cpu/cpu3]
 color='#f8f8f8'
