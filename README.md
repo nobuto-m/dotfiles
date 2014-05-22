@@ -1,5 +1,5 @@
-dot-files
-=========
+dotfiles
+========
 
 for setting up my laptop
 
@@ -31,15 +31,15 @@ $ sudo apt-get update && sudo apt-get install git
 1. clone the repo
 
     ```bash
-$ git clone https://github.com/nobuto-m/dot-files.git
+$ git clone https://github.com/nobuto-m/dotfiles.git
 ```
 
 1. execute
 
     ```bash
-$ dot-files/setup-system.sh
-$ dot-files/setup-user.sh
-$ dot-files/setup-pbuilder.sh
+$ dotfiles/setup-system.sh
+$ dotfiles/setup-user.sh
+$ dotfiles/setup-pbuilder.sh
 ```
 
 ## Manual setup
