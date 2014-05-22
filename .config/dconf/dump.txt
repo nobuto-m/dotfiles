@@ -56,9 +56,6 @@ insert-spaces=true
 auto-indent=true
 auto-save-interval=uint32 5
 
-[org/gnome/gedit/plugins/drawspaces]
-draw-spaces=['space', 'tab', 'newline', 'leading', 'text', 'trailing']
-
 [org/gnome/gedit/plugins]
 active-plugins=['time', 'spell', 'modelines', 'filebrowser', 'bracketcompletion', 'codecomment', 'textsize', 'joinlines', 'terminal', 'zeitgeistplugin', 'docinfo', 'drawspaces']
 
