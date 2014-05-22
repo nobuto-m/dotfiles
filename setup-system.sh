@@ -65,7 +65,7 @@ sudo restart lxc-net
 ## prepare userdata
 USERDATA=`mktemp`
 SSH_KEY=`cat ~/.ssh/id_rsa.pub`
-sed -e "s|{{SSH_KEY}}|$SSH_KEY|" ./cloud-config_squid-deb-proxy.txt > "$USERDATA"
+sed -e "s|{{SSH_KEY}}|$SSH_KEY|" ./cloud-config_squid-deb-proxy.yaml > "$USERDATA"
 
 if ! (sudo lxc-ls --running | grep -q -w squid-deb-proxy); then
     ## create
