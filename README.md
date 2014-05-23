@@ -66,6 +66,10 @@ $ dotfiles/setup-pbuilder.sh
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://github.com/mooz/keysnail/wiki/keysnail-japanese
 
+### Thunderbird add-ons
+
+* https://addons.mozilla.org/thunderbird/addon/confirm-address-5582/
+
 ### remaining manual steps
 
 * install third party packages listed in `packages-thirdparty.txt`
