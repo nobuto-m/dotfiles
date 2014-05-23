@@ -153,7 +153,7 @@ visible=false
 dontask-domains=['google.com', 'launchpad.net', 'tumblr.com']
 
 [com/canonical/unity/launcher]
-favorites=['application://nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
+favorites=['application://nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://thunderbird.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
 
 [com/canonical/unity/lenses]
 remote-content-search='none'
