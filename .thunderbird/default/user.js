@@ -3,8 +3,9 @@
 user_pref("spellchecker.dictionary", "en_US");
 user_pref("print.postscript.paper_size", "A4");
 
-// descending order
+// sort order: descending and by thread
 user_pref("mailnews.default_sort_order", 2);
+user_pref("mailnews.default_sort_type", 22);
 
 user_pref("mailnews.database.global.indexer.enabled", false);
 
