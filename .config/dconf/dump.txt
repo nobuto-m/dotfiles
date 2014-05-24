@@ -150,7 +150,7 @@ migrated=true
 visible=false
 
 [com/canonical/unity/webapps]
-dontask-domains=['google.com', 'launchpad.net', 'tumblr.com', 'plus.google.com']
+dontask-domains=['google.com', 'launchpad.net', 'tumblr.com', 'plus.google.com', 'mail.google.com']
 
 [com/canonical/unity/launcher]
 favorites=['application://nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://thunderbird.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
