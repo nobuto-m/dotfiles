@@ -12,6 +12,7 @@ user_pref("media.autoplay.enabled", false);
 
 user_pref("layout.spellcheckDefault", 2);
 user_pref("spellchecker.dictionary", "en_US");
+user_pref("print.postscript.paper_size", "A4");
 
 user_pref("passhash.optHashWordSizeDefault", 16);
 

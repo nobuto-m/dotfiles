@@ -1,9 +1,12 @@
 //
 
 user_pref("spellchecker.dictionary", "en_US");
+user_pref("print.postscript.paper_size", "A4");
 
 // descending order
 user_pref("mailnews.default_sort_order", 2);
+
+user_pref("mailnews.database.global.indexer.enabled", false);
 
 user_pref("mail.server.server1.check_time", 5);
 user_pref("mail.server.server2.check_time", 5);
