@@ -8,11 +8,14 @@ user_pref("mailnews.default_sort_order", 2);
 
 user_pref("mailnews.database.global.indexer.enabled", false);
 
+user_pref("mailnews.send_default_charset", "UTF-8");
+user_pref("mailnews.reply_in_default_charset", true);
+
 user_pref("mail.server.server1.check_time", 5);
 user_pref("mail.server.server2.check_time", 5);
 user_pref("mail.server.server3.check_time", 5);
 user_pref("mail.identity.default.compose_html", false);
-user_pref("mail.server.default.autosync_max_age_days", 14);
+user_pref("mail.server.default.autosync_max_age_days", 7);
 
 user_pref("com.kenmaz.confirm-address.domain-list", "canonical.com");
 user_pref("com.kenmaz.confirm-address.cd-time", "10");
