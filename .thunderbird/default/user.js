@@ -11,6 +11,7 @@ user_pref("mailnews.database.global.indexer.enabled", false);
 
 user_pref("mailnews.send_default_charset", "UTF-8");
 user_pref("mailnews.reply_in_default_charset", true);
+user_pref("extensions.enigmail.useDefaultComment", true);
 
 user_pref("mail.server.server1.check_time", 5);
 user_pref("mail.server.server2.check_time", 5);

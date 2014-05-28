@@ -69,6 +69,7 @@ chromium-browser
 vlc
 yubikey-personalization-gui
 gedit-plugins
+qemu-user-static
 
 # juju
 juju-core
