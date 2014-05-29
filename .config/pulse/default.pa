@@ -167,3 +167,7 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
+
+## Whenever a new sink or source appears, this module will switch the
+## default sink/source to be the new sink/source
+load-module module-switch-on-connect
