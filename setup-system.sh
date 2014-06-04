@@ -50,6 +50,12 @@ EOF
 
 sudo dpkg-reconfigure -fnoninteractive apt-listchanges
 
+# change IP address range of virbr0
+sudo virsh net-destroy default
+sudo sed -i -e 's/192\.168\.122\./192.168.123./g' /etc/libvirt/qemu/networks/default.xml
+sudo restart libvirt-bin
+sudo virsh net-start default
+
 # create squid-deb-proxy lxc instance
 ## prepare lxc-net
 sudo sed -i \
