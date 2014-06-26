@@ -90,4 +90,13 @@ fi
 ## launch
 sudo lxc-autostart
 
+## create a system who can have virsh shell to be manipulated by another machine
+sudo adduser --quiet --system --group --shell /bin/bash \
+    --home /var/lib/maas-virsh maas-virsh
+sudo adduser maas-virsh libvirtd
+sudo test -e ~maas-virsh/.ssh/id_rsa.pub || \
+    sudo -u maas-virsh ssh-keygen -f ~maas-virsh/.ssh/id_rsa -N ''
+sudo -u maas-virsh install -m 600 ~maas-virsh/.ssh/id_rsa.pub \
+    ~maas-virsh/.ssh/authorized_keys
+
 echo 'Done!'
