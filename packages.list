@@ -6,6 +6,7 @@
 ubuntu-dev-tools
 packaging-dev
 bikeshed
+git-review
 
 # encryption
 encfs
