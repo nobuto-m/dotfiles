@@ -56,6 +56,24 @@ sudo sed -i -e 's/192\.168\.122\./192.168.123./g' /etc/libvirt/qemu/networks/def
 sudo restart libvirt-bin
 sudo virsh net-start default
 
+# setup MTA
+echo 'Please input your mail address for MTA:'
+read -r mta_address
+echo 'Please input your mail password for MTA:'
+read -rs mta_password
+
+sudo -E sed -i \
+    -e 's/^\(mailhub=\).*/\1smtp.gmail.com:587/' \
+    -e '/^UseSTARTTLS=/d' \
+    -e '/^AuthUser=/d' \
+    -e '/^AuthPass=/d' \
+    /etc/ssmtp/ssmtp.conf
+cat << EOF | sudo tee -a /etc/ssmtp/ssmtp.conf
+UseSTARTTLS=Yes
+AuthUser=$mta_address
+AuthPass=$mta_password
+EOF
+
 # create squid-deb-proxy lxc instance
 ## prepare lxc-net
 sudo sed -i \

@@ -28,6 +28,7 @@ python-sphinxcontrib.blockdiag
 python-sphinxcontrib.nwdiag
 pandoc
 texlive-latex-recommended
+diffpdf
 
 # fonts
 fonts-dejavu
@@ -71,6 +72,9 @@ vlc
 yubikey-personalization-gui
 gedit-plugins
 qemu-user-static
+ssmtp
+bsd-mailx
+signing-party
 
 # juju
 juju-core
