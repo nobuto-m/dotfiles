@@ -63,6 +63,7 @@ echo 'Please input your mail password for MTA:'
 read -rs mta_password
 
 sudo -E sed -i \
+    -e "s/^\(root=\).*/\1$mta_address/" \
     -e 's/^\(mailhub=\).*/\1smtp.gmail.com:587/' \
     -e '/^UseSTARTTLS=/d' \
     -e '/^AuthUser=/d' \

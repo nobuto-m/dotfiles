@@ -7,6 +7,7 @@ ubuntu-dev-tools
 packaging-dev
 bikeshed
 git-review
+help2man
 
 # encryption
 encfs
@@ -75,6 +76,8 @@ qemu-user-static
 ssmtp
 bsd-mailx
 signing-party
+ansible
+ansible-doc
 
 # juju
 juju-core

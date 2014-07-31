@@ -73,66 +73,20 @@ launcher-capture-mouse=false
 hsize=2
 vsize=2
 
-[apps/indicators/multiload/general]
+[de/mh21/indicator-multiload/general]
 speed=uint16 5000
 autostart=true
 height=uint16 18
-settings-version=uint32 2
+settings-version=uint32 3
 
-[apps/indicators/multiload/graphs/cpu/cpu1]
-color='#b3b3b3'
-
-[apps/indicators/multiload/graphs/cpu/cpu4]
-color='#555555'
-
-[apps/indicators/multiload/graphs/cpu/cpu3]
-color='#f8f8f8'
-
-[apps/indicators/multiload/graphs/cpu]
-alpha=uint16 6553
+[de/mh21/indicator-multiload/graphs/net]
 enabled=true
 
-[apps/indicators/multiload/graphs/cpu/cpu2]
-color='#dfdfdf'
-
-[apps/indicators/multiload/graphs/net/net1]
-color='#dfdfdf'
-
-[apps/indicators/multiload/graphs/net]
-alpha=uint16 6553
+[de/mh21/indicator-multiload/graphs/disk]
 enabled=true
 
-[apps/indicators/multiload/graphs/net/net3]
-color='#aaaaaa'
-
-[apps/indicators/multiload/graphs/net/net2]
-color='#cccccc'
-
-[apps/indicators/multiload/graphs/disk/disk2]
-color='#dfdfdf'
-
-[apps/indicators/multiload/graphs/disk/disk1]
-color='#c6c6c6'
-
-[apps/indicators/multiload/graphs/disk]
-alpha=uint16 6553
+[de/mh21/indicator-multiload/graphs/mem]
 enabled=true
-
-[apps/indicators/multiload/graphs/mem/mem4]
-color='#dfdfdf'
-
-[apps/indicators/multiload/graphs/mem/mem3]
-color='#f8f8f8'
-
-[apps/indicators/multiload/graphs/mem]
-alpha=uint16 6553
-enabled=true
-
-[apps/indicators/multiload/graphs/mem/mem2]
-color='#cccccc'
-
-[apps/indicators/multiload/graphs/mem/mem1]
-color='#b3b3b3'
 
 [com/canonical/indicator/power]
 show-time=true
