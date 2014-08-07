@@ -8,6 +8,7 @@ packaging-dev
 bikeshed
 git-review
 help2man
+ubuntu-emulator
 
 # encryption
 encfs
