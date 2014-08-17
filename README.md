@@ -64,6 +64,7 @@ $ dotfiles/setup-pbuilder.sh
 * https://addons.mozilla.org/firefox/addon/searchbox-sync/
 * https://addons.mozilla.org/firefox/addon/eijiro-on-the-web/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
+* https://addons.mozilla.org/firefox/addon/gnotifier/
 * https://github.com/mooz/keysnail/wiki/keysnail-japanese
 
 ### Thunderbird add-ons
