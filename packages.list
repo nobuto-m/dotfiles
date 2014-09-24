@@ -9,6 +9,9 @@ bikeshed
 git-review
 help2man
 ubuntu-emulator
+python-hacking
+python-nose
+amulet
 
 # encryption
 encfs
@@ -58,6 +61,7 @@ ipcalc
 jnettop
 httping
 zsync
+powerwake
 
 # utils - indicator
 indicator-multiload

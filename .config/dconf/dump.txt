@@ -7,7 +7,7 @@ history-accelerator='<Ctrl><Alt>C'
 active-plugins=@as []
 
 [net/launchpad/diodon/clipboard]
-clipboard-size=uint32 10
+recent-items-size=uint32 10
 instant-paste=false
 use-primary=false
 
