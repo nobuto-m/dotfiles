@@ -5,14 +5,7 @@
 }
 
 @-moz-document domain("mail.google.com") {
-  input, textarea {
-    font-family: monospace !important;
-  }
-}
-
-/* gmail iframe */
-@-moz-document domain("") {
-  body.LW-avf {
+  input, textarea, .editable {
     font-family: monospace !important;
   }
 }
