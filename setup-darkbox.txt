@@ -179,3 +179,5 @@ sudo find contrib/plugins/ -type f -exec cp -v {} /etc/munin/contrib/ \;
 
 sudo munin-node-configure --suggest
 sudo munin-node-configure --suggest --libdir /etc/munin/contrib/
+
+sudo apt-add-repository ppa:canonical-kernel-team/ppa
