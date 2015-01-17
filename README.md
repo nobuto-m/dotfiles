@@ -65,6 +65,7 @@ $ dotfiles/setup-pbuilder.sh
 * https://addons.mozilla.org/firefox/addon/eijiro-on-the-web/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/gnotifier/
+* https://addons.mozilla.org/firefox/addon/greasemonkey/
 * https://github.com/mooz/keysnail/wiki/keysnail-japanese
 
 ### Thunderbird add-ons
@@ -81,4 +82,3 @@ $ dotfiles/setup-pbuilder.sh
 * forcibly enable gtkspell for Pidgin in ja_JP locale
   - `ln -s en_US.aff /usr/share/hunspell/ja_JP.aff`
   - `ln -s en_US.dic /usr/share/hunspell/ja_JP.dic`
-* add `~/Downloads/` and encfs directories to exclude list in "Security & Privacy" setting
