@@ -1,0 +1,21 @@
+#cloud-config
+output: {all: '| tee -a /var/log/cloud-init-output.log'}
+manage_etc_hosts: localhost
+password: ubuntu
+chpasswd: { expire: false; }
+
+apt_sources:
+  - source: 'ppa:maas-maintainers/stable'
+apt_upgrade: true
+package_reboot_if_required: true
+packages:
+  - anacron
+  - etckeeper
+  - maas-proxy
+ssh_authorized_keys:
+  - {{SSH_KEY}}
+debconf_selections: |
+  unattended-upgrades unattended-upgrades/enable_auto_updates boolean true
+runcmd:
+  - dpkg-reconfigure -fnoninteractive unattended-upgrades
+  - dpkg-query -W linux-* | egrep 'linux-(generic|headers|image|signed)' | cut -f1 | xargs apt-get purge -y

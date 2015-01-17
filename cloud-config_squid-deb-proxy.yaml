@@ -17,6 +17,7 @@ debconf_selections: |
   unattended-upgrades unattended-upgrades/enable_auto_updates boolean true
 runcmd:
   - dpkg-reconfigure -fnoninteractive unattended-upgrades
+  - dpkg-query -W linux-* | egrep 'linux-(generic|headers|image|signed)' | cut -f1 | xargs apt-get purge -y
   - echo manual > /etc/init/squid3.override
   - echo maas.ubuntu.com > /etc/squid-deb-proxy/mirror-dstdomain.acl.d/20-maas
   - |
