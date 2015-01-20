@@ -1,6 +1,6 @@
 ## google-talkplugin_current_amd64.deb
 $ sudo touch /etc/default/google-talkplugin
-https://support.google.com/chat/answer/161993
+https://www.google.com/tools/dlpage/hangoutplugin
 
 ## firefox-lp-improvements
 https://launchpad.net/~gm-dev-launchpad/+archive/ppa/+packages
