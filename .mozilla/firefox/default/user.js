@@ -3,7 +3,6 @@
 user_pref("browser.startup.homepage", "about:home");
 
 user_pref("plugin.default.state", 1);
-user_pref("plugin.state.flash", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
 user_pref("plugin.state.libnpo1d", 2);
 
