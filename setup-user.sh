@@ -31,8 +31,8 @@ git config --global push.default simple
 # create C locale XDG user dirs
 echo ~/{Desktop,Downloads,Templates,Public,Documents,Documents/Music,Documents/Pictures,Documents/Videos} | xargs mkdir -p
 
-# remove ja locale XDG user dirs and examples.desktop
-rmdir ~/{デスクトップ,ダウンロード,テンプレート,公開,ドキュメント,ミュージック,ピクチャ,ビデオ} 2>/dev/null || true
+# remove unneeded XDG user dirs and examples.desktop
+rmdir ~/{Music,Pictures,Videos} 2>/dev/null || true
 rm -f ~/examples.desktop
 
 # clear gtk bookmarks
