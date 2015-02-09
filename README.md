@@ -47,6 +47,7 @@ $ dotfiles/setup-pbuilder.sh
 ### copy files from deja-dup backup
 
 * `~/.vpn/`
+* `~/.sesame/`
 * `~/.ssh/config`
 * `~/.ssh/id_rsa*`
 * `~/.gnupg/pubring.gpg`

@@ -28,6 +28,7 @@ periodic-period=7
 backend='file'
 periodic=true
 delete-after=182
+include-list=['$HOME', '/etc/NetworkManager/system-connections']
 exclude-list=['/home/nobuto/.local/share/Trash', '/home/nobuto/Canonical', '/home/nobuto/Documents/private', '/home/nobuto/Downloads', '/home/nobuto/charms', '/home/nobuto/dev/+junk', '/home/nobuto/pbuilder', '/home/nobuto/.dropbox', '/home/nobuto/.dropbox-dist', '/home/nobuto/.juju/local', '/home/nobuto/.local/share/ubuntu-emulator', '/home/nobuto/.local/share/zeitgeist', '/home/nobuto/.thunderbird/default/ImapMail']
 
 [org/gnome/deja-dup/file]
