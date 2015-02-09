@@ -5,6 +5,8 @@ set -u
 
 cd `dirname "$0"`
 
+sudo true
+
 # change cryptsetup passphrase to stronger one
 echo 'cryptsetup passphrase for /dev/sda3'
 echo '1. old passphrase'
@@ -12,17 +14,20 @@ echo '2. new one'
 sudo cryptsetup luksChangeKey /dev/sda3
 
 # sytem update
+## LP: #1409555
+sudo sed -i -e 's/^deb.*extras\.ubuntu\.com.*/# \0/' /etc/apt/sources.list
 sudo apt-get update
-sudo apt-get dist-upgrade -y
+sudo apt-get install eatmydata
+sudo eatmydata apt-get dist-upgrade -y
 
 # install etckeeper
-sudo apt-get install -y etckeeper bzr
+sudo eatmydata apt-get install -y etckeeper bzr
 
 # install other packages
-grep -v ^# ./packages.list | xargs sudo apt-get install -y
+grep -v ^# ./packages.list | xargs sudo eatmydata apt-get install -y
 
 # install language support
-check-language-support | xargs sudo apt-get install -y
+check-language-support | xargs sudo eatmydata apt-get install -y
 
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
