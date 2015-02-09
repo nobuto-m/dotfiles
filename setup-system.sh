@@ -17,7 +17,7 @@ sudo cryptsetup luksChangeKey /dev/sda3
 ## LP: #1409555
 sudo sed -i -e 's/^deb.*extras\.ubuntu\.com.*/# \0/' /etc/apt/sources.list
 sudo apt-get update
-sudo apt-get install eatmydata
+sudo apt-get install -y eatmydata
 sudo eatmydata apt-get dist-upgrade -y
 
 # install etckeeper
