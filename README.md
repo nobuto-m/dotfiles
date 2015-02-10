@@ -53,19 +53,7 @@ $ dotfiles/setup-pbuilder.sh
 1. `passwd backup-samba`
 1. `sshuttle -r <backup server> -N`
 1. run deja-dup and restore files into `~/backup/`
-
-#### needed files
-
-* `~/.vpn/`
-* `~/.sesame/`
-* `~/.ssh/config`
-* `~/.ssh/id_rsa*`
-* `~/.gnupg/pubring.gpg`
-* `~/.gnupg/secring.gpg`
-* `~/.gnupg/trustdb.gpg`
-* `~/.local/share/keyrings/login.keyring`
-* `~/.purple/accounts.xml`
-* `~/.purple/blist.xml`
+1. `dotfiles/backup-restore.sh`
 
 ### Firefox add-ons
 

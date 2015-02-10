@@ -3,6 +3,8 @@
 set -e
 set -u
 
+cd `dirname "$0"`
+
 ## prepare userdata
 USERDATA=`mktemp`
 SSH_KEY=`cat ~/.ssh/id_rsa.pub`
