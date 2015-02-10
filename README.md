@@ -46,6 +46,15 @@ $ dotfiles/setup-pbuilder.sh
 
 ### copy files from deja-dup backup
 
+1. login to the backup server from console with password
+1. copy ssh public key
+1. `lxc-attach -n backup-samba`
+1. `passwd backup-samba`
+1. `sshuttle -r <backup server> -N`
+1. run deja-dup and restore files into `~/backup/`
+
+#### needed files
+
 * `~/.vpn/`
 * `~/.sesame/`
 * `~/.ssh/config`
@@ -75,10 +84,11 @@ $ dotfiles/setup-pbuilder.sh
 
 ### remaining manual steps
 
+* login to Firefox Sync
+* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * install third party packages listed in `packages-thirdparty.txt`
 * create VPN config in network-manager
 * select color profile from gnome-control-center
-* set background trancparency of gnome-terminal
 * enable markerline, joinpart, highlight and splitter plugin in Pidgin
 * forcibly enable gtkspell for Pidgin in ja_JP locale
   - `ln -s en_US.aff /usr/share/hunspell/ja_JP.aff`

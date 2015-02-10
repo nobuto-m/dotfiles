@@ -52,6 +52,7 @@ dlocate
 # utils - terminal
 colordiff
 dwdiff
+ccze
 tree
 xclip
 nautilus-open-terminal
