@@ -8,7 +8,6 @@ packaging-dev
 bikeshed
 git-review
 help2man
-ubuntu-emulator
 python-hacking
 python-nose
 

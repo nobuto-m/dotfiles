@@ -88,6 +88,9 @@ AuthUser=$mta_address
 AuthPass=$mta_password
 EOF
 
+## lang
+sudo sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
+
 ## prepare ssh key
 [ -e ~/.ssh/id_rsa.pub ] || ssh-keygen -N '' -f ~/.ssh/id_rsa
 

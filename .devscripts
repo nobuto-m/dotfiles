@@ -1,4 +1,3 @@
 UBUNTUTOOLS_UBUNTU_MIRROR='http://jp.archive.ubuntu.com/ubuntu'
-PBUILDER_DIST_UBUNTU_MIRROR='http://archive.ubuntu.com/ubuntu'
 UBUNTUTOOLS_DEBIAN_MIRROR='http://ftp.jp.debian.org/debian'
 UBUNTUTOOLS_BUILDER='pbuilder-dist'
