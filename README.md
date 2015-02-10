@@ -39,6 +39,7 @@ $ git clone https://github.com/nobuto-m/dotfiles.git
     ```bash
 $ dotfiles/setup-system.sh
 $ dotfiles/setup-user.sh
+$ dotfiles/setup-proxy.sh
 $ dotfiles/setup-pbuilder.sh
 ```
 
@@ -69,7 +70,6 @@ $ dotfiles/setup-pbuilder.sh
 ### Firefox add-ons
 
 * https://addons.mozilla.org/firefox/addon/password-hasher/
-* https://addons.mozilla.org/firefox/addon/click-to-play-per-element/
 * https://addons.mozilla.org/firefox/addon/searchwp/
 * https://addons.mozilla.org/firefox/addon/searchbox-sync/
 * https://addons.mozilla.org/firefox/addon/eijiro-on-the-web/
@@ -90,6 +90,3 @@ $ dotfiles/setup-pbuilder.sh
 * create VPN config in network-manager
 * select color profile from gnome-control-center
 * enable markerline, joinpart, highlight and splitter plugin in Pidgin
-* forcibly enable gtkspell for Pidgin in ja_JP locale
-  - `ln -s en_US.aff /usr/share/hunspell/ja_JP.aff`
-  - `ln -s en_US.dic /usr/share/hunspell/ja_JP.dic`

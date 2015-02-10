@@ -46,6 +46,9 @@ xkb-options=['ctrl:nocaps']
 [org/gnome/desktop/session]
 idle-delay=uint32 300
 
+[org/gnome/gedit/preferences/encodings]
+auto-detected=['UTF-8', 'CURRENT', 'CP932', 'ISO-8859-15', 'UTF-16']
+
 [org/gnome/gedit/preferences/editor]
 display-right-margin=true
 highlight-current-line=true
@@ -130,7 +133,6 @@ list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
 default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
 
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
-cjk-utf8-ambiguous-width='wide'
 background-transparency-percent=10
 use-transparent-background=true
 visible-name='default'
