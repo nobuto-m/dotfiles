@@ -6,8 +6,10 @@
 ubuntu-dev-tools
 packaging-dev
 bikeshed
+bzr-fastimport
 git-review
 help2man
+poedit
 python-hacking
 python-nose
 
