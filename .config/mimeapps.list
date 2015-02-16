@@ -1,0 +1,5 @@
+[Default Applications]
+application/x-deb=org.gnome.FileRoller.desktop
+
+[Added Associations]
+application/x-deb=org.gnome.FileRoller.desktop;
