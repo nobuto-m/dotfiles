@@ -1,6 +1,7 @@
 //
 
 user_pref("browser.startup.homepage", "about:home");
+user_pref("browser.newtab.url", "about:home");
 
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
