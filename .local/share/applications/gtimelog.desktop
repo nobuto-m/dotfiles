@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GTimeLog Time Tracker
+Comment=Track and time daily activities
+Exec=gtimelog
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=gtimelog
+Categories=Application;Utility;
