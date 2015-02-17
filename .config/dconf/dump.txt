@@ -113,7 +113,7 @@ visible=false
 integration-allowed=false
 
 [com/canonical/unity/launcher]
-favorites=['application://nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://gtimelog.desktop', 'application://thunderbird.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
+favorites=['application://nautilus.desktop', 'application://firefox.desktop', 'application://gtimelog.desktop', 'application://pidgin.desktop', 'application://thunderbird.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
 
 [com/canonical/unity/lenses]
 remote-content-search='none'
