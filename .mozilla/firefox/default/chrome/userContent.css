@@ -5,6 +5,9 @@
 }
 
 @-moz-document domain("mail.google.com") {
+  .nM, .xY, .gt {
+    font-size: 87.5% !important;
+  }
   input, textarea, .editable {
     font-family: monospace !important;
   }
