@@ -5,5 +5,5 @@ Exec=gtimelog
 Terminal=false
 Type=Application
 StartupNotify=true
-Icon=gtimelog
+Icon=gtimelog-large
 Categories=Application;Utility;

@@ -91,8 +91,11 @@ EOF
 ## lang
 sudo sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
 
-# turn off sound on lightdm
+## turn off sound on lightdm
 sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false
+
+## add the first user into docker group
+sudo adduser $USER docker
 
 ## prepare ssh key
 [ -e ~/.ssh/id_rsa.pub ] || ssh-keygen -N '' -f ~/.ssh/id_rsa
