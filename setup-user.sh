@@ -48,8 +48,8 @@ rm -f /var/crash/*.crash || true
 
 # create ICC profile
 # after this step, .icc needs to be chosen manually in gnome-control-center
-cd-create-profile --output ~/.local/share/icc/Gamma6200K.icc \
-    ~/.local/share/icc/Gamma6200K.xml
+cd-create-profile --output ~/.local/share/icc/Gamma.icc \
+    ~/.local/share/icc/Gamma.xml
 
 # caff
 caff || true
