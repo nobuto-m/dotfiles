@@ -39,6 +39,7 @@ rm -f ~/examples.desktop
 rm -f ~/.config/gtk-3.0/bookmarks
 
 # import dconf settings
+dconf reset -f /
 dconf load / < ~/.config/dconf/dump.txt
 
 # clear /var/crash, sometimes ibus-dconf crashes during `dconf load`
