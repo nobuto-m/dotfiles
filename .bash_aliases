@@ -1,4 +1,4 @@
-alias C='LC_MESSAGES=C'
+alias ssh='env LC_ALL="en_US.UTF-8" ssh'
 alias cdtemp='cd $(mktemp -d)'
 alias check-connectivity='httping -sGb -c5 -t5 www.google.co.jp | ccze -A'
 alias xclips='xclip -selection clip'
