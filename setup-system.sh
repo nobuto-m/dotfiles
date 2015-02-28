@@ -69,25 +69,6 @@ sudo sed -i \
     /etc/default/lxc-net
 sudo restart lxc-net
 
-# setup MTA
-echo 'Please input your mail address for MTA:'
-read -r mta_address
-echo 'Please input your mail password for MTA:'
-read -rs mta_password
-
-sudo -E sed -i \
-    -e "s/^\(root=\).*/\1$mta_address/" \
-    -e 's/^\(mailhub=\).*/\1smtp.gmail.com:587/' \
-    -e '/^UseSTARTTLS=/d' \
-    -e '/^AuthUser=/d' \
-    -e '/^AuthPass=/d' \
-    /etc/ssmtp/ssmtp.conf
-cat << EOF | sudo tee -a /etc/ssmtp/ssmtp.conf
-UseSTARTTLS=Yes
-AuthUser=$mta_address
-AuthPass=$mta_password
-EOF
-
 ## lang
 sudo sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
 
@@ -96,8 +77,5 @@ sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-rea
 
 ## add the first user into docker group
 sudo adduser $USER docker
-
-## prepare ssh key
-[ -e ~/.ssh/id_rsa.pub ] || ssh-keygen -N '' -f ~/.ssh/id_rsa
 
 echo 'Done!'
