@@ -50,10 +50,6 @@ dconf load / < ~/.config/dconf/dump.txt
 cd-create-profile --output ~/.local/share/icc/Gamma.icc \
     ~/.local/share/icc/Gamma.xml
 
-# caff
-caff || true
-sed -i -e "s/^\(\$CONFIG{'email'} = \).*/\1'$DEBEMAIL';/" -e "s/^\(\$CONFIG{'keyid'} = \).*/\1\[ qw{75910B785FAC9400} \];/" ~/.caffrc
-
 
 echo 'Done!'
 
