@@ -5,6 +5,9 @@ set -u
 
 cd `dirname "$0"`
 
+## prepare ssh key
+[ -e ~/.ssh/id_rsa.pub ] || ssh-keygen -N '' -f ~/.ssh/id_rsa
+
 # copy repository contents
 rsync -rv --exclude '/[^.]*' --exclude '/.git/' . ~/
 
@@ -41,10 +44,6 @@ rm -f ~/.config/gtk-3.0/bookmarks
 # import dconf settings
 dconf reset -f /
 dconf load / < ~/.config/dconf/dump.txt
-
-# clear /var/crash, sometimes ibus-dconf crashes during `dconf load`
-sleep 5
-rm -f /var/crash/*.crash || true
 
 # create ICC profile
 # after this step, .icc needs to be chosen manually in gnome-control-center
