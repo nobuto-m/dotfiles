@@ -52,11 +52,7 @@ cd-create-profile --output ~/.local/share/icc/Gamma.icc \
 
 # caff
 caff || true
-
-mta_address=`grep ^AuthUser /etc/ssmtp/ssmtp.conf | cut -d= -f2`
-mta_address=`echo $mta_address | cut -d= -f2`
-
-sed -i -e "s/^\(\$CONFIG{'email'} = \).*/\1'$mta_address';/" -e "s/^\(\$CONFIG{'keyid'} = \).*/\1\[ qw{75910B785FAC9400} \];/" ~/.caffrc
+sed -i -e "s/^\(\$CONFIG{'email'} = \).*/\1'$DEBEMAIL';/" -e "s/^\(\$CONFIG{'keyid'} = \).*/\1\[ qw{75910B785FAC9400} \];/" ~/.caffrc
 
 
 echo 'Done!'
