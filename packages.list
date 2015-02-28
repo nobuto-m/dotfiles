@@ -83,9 +83,6 @@ vlc
 yubikey-personalization-gui
 gedit-plugins
 qemu-user-static
-ssmtp
-bsd-mailx
-signing-party
 ansible
 ansible-doc
 gtimelog
