@@ -72,8 +72,6 @@ indicator-multiload
 diodon
 
 # other
-## LP: #1377370
-ibus-gtk
 ibus-mozc
 dconf-editor
 gimp
