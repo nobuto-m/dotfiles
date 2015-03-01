@@ -12,6 +12,7 @@ help2man
 poedit
 python-hacking
 python-nose
+fonttools
 
 # encryption
 encfs
