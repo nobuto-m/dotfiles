@@ -1,4 +1,5 @@
 set autoindent
+set fill 72
 # set nohelp
 set nowrap
 # set quickblank
