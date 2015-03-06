@@ -20,6 +20,9 @@ fi
 DEBFULLNAME=`grep -w DEBFULLNAME ~/.bashrc | cut -d'"' -f2`
 DEBEMAIL=`grep -w DEBEMAIL ~/.bashrc | cut -d'"' -f2`
 
+reportbug --configure -B debian --email "$DEBEMAIL"
+echo 'bts debian' >> ~/.reportbugrc
+
 # set id for bzr command
 bzr whoami "$DEBFULLNAME <$DEBEMAIL>"
 
