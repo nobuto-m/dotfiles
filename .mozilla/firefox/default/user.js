@@ -14,6 +14,7 @@ user_pref("layout.spellcheckDefault", 2);
 user_pref("spellchecker.dictionary", "en_US");
 user_pref("print.postscript.paper_size", "A4");
 
+user_pref("passhash.optGuessFullDomain", true);
 user_pref("passhash.optHashWordSizeDefault", 16);
 
 user_pref("services.sync.engine.greasemonkey", false);
