@@ -12,6 +12,8 @@ help2man
 poedit
 python-hacking
 python-nose
+python3-hacking
+python3-nose
 fonttools
 fontforge
 
