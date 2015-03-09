@@ -77,4 +77,4 @@ $ dotfiles/setup-pbuilder.sh
 * install third party packages listed in `packages-thirdparty.txt`
 * create VPN config in network-manager
 * select color profile from gnome-control-center
-* enable markerline, joinpart, highlight and splitter plugin in Pidgin
+* enable markerline, joinpart and highlight plugin in Pidgin
