@@ -10,9 +10,9 @@ bzr-fastimport
 git-review
 help2man
 poedit
-python-hacking
+python-flake8
 python-nose
-python3-hacking
+python3-flake8
 python3-nose
 fonttools
 fontforge
