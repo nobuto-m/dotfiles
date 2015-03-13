@@ -11,9 +11,11 @@ git-review
 help2man
 poedit
 python-flake8
-python-nose
 python3-flake8
+python-nose
 python3-nose
+python-coverage
+python3-coverage
 fonttools
 fontforge
 
