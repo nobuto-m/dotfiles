@@ -18,6 +18,7 @@ python-coverage
 python3-coverage
 fonttools
 fontforge
+gnome-core-devel
 
 # encryption
 encfs
