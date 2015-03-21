@@ -91,6 +91,7 @@ qemu-user-static
 ansible
 ansible-doc
 gtimelog
+gstreamer1.0-libav
 
 # juju
 juju-core
