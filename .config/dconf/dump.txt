@@ -33,6 +33,12 @@ exclude-list=['/home/nobuto/.local/share/Trash', '/home/nobuto/Canonical', '/hom
 [org/gnome/deja-dup/file]
 path='smb://WORKGROUP;backup-samba@10.0.5.12/user/lifebook/'
 
+[org/gnome/desktop/screensaver]
+lock-delay=uint32 30
+
+[org/gnome/desktop/privacy]
+remember-recent-files=false
+
 [org/gnome/desktop/interface]
 gtk-key-theme='Emacs'
 
