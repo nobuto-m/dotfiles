@@ -73,6 +73,7 @@ $ dotfiles/setup-pbuilder.sh
 ### remaining manual steps
 
 * login to Firefox Sync
+* enable Desktop Notifications in Firefox for Gmail
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * install third party packages listed in `packages-thirdparty.txt`
 * create VPN config in network-manager
