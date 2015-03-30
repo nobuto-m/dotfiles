@@ -16,6 +16,8 @@ python-nose
 python3-nose
 python-coverage
 python3-coverage
+python-distutils-extra
+python3-distutils-extra
 fonttools
 fontforge
 gnome-core-devel
