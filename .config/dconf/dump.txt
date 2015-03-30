@@ -82,6 +82,7 @@ hsize=2
 vsize=2
 
 [de/mh21/indicator-multiload/general]
+indicator-expressions=@as []
 speed=uint16 5000
 autostart=true
 height=uint16 18
