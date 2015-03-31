@@ -18,6 +18,8 @@ python-coverage
 python3-coverage
 python-distutils-extra
 python3-distutils-extra
+python-stdeb
+python3-stdeb
 fonttools
 fontforge
 gnome-core-devel
