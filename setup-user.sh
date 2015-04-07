@@ -31,6 +31,10 @@ bzr whoami "$DEBFULLNAME <$DEBEMAIL>"
 # set login name for launchpad.net
 bzr lp-login nobuto
 
+# bzr config
+bzr alias diff='diff --diff-options="-p"'
+bzr alias cdiff='cdiff --diff-options="-p"'
+
 # git config
 git config --global user.name "$DEBFULLNAME"
 git config --global user.email "$DEBEMAIL"
