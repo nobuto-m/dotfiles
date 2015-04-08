@@ -23,6 +23,7 @@ python3-stdeb
 fonttools
 fontforge
 gnome-core-devel
+default-jdk
 
 # encryption
 encfs
