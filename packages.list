@@ -20,6 +20,8 @@ python-distutils-extra
 python3-distutils-extra
 python-stdeb
 python3-stdeb
+python-dbusmock
+python3-dbusmock
 fonttools
 fontforge
 gnome-core-devel
