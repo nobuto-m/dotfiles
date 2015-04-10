@@ -105,6 +105,7 @@ show-date=true
 locations=['America/Los_Angeles San Francisco', 'America/New_York Boston', 'America/Montreal Montreal', 'UTC UTC', 'Europe/London London', 'Asia/Shanghai Shanghai', 'Asia/Taipei Taipei', 'Asia/Tokyo Tokyo']
 show-day=true
 time-format='24-hour'
+show-week-numbers=true
 show-locations=true
 show-auto-detected-location=true
 show-seconds=true
