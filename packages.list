@@ -26,6 +26,7 @@ fonttools
 fontforge
 gnome-core-devel
 openjdk-8-jre
+xvfb
 
 # encryption
 encfs
