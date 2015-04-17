@@ -57,6 +57,7 @@ rm -f ~/.config/gtk-3.0/bookmarks
 
 # import dconf settings
 dconf reset -f /
+sleep 5
 dconf load / < ~/.config/dconf/dump.txt
 
 # create ICC profile
