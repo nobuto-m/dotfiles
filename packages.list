@@ -23,10 +23,10 @@ python3-stdeb
 python-dbusmock
 python3-dbusmock
 fonttools
-fontforge
 gnome-core-devel
 default-jre
 xvfb
+python3-xlib
 
 # encryption
 encfs
