@@ -17,6 +17,9 @@ user_pref("print.postscript.paper_size", "A4");
 user_pref("passhash.optGuessFullDomain", true);
 user_pref("passhash.optHashWordSizeDefault", 16);
 
+user_pref("extensions.eow.quickSearch.enabled"; true);
+user_pref("extensions.eow.quickSearch.disableOnHTTPS"; false);
+
 user_pref("services.sync.engine.greasemonkey", false);
 
 user_pref("font.default.x-unicode", "sans-serif");
