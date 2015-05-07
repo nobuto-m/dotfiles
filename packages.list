@@ -100,6 +100,7 @@ ansible
 ansible-doc
 gtimelog
 gstreamer1.0-libav
+desktop-webmail
 
 # juju
 juju-core
