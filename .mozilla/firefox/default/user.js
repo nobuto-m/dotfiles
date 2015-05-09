@@ -19,6 +19,7 @@ user_pref("passhash.optHashWordSizeDefault", 16);
 
 user_pref("extensions.eow.quickSearch.enabled"; true);
 user_pref("extensions.eow.quickSearch.disableOnHTTPS"; false);
+user_pref("extensions.eow.quickSearch.onkeyupSearch.triggerKey"; "RETURN");
 
 user_pref("services.sync.engine.greasemonkey", false);
 
