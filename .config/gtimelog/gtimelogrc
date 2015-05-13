@@ -1,6 +1,0 @@
-[gtimelog]
-mailer = xdg-open
-enable_gtk_completion = True
-hours = 7
-show_tray_icon = False
-show_tasks = False
