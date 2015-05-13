@@ -2,31 +2,9 @@
 ## $ check-language-support | xargs sudo apt-get install -y
 ## $ grep -v ^# dotfiles/packages.list | xargs sudo apt-get install -y
 
-# dev
-ubuntu-dev-tools
+# minimal dev
 packaging-dev
 bikeshed
-bzr-fastimport
-git-review
-help2man
-poedit
-python-flake8
-python3-flake8
-python-nose
-python3-nose
-python-coverage
-python3-coverage
-python-distutils-extra
-python3-distutils-extra
-python-stdeb
-python3-stdeb
-python-dbusmock
-python3-dbusmock
-fonttools
-gnome-core-devel
-default-jre
-xvfb
-python3-xlib
 
 # encryption
 encfs

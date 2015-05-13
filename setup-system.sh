@@ -14,18 +14,18 @@ echo '2. new one'
 sudo cryptsetup luksChangeKey /dev/sda3
 
 # sytem update
-sudo apt-get update
-sudo apt-get install -y eatmydata
-sudo eatmydata apt-get dist-upgrade -y
+sudo apt update
+sudo apt install -y eatmydata
+sudo eatmydata apt full-upgrade -y
 
 # install etckeeper
-sudo eatmydata apt-get install -y etckeeper bzr
+sudo eatmydata apt install -y etckeeper bzr
 
 # install other packages
-grep -v ^# ./packages.list | xargs sudo eatmydata apt-get install -y
+grep -v ^# ./packages.list | xargs sudo eatmydata apt install -y
 
 # install language support
-check-language-support | xargs sudo eatmydata apt-get install -y
+check-language-support | xargs sudo eatmydata apt install -y
 
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
@@ -34,10 +34,6 @@ sudo touch /etc/default/google-talkplugin
 if ! grep -qw /tmp /etc/fstab; then
     echo 'tmpfs /tmp tmpfs rw,nosuid,nodev 0 0' | sudo tee -a /etc/fstab
 fi
-
-# format swap as a workaround for LP: #1320702
-sudo swapoff -a
-sudo mkswap /dev/mapper/ubuntu--vg-swap_1
 
 # set swappiness
 echo 'vm.swappiness = 20' | sudo tee /etc/sysctl.d/99-local.conf
@@ -56,8 +52,7 @@ sudo dpkg-reconfigure -fnoninteractive apt-listchanges
 # change IP address range of virbr0
 sudo virsh net-destroy default
 sudo sed -i -e 's/192\.168\.122\./192.168.123./g' /etc/libvirt/qemu/networks/default.xml
-sudo restart libvirt-bin
-sudo virsh net-start default
+sudo service libvirt-bin restart
 
 # change IP address range of lxcbr0
 sudo sed -i \
@@ -65,7 +60,7 @@ sudo sed -i \
     -e 's|\(LXC_NETWORK=\).*|\1"10.0.7.0/24"|' \
     -e 's|\(LXC_DHCP_RANGE=\).*|\1"10.0.7.50,10.0.7.254"|' \
     /etc/default/lxc-net
-sudo restart lxc-net
+sudo service lxc-net restart
 
 ## lang
 sudo sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
