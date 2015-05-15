@@ -61,6 +61,7 @@ $ dotfiles/setup-pbuilder.sh
 * https://addons.mozilla.org/firefox/addon/searchwp/
 * https://addons.mozilla.org/firefox/addon/searchbox-sync/
 * https://addons.mozilla.org/firefox/addon/eijiro-on-the-web/
+* https://addons.mozilla.org/firefox/addon/dictionary-extension/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/gnotifier/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
