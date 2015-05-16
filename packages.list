@@ -5,6 +5,7 @@
 # minimal dev
 packaging-dev
 bikeshed
+ubuntu-make
 
 # encryption
 encfs
