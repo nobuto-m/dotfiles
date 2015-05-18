@@ -39,6 +39,7 @@ fonts-linex
 # messenger
 pidgin
 pidgin-plugin-pack
+weechat
 
 # utils - apt
 apt-listchanges
