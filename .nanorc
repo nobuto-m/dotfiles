@@ -1,5 +1,5 @@
 set autoindent
-set cut
+# set cut
 set fill 72
 # set nohelp
 set nowrap
