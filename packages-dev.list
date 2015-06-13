@@ -19,6 +19,5 @@ python-dbusmock
 python3-dbusmock
 fonttools
 gnome-core-devel
-default-jre
 xvfb
 python3-xlib
