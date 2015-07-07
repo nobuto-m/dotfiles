@@ -1,7 +1,0 @@
-#!/usr/bin/pulseaudio -nF
-
-.include /etc/pulse/default.pa
-
-## Whenever a new sink or source appears, this module will switch the
-## default sink/source to be the new sink/source
-load-module module-switch-on-connect
