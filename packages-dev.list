@@ -21,3 +21,4 @@ fonttools
 gnome-core-devel
 xvfb
 python3-xlib
+python-lzma
