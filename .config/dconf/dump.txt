@@ -22,7 +22,6 @@ sleep-inactive-battery-timeout=1800
 motion-threshold=30
 scroll-method='edge-scrolling'
 motion-acceleration=100.0
-tap-to-click=true
 
 [org/gnome/deja-dup]
 periodic-period=7
