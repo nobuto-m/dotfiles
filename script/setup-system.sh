@@ -10,7 +10,7 @@ sudo eatmydata apt full-upgrade -y
 sudo apt-get autoremove --purge -y
 
 apt_install() {
-    sudo eatmydata apt install -y -- $@
+    sudo env DEBIAN_FRONTEND=noninteractive eatmydata apt install -y -- $@
 }
 
 # install etckeeper
@@ -53,9 +53,8 @@ EOF
 sudo dpkg-reconfigure -fnoninteractive apt-listchanges
 
 # change IP address range of virbr0
-sudo virsh net-destroy default
+sudo virsh net-destroy default || true
 sudo sed -i -e 's/192\.168\.122\./192.168.123./g' /etc/libvirt/qemu/networks/default.xml
-sudo virsh net-start default
 
 # change IP address range of lxcbr0
 sudo sed -i \
@@ -63,10 +62,15 @@ sudo sed -i \
     -e 's|\(LXC_NETWORK=\).*|\1"10.0.7.0/24"|' \
     -e 's|\(LXC_DHCP_RANGE=\).*|\1"10.0.7.50,10.0.7.254"|' \
     /etc/default/lxc-net
-sudo service lxc-net restart
 
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
+
+# workaround for LP: #1489730
+wget -O- \
+    'https://bazaar.launchpad.net/~nobuto/ubuntu/wily/ubuntu-settings/fix-peripherals-schema/download/head:/ubuntusettings.gsett-20120913114305-u2qcapfyqxetdhj6-5/ubuntu-settings.gsettings-override' \
+    | sudo tee /usr/share/glib-2.0/schemas/10_ubuntu-settings.gschema.override >/dev/null
+sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
 echo 'Done!'
 
