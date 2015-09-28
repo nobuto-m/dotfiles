@@ -1,5 +1,3 @@
-## $ dconf load / < ~/.config/dconf/dump.txt
-
 [net/launchpad/diodon/keybindings]
 history-accelerator='<Ctrl><Alt>C'
 
@@ -18,17 +16,15 @@ lid-close-ac-action='nothing'
 sleep-inactive-ac-timeout=0
 sleep-inactive-battery-timeout=1800
 
-[org/gnome/settings-daemon/peripherals/touchpad]
-motion-threshold=30
+[org/gnome/desktop/peripherals/touchpad]
 scroll-method='edge-scrolling'
-motion-acceleration=100.0
 
 [org/gnome/deja-dup]
 periodic-period=7
 backend='file'
 periodic=true
 delete-after=182
-exclude-list=['/home/nobuto/.local/share/Trash', '/home/nobuto/Canonical', '/home/nobuto/Documents/private', '/home/nobuto/Downloads', '/home/nobuto/charms', '/home/nobuto/dev/+junk', '/home/nobuto/pbuilder', '/home/nobuto/.dropbox', '/home/nobuto/.juju/local', '/home/nobuto/.local/share/ubuntu-emulator', '/home/nobuto/.local/share/zeitgeist', '/home/nobuto/.thunderbird/default/ImapMail', '/home/nobuto/.vagrant.d/boxes', '/home/nobuto/VirtualBox VMs', '/home/nobuto/.dropbox-dist', '/home/nobuto/backup', '/home/nobuto/bin']
+exclude-list=['/home/nobuto/.local/share/Trash', '/home/nobuto/Canonical', '/home/nobuto/Documents/private', '/home/nobuto/Downloads', '/home/nobuto/charms', '/home/nobuto/dev', '/home/nobuto/pbuilder', '/home/nobuto/.dropbox', '/home/nobuto/.juju/local', '/home/nobuto/.local/share/ubuntu-emulator', '/home/nobuto/.local/share/zeitgeist', '/home/nobuto/.thunderbird/default/ImapMail', '/home/nobuto/.vagrant.d/boxes', '/home/nobuto/VirtualBox VMs', '/home/nobuto/.dropbox-dist', '/home/nobuto/backup', '/home/nobuto/tools']
 
 [org/gnome/deja-dup/file]
 path='smb://WORKGROUP;backup-samba@10.0.5.12/user/lifebook/'
@@ -118,7 +114,7 @@ visible=false
 integration-allowed=false
 
 [com/canonical/unity/launcher]
-favorites=['application://nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
+favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
 
 [com/canonical/unity/lenses]
 remote-content-search='none'

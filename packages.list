@@ -1,6 +1,5 @@
-## $ sudo apt-get install etckeeper bzr
-## $ check-language-support | xargs sudo apt-get install -y
-## $ grep -v ^# dotfiles/packages.list | xargs sudo apt-get install -y
+# swap
+swapspace
 
 # minimal dev
 packaging-dev
@@ -18,11 +17,6 @@ network-manager-openvpn-gnome
 uvtool
 lxc
 virt-manager
-python-spice-client-gtk
-virt-top
-vagrant
-virtualbox
-docker.io
 
 # doc
 python-sphinx
@@ -35,12 +29,10 @@ diffpdf
 # fonts
 fonts-dejavu
 fonts-noto
-fonts-linex
 
 # messenger
 pidgin
 pidgin-plugin-pack
-weechat
 
 # utils - apt
 apt-listchanges
@@ -76,9 +68,6 @@ inkscape
 chromium-browser
 yubikey-personalization-gui
 gedit-plugins
-qemu-user-static
-ansible
-ansible-doc
 gstreamer1.0-libav
 desktop-webmail
 

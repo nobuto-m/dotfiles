@@ -1,9 +1,2 @@
 ## google-talkplugin_current_amd64.deb
-$ sudo touch /etc/default/google-talkplugin
 https://www.google.com/tools/dlpage/hangoutplugin
-
-## Google Cloud SDK
-https://cloud.google.com/sdk/
-
-## PyCharm
-https://www.jetbrains.com/pycharm/download/

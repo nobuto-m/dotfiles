@@ -1,7 +1,9 @@
 //
 
 user_pref("browser.startup.homepage", "about:home");
-user_pref("browser.newtab.url", "about:home");
+user_pref("browser.newtabpage.enabled", false);
+
+user_pref("layers.acceleration.force-enabled", true);
 
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
@@ -11,8 +13,7 @@ user_pref("image.animation_mode", "once");
 user_pref("media.autoplay.enabled", false);
 
 user_pref("layout.spellcheckDefault", 2);
-user_pref("spellchecker.dictionary", "en_US");
-user_pref("print.postscript.paper_size", "A4");
+user_pref("spellchecker.dictionary", "en-US");
 
 user_pref("privacy.trackingprotection.enabled", true);
 

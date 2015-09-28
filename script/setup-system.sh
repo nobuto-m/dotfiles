@@ -3,40 +3,43 @@
 set -e
 set -u
 
-cd `dirname "$0"`
-
-sudo true
-
-# change cryptsetup passphrase to stronger one
-echo 'cryptsetup passphrase for /dev/sda3'
-echo '1. old passphrase'
-echo '2. new one'
-sudo cryptsetup luksChangeKey /dev/sda3
-
 # sytem update
 sudo apt update
 sudo apt install -y eatmydata
 sudo eatmydata apt full-upgrade -y
+sudo apt-get autoremove --purge -y
+
+apt_install() {
+    sudo eatmydata apt install -y -- $@
+}
 
 # install etckeeper
-sudo eatmydata apt install -y etckeeper bzr
+apt_install etckeeper bzr
 
 # install other packages
-grep -v ^# ./packages.list | xargs sudo eatmydata apt install -y
+apt_install $(grep -v ^# ./packages.list)
 
 # install language support
-check-language-support | xargs sudo eatmydata apt install -y
-
-# prevent google repository from being added
-sudo touch /etc/default/google-talkplugin
+apt_install $(check-language-support)
+sudo sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
 
 # /tmp as tmpfs
 if ! grep -qw /tmp /etc/fstab; then
     echo 'tmpfs /tmp tmpfs rw,nosuid,nodev 0 0' | sudo tee -a /etc/fstab
 fi
 
-# set swappiness
-echo 'vm.swappiness = 20' | sudo tee /etc/sysctl.d/99-local.conf
+# disable swap partition
+echo 'vm.swappiness = 10' | sudo tee /etc/sysctl.d/99-local.conf
+sudo swapoff -a
+sudo sed -i -e 's|^/.* swap .*|#\0|' /etc/fstab
+sudo sed -i -e 's|^cryptswap1 .*|#\0|' /etc/crypttab
+sudo cryptsetup close cryptswap1 || true
+sudo lvremove -f ubuntu-vg/swap_1 || true
+sudo lvresize -l +100%FREE ubuntu-vg/root || true
+sudo resize2fs /dev/mapper/ubuntu--vg-root
+
+## turn off sound on lightdm
+sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false
 
 # setup apt-listchanges
 cat << EOF | sudo debconf-set-selections
@@ -52,7 +55,7 @@ sudo dpkg-reconfigure -fnoninteractive apt-listchanges
 # change IP address range of virbr0
 sudo virsh net-destroy default
 sudo sed -i -e 's/192\.168\.122\./192.168.123./g' /etc/libvirt/qemu/networks/default.xml
-sudo service libvirt-bin restart
+sudo virsh net-start default
 
 # change IP address range of lxcbr0
 sudo sed -i \
@@ -62,13 +65,10 @@ sudo sed -i \
     /etc/default/lxc-net
 sudo service lxc-net restart
 
-## lang
-sudo sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
-
-## turn off sound on lightdm
-sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false
-
-## add the first user into docker group
-sudo adduser $USER docker
+# prevent google repository from being added
+sudo touch /etc/default/google-talkplugin
 
 echo 'Done!'
+
+# propose reboot
+gnome-session-quit --reboot

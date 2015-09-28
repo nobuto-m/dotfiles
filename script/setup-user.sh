@@ -3,8 +3,6 @@
 set -e
 set -u
 
-cd `dirname "$0"`
-
 ## prepare ssh key
 [ -e ~/.ssh/id_rsa.pub ] || ssh-keygen -N '' -f ~/.ssh/id_rsa
 
@@ -56,6 +54,7 @@ rm -f ~/examples.desktop
 rm -f ~/.config/gtk-3.0/bookmarks
 
 # import dconf settings
+echo 'Resetting dconf...'
 dconf reset -f /
 sleep 5
 dconf load / < ~/.config/dconf/dump.txt
@@ -68,5 +67,5 @@ cd-create-profile --output ~/.local/share/icc/Gamma.icc \
 
 echo 'Done!'
 
-# propose reboot
-gnome-session-quit --reboot
+# propose logout
+gnome-session-quit --logout

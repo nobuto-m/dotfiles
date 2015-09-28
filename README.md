@@ -25,7 +25,7 @@ for setting up my laptop
 1. install git first
 
     ```bash
-$ sudo apt-get update && sudo apt-get install git
+$ sudo apt update && sudo apt install git
 ```
 
 1. clone the repo
@@ -37,10 +37,10 @@ $ git clone https://github.com/nobuto-m/dotfiles.git
 1. execute
 
     ```bash
-$ dotfiles/setup-system.sh
-$ dotfiles/setup-user.sh
-$ dotfiles/setup-proxy.sh
-$ dotfiles/setup-pbuilder.sh
+$ cd dotfiles/
+$ make setup-system
+$ make setup-user
+$ make setup-pbuilder
 ```
 
 ## Manual setup
