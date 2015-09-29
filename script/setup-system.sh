@@ -35,8 +35,8 @@ sudo sed -i -e 's|^/.* swap .*|#\0|' /etc/fstab
 sudo sed -i -e 's|^cryptswap1 .*|#\0|' /etc/crypttab
 sudo cryptsetup close cryptswap1 || true
 sudo lvremove -f ubuntu-vg/swap_1 || true
-sudo lvresize -l +100%FREE ubuntu-vg/root || true
-sudo resize2fs /dev/mapper/ubuntu--vg-root
+#sudo lvresize -l +100%FREE ubuntu-vg/root || true
+#sudo resize2fs /dev/mapper/ubuntu--vg-root
 
 ## turn off sound on lightdm
 sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false

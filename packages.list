@@ -77,5 +77,8 @@ juju-local
 juju-deployer
 charm-tools
 
+# restricted
+intel-microcode
+
 # multiverse
 nautilus-dropbox
