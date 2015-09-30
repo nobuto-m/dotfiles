@@ -6,6 +6,14 @@ packaging-dev
 bikeshed
 ubuntu-make
 
+# dev
+## indicator-presentation
+python3-distutils-extra
+python3-flake8
+python3-nose
+python3-dbusmock
+xvfb
+
 # encryption
 encfs
 enigmail
@@ -47,7 +55,6 @@ xclip
 jq
 
 # utils - network
-ssh
 sshuttle
 nmap
 ipcalc
@@ -82,3 +89,6 @@ intel-microcode
 
 # multiverse
 nautilus-dropbox
+
+# PPA
+indicator-presentation

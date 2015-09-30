@@ -3,6 +3,10 @@
 set -e
 set -u
 
+# add PPA
+sudo apt-add-repository -y ppa:juju/stable
+sudo apt-add-repository -y ppa:indicator-presentation/ppa
+
 # sytem update
 sudo apt update
 sudo apt install -y eatmydata
