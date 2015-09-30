@@ -3,10 +3,10 @@
 <pref version='1' name='/'>
 	<pref name='purple'>
 		<pref name='away'>
-			<pref name='idle_reporting' type='string' value='system'/>
-			<pref name='away_when_idle' type='bool' value='1'/>
+			<pref name='idle_reporting' type='string' value='none'/>
+			<pref name='away_when_idle' type='bool' value='0'/>
 			<pref name='mins_before_away' type='int' value='5'/>
-			<pref name='auto_reply' type='string' value='awayidle'/>
+			<pref name='auto_reply' type='string' value='never'/>
 		</pref>
 		<pref name='buddies'/>
 		<pref name='contact'>
@@ -42,9 +42,9 @@
 			</pref>
 		</pref>
 		<pref name='savedstatus'>
-			<pref name='default' type='int' value='1443607592'/>
+			<pref name='default' type='int' value='0'/>
 			<pref name='startup' type='int' value='0'/>
-			<pref name='startup_current_status' type='bool' value='1'/>
+			<pref name='startup_current_status' type='bool' value='0'/>
 			<pref name='idleaway' type='int' value='0'/>
 			<pref name='isidleaway' type='bool' value='0'/>
 		</pref>
@@ -413,7 +413,9 @@
 		</pref>
 		<pref name='plugins'>
 			<pref name='loaded' type='pathlist'>
+				<item value='/usr/lib/purple-2/joinpart.so'/>
 				<item value='/usr/lib/purple-2/pidgin-libnotify.so'/>
+				<item value='/usr/lib/pidgin/markerline.so'/>
 				<item value='/usr/lib/pidgin/notify.so'/>
 				<item value='/usr/lib/purple-2/ssl-nss.so'/>
 				<item value='/usr/lib/purple-2/ssl.so'/>
@@ -491,7 +493,7 @@
 			</pref>
 			<pref name='theme' type='string' value=''/>
 			<pref name='conv_focus' type='bool' value='1'/>
-			<pref name='mute' type='bool' value='0'/>
+			<pref name='mute' type='bool' value='1'/>
 			<pref name='command' type='path' value=''/>
 			<pref name='method' type='string' value='automatic'/>
 			<pref name='volume' type='int' value='50'/>
@@ -509,13 +511,13 @@
 			<pref name='show_idle_time' type='bool' value='1'/>
 			<pref name='show_offline_buddies' type='bool' value='0'/>
 			<pref name='show_protocol_icons' type='bool' value='0'/>
-			<pref name='list_visible' type='bool' value='1'/>
+			<pref name='list_visible' type='bool' value='0'/>
 			<pref name='list_maximized' type='bool' value='0'/>
 			<pref name='sort_type' type='string' value='alphabetical'/>
 			<pref name='x' type='int' value='70'/>
 			<pref name='y' type='int' value='39'/>
-			<pref name='width' type='int' value='250'/>
-			<pref name='height' type='int' value='405'/>
+			<pref name='width' type='int' value='336'/>
+			<pref name='height' type='int' value='508'/>
 			<pref name='theme' type='string' value=''/>
 		</pref>
 		<pref name='conversations'>
@@ -549,10 +551,10 @@
 				<pref name='height' type='int' value='390'/>
 			</pref>
 			<pref name='im'>
-				<pref name='x' type='int' value='320'/>
+				<pref name='x' type='int' value='1315'/>
 				<pref name='y' type='int' value='39'/>
-				<pref name='width' type='int' value='448'/>
-				<pref name='height' type='int' value='390'/>
+				<pref name='width' type='int' value='1245'/>
+				<pref name='height' type='int' value='1355'/>
 				<pref name='animate_buddy_icons' type='bool' value='1'/>
 				<pref name='entry_height' type='int' value='54'/>
 				<pref name='show_buddy_icons' type='bool' value='1'/>
