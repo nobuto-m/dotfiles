@@ -66,12 +66,6 @@ sudo sed -i \
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
 
-# workaround for LP: #1489730
-wget -O- \
-    'https://bazaar.launchpad.net/~nobuto/ubuntu/wily/ubuntu-settings/fix-peripherals-schema/download/head:/ubuntusettings.gsett-20120913114305-u2qcapfyqxetdhj6-5/ubuntu-settings.gsettings-override' \
-    | sudo tee /usr/share/glib-2.0/schemas/10_ubuntu-settings.gschema.override >/dev/null
-sudo glib-compile-schemas /usr/share/glib-2.0/schemas
-
 echo 'Done!'
 
 # propose reboot
