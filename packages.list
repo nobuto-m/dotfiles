@@ -82,7 +82,7 @@ desktop-webmail
 juju-core
 juju-local
 juju-deployer
-charm-tools
+#charm-tools
 
 # restricted
 intel-microcode

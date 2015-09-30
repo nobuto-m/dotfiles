@@ -8,5 +8,7 @@ apt-file update
 
 # create pbuilder tarball
 for type in devel stable lts; do
-    pbuilder-dist `ubuntu-distro-info --$type` create
-done
+    ubuntu-distro-info --$type
+done | sort -u | xargs -L1 -I{} pbuilder-dist {} create
+
+rm -f ~/pbuilder/aptcache/ubuntu/*.deb
