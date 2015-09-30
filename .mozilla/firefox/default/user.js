@@ -3,7 +3,8 @@
 user_pref("browser.startup.homepage", "about:home");
 user_pref("browser.newtabpage.enabled", false);
 
-user_pref("layers.acceleration.force-enabled", true);
+// hangout uses cpu 100%
+// user_pref("layers.acceleration.force-enabled", true);
 
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
