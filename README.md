@@ -61,7 +61,6 @@ $ make setup-pbuilder
 * https://addons.mozilla.org/firefox/addon/searchwp/
 * https://addons.mozilla.org/firefox/addon/searchbox-sync/
 * https://addons.mozilla.org/firefox/addon/eijiro-on-the-web/
-* https://addons.mozilla.org/firefox/addon/dictionary-extension/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/gnotifier/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
@@ -79,4 +78,3 @@ $ make setup-pbuilder
 * install third party packages listed in `packages-thirdparty.txt`
 * create VPN config in network-manager
 * select color profile from gnome-control-center
-* enable markerline, joinpart and highlight plugin in Pidgin
