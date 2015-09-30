@@ -1,3 +1,15 @@
+[com/ubuntu/user-interface]
+scale-factor={'eDP1': 13}
+
+[org/compiz/profiles/unity/plugins/expo]
+x-offset=68
+
+[org/gnome/desktop/interface]
+gtk-key-theme='Emacs'
+scaling-factor=uint32 1
+cursor-size=39
+text-scaling-factor=1.625
+
 [net/launchpad/diodon/keybindings]
 history-accelerator='<Ctrl><Alt>C'
 
@@ -35,9 +47,6 @@ lock-delay=uint32 30
 [org/gnome/desktop/privacy]
 remember-recent-files=false
 
-[org/gnome/desktop/interface]
-gtk-key-theme='Emacs'
-
 [org/gnome/desktop/input-sources]
 sources=[('ibus', 'mozc-jp'), ('xkb', 'jp')]
 xkb-options=['ctrl:nocaps']
@@ -70,7 +79,7 @@ overlay-icon=1
 
 [org/compiz/profiles/unity/plugins/unityshell]
 show-minimized-windows=false
-icon-size=24
+icon-size=26
 launcher-capture-mouse=false
 
 [org/compiz/profiles/unity/plugins/core]
