@@ -40,7 +40,8 @@ sudo lvremove -f ubuntu-vg/swap_1 || true
 
 ## turn off sound on lightdm
 sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false
-sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/xft-dpi 156.0
+## set HiDPI for unity-greeter
+sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/xft-dpi 128.0
 
 # setup apt-listchanges
 cat << EOF | sudo debconf-set-selections
