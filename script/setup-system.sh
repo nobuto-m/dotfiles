@@ -63,6 +63,10 @@ sudo sed -i \
     -e 's|\(LXC_DHCP_RANGE=\).*|\1"10.0.7.50,10.0.7.254"|' \
     /etc/default/lxc-net
 
+# workaround for LP: #1500504
+sudo sed -i -e 's/^\(GRUB_CMDLINE_LINUX_DEFAULT=\).*/\1"quiet splash i8042.nomux"/' /etc/default/grub
+sudo update-grub
+
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
 
