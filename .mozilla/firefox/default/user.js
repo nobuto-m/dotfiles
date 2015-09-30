@@ -4,14 +4,14 @@ user_pref("browser.startup.homepage", "about:home");
 user_pref("browser.newtabpage.enabled", false);
 
 // hangout uses cpu 100%
-// user_pref("layers.acceleration.force-enabled", true);
+//user_pref("layers.acceleration.force-enabled", true);
 
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
 user_pref("plugin.state.libnpo1d", 2);
 
-user_pref("image.animation_mode", "once");
-user_pref("media.autoplay.enabled", false);
+//user_pref("image.animation_mode", "once");
+//user_pref("media.autoplay.enabled", false);
 
 user_pref("layout.spellcheckDefault", 2);
 user_pref("spellchecker.dictionary", "en-US");
