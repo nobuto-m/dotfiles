@@ -3,6 +3,18 @@
 set -e
 set -u
 
+# enable -proposed
+cat <<EOF | sudo tee /etc/apt/sources.list.d/proposed.list
+deb http://jp.archive.ubuntu.com/ubuntu/ $(lsb_release -sc)-proposed main restricted universe multiverse
+deb-src http://jp.archive.ubuntu.com/ubuntu/ $(lsb_release -sc)-proposed main restricted universe multiverse
+EOF
+
+cat <<EOF | sudo tee /etc/apt/preferences.d/proposed
+Package: *
+Pin: release a=*-proposed
+Pin-Priority: 400
+EOF
+
 # add PPA
 sudo apt-add-repository -y ppa:juju/stable
 sudo apt-add-repository -y ppa:indicator-presentation/ppa
