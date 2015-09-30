@@ -23,8 +23,6 @@ user_pref("passhash.optHashWordSizeDefault", 16);
 
 user_pref("extensions.keysnail.userscript.location", "~/.config/keysnail");
 
-user_pref("services.sync.engine.greasemonkey", false);
-
 user_pref("font.default.x-unicode", "sans-serif");
 user_pref("font.name.monospace.x-unicode", "DejaVu Sans Mono");
 user_pref("font.name.sans-serif.x-unicode", "DejaVu Sans");

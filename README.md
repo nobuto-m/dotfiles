@@ -53,7 +53,7 @@ $ make setup-pbuilder
 1. `passwd backup-samba`
 1. `sshuttle -r <backup server> -N`
 1. run deja-dup and restore files into `~/backup/`
-1. `dotfiles/backup-restore.sh`
+1. `make backup-restore`
 
 ### Firefox add-ons
 
