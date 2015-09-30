@@ -64,6 +64,8 @@ dconf load / < ~/.config/dconf/dump.txt
 cd-create-profile --output ~/.local/share/icc/Gamma.icc \
     ~/.local/share/icc/Gamma.xml
 
+# enable autostart
+indicator-multiload &
 
 echo 'Done!'
 
