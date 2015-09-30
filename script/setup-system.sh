@@ -51,8 +51,13 @@ sudo sed -i -e 's|^/.* swap .*|#\0|' /etc/fstab
 sudo sed -i -e 's|^cryptswap1 .*|#\0|' /etc/crypttab
 sudo cryptsetup close cryptswap1 || true
 sudo lvremove -f ubuntu-vg/swap_1 || true
-#sudo lvresize -l +100%FREE ubuntu-vg/root || true
-#sudo resize2fs /dev/mapper/ubuntu--vg-root
+
+# create btrfs for lxc
+sudo lvcreate -l 100%FREE -n lxc ubuntu-vg || true
+sudo mkfs.btrfs /dev/mapper/ubuntu--vg-lxc || true
+if ! grep -qw lxc /etc/fstab; then
+    echo /dev/mapper/ubuntu--vg-lxc /var/lib/lxc btrfs noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
+fi
 
 ## turn off sound on lightdm
 sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false

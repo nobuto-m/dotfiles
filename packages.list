@@ -24,6 +24,7 @@ network-manager-openvpn-gnome
 # virt
 uvtool
 lxc
+btrfs-tools
 virt-manager
 
 # doc
