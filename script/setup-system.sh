@@ -56,7 +56,7 @@ sudo fallocate -l 6G /swapfile
 sudo chmod 0600 /swapfile
 sudo mkswap /swapfile || true
 if ! grep -qw /swapfile /etc/fstab; then
-    echo /swapfile none swap sw 0 0 | sudo tee -a /etc/fstab
+    echo /swapfile swap swap defaults 0 0 | sudo tee -a /etc/fstab
 fi
 
 # create btrfs for lxc
