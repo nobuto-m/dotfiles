@@ -44,13 +44,20 @@ if ! grep -qw /tmp /etc/fstab; then
     echo 'tmpfs /tmp tmpfs rw,nosuid,nodev 0 0' | sudo tee -a /etc/fstab
 fi
 
-# disable swap partition
+# switch to swap file
 echo 'vm.swappiness = 10' | sudo tee /etc/sysctl.d/99-local.conf
 sudo swapoff -a
 sudo sed -i -e 's|^/.* swap .*|#\0|' /etc/fstab
 sudo sed -i -e 's|^cryptswap1 .*|#\0|' /etc/crypttab
 sudo cryptsetup close cryptswap1 || true
 sudo lvremove -f ubuntu-vg/swap_1 || true
+
+sudo fallocate -l 6G /swapfile
+sudo chmod 0600 /swapfile
+sudo mkswap /swapfile || true
+if ! grep -qw /swapfile /etc/fstab; then
+    echo /swapfile none swap sw 0 0 | sudo tee -a /etc/fstab
+fi
 
 # create btrfs for lxc
 sudo lvcreate -l 100%FREE -n lxc ubuntu-vg || true
