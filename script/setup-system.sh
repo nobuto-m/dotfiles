@@ -91,7 +91,12 @@ sudo sed -i \
     -e 's|\(LXC_ADDR=\).*|\1"10.0.7.1"|' \
     -e 's|\(LXC_NETWORK=\).*|\1"10.0.7.0/24"|' \
     -e 's|\(LXC_DHCP_RANGE=\).*|\1"10.0.7.50,10.0.7.254"|' \
+    -e 's|#*\(LXC_DHCP_CONFILE=.*\)|\1|' \
     /etc/default/lxc-net
+
+cat << EOF | sudo tee /etc/lxc/dnsmasq.conf
+dhcp-host=squid-deb-proxy,10.0.7.2,336h
+EOF
 
 # workaround for LP: #1500504
 sudo sed -i -e 's/^\(GRUB_CMDLINE_LINUX_DEFAULT=\).*/\1"quiet splash i8042.nomux"/' /etc/default/grub

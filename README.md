@@ -40,6 +40,7 @@ $ git clone https://github.com/nobuto-m/dotfiles.git
 $ cd dotfiles/
 $ make setup-system
 $ make setup-user
+$ make setup-proxy
 $ make setup-pbuilder
 ```
 

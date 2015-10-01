@@ -30,6 +30,7 @@ sleep-inactive-battery-timeout=1800
 
 [org/gnome/desktop/peripherals/touchpad]
 scroll-method='edge-scrolling'
+speed=1.0
 
 [org/gnome/deja-dup]
 periodic-period=7
