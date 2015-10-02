@@ -98,6 +98,18 @@ cat << EOF | sudo tee /etc/lxc/dnsmasq.conf
 dhcp-host=squid-deb-proxy,10.0.7.2,336h
 EOF
 
+# enable all tunables in powertop
+cat <<EOF | sudo tee /etc/systemd/system/powertop.service
+[Service]
+Environment=TERM=linux
+ExecStart=/usr/sbin/powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl enable powertop
+
 # workaround for LP: #1500504
 sudo sed -i -e 's/^\(GRUB_CMDLINE_LINUX_DEFAULT=\).*/\1"quiet splash i8042.nomux"/' /etc/default/grub
 sudo update-grub

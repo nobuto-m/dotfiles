@@ -82,6 +82,11 @@ juju-local
 juju-deployer
 #charm-tools
 
+# investigation
+evtest
+powertop
+sysstat
+
 # restricted
 intel-microcode
 
