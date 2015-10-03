@@ -59,11 +59,19 @@ if ! grep -qw /swapfile /etc/fstab; then
     echo /swapfile swap swap defaults 0 0 | sudo tee -a /etc/fstab
 fi
 
-# create btrfs for lxc
-sudo lvcreate -l 100%FREE -n lxc ubuntu-vg || true
-sudo mkfs.btrfs /dev/mapper/ubuntu--vg-lxc || true
-if ! grep -qw lxc /etc/fstab; then
-    echo /dev/mapper/ubuntu--vg-lxc /var/lib/lxc btrfs noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
+# create btrfs for lxc/kvm dirs
+sudo lvcreate -l 100%FREE -n virt ubuntu-vg || true
+sudo mkfs.btrfs /dev/mapper/ubuntu--vg-virt || true
+sudo mount /dev/mapper/ubuntu--vg-virt /mnt
+sudo btrfs subvolume create /mnt/libvirt || true
+sudo btrfs subvolume create /mnt/lxc || true
+sudo chmod 0700 /mnt/libvirt
+sudo chmod 0700 /mnt/lxc
+sudo umount /mnt
+
+if ! grep -qw btrfs /etc/fstab; then
+    echo /dev/mapper/ubuntu--vg-virt /var/lib/libvirt/images btrfs subvol=libvirt,nobarrier 0 3 | sudo tee -a /etc/fstab
+    echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc btrfs subvol=lxc,compress=lzo,autodefrag,noatime,nobarrier 0 4 | sudo tee -a /etc/fstab
 fi
 
 ## turn off sound on lightdm
