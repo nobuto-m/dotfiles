@@ -70,7 +70,7 @@ sudo chmod 0700 /mnt/lxc
 sudo umount /mnt
 
 if ! grep -qw btrfs /etc/fstab; then
-    echo /dev/mapper/ubuntu--vg-virt /var/lib/libvirt/images btrfs subvol=libvirt,compress=lzo,noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
+    echo /dev/mapper/ubuntu--vg-virt /var/lib/libvirt/images btrfs subvol=libvirt,compress=no,noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
     echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc btrfs subvol=lxc,compress=lzo,autodefrag,noatime,nobarrier 0 4 | sudo tee -a /etc/fstab
 fi
 
