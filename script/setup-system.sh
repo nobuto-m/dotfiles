@@ -47,7 +47,7 @@ fi
 # switch to swap file
 echo 'vm.swappiness = 10' | sudo tee /etc/sysctl.d/99-local.conf
 sudo swapoff -a
-sudo sed -i -e 's|^/.* swap .*|#\0|' /etc/fstab
+sudo sed -i -e 's|^/dev/mapper/cryptswap1 .*|#\0|' /etc/fstab
 sudo sed -i -e 's|^cryptswap1 .*|#\0|' /etc/crypttab
 sudo cryptsetup close cryptswap1 || true
 sudo lvremove -f ubuntu-vg/swap_1 || true
@@ -70,7 +70,7 @@ sudo chmod 0700 /mnt/lxc
 sudo umount /mnt
 
 if ! grep -qw btrfs /etc/fstab; then
-    echo /dev/mapper/ubuntu--vg-virt /var/lib/libvirt/images btrfs subvol=libvirt,nobarrier 0 3 | sudo tee -a /etc/fstab
+    echo /dev/mapper/ubuntu--vg-virt /var/lib/libvirt/images btrfs subvol=libvirt,compress=lzo,noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
     echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc btrfs subvol=lxc,compress=lzo,autodefrag,noatime,nobarrier 0 4 | sudo tee -a /etc/fstab
 fi
 
