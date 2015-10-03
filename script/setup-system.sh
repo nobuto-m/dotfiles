@@ -92,6 +92,7 @@ sudo sed -i \
     -e 's|\(LXC_NETWORK=\).*|\1"10.0.7.0/24"|' \
     -e 's|\(LXC_DHCP_RANGE=\).*|\1"10.0.7.50,10.0.7.254"|' \
     -e 's|#*\(LXC_DHCP_CONFILE=.*\)|\1|' \
+    -e 's|#*\(LXC_DOMAIN="lxc"\)|\1|' \
     /etc/default/lxc-net
 
 cat << EOF | sudo tee /etc/lxc/dnsmasq.conf
