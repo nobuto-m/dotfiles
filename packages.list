@@ -23,6 +23,7 @@ uvtool
 lxc
 btrfs-tools
 virt-manager
+openvswitch-switch
 
 # doc
 python-sphinx
