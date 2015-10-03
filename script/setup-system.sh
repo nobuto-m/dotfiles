@@ -102,7 +102,7 @@ EOF
 cat <<EOF | sudo tee /etc/systemd/system/powertop.service
 [Service]
 Environment=TERM=linux
-ExecStart=/usr/sbin/powertop --auto-tune
+ExecStart=/usr/sbin/powertop --quiet --auto-tune
 
 [Install]
 WantedBy=multi-user.target
