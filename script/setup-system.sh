@@ -94,6 +94,18 @@ sudo dpkg-reconfigure -fnoninteractive apt-listchanges
 sudo virsh net-destroy default || true
 sudo sed -i -e 's/192\.168\.122\./192.168.123./g' /etc/libvirt/qemu/networks/default.xml
 
+# openvswitch network in libvirt
+sudo ovs-vsctl add-br br-ovs0 || true
+cat <<EOF | virsh net-define /dev/stdin || true
+<network>
+  <name>br-ovs0</name>
+  <forward mode='bridge'/>
+  <bridge name='br-ovs0'/>
+  <virtualport type='openvswitch'/>
+</network>
+EOF
+virsh net-autostart br-ovs0
+
 # change IP address range of lxcbr0
 sudo sed -i \
     -e 's|\(LXC_ADDR=\).*|\1"10.0.7.1"|' \
