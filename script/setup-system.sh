@@ -63,15 +63,15 @@ fi
 sudo lvcreate -l 100%FREE -n virt ubuntu-vg || true
 sudo mkfs.btrfs /dev/mapper/ubuntu--vg-virt || true
 sudo mount /dev/mapper/ubuntu--vg-virt /mnt
-sudo btrfs subvolume create /mnt/libvirt || true
+sudo btrfs subvolume create /mnt/uvtool || true
 sudo btrfs subvolume create /mnt/lxc || true
-sudo chmod 0700 /mnt/libvirt
+sudo chmod 0700 /mnt/uvtool
 sudo chmod 0700 /mnt/lxc
 sudo umount /mnt
 
 if ! grep -qw btrfs /etc/fstab; then
-    echo /dev/mapper/ubuntu--vg-virt /var/lib/libvirt/images btrfs subvol=libvirt,compress=no,noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
-    echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc btrfs subvol=lxc,compress=lzo,autodefrag,noatime,nobarrier 0 4 | sudo tee -a /etc/fstab
+    echo /dev/mapper/ubuntu--vg-virt /var/lib/uvtool/libvirt/images btrfs subvol=uvtool,compress=no,autodefrag,noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
+    echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc btrfs subvol=lxc,compress=no,autodefrag,noatime,nobarrier 0 4 | sudo tee -a /etc/fstab
 fi
 
 ## turn off sound on lightdm
