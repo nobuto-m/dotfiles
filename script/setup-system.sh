@@ -132,6 +132,21 @@ sudo update-grub
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
 
+# force --unsafe-caching for juju, LP: #1505435
+cat <<"EOF" | sudo install -m 755 /dev/stdin /usr/local/bin/uvt-kvm
+#!/bin/sh
+
+set -e
+set -u
+
+if [ "$1" = 'create' ]; then
+    shift
+    /usr/bin/uvt-kvm create --unsafe-caching "$@"
+else
+    /usr/bin/uvt-kvm "$@"
+fi
+EOF
+
 echo 'Done!'
 
 # propose reboot
