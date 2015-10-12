@@ -61,17 +61,11 @@ fi
 
 # create btrfs for lxc/kvm dirs
 sudo lvcreate -l 100%FREE -n virt ubuntu-vg || true
-sudo mkfs.btrfs /dev/mapper/ubuntu--vg-virt || true
-sudo mount /dev/mapper/ubuntu--vg-virt /mnt
-sudo btrfs subvolume create /mnt/uvtool || true
-sudo btrfs subvolume create /mnt/lxc || true
-sudo chmod 0700 /mnt/uvtool
-sudo chmod 0700 /mnt/lxc
-sudo umount /mnt
-
-if ! grep -qw btrfs /etc/fstab; then
-    echo /dev/mapper/ubuntu--vg-virt /var/lib/uvtool/libvirt/images btrfs subvol=uvtool,compress=no,autodefrag,noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
-    echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc btrfs subvol=lxc,compress=no,autodefrag,noatime,nobarrier 0 4 | sudo tee -a /etc/fstab
+if ! lsblk -f /dev/mapper/ubuntu--vg-virt | grep -qw ext4; then
+    sudo mkfs.ext4 /dev/mapper/ubuntu--vg-virt || true
+fi
+if ! grep -qw ubuntu--vg-virt /etc/fstab; then
+    echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc ext4 noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
 fi
 
 ## turn off sound on lightdm
