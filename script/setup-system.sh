@@ -142,7 +142,7 @@ set -u
 if [ "$1" = 'create' ]; then
     shift
     # LP: #1505435, LP: #1397201
-    /usr/bin/uvt-kvm create --unsafe-caching --cpu 2 --memory 1536 "$@"
+    /usr/bin/uvt-kvm create "$@" --unsafe-caching --cpu 2 --memory 1536
 else
     /usr/bin/uvt-kvm "$@"
 fi
