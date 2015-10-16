@@ -29,6 +29,7 @@ lxc
 btrfs-tools
 virt-manager
 openvswitch-switch
+python-openstackclient
 
 # doc
 python-sphinx
