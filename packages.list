@@ -16,6 +16,10 @@ python-nose
 python-coverage
 python-mock
 
+# openstack
+python-openstackclient
+python-ceilometerclient
+
 # encryption
 encfs
 enigmail
@@ -29,7 +33,6 @@ lxc
 btrfs-tools
 virt-manager
 openvswitch-switch
-python-openstackclient
 
 # doc
 python-sphinx
