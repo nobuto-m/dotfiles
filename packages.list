@@ -11,6 +11,7 @@ python3-nose
 python3-dbusmock
 xvfb
 ## charm
+tox
 python-flake8
 python-nose
 python-coverage
