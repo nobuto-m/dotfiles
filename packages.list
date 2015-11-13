@@ -62,6 +62,7 @@ ccze
 tree
 xclip
 jq
+shellcheck
 
 # utils - network
 sshuttle
