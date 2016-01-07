@@ -38,6 +38,7 @@ $ git clone https://github.com/nobuto-m/dotfiles.git
 
     ```bash
 $ cd dotfiles/
+$ make setup-machine
 $ make setup-system
 $ make setup-user
 $ make setup-proxy

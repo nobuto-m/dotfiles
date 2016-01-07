@@ -1,5 +1,9 @@
 .PHONY: setup-system setup-user backup-restore setup-proxy setup-pbuilder ubuntu-make
 
+.PHONY: setup-machine
+setup-machine:
+	@script/setup-machine.sh
+
 setup-system:
 	@script/setup-system.sh
 
