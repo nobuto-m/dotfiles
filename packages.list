@@ -89,7 +89,7 @@ desktop-webmail
 
 # juju
 juju-core
-charm-tools
+#charm-tools
 
 # investigation
 powertop
