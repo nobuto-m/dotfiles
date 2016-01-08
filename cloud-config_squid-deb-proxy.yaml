@@ -11,7 +11,7 @@ packages:
   - etckeeper
   - squid-deb-proxy
 ssh_authorized_keys:
-  - {{SSH_KEY}}
+  - {{ ssh_key }}
 debconf_selections: |
   squid-deb-proxy squid-deb-proxy/ppa-enable boolean true
   unattended-upgrades unattended-upgrades/enable_auto_updates boolean true
@@ -30,6 +30,6 @@ runcmd:
       refresh_pattern \/(boot|di)-kernel$ 129600 100% 129600
       refresh_pattern \/(boot|di)-initrd$ 129600 100% 129600
       
-      negative_ttl 120 minutes
+      negative_ttl 20 minutes
       EOF
-  - restart squid-deb-proxy
+  - service squid-deb-proxy restart

@@ -6,7 +6,7 @@ set -u
 ## prepare userdata
 USERDATA=`mktemp`
 SSH_KEY=`cat ~/.ssh/id_rsa.pub`
-sed -e "s|{{SSH_KEY}}|$SSH_KEY|" ./cloud-config_squid-deb-proxy.yaml > "$USERDATA"
+sed -e "s|{{ ssh_key }}|$SSH_KEY|" ./cloud-config_squid-deb-proxy.yaml > "$USERDATA"
 
 ## create
 if ! (sudo lxc-ls --running | grep -q -w squid-deb-proxy); then
