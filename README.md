@@ -68,10 +68,6 @@ $ make setup-pbuilder
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
 * https://github.com/mooz/keysnail/wiki/keysnail-japanese
 
-### Thunderbird add-ons
-
-* https://addons.mozilla.org/thunderbird/addon/confirm-address-5582/
-
 ### remaining manual steps
 
 * login to Firefox Sync
