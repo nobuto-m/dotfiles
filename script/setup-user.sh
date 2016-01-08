@@ -33,7 +33,6 @@ bzr lp-login nobuto
 bzr alias diff='diff --diff-options="-p"'
 bzr alias cdiff='cdiff --diff-options="-p"'
 if ! grep -q '^.idea/$' ~/.bazaar/ignore; then
-    sudo chown $USER: ~/.bazaar/ignore
     # for PyCharm(IntelliJ IDEA)
     echo .idea/ >> ~/.bazaar/ignore
 fi
