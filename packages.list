@@ -31,14 +31,13 @@ network-manager-openvpn-gnome
 # virt
 uvtool
 lxc
-btrfs-tools
 virt-manager
 openvswitch-switch
 
 # doc
-python-sphinx
-python-sphinxcontrib.blockdiag
-python-sphinxcontrib.nwdiag
+python3-sphinx
+python3-sphinxcontrib.blockdiag
+python3-sphinxcontrib.nwdiag
 pandoc
 texlive-latex-recommended
 diffpdf
@@ -90,12 +89,9 @@ desktop-webmail
 
 # juju
 juju-core
-juju-local
-juju-deployer
 charm-tools
 
 # investigation
-evtest
 powertop
 sysstat
 
