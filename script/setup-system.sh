@@ -94,7 +94,7 @@ sudo sed -i -e 's/192\.168\.122\./192.168.123./g' /etc/libvirt/qemu/networks/def
 
 # openvswitch network in libvirt
 sudo ovs-vsctl add-br br-ovs0 || true
-cat <<EOF | virsh net-define /dev/stdin || true
+cat <<EOF | sudo virsh net-define /dev/stdin || true
 <network>
   <name>br-ovs0</name>
   <forward mode='bridge'/>
@@ -102,7 +102,7 @@ cat <<EOF | virsh net-define /dev/stdin || true
   <virtualport type='openvswitch'/>
 </network>
 EOF
-virsh net-autostart br-ovs0
+sudo virsh net-autostart br-ovs0
 
 # change IP address range of lxcbr0
 sudo sed -i \
