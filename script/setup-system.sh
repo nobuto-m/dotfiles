@@ -49,7 +49,7 @@ if ! grep -qw /tmp /etc/fstab; then
 fi
 
 # switch to swap file
-echo 'vm.swappiness = 10' | sudo tee /etc/sysctl.d/99-local.conf
+echo 'vm.swappiness = 1' | sudo tee /etc/sysctl.d/99-local.conf
 sudo swapoff -a
 sudo sed -i -e 's|^/dev/mapper/cryptswap1 .*|#\0|' /etc/fstab
 sudo sed -i -e 's|^cryptswap1 .*|#\0|' /etc/crypttab
@@ -63,7 +63,7 @@ if ! grep -qw /swapfile /etc/fstab; then
     echo /swapfile swap swap defaults 0 0 | sudo tee -a /etc/fstab
 fi
 
-# create btrfs for lxc/kvm dirs
+# create a partition for lxc/kvm dirs
 sudo lvcreate -l 100%FREE -n virt ubuntu-vg || true
 if ! lsblk -f /dev/mapper/ubuntu--vg-virt | grep -qw ext4; then
     sudo mkfs.ext4 /dev/mapper/ubuntu--vg-virt || true
@@ -116,18 +116,6 @@ sudo sed -i \
 cat << EOF | sudo tee /etc/lxc/dnsmasq.conf
 dhcp-host=squid-deb-proxy,10.0.7.2,336h
 EOF
-
-# enable all tunables in powertop
-cat <<EOF | sudo tee /etc/systemd/system/powertop.service
-[Service]
-Environment=TERM=linux
-ExecStart=/usr/sbin/powertop --quiet --auto-tune
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-sudo systemctl enable powertop
 
 # prevent google repository from being added
 sudo touch /etc/default/google-talkplugin
