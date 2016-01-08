@@ -9,14 +9,21 @@ set -u
 # copy repository contents
 rsync -rv --exclude '/[^.]*' --exclude '/.git/' . ~/
 
-# set DEBEMAIL and DEBFULLNAME in ~/.bashrc
-if ! grep -qw DEBEMAIL ~/.bashrc; then
-    setup-packaging-environment
+# get user's full name and e-mail address
+DEBFULLNAME=`getent passwd "$USER" | cut -d: -f5 | cut -d, -f1`
+if [ -z "$DEBEMAIL" ]; then
+    echo 'Your e-mail address:'
+    read -sr DEBEMAIL
 fi
 
-# get DEBFULLNAME and DEBEMAIL to setup bzr and git
-DEBFULLNAME=`grep -w DEBFULLNAME ~/.bashrc | cut -d'"' -f2`
-DEBEMAIL=`grep -w DEBEMAIL ~/.bashrc | cut -d'"' -f2`
+# set DEBEMAIL and DEBFULLNAME in ~/.bashrc
+if ! grep -qw DEBEMAIL ~/.bashrc; then
+    cat <<EOF >> ~/.bashrc
+
+export DEBFULLNAME='$DEBFULLNAME'
+export DEBEMAIL='$DEBEMAIL'
+EOF
+fi
 
 if [ ! -e ~/.reportbugrc ]; then
     reportbug --configure -B debian --email "$DEBEMAIL"
