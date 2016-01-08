@@ -1,14 +1,14 @@
 [com/ubuntu/user-interface]
-scale-factor={'eDP1': 13}
+scale-factor={'eDP1': 12}
 
 [org/compiz/profiles/unity/plugins/expo]
-x-offset=68
+x-offset=63
 
 [org/gnome/desktop/interface]
 gtk-key-theme='Emacs'
 scaling-factor=uint32 1
-cursor-size=39
-text-scaling-factor=1.625
+cursor-size=36
+text-scaling-factor=1.5
 
 [net/launchpad/diodon/keybindings]
 history-accelerator='<Ctrl><Alt>C'
