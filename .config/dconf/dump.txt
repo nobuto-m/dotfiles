@@ -80,7 +80,7 @@ overlay-icon=1
 
 [org/compiz/profiles/unity/plugins/unityshell]
 show-minimized-windows=false
-icon-size=26
+icon-size=24
 launcher-capture-mouse=false
 
 [org/compiz/profiles/unity/plugins/core]
