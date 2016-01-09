@@ -1,27 +1,27 @@
 .PHONY: setup-machine
 setup-machine:
-	@script/setup-machine.sh
+	@bin/setup-machine.sh
 
 .PHONY: setup-system
 setup-system:
-	@script/setup-system.sh
+	@bin/setup-system.sh
 
 .PHONY: setup-user
 setup-user:
-	@script/setup-user.sh
+	@bin/setup-user.sh
 
 .PHONY: backup-restore
 backup-restore:
-	@script/backup-restore.sh
+	@bin/backup-restore.sh
 
 .PHONY: setup-proxy
 setup-proxy:
-	@script/setup-proxy.sh
+	@bin/setup-proxy.sh
 
 .PHONY: setup-pbuilder
 setup-pbuilder:
-	@script/setup-pbuilder.sh
+	@bin/setup-pbuilder.sh
 
 .PHONY: ubuntu-make
 ubuntu-make:
-	@script/ubuntu-make.sh
+	@bin/ubuntu-make.sh
