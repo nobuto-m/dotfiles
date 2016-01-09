@@ -4,7 +4,7 @@ user_pref("browser.startup.homepage", "about:home");
 user_pref("browser.newtabpage.enabled", false);
 
 // HiDPI tweak
-user_pref("layout.css.devPixelsPerPx", 1.8);
+user_pref("layout.css.devPixelsPerPx", "1.8");
 
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
