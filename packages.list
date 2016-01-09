@@ -11,6 +11,7 @@ python3-nose
 python3-dbusmock
 xvfb
 ## charm
+charm-tools
 tox
 python-flake8
 python-nose
@@ -90,7 +91,6 @@ desktop-webmail
 
 # juju
 juju-core
-#charm-tools
 
 # investigation
 powertop
