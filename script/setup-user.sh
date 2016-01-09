@@ -11,9 +11,9 @@ rsync -rv --exclude '/[^.]*' --exclude '/.git/' . ~/
 
 # get user's full name and e-mail address
 DEBFULLNAME=`getent passwd "$USER" | cut -d: -f5 | cut -d, -f1`
-if [ -z "$DEBEMAIL" ]; then
+if [ -z "${DEBEMAIL:-}" ]; then
     echo 'Your e-mail address:'
-    read -sr DEBEMAIL
+    read -r DEBEMAIL
 fi
 
 # set DEBEMAIL and DEBFULLNAME in ~/.bashrc
