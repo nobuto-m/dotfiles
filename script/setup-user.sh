@@ -25,6 +25,8 @@ export DEBEMAIL='$DEBEMAIL'
 EOF
 fi
 
+byobu-enable-prompt
+
 if [ ! -e ~/.reportbugrc ]; then
     reportbug --configure -B debian --email "$DEBEMAIL"
     echo 'bts debian' >> ~/.reportbugrc
