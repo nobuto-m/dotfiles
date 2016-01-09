@@ -6,6 +6,9 @@ user_pref("browser.newtabpage.enabled", false);
 // hangout uses cpu 100%
 //user_pref("layers.acceleration.force-enabled", true);
 
+// HiDPI tweak
+user_pref("layout.css.devPixelsPerPx", 1.8);
+
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
 user_pref("plugin.state.libnpo1d", 2);
