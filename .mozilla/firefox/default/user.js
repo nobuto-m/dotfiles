@@ -3,6 +3,8 @@
 user_pref("browser.startup.homepage", "about:home");
 user_pref("browser.newtabpage.enabled", false);
 
+user_pref("browser.urlbar.suggest.searches", true);
+
 // HiDPI tweak
 user_pref("layout.css.devPixelsPerPx", "1.8");
 
