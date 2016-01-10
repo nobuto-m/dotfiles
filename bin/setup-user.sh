@@ -58,6 +58,8 @@ echo ~/{Desktop,Downloads,Templates,Public,Documents,Documents/Music,Documents/P
 rmdir ~/{Music,Pictures,Videos} 2>/dev/null || true
 rm -f ~/examples.desktop
 
+mkdir -p ~/dev/
+
 # clear gtk bookmarks
 rm -f ~/.config/gtk-3.0/bookmarks
 
