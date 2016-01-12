@@ -54,6 +54,7 @@ pidgin-plugin-pack
 # utils - apt
 apt-listchanges
 dlocate
+ppa-purge
 
 # utils - terminal
 colordiff
