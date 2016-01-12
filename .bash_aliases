@@ -1,6 +1,6 @@
 alias ssh='env --unset=LC_CTYPE --unset=LC_PAPER --unset=LC_MEASUREMENT ssh'
 alias cdtemp='cd $(mktemp -d)'
-alias check-connectivity='httping -sGb -c5 -t5 www.google.co.jp | ccze -A'
+alias check-connectivity='httping -sGb -c3 -t5 www.google.co.jp | ccze -A'
 alias xclips='xclip -selection clip'
 alias xclips-indent='xclips -o | sed -e "s/^/    /" | xclips'
 alias xclips-blockquote='xclips -o | sed -e "s/^/> /" | xclips'
