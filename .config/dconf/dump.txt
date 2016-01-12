@@ -11,7 +11,7 @@ cursor-size=36
 text-scaling-factor=1.5
 
 [net/launchpad/diodon/keybindings]
-history-accelerator='<Ctrl><Alt>C'
+history-accelerator=''
 
 [net/launchpad/diodon/plugins]
 active-plugins=@as []
@@ -20,6 +20,14 @@ active-plugins=@as []
 recent-items-size=uint32 10
 instant-paste=false
 use-primary=false
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Primary><Alt>c'
+command='diodon'
+name='Diodon'
 
 [org/gnome/settings-daemon/plugins/power]
 button-power='suspend'
