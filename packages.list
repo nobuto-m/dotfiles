@@ -95,6 +95,7 @@ juju-core
 
 # investigation
 powertop
+powerstat
 sysstat
 
 # restricted

@@ -72,10 +72,20 @@ if ! grep -qw ubuntu--vg-virt /etc/fstab; then
     echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc ext4 noatime,nobarrier 0 3 | sudo tee -a /etc/fstab
 fi
 
-## turn off sound on lightdm
+# turn off sound on lightdm
 sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false
-## set HiDPI for unity-greeter
+# set HiDPI for unity-greeter
 sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/xft-dpi 128.0
+
+# power management
+## enable ALPM
+## https://wiki.ubuntu.com/Kernel/PowerManagementALPM
+echo SATA_ALPM_ENABLE=true | sudo tee /etc/pm/config.d/sata_alpm
+## kick pm-powersave, LP: #1461386
+cat <<EOF | sudo tee /etc/udev/rules.d/99-pm-powersave.rules
+SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/usr/sbin/pm-powersave true"
+SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/usr/sbin/pm-powersave false"
+EOF
 
 # setup apt-listchanges
 cat << EOF | sudo debconf-set-selections
