@@ -32,6 +32,7 @@ network-manager-openvpn-gnome
 # virt
 uvtool
 lxc
+lxd
 virt-manager
 openvswitch-switch
 

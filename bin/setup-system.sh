@@ -17,6 +17,7 @@ EOF
 
 # add PPA
 sudo apt-add-repository -y ppa:juju/stable
+sudo apt-add-repository -y ppa:juju/devel
 sudo apt-add-repository -y ppa:indicator-presentation/ppa
 
 # sytem update
