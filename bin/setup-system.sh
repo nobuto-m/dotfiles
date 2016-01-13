@@ -87,6 +87,16 @@ cat <<EOF | sudo tee /etc/udev/rules.d/99-pm-powersave.rules
 SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="/usr/sbin/pm-powersave true"
 SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/usr/sbin/pm-powersave false"
 EOF
+## disable pm-powersave on suspend, LP: #1455097
+cat <<"EOF" | sudo install /dev/stdin -m 0755 /lib/systemd/system-sleep/00powersave
+#!/bin/sh
+case $1 in
+    pre)    pm-powersave false ;;
+    post)   pm-powersave ;;
+    *)      exit 1 ;;
+esac
+exit 0
+EOF
 
 # setup apt-listchanges
 cat << EOF | sudo debconf-set-selections
