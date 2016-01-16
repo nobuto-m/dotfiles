@@ -45,9 +45,7 @@ apt_install $(check-language-support)
 sudo sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
 
 # /tmp as tmpfs
-if ! grep -qw /tmp /etc/fstab; then
-    echo 'tmpfs /tmp tmpfs rw,nosuid,nodev 0 0' | sudo tee -a /etc/fstab
-fi
+sudo cp /usr/share/systemd/tmp.mount /etc/systemd/system/
 
 # switch to swap file
 echo 'vm.swappiness = 1' | sudo tee /etc/sysctl.d/99-local.conf
