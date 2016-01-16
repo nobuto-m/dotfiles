@@ -32,10 +32,6 @@ apt_install() {
 
 # install etckeeper
 apt_install etckeeper
-if [ ! -e /etc/.etckeeper ]; then
-    sudo etckeeper init
-    sudo etckeeper commit 'Initial commit'
-fi
 
 # install other packages
 apt_install $(grep -v ^# ./packages.list)
