@@ -1,10 +1,14 @@
+.PHONY: test
+test:
+	@shellcheck bin/*.sh
+
 .PHONY: setup-machine
 setup-machine:
-	@bin/setup-machine.sh
+	@sudo bin/setup-machine.sh
 
 .PHONY: setup-system
 setup-system:
-	@bin/setup-system.sh
+	@sudo bin/setup-system.sh
 
 .PHONY: setup-user
 setup-user:
