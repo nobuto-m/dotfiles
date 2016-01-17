@@ -4,8 +4,9 @@ set -e
 set -u
 
 ## prepare userdata
-USERDATA=`mktemp`
-SSH_KEY=`cat ~/.ssh/id_rsa.pub`
+USERDATA=$(mktemp)
+trap 'rm -f $USERDATA' 0 INT QUIT ABRT PIPE TERM
+SSH_KEY=$(cat ~/.ssh/id_rsa.pub)
 sed -e "s|{{ ssh_key }}|$SSH_KEY|" template/cloud-config_squid-deb-proxy.yaml > "$USERDATA"
 
 ## create

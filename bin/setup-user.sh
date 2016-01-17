@@ -10,7 +10,7 @@ set -u
 rsync -rv --exclude '/[^.]*' --exclude '/.git/' . ~/
 
 # get user's full name and e-mail address
-DEBFULLNAME=`getent passwd "$USER" | cut -d: -f5 | cut -d, -f1`
+DEBFULLNAME=$(getent passwd "$USER" | cut -d: -f5 | cut -d, -f1)
 if [ -z "${DEBEMAIL:-}" ]; then
     echo 'Your e-mail address:'
     read -r DEBEMAIL

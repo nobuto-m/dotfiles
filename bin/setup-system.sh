@@ -33,9 +33,11 @@ apt_install() {
 apt_install etckeeper
 
 # install other packages
+# shellcheck disable=SC2046
 apt_install $(grep -v ^# ./packages.list)
 
 # install language support
+# shellcheck disable=SC2046
 apt_install $(check-language-support)
 sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
 
