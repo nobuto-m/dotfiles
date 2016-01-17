@@ -23,22 +23,24 @@ apt-add-repository -y ppa:indicator-presentation/ppa
 # sytem update
 apt update
 apt install -y eatmydata
-eatmydata apt upgrade -y
 
-apt_install() {
-    env DEBIAN_FRONTEND=noninteractive eatmydata apt install -y -- "$@"
-}
+# unsafe dpkg
+export DEBIAN_FRONTEND=noninteractive
+export LD_LIBRARY_PATH=/usr/lib/libeatmydata
+export LD_PRELOAD=libeatmydata.so
+
+apt upgrade -y
 
 # install etckeeper
-apt_install etckeeper
+apt install -y etckeeper
 
 # install other packages
 # shellcheck disable=SC2046
-apt_install $(grep -v ^# ./packages.list)
+apt install -y $(grep -v ^# ./packages.list)
 
 # install language support
 # shellcheck disable=SC2046
-apt_install $(check-language-support)
+apt install -y $(check-language-support)
 sed -i -e 's/[a-zA-Z_]\+.UTF-8/en_US.UTF-8/' /etc/default/locale
 
 # /tmp as tmpfs
