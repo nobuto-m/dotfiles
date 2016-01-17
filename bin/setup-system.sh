@@ -54,9 +54,17 @@ sudo lvremove -f ubuntu-vg/swap_1 || true
 sudo fallocate -l 6G /swapfile
 sudo chmod 0600 /swapfile
 sudo mkswap /swapfile || true
-if ! grep -qw /swapfile /etc/fstab; then
-    echo /swapfile swap swap defaults 0 0 | sudo tee -a /etc/fstab
-fi
+cat <<EOF | sudo tee /etc/systemd/system/swapfile.swap
+[Unit]
+Documentation=man:systemd.swap(5)
+
+[Swap]
+What=/swapfile
+
+[Install]
+WantedBy=swap.target
+EOF
+sudo systemctl enable swapfile.swap
 
 # create a partition for lxc/kvm dirs
 sudo lvcreate -l 100%FREE -n virt ubuntu-vg || true
