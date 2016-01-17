@@ -51,6 +51,8 @@ sed -i -e 's|^/dev/mapper/cryptswap1 .*|#\0|' /etc/fstab
 sed -i -e 's|^cryptswap1 .*|#\0|' /etc/crypttab
 cryptsetup close cryptswap1 || true
 lvremove -f ubuntu-vg/swap_1 || true
+lvresize -l +100%FREE ubuntu-vg/root || true
+resize2fs /dev/mapper/ubuntu--vg-root
 
 fallocate -l 6G /swapfile
 chmod 0600 /swapfile
@@ -67,14 +69,27 @@ WantedBy=swap.target
 EOF
 systemctl enable swapfile.swap
 
-# create a partition for lxc/kvm dirs
-lvcreate -l 100%FREE -n virt ubuntu-vg || true
-if ! lsblk -f /dev/mapper/ubuntu--vg-virt | grep -qw ext4; then
-    mkfs.ext4 /dev/mapper/ubuntu--vg-virt || true
+# create a loopback for lxd
+if ! lsblk -f /dev/loop0 | grep -qw ext4; then
+    fallocate -l 20G /var/lib/lxd/loop.img
+    chmod 600 /var/lib/lxd/loop.img
+    mkfs.ext4 /var/lib/lxd/loop.img
 fi
-if ! grep -qw ubuntu--vg-virt /etc/fstab; then
-    echo /dev/mapper/ubuntu--vg-virt /var/lib/lxc ext4 noatime,nobarrier 0 3 >> /etc/fstab
-fi
+
+cat > /etc/systemd/system/var-lib-lxd-containers.mount <<EOF
+[Unit]
+Documentation=man:systemd.mount(5)
+
+[Mount]
+What=/var/lib/lxd/loop.img
+Where=/var/lib/lxd/containers
+Type=ext4
+Options=loop,noatime,nobarrier
+
+[Install]
+WantedBy=local-fs.target
+EOF
+systemctl enable var-lib-lxd-containers.mount
 
 # turn off sound on lightdm
 sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false
