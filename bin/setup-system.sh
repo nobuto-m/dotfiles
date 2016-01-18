@@ -76,6 +76,9 @@ if ! lsblk -f /dev/loop0 | grep -qw ext4; then
     fallocate -l 20G /var/lib/lxd/loop.img
     chmod 600 /var/lib/lxd/loop.img
     mkfs.ext4 /var/lib/lxd/loop.img
+    mount -o loop /var/lib/lxd/loop.img /mnt
+    chmod 700 /mnt
+    umount /mnt
 fi
 
 cat > /etc/systemd/system/var-lib-lxd-containers.mount <<EOF
