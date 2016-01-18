@@ -77,7 +77,7 @@ if ! lsblk -f /dev/loop0 | grep -qw ext4; then
     chmod 600 /var/lib/lxd/loop.img
     mkfs.ext4 /var/lib/lxd/loop.img
     mount -o loop /var/lib/lxd/loop.img /mnt
-    chmod 700 /mnt
+    chmod 711 /mnt
     umount /mnt
 fi
 
