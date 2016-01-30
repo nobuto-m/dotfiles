@@ -40,7 +40,7 @@ bzr lp-login nobuto
 
 # bzr config
 bzr alias diff='diff --diff-options="-p"'
-bzr alias cdiff='cdiff --diff-options="-p"'
+bzr alias cdiff='cdiff --diff-options="-p" --check-style'
 if ! grep -q '^.idea/$' ~/.bazaar/ignore; then
     # for PyCharm(IntelliJ IDEA)
     echo .idea/ >> ~/.bazaar/ignore
