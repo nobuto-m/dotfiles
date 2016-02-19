@@ -98,8 +98,6 @@ systemctl enable var-lib-lxd-containers.mount
 
 # turn off sound on lightdm
 sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false
-# set HiDPI for unity-greeter
-sudo -u lightdm -H dbus-launch dconf write /com/canonical/unity-greeter/xft-dpi 128.0
 
 # power management
 ## enable ALPM
