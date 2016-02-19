@@ -64,7 +64,7 @@ xkb-options=['ctrl:nocaps']
 idle-delay=uint32 300
 
 [org/gnome/gedit/preferences/encodings]
-auto-detected=['UTF-8', 'CURRENT', 'CP932', 'ISO-8859-15', 'UTF-16']
+candidate-encodings=['UTF-8', 'CURRENT', 'CP932', 'ISO-8859-15', 'UTF-16']
 
 [org/gnome/gedit/preferences/editor]
 display-right-margin=true
