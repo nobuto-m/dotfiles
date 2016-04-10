@@ -1,0 +1,32 @@
+---
+- hosts: localhost
+
+  vars_prompt:
+    - name: debfullname
+      prompt: 'Your full name for VCS'
+      private: no
+
+    - name: debemail
+      prompt: 'Your e-mail address for VCS'
+      private: no
+
+    - name: launchpad_username
+      prompt: 'Your launchpad ID'
+      private: no
+
+    - name: archive_mirror
+      prompt: 'Archive mirror'
+      default: http://jp.archive.ubuntu.com/ubuntu
+      private: no
+
+  roles:
+    - common
+    - user
+
+    - { role: restore, tags: restore }
+
+    # laptop specific
+    - { role: laptop, when: "ansible_form_factor == 'Notebook'" }
+
+    # hardware specific
+    - { role: fmvs90tb, when: "ansible_product_name == 'FMVS90TB'" }

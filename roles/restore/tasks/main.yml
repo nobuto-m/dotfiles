@@ -1,0 +1,19 @@
+---
+- name: download backup
+  command: duplicity restore sftp://vps-jp/srv/backup ~/backup
+    creates=~/backup
+
+- name: restore files
+  copy:
+    src=~/backup{{ ansible_env.HOME }}/{{ item }}
+    dest=~/{{ item }}
+  with_items:
+    - .vpn/
+    - .sesame/
+    - .ssh/
+    - .gnupg/pubring.gpg
+    - .gnupg/secring.gpg
+    - .gnupg/trustdb.gpg
+    - .local/share/keyrings/login.keyring
+    - .purple/accounts.xml
+    - .purple/blist.xml

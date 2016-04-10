@@ -1,0 +1,50 @@
+---
+- name: enable -proposed
+  template:
+    src=templates/proposed.list.j2
+    dest=/etc/apt/sources.list.d/proposed.list
+
+- name: set apt_preferences for -proposed
+  copy:
+    src=files/proposed
+    dest=/etc/apt/preferences.d/proposed
+
+- name: add juju stable PPA
+  apt_repository: repo='ppa:juju/stable' state=present update_cache=yes
+
+- name: apt update
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: install eatmydata
+  apt: name=eatmydata state=present
+
+- name: apt dist-upgrade
+  apt: upgrade=dist
+  environment: "{{ eatmydata }}"
+
+- name: apt install packages
+  apt: name={{ item }} state=present
+  with_items: "{{ packages }}"
+  environment: "{{ eatmydata }}"
+
+- name: debconf apt-listchanges
+  debconf: name=apt-listchanges question=apt-listchanges/which vtype=select value=both
+  register: apt_listchanges
+- debconf: name=apt-listchanges question=apt-listchanges/frontend vtype=select value=pager
+- debconf: name=apt-listchanges question=apt-listchanges/email-address vtype=string value=null
+- debconf: name=apt-listchanges question=apt-listchanges/save-seen vtype=boolean value=true
+- debconf: name=apt-listchanges question=apt-listchanges/confirm vtype=boolean value=true
+
+- name: dpkg-reconfigure apt-listchanges
+  command: dpkg-reconfigure -fnoninteractive apt-listchanges
+  when: apt_listchanges|changed
+
+- name: check language support
+  command: check-language-support
+  register: language_support
+  changed_when: False
+
+- name: install language support
+  apt: name={{ item }} state=present
+  with_items: "{{ language_support.stdout.split() }}"
+  environment: "{{ eatmydata }}"

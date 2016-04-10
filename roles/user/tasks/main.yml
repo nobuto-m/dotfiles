@@ -1,0 +1,159 @@
+---
+- name: generate ssh key
+  command: ssh-keygen -N '' -f ~/.ssh/id_rsa
+    creates=~/.ssh/id_rsa.pub
+
+- name: make XDG directories
+  file: path={{ item }} state=directory
+  with_items:
+    - ~/Documents/Music
+    - ~/Documents/Pictures
+    - ~/Documents/Videos
+  register: xdg_dir
+
+- name: clean up old XDG directories
+  command: rmdir "{{ item }}"
+  with_items:
+    - ~/Music
+    - ~/Pictures
+    - ~/Videos
+  when: xdg_dir|changed
+
+- name: clean up example link
+  file: path=~/examples.desktop state=absent
+  when: xdg_dir|changed
+
+- name: clear gtk bookmarks
+  file: path=~/.config/gtk-3.0/bookmarks state=absent
+  when: xdg_dir|changed
+
+- name: create dev directory
+  file: path=~/dev state=directory
+
+- name: copy dotfiles
+  copy:
+    src=files/dotfiles/
+    dest=~/
+  register: dotfiles
+
+- name: generate ICC profile
+  command: |
+    cd-create-profile \
+      --output ~/.local/share/icc/Gamma.icc \
+      ~/.local/share/icc/Gamma.xml
+  when: dotfiles|changed
+
+- name: create autostart directory
+  file: path=~/.config/autostart state=directory
+
+- name: enable autostart of indicator-multiload
+  copy:
+    src=/usr/share/applications/indicator-multiload.desktop
+    dest=~/.config/autostart/indicator-multiload.desktop
+
+- name: DEBFULLNAME
+  lineinfile:
+    dest=~/.bashrc
+    regexp='^export DEBFULLNAME='
+    line="export DEBFULLNAME='{{ debfullname }}'"
+    state=present
+  when: "debfullname != ''"
+
+- name: DEBEMAIL
+  lineinfile:
+    dest=~/.bashrc
+    regexp='^export DEBEMAIL='
+    line="export DEBEMAIL='{{ debemail }}'"
+    state=present
+  when: "debemail != ''"
+
+- name: git username
+  ini_file:
+    dest=~/.gitconfig
+    section=user
+    option=name
+    value={{ debfullname }}
+    state=present
+  when: "debfullname != ''"
+
+- name: git email
+  ini_file:
+    dest=~/.gitconfig
+    section=user
+    option=email
+    value={{ debemail }}
+    state=present
+  when: "debemail != ''"
+
+- name: git push.default
+  ini_file:
+    dest=~/.gitconfig
+    section=push
+    option=default
+    value=simple
+    state=present
+
+- name: bzr create directory
+  file: path=~/.bazaar state=directory
+
+- name: bzr whoami
+  ini_file:
+    dest=~/.bazaar/bazaar.conf
+    section=DEFAULT
+    option=email
+    value="{{ debfullname }} <{{ debemail }}>"
+    state=present
+  when: "debfullname != '' and debemail != ''"
+
+- name: bzr lp-login
+  ini_file:
+    dest=~/.bazaar/bazaar.conf
+    section=DEFAULT
+    option=launchpad_username
+    value={{ launchpad_username }}
+    state=present
+  when: "launchpad_username != ''"
+
+- name: bzr diff alias
+  ini_file:
+    dest=~/.bazaar/bazaar.conf
+    section=ALIASES
+    option=diff
+    value='diff --diff-options="-p"'
+    state=present
+
+- name: bzr cdiff alias
+  ini_file:
+    dest=~/.bazaar/bazaar.conf
+    section=ALIASES
+    option=cdiff
+    value='cdiff --diff-options="-p" --check-style'
+    state=present
+
+- name: render dconf
+  template:
+    src=templates/dconf.ini.j2
+    dest=~/.config/dconf/user.ini
+  register: dconf
+
+- name: reset dconf
+  command: dconf reset -f /
+  when: dconf|changed
+
+- name: pause to prevent dconf race conditions
+  pause: seconds=5
+  when: dconf|changed
+
+- name: import dconf
+  shell: dconf load / < ~/.config/dconf/user.ini
+  when: dconf|changed
+
+- name: 'workaround for LP: #1422290 - UNZIP'
+  lineinfile:
+    dest=~/.profile
+    regexp="^export {{ item }}="
+    line="export {{ item }}='-O CP932 -I CP932'"
+    state=present
+  with_items:
+    - UNZIP
+    - ZIPINFO

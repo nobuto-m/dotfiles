@@ -1,0 +1,31 @@
+---
+- name: add indicator-presentation PPA
+  apt_repository: repo='ppa:indicator-presentation/ppa' state=present update_cache=yes
+  become: yes
+
+- name: install indicator-presentation
+  apt: name=indicator-presentation state=present
+  become: yes
+
+- name: disable auto-update of Google Hangout plugin
+  file: path=/etc/default/google-talkplugin state=touch
+  become: yes
+  changed_when: False
+
+- name: download Google Hangout plugin
+  get_url:
+    url=https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb
+    dest={{ ansible_env.HOME }}/Downloads/google-talkplugin_current_amd64.deb
+
+- name: install Google Hangout plugin
+  apt: deb={{ ansible_env.HOME }}/Downloads/google-talkplugin_current_amd64.deb
+  become: yes
+
+- name: download Atom
+  get_url:
+    url=https://atom.io/download/deb
+    dest={{ ansible_env.HOME }}/Downloads/atom-amd64.deb
+
+- name: install Atom
+  apt: deb={{ ansible_env.HOME }}/Downloads/atom-amd64.deb
+  become: yes

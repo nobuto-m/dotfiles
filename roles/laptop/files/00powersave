@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# LP: #1455097
+case $1 in
+    pre)    pm-powersave false ;;
+    post)   pm-powersave ;;
+    *)      exit 1 ;;
+esac
+exit 0

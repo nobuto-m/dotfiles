@@ -1,0 +1,189 @@
+#### UI ####
+
+[com/ubuntu/user-interface]
+scale-factor={'eDP1': 12}
+
+[org/compiz/profiles/unity/plugins/expo]
+x-offset=63
+
+[org/gnome/desktop/interface]
+scaling-factor=uint32 1
+cursor-size=36
+text-scaling-factor=1.5
+gtk-key-theme='Emacs'
+
+[com/canonical/unity/launcher]
+favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']
+
+[org/compiz/profiles/unity/plugins/unityshell]
+icon-size=24
+launcher-capture-mouse=false
+show-minimized-windows=false
+
+[com/canonical/unity/webapps]
+integration-allowed=false
+
+[com/canonical/unity/lenses]
+remote-content-search='none'
+
+[org/compiz/profiles/unity/plugins/core]
+hsize=2
+vsize=2
+
+[org/compiz/profiles/unity/plugins/scale]
+initiate-edge='BottomLeft'
+overlay-icon=1
+
+[org/gnome/desktop/privacy]
+remember-recent-files=false
+
+
+#### touchpad ####
+
+[org/gnome/desktop/peripherals/touchpad]
+scroll-method='edge-scrolling'
+speed=1.0
+
+
+#### power #####
+
+[org/gnome/settings-daemon/plugins/power]
+button-power='suspend'
+critical-battery-action='shutdown'
+lid-close-ac-action='nothing'
+sleep-inactive-ac-timeout=0
+sleep-inactive-battery-timeout=1800
+
+[org/gnome/desktop/screensaver]
+lock-delay=uint32 30
+
+[org/gnome/desktop/session]
+idle-delay=uint32 300
+
+
+#### keyboard ####
+
+[org/gnome/desktop/input-sources]
+sources=[('ibus', 'mozc-jp'), ('xkb', 'jp'), ('xkb', 'us')]
+xkb-options=['ctrl:nocaps']
+
+[desktop/ibus/general]
+preload-engine-mode=0
+preload-engines=['mozc-jp', 'xkb:jp::jpn']
+
+[desktop/ibus/panel]
+auto-hide-timeout=500
+
+[com/canonical/indicator/keyboard]
+migrated=true
+visible=false
+
+
+#### gnome-terminal ####
+
+[org/gnome/terminal/legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9']
+default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-transparency-percent=10
+use-transparent-background=true
+visible-name='default'
+
+
+#### indicator ####
+
+[com/canonical/indicator/power]
+show-time=true
+
+[com/canonical/indicator/datetime]
+show-date=true
+locations=['America/Los_Angeles San Francisco', 'America/Denver Denver', 'America/Chicago Austin', 'America/New_York Boston', 'America/Montreal Montreal', 'UTC UTC', 'Europe/London London', 'Europe/Paris Paris', 'Europe/Helsinki Helsinki', 'Asia/Dubai Dubai', 'Asia/Shanghai Beijing', 'Asia/Taipei Taipei', 'Asia/Tokyo Tokyo', 'Australia/Sydney Sydney']
+show-day=true
+time-format='24-hour'
+show-week-numbers=true
+show-locations=true
+show-auto-detected-location=true
+show-seconds=true
+
+
+#### indicator-multiload ####
+
+[de/mh21/indicator-multiload/general]
+indicator-expressions=@as []
+speed=uint16 5000
+autostart=true
+height=uint16 18
+settings-version=uint32 3
+
+[de/mh21/indicator-multiload/graphs/net]
+enabled=true
+
+[de/mh21/indicator-multiload/graphs/disk]
+enabled=true
+
+[de/mh21/indicator-multiload/graphs/mem]
+enabled=true
+
+
+#### diodon ####
+
+[net/launchpad/diodon/keybindings]
+history-accelerator=''
+
+[net/launchpad/diodon/plugins]
+active-plugins=@as []
+
+[net/launchpad/diodon/clipboard]
+recent-items-size=uint32 10
+instant-paste=false
+use-primary=false
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Primary><Alt>c'
+command='diodon'
+name='Diodon'
+
+
+#### indicator-presentation ####
+
+[net/launchpad/indicator-presentation]
+inhibit-interrupts=true
+
+
+#### gedit #####
+
+[org/gnome/gedit/preferences/encodings]
+candidate-encodings=['UTF-8', 'CURRENT', 'CP932', 'ISO-8859-15', 'UTF-16']
+
+[org/gnome/gedit/preferences/editor]
+display-right-margin=true
+highlight-current-line=true
+bracket-matching=true
+auto-save=true
+scheme='cobalt'
+create-backup-copy=false
+tabs-size=uint32 4
+display-line-numbers=true
+insert-spaces=true
+auto-indent=true
+auto-save-interval=uint32 5
+
+[org/gnome/gedit/plugins]
+active-plugins=['time', 'spell', 'modelines', 'filebrowser', 'bracketcompletion', 'codecomment', 'textsize', 'joinlines', 'terminal', 'zeitgeistplugin', 'docinfo', 'drawspaces']
+
+
+#### deja-dup ####
+
+[org/gnome/deja-dup]
+periodic-period=7
+backend='file'
+periodic=true
+delete-after=182
+exclude-list=['{{ ansible_env.HOME }}/.local/share/Trash', '{{ ansible_env.HOME }}/Canonical', '{{ ansible_env.HOME }}/Documents/private', '{{ ansible_env.HOME }}/Downloads', '{{ ansible_env.HOME }}/charms', '{{ ansible_env.HOME }}/dev', '{{ ansible_env.HOME }}/pbuilder', '{{ ansible_env.HOME }}/.dropbox', '{{ ansible_env.HOME }}/.juju/local', '{{ ansible_env.HOME }}/.local/share/ubuntu-emulator', '{{ ansible_env.HOME }}/.local/share/zeitgeist', '{{ ansible_env.HOME }}/.thunderbird/default/ImapMail', '{{ ansible_env.HOME }}/.vagrant.d/boxes', '{{ ansible_env.HOME }}/VirtualBox VMs', '{{ ansible_env.HOME }}/.dropbox-dist', '{{ ansible_env.HOME }}/backup', '{{ ansible_env.HOME }}/tools']
+
+[org/gnome/deja-dup/file]
+path='sftp://vps-jp/srv/backup'

@@ -1,0 +1,10 @@
+---
+- name: setup tmpfs
+  copy:
+    src=/usr/share/systemd/tmp.mount
+    dest=/etc/systemd/system/tmp.mount
+
+- name: set swappiness
+  sysctl:
+    name=vm.swappiness value=1 state=present
+    sysctl_file=/etc/sysctl.d/99-local.conf

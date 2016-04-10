@@ -1,9 +1,0 @@
-.vpn/
-.sesame/
-.ssh/
-.gnupg/pubring.gpg
-.gnupg/secring.gpg
-.gnupg/trustdb.gpg
-.local/share/keyrings/login.keyring
-.purple/accounts.xml
-.purple/blist.xml

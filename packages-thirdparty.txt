@@ -1,5 +1,0 @@
-## google-talkplugin_current_amd64.deb for Firefox
-https://www.google.com/tools/dlpage/hangoutplugin
-
-## Atom, atom-amd64.deb
-https://atom.io/download/deb

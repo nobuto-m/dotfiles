@@ -1,0 +1,13 @@
+---
+- name: check lightdm sound
+  command: dbus-launch dconf read /com/canonical/unity-greeter/play-ready-sound
+  become: yes
+  become_user: lightdm
+  changed_when: False
+  register: lightdm_sound
+
+- name: turn off lightdm sound
+  command: dbus-launch dconf write /com/canonical/unity-greeter/play-ready-sound false
+  become: yes
+  become_user: lightdm
+  when: "lightdm_sound.stdout != 'false'"

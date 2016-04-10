@@ -1,0 +1,120 @@
+---
+eatmydata: { LD_LIBRARY_PATH: /usr/lib/libeatmydata, LD_PRELOAD: libeatmydata.so }
+
+packages:
+
+  - etckeeper
+
+  # minimal dev
+  - packaging-dev
+  - bikeshed
+  - ubuntu-make
+  - git
+  - bzr
+  - bzrtools
+
+  # dev
+  ## indicator-presentation
+  - python3-distutils-extra
+  - python3-flake8
+  - python3-nose
+  - python3-dbusmock
+  - xvfb
+  ## charm
+  - charm-tools
+  - tox
+  - python-flake8
+  - python-nose
+  - python-coverage
+  - python-mock
+
+  # openstack
+  - python-openstackclient
+  - python-ceilometerclient
+
+  # encryption
+  - encfs
+  - enigmail
+
+  # vpn
+  - network-manager-openvpn-gnome
+  - network-manager-openconnect-gnome
+
+  # virt
+  - uvtool
+  - lxd
+  - virt-manager
+  - openvswitch-switch
+
+  # doc
+  - python3-sphinx
+  - python3-sphinxcontrib.blockdiag
+  - python3-sphinxcontrib.nwdiag
+  - pandoc
+  - texlive-latex-recommended
+  - diffpdf
+
+  # fonts
+  - fonts-dejavu
+  - fonts-noto
+
+  # messenger
+  - pidgin
+  - pidgin-plugin-pack
+
+  # utils - apt
+  - apt-listchanges
+  - dlocate
+  - ppa-purge
+
+  # utils - terminal
+  - colordiff
+  - dwdiff
+  - ccze
+  - tree
+  - xclip
+  - jq
+  - shellcheck
+
+  # utils - network
+  - sshuttle
+  - nmap
+  - sipcalc
+  - ipcalc
+  - ipv6calc
+  - jnettop
+  - httping
+  - zsync
+  - powerwake
+
+  # utils - indicator
+  - indicator-multiload
+  - diodon
+
+  # other
+  - ibus-mozc
+  - duplicity
+  - dconf-editor
+  - gimp
+  - inkscape
+  - chromium-browser
+  - yubikey-personalization-gui
+  - gedit-plugins
+  - gstreamer1.0-libav
+  - gstreamer1.0-vaapi
+  - desktop-webmail
+  - byzanz
+
+  # juju
+  - juju-2.0
+
+  # investigation
+  - powertop
+  - powerstat
+  - sysstat
+
+  # restricted
+  - intel-microcode
+
+  # multiverse
+  - nautilus-dropbox

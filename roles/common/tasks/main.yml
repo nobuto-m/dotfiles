@@ -1,0 +1,13 @@
+---
+- include: package_apt.yml
+  become: yes
+
+- include: locale.yml
+  become: yes
+
+- include: filesystem.yml
+  become: yes
+
+- include: lightdm.yml
+
+- include: package_third-party.yml

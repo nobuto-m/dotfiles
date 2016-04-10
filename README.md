@@ -22,10 +22,10 @@ for setting up my laptop
 
 ## Use this repository
 
-1. install git first
+1. install git and ansible first
 
     ```bash
-$ sudo apt update && sudo apt install git
+$ sudo apt update && sudo apt install git ansible
 ```
 
 1. clone the repo
@@ -38,31 +38,30 @@ $ git clone https://github.com/nobuto-m/dotfiles.git
 
     ```bash
 $ cd dotfiles/
-$ make setup-machine
-$ make setup-system
-$ make setup-user
-$ make setup-proxy
-$ make setup-pbuilder
+$ make setup
+```
+
+1. download backup
+
+   Login to the backup server from console with password, then copy temporary ssh public key.
+
+    ```bash
+$ make restore
+```
+
+1. full setup
+
+    ```bash
+$ make full-setup
 ```
 
 ## Manual setup
-
-### copy files from deja-dup backup
-
-1. login to the backup server from console with password
-1. copy ssh public key
-1. `lxc-attach -n backup-samba`
-1. `passwd backup-samba`
-1. `sshuttle -r <backup server> -N`
-1. run deja-dup and restore files into `~/backup/`
-1. `make backup-restore`
 
 ### Firefox add-ons
 
 * https://addons.mozilla.org/firefox/addon/password-hasher/
 * https://addons.mozilla.org/firefox/addon/searchwp/
 * https://addons.mozilla.org/firefox/addon/searchbox-sync/
-* https://addons.mozilla.org/firefox/addon/eijiro-on-the-web/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/gnotifier/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
@@ -73,6 +72,5 @@ $ make setup-pbuilder
 * login to Firefox Sync
 * enable Desktop Notifications in Firefox for Gmail
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
-* install third party packages listed in `packages-thirdparty.txt`
-* create VPN config in network-manager
 * select color profile from gnome-control-center
+* import VPN config into network-manager

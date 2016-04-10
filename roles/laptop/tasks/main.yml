@@ -1,0 +1,19 @@
+---
+- name: enable SATA ALPM
+  copy:
+    src=files/sata_alpm
+    dest=/etc/pm/config.d/sata_alpm
+  become: yes
+
+- name: 'force enable pm-powersave, LP: #1461386'
+  copy:
+    src=files/99-pm-powersave.rules
+    dest=/etc/udev/rules.d/99-pm-powersave.rules
+  become: yes
+
+- name: 'disable pm-powersave on suspend, LP: #1455097'
+  copy:
+    src=files/00powersave
+    dest=/lib/systemd/system-sleep/00powersave
+    mode=0755
+  become: yes

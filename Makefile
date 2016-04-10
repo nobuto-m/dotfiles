@@ -1,31 +1,11 @@
-.PHONY: test
-test:
-	@shellcheck bin/*.sh
+.PHONY: setup
+setup:
+	@ansible-playbook --ask-become-pass  --skip-tags=restore local.yml
 
-.PHONY: setup-machine
-setup-machine:
-	@sudo bin/setup-machine.sh
+.PHONY: restore
+restore:
+	@deja-dup --restore
 
-.PHONY: setup-system
-setup-system:
-	@sudo bin/setup-system.sh
-
-.PHONY: setup-user
-setup-user:
-	@bin/setup-user.sh
-
-.PHONY: backup-restore
-backup-restore:
-	@bin/backup-restore.sh
-
-.PHONY: setup-proxy
-setup-proxy:
-	@bin/setup-proxy.sh
-
-.PHONY: setup-pbuilder
-setup-pbuilder:
-	@bin/setup-pbuilder.sh
-
-.PHONY: ubuntu-make
-ubuntu-make:
-	@bin/ubuntu-make.sh
+.PHONY: full-setup
+full-setup:
+	@ansible-playbook --ask-become-pass local.yml

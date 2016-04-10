@@ -1,0 +1,5 @@
+---
+- name: reset system locale
+  copy:
+    src=files/locale
+    dest=/etc/default/locale
