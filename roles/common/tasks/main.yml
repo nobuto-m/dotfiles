@@ -10,4 +10,6 @@
 
 - include: lightdm.yml
 
+- include: vpn.yml
+
 - include: package_third-party.yml
