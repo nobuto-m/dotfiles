@@ -104,6 +104,7 @@ packages:
   - gstreamer1.0-vaapi
   - desktop-webmail
   - byzanz
+  - default-java-plugin
 
   # juju
   - juju-2.0
