@@ -14,6 +14,7 @@
     - .gnupg/pubring.gpg
     - .gnupg/secring.gpg
     - .gnupg/trustdb.gpg
+    - .gnupg/private-keys-v1.d/
     - .local/share/keyrings/login.keyring
     - .purple/accounts.xml
     - .purple/blist.xml
