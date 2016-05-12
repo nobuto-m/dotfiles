@@ -108,7 +108,7 @@ packages:
   - calibre
 
   # juju
-  - juju-2.0
+  - juju
 
   # investigation
   - powertop
