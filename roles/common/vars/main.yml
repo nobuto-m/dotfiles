@@ -105,6 +105,7 @@ packages:
   - desktop-webmail
   - byzanz
   - default-java-plugin
+  - calibre
 
   # juju
   - juju-2.0
