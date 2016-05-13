@@ -28,6 +28,9 @@
   with_items: "{{ packages }}"
   environment: "{{ eatmydata }}"
 
+- name: disable unattended-upgrades
+  apt: name=unattended-upgrades state=absent purge=yes
+
 - name: debconf apt-listchanges
   debconf: name=apt-listchanges question=apt-listchanges/which vtype=select value=both
   register: apt_listchanges
