@@ -10,7 +10,7 @@
   filesystem: dev=/var/lib/lxd-loop.img fstype=btrfs
 
 - name: mount filesystem
-  mount: src=/var/lib/lxd-loop.img name=/var/lib/lxd fstype=btrfs opts=loop,noatime,nobarrier,compress=no state=mounted
+  mount: src=/var/lib/lxd-loop.img name=/var/lib/lxd fstype=btrfs opts=loop,nobarrier,compress=no,nodatasum state=mounted
 
 - name: strict permission
   file: path=/var/lib/lxd owner=root group=root mode=0755
