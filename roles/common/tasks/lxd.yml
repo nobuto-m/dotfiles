@@ -1,0 +1,22 @@
+---
+- name: debconf lxd
+  debconf: name=lxd question=lxd/bridge-ipv4 vtype=boolean value=true
+  register: lxd_bridge
+- debconf: name=lxd question=lxd/bridge-ipv4-address vtype=string value=10.0.8.1
+- debconf: name=lxd question=lxd/bridge-ipv4-netmask vtype=string value=24
+- debconf: name=lxd question=lxd/bridge-ipv4-dhcp-first vtype=string value=10.0.8.11
+- debconf: name=lxd question=lxd/bridge-ipv4-dhcp-last vtype=string value=10.0.8.200
+- debconf: name=lxd question=lxd/bridge-ipv4-dhcp-leases vtype=string value=255
+- debconf: name=lxd question=lxd/bridge-ipv6 vtype=boolean value=false
+- debconf: name=lxd question=lxd/bridge-http-proxy vtype=boolean value=false
+
+- name: clear lxd bridge
+  file: path=/etc/default/lxd-bridge state=absent
+  when: lxd_bridge|changed
+
+- name: dpkg-reconfigure lxd
+  command: dpkg-reconfigure -fnoninteractive lxd
+  when: lxd_bridge|changed
+
+- name: lxd init
+  command: lxd init --auto
