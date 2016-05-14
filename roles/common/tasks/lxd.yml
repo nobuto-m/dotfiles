@@ -4,7 +4,7 @@
   register: lxd_bridge
 - debconf: name=lxd question=lxd/bridge-ipv4-address vtype=string value=10.0.8.1
 - debconf: name=lxd question=lxd/bridge-ipv4-netmask vtype=string value=24
-- debconf: name=lxd question=lxd/bridge-ipv4-dhcp-first vtype=string value=10.0.8.11
+- debconf: name=lxd question=lxd/bridge-ipv4-dhcp-first vtype=string value=10.0.8.51
 - debconf: name=lxd question=lxd/bridge-ipv4-dhcp-last vtype=string value=10.0.8.200
 - debconf: name=lxd question=lxd/bridge-ipv4-dhcp-leases vtype=string value=255
 - debconf: name=lxd question=lxd/bridge-ipv6 vtype=boolean value=false
@@ -36,4 +36,4 @@
 
 - name: lxd init
   command: lxd init --auto
-  changed_when: False
+  when: lxd_bridge|changed
