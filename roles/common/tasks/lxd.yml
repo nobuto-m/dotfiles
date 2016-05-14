@@ -20,3 +20,4 @@
 
 - name: lxd init
   command: lxd init --auto
+  changed_when: False
