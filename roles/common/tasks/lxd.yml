@@ -58,5 +58,9 @@
   register: squid_deb_proxy
 
 - name: launch squid-deb-proxy container
-  command: lxc launch ubuntu:xenial --config=user.user-data="{{ lookup('file', 'files/squid-deb-proxy.yml') }}" squid-deb-proxy
+  command: lxc launch ubuntu:xenial --config=user.user-data="{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" squid-deb-proxy
+  when: "squid_deb_proxy.rc != 0"
+
+- name: set default profile
+  command: lxc profile set default user.user-data "{{ lookup('file', 'files/lxd_default_user-data.yml') }}"
   when: "squid_deb_proxy.rc != 0"

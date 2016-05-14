@@ -1,0 +1,2 @@
+#cloud-config
+apt_proxy: http://squid-deb-proxy.lxd:8000/

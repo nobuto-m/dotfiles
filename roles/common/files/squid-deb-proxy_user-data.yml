@@ -5,3 +5,5 @@ debconf_selections: |
 packages:
   - anacron
   - squid-deb-proxy
+runcmd:
+  - systemctl start squid-deb-proxy
