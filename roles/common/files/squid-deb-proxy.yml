@@ -1,0 +1,7 @@
+#cloud-config
+
+debconf_selections: |
+  squid-deb-proxy squid-deb-proxy/ppa-enable boolean true
+packages:
+  - anacron
+  - squid-deb-proxy

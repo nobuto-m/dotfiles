@@ -8,6 +8,7 @@
 - debconf: name=lxd question=lxd/bridge-ipv4-dhcp-last vtype=string value=10.0.8.200
 - debconf: name=lxd question=lxd/bridge-ipv4-dhcp-leases vtype=string value=255
 - debconf: name=lxd question=lxd/bridge-ipv6 vtype=boolean value=false
+- debconf: name=lxd question=lxd/bridge-dnsmasq vtype=string value=/var/lib/lxd-bridge/dnsmasq.lxdbr0.conf
 - debconf: name=lxd question=lxd/bridge-http-proxy vtype=boolean value=false
 
 - name: clear lxd bridge
@@ -37,3 +38,25 @@
 - name: lxd init
   command: lxd init --auto
   when: lxd_bridge|changed
+
+- name: static leases
+  copy: content="dhcp-host=squid-deb-proxy,10.0.8.2,336h" dest=/var/lib/lxd-bridge/dnsmasq.lxdbr0.conf owner=root group=root mode=0644
+  register: leases
+
+- name: restart lxd-bridge
+  service: name=lxd-bridge state=restarted
+  when: leases|changed
+
+- name: enable jumbo frame
+  command: lxc profile device set default eth0 mtu 9000
+  changed_when: False
+
+- name: check squid-deb-proxy
+  command: lxc info squid-deb-proxy
+  changed_when: False
+  ignore_errors: True
+  register: squid_deb_proxy
+
+- name: launch squid-deb-proxy container
+  command: lxc launch ubuntu:xenial --config=user.user-data="{{ lookup('file', 'files/squid-deb-proxy.yml') }}" squid-deb-proxy
+  when: "squid_deb_proxy.rc != 0"

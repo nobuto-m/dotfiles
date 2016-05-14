@@ -110,7 +110,6 @@ packages:
   # juju
   - juju
   - zfsutils-linux
-  - squid-deb-proxy
 
   # investigation
   - powertop
