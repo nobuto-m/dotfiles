@@ -7,6 +7,16 @@
   apt: name=indicator-presentation state=present
   become: yes
 
+- name: disable auto-update of Google Hangout plugin
+  file: path=/etc/default/google-talkplugin state=touch
+  become: yes
+  changed_when: False
+
+- name: disable auto-update of Google Chrome
+  file: path=/etc/default/google-chrome state=touch
+  become: yes
+  changed_when: False
+
 - name: download Google Hangout plugin
   get_url:
     url=https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb
