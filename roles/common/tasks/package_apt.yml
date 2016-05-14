@@ -14,7 +14,6 @@
 
 - name: apt update
   apt: update_cache=yes cache_valid_time=3600
-  ignore_errors: yes
 
 - name: install eatmydata
   apt: name=eatmydata state=present
