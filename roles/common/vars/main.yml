@@ -42,7 +42,6 @@ packages:
 
   # virt
   - uvtool
-  - lxd
   - virt-manager
   - openvswitch-switch
 
@@ -110,6 +109,7 @@ packages:
   # juju
   - juju
   - zfsutils-linux
+  - btrfs-tools
 
   # investigation
   - powertop

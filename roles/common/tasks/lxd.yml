@@ -1,4 +1,23 @@
 ---
+- name: create loopback image
+  command: fallocate -l 32G  /var/lib/lxd-loop.img
+  changed_when: False
+
+- name: strict permission
+  file: path=/var/lib/lxd-loop.img owner=root group=root mode=0600
+
+- name: create filesystem
+  filesystem: dev=/var/lib/lxd-loop.img fstype=btrfs
+
+- name: mount filesystem
+  mount: src=/var/lib/lxd-loop.img name=/var/lib/lxd fstype=btrfs opts=loop,noatime,nobarrier,compress=lzo state=mounted
+
+- name: strict permission
+  file: path=/var/lib/lxd owner=root group=root mode=0755
+
+- name: install lxd
+  apt: name=lxd state=present
+
 - name: debconf lxd
   debconf: name=lxd question=lxd/bridge-ipv4 vtype=boolean value=true
   register: lxd_bridge
@@ -18,22 +37,6 @@
 - name: dpkg-reconfigure lxd
   command: dpkg-reconfigure -fnoninteractive lxd
   when: lxd_bridge|changed
-
-- name: create loopback image
-  command: fallocate -l 32G  /var/lib/lxd/loop.img
-  changed_when: False
-
-- name: strict permission
-  file: path=/var/lib/lxd/loop.img owner=root group=root mode=0600
-
-- name: create filesystem
-  filesystem: dev=/var/lib/lxd/loop.img fstype=ext4
-
-- name: mount filesystem
-  mount: src=/var/lib/lxd/loop.img name=/var/lib/lxd/containers fstype=ext4 opts=loop,noatime,nobarrier state=mounted
-
-- name: strict permission
-  file: path=/var/lib/lxd/containers owner=root group=root mode=0711
 
 - name: lxd init
   command: lxd init --auto
