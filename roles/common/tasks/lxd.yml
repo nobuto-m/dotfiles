@@ -20,7 +20,7 @@
   when: lxd_bridge|changed
 
 - name: create loopback image
-  command: truncate -s 32G  /var/lib/lxd/loop.img
+  command: fallocate -l 32G  /var/lib/lxd/loop.img
   changed_when: False
 
 - name: strict permission
