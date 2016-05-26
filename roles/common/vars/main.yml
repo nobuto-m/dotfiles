@@ -28,6 +28,9 @@ packages:
   - python-nose
   - python-coverage
   - python-mock
+  ## other
+  - dh-apport
+  - dh-systemd
 
   # openstack
   - python-openstackclient
