@@ -51,3 +51,9 @@
   apt: name={{ item }} state=present
   with_items: "{{ language_support.stdout.split() }}"
   environment: "{{ eatmydata }}"
+
+- name: keep Firefox as primary browser - gnome-www-browser
+  alternatives: name=gnome-www-browser path=/usr/bin/firefox
+
+- name: keep Firefox as primary browser - x-www-browser
+  alternatives: name=x-www-browser path=/usr/bin/firefox

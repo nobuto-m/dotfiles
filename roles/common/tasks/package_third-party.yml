@@ -12,11 +12,6 @@
   become: yes
   changed_when: False
 
-- name: disable auto-update of Google Chrome
-  file: path=/etc/default/google-chrome state=touch
-  become: yes
-  changed_when: False
-
 - name: download Google Hangout plugin
   get_url:
     url=https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb
@@ -24,23 +19,6 @@
 
 - name: install Google Hangout plugin
   apt: deb={{ ansible_env.HOME }}/Downloads/google-talkplugin_current_amd64.deb
-  become: yes
-
-- name: download Google Chrome
-  get_url:
-    url=https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    dest={{ ansible_env.HOME }}/Downloads/google-chrome-stable_current_amd64.deb
-
-- name: install Google Chrome
-  apt: deb={{ ansible_env.HOME }}/Downloads/google-chrome-stable_current_amd64.deb
-  become: yes
-
-- name: keep Firefox as primary browser - gnome-www-browser
-  alternatives: name=gnome-www-browser path=/usr/bin/firefox
-  become: yes
-
-- name: keep Firefox as primary browser - x-www-browser
-  alternatives: name=x-www-browser path=/usr/bin/firefox
   become: yes
 
 - name: download Atom
