@@ -33,6 +33,7 @@ packages:
   - dh-systemd
   - npm
   - nodejs-legacy
+  - adb
 
   # openstack
   - python-openstackclient
