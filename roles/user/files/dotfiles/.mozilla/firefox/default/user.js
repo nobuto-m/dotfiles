@@ -8,6 +8,9 @@ user_pref("browser.urlbar.suggest.searches", true);
 // HiDPI tweak
 user_pref("layout.css.devPixelsPerPx", "1.8");
 
+// e10s
+user_pref("browser.tabs.remote.force-enable", true);
+
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
 user_pref("plugin.state.libnpo1d", 2);
