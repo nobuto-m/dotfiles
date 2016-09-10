@@ -1,10 +1,14 @@
 ---
-- name: add indicator-presentation PPA
-  apt_repository: repo='ppa:indicator-presentation/ppa' state=present update_cache=yes
+- name: add my-tools PPA
+  apt_repository: repo='ppa:nobuto/my-tools' state=present update_cache=yes
   become: yes
 
 - name: install indicator-presentation
   apt: name=indicator-presentation state=present
+  become: yes
+
+- name: install gnome-sound-recorder-all
+  apt: name=gnome-sound-recorder-all state=present
   become: yes
 
 - name: disable auto-update of Google Hangout plugin
