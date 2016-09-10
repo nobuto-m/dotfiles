@@ -1,4 +1,12 @@
 ---
+- name: install Juju with snap
+  command: snap install --devmode --beta juju
+  become: yes
+
+- name: install Charm tools with snap
+  command: snap install --edge charm
+  become: yes
+
 - name: add my-tools PPA
   apt_repository: repo='ppa:nobuto/my-tools' state=present update_cache=yes
   become: yes
