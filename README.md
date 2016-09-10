@@ -74,3 +74,4 @@ $ make full-setup
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * select color profile from gnome-control-center
 * import VPN config into network-manager
+* adjust microphone volume
