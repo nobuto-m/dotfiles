@@ -8,33 +8,20 @@ packages:
   # minimal dev
   - packaging-dev
   - bikeshed
-  - ubuntu-make
   - git
+  - git-review
   - bzr
   - bzrtools
+  - python3-hacking
+  - tox
+  - shellcheck
 
   # dev
   ## indicator-presentation
   - python3-distutils-extra
-  - python3-flake8
   - python3-nose
   - python3-dbusmock
   - xvfb
-  ## charm
-  - git-review
-  - charm-tools
-  - tox
-  - python-flake8
-  - python-nose
-  - python-coverage
-  - python-mock
-  ## other
-  - dh-apport
-  - dh-systemd
-  - npm
-  - nodejs-legacy
-  - adb
-  - golang-go
 
   # openstack
   - python-openstackclient
@@ -55,16 +42,12 @@ packages:
   - openvswitch-switch
 
   # doc
-  - python3-sphinx
-  - python3-sphinxcontrib.blockdiag
-  - python3-sphinxcontrib.nwdiag
   - pandoc
   - texlive-latex-recommended
   - diffpdf
 
   # fonts
   - fonts-dejavu
-  - fonts-noto
 
   # messenger
   - pidgin
@@ -82,7 +65,6 @@ packages:
   - tree
   - xclip
   - jq
-  - shellcheck
 
   # utils - network
   - sshuttle
@@ -99,9 +81,11 @@ packages:
   - indicator-multiload
   - diodon
 
+  # backup
+  - duplicity
+
   # other
   - ibus-mozc
-  - duplicity
   - dconf-editor
   - gimp
   - inkscape
@@ -113,10 +97,9 @@ packages:
   - desktop-webmail
   - byzanz
   - default-java-plugin
-  - calibre
 
-  # juju
-  - juju
+  # filesystem
+  - xfsprogs
   - zfsutils-linux
 
   # investigation
