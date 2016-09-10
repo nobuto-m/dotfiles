@@ -54,6 +54,13 @@
     src=/usr/share/applications/indicator-multiload.desktop
     dest=~/.config/autostart/indicator-multiload.desktop
 
+- name: unset LC_*
+  lineinfile:
+    dest=~/.bashrc
+    regexp='^unset \$\{'
+    line="unset ${!LC_*}"
+    state=present
+
 - name: DEBFULLNAME
   lineinfile:
     dest=~/.bashrc

@@ -1,4 +1,3 @@
-alias ssh='env --unset=LC_CTYPE --unset=LC_PAPER --unset=LC_MEASUREMENT ssh'
 alias cdtemp='cd $(mktemp -d)'
 alias check-connectivity='httping -sGb -c3 -t5 www.google.co.jp | ccze -A'
 alias xclips='xclip -selection clip'
