@@ -70,6 +70,7 @@ $ make full-setup
 ### remaining manual steps
 
 * login to Firefox Sync
+* pin tabs of e-mails, calendar, task-management, time-tracking and grammar-checker
 * enable Desktop Notifications in Firefox for Gmail
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * select color profile from gnome-control-center
