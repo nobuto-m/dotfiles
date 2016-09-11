@@ -17,6 +17,12 @@ for setting up my laptop
    * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
    * Encrypt my home folder (eCryptfs)
 
+1. Shrink / to 120G
+
+    ```bash
+    $ sudo lvresize /dev/ubuntu-vg/root -L 120G --resizefs
+```
+
 1. reboot
 
 
