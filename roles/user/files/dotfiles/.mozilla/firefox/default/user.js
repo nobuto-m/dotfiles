@@ -9,7 +9,9 @@ user_pref("browser.urlbar.suggest.searches", true);
 user_pref("layout.css.devPixelsPerPx", "1.8");
 
 // e10s
-user_pref("browser.tabs.remote.force-enable", true);
+// # userContent.css does not work
+// # https://bugzilla.mozilla.org/show_bug.cgi?id=1046166
+// user_pref("browser.tabs.remote.force-enable", true);
 
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
