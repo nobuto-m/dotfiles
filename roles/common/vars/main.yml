@@ -98,7 +98,8 @@ packages:
   - byzanz
   - default-java-plugin
 
-  # filesystem
+  # storage/filesystem
+  - thin-provisioning-tools
   - xfsprogs
   - zfsutils-linux
 
