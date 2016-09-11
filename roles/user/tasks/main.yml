@@ -77,6 +77,18 @@
     state=present
   when: "debemail != ''"
 
+- name: git PS1
+  blockinfile:
+    dest: ~/.bashrc
+    block: |
+      GIT_PS1_SHOWDIRTYSTATE=1
+      GIT_PS1_SHOWSTASHSTATE=1
+      GIT_PS1_SHOWUNTRACKEDFILES=1
+      GIT_PS1_SHOWUPSTREAM='auto'
+      GIT_PS1_SHOWCOLORHINTS=1
+      GIT_PS1_BASE="${PS1%\\\$ }"
+      PROMPT_COMMAND='__git_ps1 "$GIT_PS1_BASE" "\\\$ "'
+
 - name: git username
   ini_file:
     dest=~/.gitconfig
