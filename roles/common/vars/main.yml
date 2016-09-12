@@ -92,6 +92,8 @@ packages:
   - chromium-browser
   - yubikey-personalization-gui
   - gedit-plugins
+  - gnome-sound-recorder
+  - sox
   - gstreamer1.0-libav
   - gstreamer1.0-vaapi
   - desktop-webmail
