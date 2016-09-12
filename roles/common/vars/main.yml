@@ -17,6 +17,9 @@ packages:
   - shellcheck
 
   # dev
+  ## deb
+  - dh-systemd
+  - dh-golang
   ## indicator-presentation
   - python3-distutils-extra
   - python3-nose
