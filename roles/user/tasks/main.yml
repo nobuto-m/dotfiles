@@ -58,7 +58,7 @@
   lineinfile:
     dest=~/.bashrc
     regexp='^unset \$\{'
-    line="unset ${!LC_*}"
+    line='unset ${!LC_*}'
     state=present
 
 - name: DEBFULLNAME
