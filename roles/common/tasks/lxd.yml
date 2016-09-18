@@ -62,3 +62,9 @@
 - name: launch mirror container
   command: lxc launch ubuntu:xenial --config=user.user-data="{{ lookup('file', 'files/mirror_user-data.yml') }}" mirror
   when: "mirror.rc != 0"
+
+- name: attach LV to mirror container
+  command: lxc config device add mirror mirror_disk disk source=/dev/ubuntu-vg/mirror-content path=srv/mirror
+  register: attach_lv_mirror
+  failed_when: "attach_lv_mirror.rc != 0 and 'already exists' not in attach_lv_mirror.stderr"
+  changed_when: "attach_lv_mirror.rc == 0"

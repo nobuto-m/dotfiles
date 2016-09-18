@@ -16,6 +16,7 @@
   command: lvcreate -T ubuntu-vg/LXDPool -V 300G -n mirror-content
   register: mirror_content_thin
   failed_when: "mirror_content_thin.rc != 0 and 'already exists' not in mirror_content_thin.stderr"
+  changed_when: "mirror_content_thin.rc == 0"
 
 - name: mirror-content thin LV filesystem
   filesystem: fstype=ext4 dev=/dev/ubuntu-vg/mirror-content

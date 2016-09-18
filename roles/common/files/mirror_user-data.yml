@@ -98,5 +98,4 @@ write_files:
     permissions: '0644'
 runcmd:
   - rm -rf /var/www/html/
-  - install -d -m 0755 /srv/mirror
   - ln -s /srv/mirror /var/www/html
