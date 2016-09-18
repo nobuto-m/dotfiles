@@ -1,4 +1,0 @@
-# 100%FREE does not work on xenial
-# $ sudo lvcreate --thin -l 100%FREE -n LXDPool ubuntu-vg
-
-$ sudo lvcreate --thin -L 306G -n LXDPool ubuntu-vg

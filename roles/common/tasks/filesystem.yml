@@ -9,6 +9,14 @@
     name=vm.swappiness value=1 state=present
     sysctl_file=/etc/sysctl.d/99-local.conf
 
+- name: LVM LXDPool
+  lvol: vg=ubuntu-vg lv=LXDPool size=300G opts='--thin'
+
+- name: LVM LXDPool - mirror-content thin LV
+  command: lvcreate -T ubuntu-vg/LXDPool -V 300G -n mirror-content
+  register: mirror_content_thin
+  failed_when: "mirror_content_thin.rc != 0 and 'already exists' not in mirror_content_thin.stderr"
+
 - name: fuse allow_other for non-root users
   lineinfile:
     dest=/etc/fuse.conf
