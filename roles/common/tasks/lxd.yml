@@ -24,7 +24,7 @@
   when: lxd_bridge|changed
 
 - name: static leases
-  copy: content="dhcp-host=squid-deb-proxy,10.0.8.2,336h" dest=/var/lib/lxd-bridge/dnsmasq.lxdbr0.conf owner=root group=root mode=0644
+  copy: content="dhcp-host=squid-deb-proxy,10.0.8.2,336h\ndhcp-host=mirror,10.0.8.3,336h" dest=/var/lib/lxd-bridge/dnsmasq.lxdbr0.conf owner=root group=root mode=0644
   register: leases
 
 - name: restart lxd-bridge
@@ -52,3 +52,13 @@
 - name: set default profile
   command: lxc profile set default user.user-data "{{ lookup('file', 'files/lxd_default_user-data.yml') }}"
   when: "squid_deb_proxy.rc != 0"
+
+- name: check mirror
+  command: lxc info mirror
+  changed_when: False
+  ignore_errors: True
+  register: mirror
+
+- name: launch mirror container
+  command: lxc launch ubuntu:xenial --config=user.user-data="{{ lookup('file', 'files/mirror_user-data.yml') }}" mirror
+  when: "mirror.rc != 0"

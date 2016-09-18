@@ -1,0 +1,102 @@
+#cloud-config
+
+packages:
+  - anacron
+  - apache2
+  - apt-mirror
+  - simplestreams
+  - tree
+write_files:
+  - content: |
+      #!/bin/sh
+      sstream-mirror --progress --max=2 \
+          --path streams/v1/index.json \
+          https://cloud-images.ubuntu.com/releases/ \
+          /srv/mirror/cloud-images.ubuntu.com/releases/ \
+          arch=amd64 release=xenial \
+          'ftype~(lxd.tar.xz|squashfs|root.tar.xz|disk1.img)'
+    owner: root:root
+    path: /usr/local/bin/sstream-mirror-cloud-images
+    permissions: '0755'
+  - content: |
+      #!/bin/sh
+      sstream-mirror --progress --max=2 \
+          --keyring=/usr/share/keyrings/ubuntu-cloudimage-keyring.gpg \
+          http://images.maas.io/ephemeral-v2/daily/ \
+          /srv/mirror/images.maas.io/ephemeral-v2/daily/ \
+          arch=amd64 release=xenial
+    owner: root:root
+    path: /usr/local/bin/sstream-mirror-maas
+    permissions: '0755'
+  - content: |
+      #!/bin/sh
+      set -e
+      sstream-mirror --progress --max=2 \
+          --no-verify \
+          --path streams/v1/index2.sjson \
+          https://streams.canonical.com/juju/tools/ \
+          /srv/mirror/streams.canonical.com/juju/tools/ \
+          arch=amd64 release=xenial
+      sstream-mirror --progress --max=2 \
+          --no-verify \
+          https://streams.canonical.com/juju/gui/ \
+          /srv/mirror/streams.canonical.com/juju/gui/
+    owner: root:root
+    path: /usr/local/bin/sstream-mirror-juju
+    permissions: '0755'
+  - content: |
+      set nthreads 5
+      set mirror_path /srv/mirror
+      
+      # Ubuntu official package archive
+      
+      ## xenial
+      deb-amd64 http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse
+      deb-amd64 http://archive.ubuntu.com/ubuntu xenial-security main restricted universe multiverse
+      deb-amd64 http://archive.ubuntu.com/ubuntu xenial-updates main restricted universe multiverse
+      deb-amd64 http://archive.ubuntu.com/ubuntu xenial-proposed main restricted universe multiverse
+      deb-amd64 http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse
+      
+      deb-i386 http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse
+      deb-i386 http://archive.ubuntu.com/ubuntu xenial-security main restricted universe multiverse
+      deb-i386 http://archive.ubuntu.com/ubuntu xenial-updates main restricted universe multiverse
+      deb-i386 http://archive.ubuntu.com/ubuntu xenial-proposed main restricted universe multiverse
+      deb-i386 http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse
+      
+      deb-src http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse
+      deb-src http://archive.ubuntu.com/ubuntu xenial-security main restricted universe multiverse
+      deb-src http://archive.ubuntu.com/ubuntu xenial-updates main restricted universe multiverse
+      deb-src http://archive.ubuntu.com/ubuntu xenial-proposed main restricted universe multiverse
+      deb-src http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse
+      
+      # Ubuntu Cloud Archive
+      
+      ## xenial-newton
+      deb http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-updates/newton main
+      deb http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-proposed/newton main
+      
+      # PPAs
+      
+      ## Juju
+      deb http://ppa.launchpad.net/juju/stable/ubuntu xenial main
+      deb http://ppa.launchpad.net/juju/proposed/ubuntu xenial main
+      deb http://ppa.launchpad.net/juju/devel/ubuntu xenial main
+      
+      ## MAAS
+      deb http://ppa.launchpad.net/maas/stable/ubuntu xenial main
+      deb http://ppa.launchpad.net/maas/proposed/ubuntu xenial main
+      deb http://ppa.launchpad.net/maas/next/ubuntu xenial main
+      
+      ## Landscape
+      deb http://ppa.launchpad.net/landscape/16.06/ubuntu xenial main
+      
+      clean http://archive.ubuntu.com/ubuntu
+      clean http://ubuntu-cloud.archive.canonical.com/ubuntu
+      clean http://ppa.launchpad.net/
+    owner: root:root
+    path: /etc/apt/mirror.list
+    permissions: '0644'
+runcmd:
+  - rm -rf /var/www/html/
+  - install -d -m 0755 /srv/mirror
+  - ln -s /srv/mirror /var/www/html
