@@ -57,38 +57,26 @@ write_files:
       deb-amd64 http://archive.ubuntu.com/ubuntu xenial-proposed main restricted universe multiverse
       deb-amd64 http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse
       
-      deb-i386 http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse
-      deb-i386 http://archive.ubuntu.com/ubuntu xenial-security main restricted universe multiverse
-      deb-i386 http://archive.ubuntu.com/ubuntu xenial-updates main restricted universe multiverse
-      deb-i386 http://archive.ubuntu.com/ubuntu xenial-proposed main restricted universe multiverse
-      deb-i386 http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse
-      
-      deb-src http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse
-      deb-src http://archive.ubuntu.com/ubuntu xenial-security main restricted universe multiverse
-      deb-src http://archive.ubuntu.com/ubuntu xenial-updates main restricted universe multiverse
-      deb-src http://archive.ubuntu.com/ubuntu xenial-proposed main restricted universe multiverse
-      deb-src http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse
-      
       # Ubuntu Cloud Archive
       
       ## xenial-newton
-      deb http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-updates/newton main
-      deb http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-proposed/newton main
+      deb-amd64 http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-updates/newton main
+      deb-amd64 http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-proposed/newton main
       
       # PPAs
       
       ## Juju
-      deb http://ppa.launchpad.net/juju/stable/ubuntu xenial main
-      deb http://ppa.launchpad.net/juju/proposed/ubuntu xenial main
-      deb http://ppa.launchpad.net/juju/devel/ubuntu xenial main
+      deb-amd64 http://ppa.launchpad.net/juju/stable/ubuntu xenial main
+      deb-amd64 http://ppa.launchpad.net/juju/proposed/ubuntu xenial main
+      deb-amd64 http://ppa.launchpad.net/juju/devel/ubuntu xenial main
       
       ## MAAS
-      deb http://ppa.launchpad.net/maas/stable/ubuntu xenial main
-      deb http://ppa.launchpad.net/maas/proposed/ubuntu xenial main
-      deb http://ppa.launchpad.net/maas/next/ubuntu xenial main
+      deb-amd64 http://ppa.launchpad.net/maas/stable/ubuntu xenial main
+      deb-amd64 http://ppa.launchpad.net/maas/proposed/ubuntu xenial main
+      deb-amd64 http://ppa.launchpad.net/maas/next/ubuntu xenial main
       
       ## Landscape
-      deb http://ppa.launchpad.net/landscape/16.06/ubuntu xenial main
+      deb-amd64 http://ppa.launchpad.net/landscape/16.06/ubuntu xenial main
       
       clean http://archive.ubuntu.com/ubuntu
       clean http://ubuntu-cloud.archive.canonical.com/ubuntu
