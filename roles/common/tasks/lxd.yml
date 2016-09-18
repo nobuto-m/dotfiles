@@ -69,5 +69,5 @@
   failed_when: "attach_lv_mirror.rc != 0 and 'already exists' not in attach_lv_mirror.stderr"
   changed_when: "attach_lv_mirror.rc == 0"
 
-- name: modify LV filesystem permission for mirror container 
+- name: modify LV filesystem permission for mirror container
   file: path=/var/lib/lxd/devices/mirror/disk.srv-mirror state=directory owner=165536 group=165536 mode=0755
