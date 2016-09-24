@@ -81,14 +81,17 @@
   blockinfile:
     dest: ~/.bashrc
     block: |
-      GIT_PS1_SHOWDIRTYSTATE=1
-      GIT_PS1_SHOWSTASHSTATE=1
-      GIT_PS1_SHOWUNTRACKEDFILES=1
+      GIT_PS1_SHOWDIRTYSTATE=true
+      GIT_PS1_SHOWSTASHSTATE=true
+      GIT_PS1_SHOWUNTRACKEDFILES=true
       GIT_PS1_SHOWUPSTREAM='auto'
-      GIT_PS1_SHOWCOLORHINTS=1
-      GIT_PS1_BASE="${PS1%\\\$ }"
-      PROMPT_COMMAND='__git_ps1 "$GIT_PS1_BASE" "\\\$ "'
-
+      GIT_PS1_SHOWCOLORHINTS=true
+      GIT_PS1_BASE="${PS1%\\* }"
+      __show_exit_status() {
+          local exit=$?
+          [ "$exit" = 0 ] || printf ' \[\e[7m\]%d\[\e[0m\]' "$exit"
+      }
+      PROMPT_COMMAND='__git_ps1 "$GIT_PS1_BASE" "$(__show_exit_status)\\\$ "'
 - name: git username
   ini_file:
     dest=~/.gitconfig
