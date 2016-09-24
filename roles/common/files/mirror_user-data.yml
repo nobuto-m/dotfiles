@@ -5,6 +5,7 @@ packages:
   - apache2
   - apt-mirror
   - simplestreams
+  - ccze
   - tree
 write_files:
   - content: |
