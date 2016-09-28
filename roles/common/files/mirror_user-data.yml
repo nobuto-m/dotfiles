@@ -56,7 +56,7 @@ write_files:
       @keyrings='/etc/apt/trusted.gpg';
       @arches='i386,amd64';
       $do_source=1;
-      @excludes='_i386\.deb$|\.udeb$|\.dsc$|\.tar\.|\.diff\.|/Translation-';
+      @excludes='_i386\.deb$|\.udeb$|\.dsc$|\.tar\.|\.diff\.|/Translation-en_';
       1;
     owner: root:root
     path: /etc/debmirror.conf
