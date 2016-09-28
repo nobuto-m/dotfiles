@@ -4,6 +4,7 @@ packages:
   - anacron
   - apache2
   - apt-mirror
+  - debmirror
   - simplestreams
   - ccze
   - tree
@@ -46,17 +47,23 @@ write_files:
     path: /usr/local/bin/sstream-mirror-juju
     permissions: '0755'
   - content: |
+      $mirrordir='/srv/mirror/archive.ubuntu.com/ubuntu';
+      $download_method='http';
+      @rsync_extra='none';
+      @dists='xenial,xenial-security,xenial-updates,xenial-proposed,xenial-backports';
+      @skip_installer='xenial,xenial-security,xenial-updates,xenial-proposed,xenial-backports';
+      @sections='main,universe,restricted,multiverse';
+      @keyrings='/etc/apt/trusted.gpg';
+      @arches='i386,amd64';
+      $do_source=1;
+      @excludes='_i386\.deb$|\.udeb$|\.dsc$|\.tar\.|\.diff\.|/Translation-';
+      1;
+    owner: root:root
+    path: /etc/debmirror.conf
+    permissions: '0644'
+  - content: |
       set nthreads 5
       set mirror_path /srv/mirror
-      
-      # Ubuntu official package archive
-      
-      ## xenial
-      deb-amd64 http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse
-      deb-amd64 http://archive.ubuntu.com/ubuntu xenial-security main restricted universe multiverse
-      deb-amd64 http://archive.ubuntu.com/ubuntu xenial-updates main restricted universe multiverse
-      deb-amd64 http://archive.ubuntu.com/ubuntu xenial-proposed main restricted universe multiverse
-      deb-amd64 http://archive.ubuntu.com/ubuntu xenial-backports main restricted universe multiverse
       
       # Ubuntu Cloud Archive
       
@@ -79,7 +86,6 @@ write_files:
       ## Landscape
       deb-amd64 http://ppa.launchpad.net/landscape/16.06/ubuntu xenial main
       
-      clean http://archive.ubuntu.com/ubuntu
       clean http://ubuntu-cloud.archive.canonical.com/ubuntu
       clean http://ppa.launchpad.net/
     owner: root:root
