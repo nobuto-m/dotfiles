@@ -89,9 +89,9 @@
       GIT_PS1_BASE="${PS1%\\* }"
       __show_exit_status() {
           local exit=$?
-          [ "$exit" = 0 ] || printf ' \[\e[7m\]%d\[\e[0m\]' "$exit"
+          [ "$exit" = 0 ] || printf '\[\e[7m\]%d\[\e[0m\] ' "$exit"
       }
-      PROMPT_COMMAND='__git_ps1 "$GIT_PS1_BASE" "$(__show_exit_status)\\\$ "'
+      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$GIT_PS1_BASE" "\\\$ "'
 - name: git username
   ini_file:
     dest=~/.gitconfig
