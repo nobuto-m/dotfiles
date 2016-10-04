@@ -27,6 +27,11 @@ write_files:
           http://images.maas.io/ephemeral-v2/daily/ \
           /srv/mirror/images.maas.io/ephemeral-v2/daily/ \
           arch=amd64 release=xenial
+      sstream-mirror --progress --max=2 \
+          --keyring=/usr/share/keyrings/ubuntu-cloudimage-keyring.gpg \
+          http://images.maas.io/ephemeral-v3/daily/ \
+          /srv/mirror/images.maas.io/ephemeral-v3/daily/ \
+          arch=amd64 release=xenial
     owner: root:root
     path: /usr/local/bin/sstream-mirror-maas
     permissions: '0755'
