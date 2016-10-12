@@ -77,6 +77,13 @@
     state=present
   when: "debemail != ''"
 
+- name: LESS
+  lineinfile:
+    dest=~/.bashrc
+    regexp='^export LESS='
+    line="export LESS='-j4'"
+    state=present
+
 - name: git PS1
   blockinfile:
     dest: ~/.bashrc
