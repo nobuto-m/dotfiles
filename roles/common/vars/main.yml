@@ -69,6 +69,7 @@ packages:
   - colordiff
   - dwdiff
   - ccze
+  - python-pygments
   - tree
   - xclip
   - jq

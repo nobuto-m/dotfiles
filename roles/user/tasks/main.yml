@@ -39,6 +39,9 @@
     dest=~/
   register: dotfiles
 
+- name: make .lessfilter executable
+  file: path=~/.lessfilter mode=0755
+
 - name: generate ICC profile
   command: |
     cd-create-profile \
@@ -81,7 +84,7 @@
   lineinfile:
     dest=~/.bashrc
     regexp='^export LESS='
-    line="export LESS='-j4'"
+    line="export LESS='-R -j4'"
     state=present
 
 - name: git PS1
