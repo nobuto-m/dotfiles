@@ -125,6 +125,14 @@
     value=simple
     state=present
 
+- name: git core.pager
+  ini_file:
+    dest=~/.gitconfig
+    section=core
+    option=pager
+    value="less -FRX -j4"
+    state=present
+
 - name: bzr create directory
   file: path=~/.bazaar state=directory
 
