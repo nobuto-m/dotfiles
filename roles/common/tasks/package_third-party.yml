@@ -7,7 +7,7 @@
   changed_when: "install_juju.rc == 0"
 
 - name: install Charm tools with snap
-  command: snap install --edge charm
+  command: snap install charm
   become: yes
   register: install_charm
   failed_when: "install_charm.rc != 0 and 'already installed' not in install_charm.stderr"
