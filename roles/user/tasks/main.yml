@@ -99,6 +99,7 @@
           [ "$exit" = 0 ] || printf '\[\e[7m\]%d\[\e[0m\] ' "$exit"
       }
       PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$GIT_PS1_BASE" "\\\$ "'
+
 - name: git username
   ini_file:
     dest=~/.gitconfig
@@ -131,6 +132,30 @@
     section=core
     option=pager
     value="less -FRX -j4"
+    state=present
+
+- name: git diff.renames
+  ini_file:
+    dest=~/.gitconfig
+    section=diff
+    option=renames
+    value=true
+    state=present
+
+- name: git diff.algorithm
+  ini_file:
+    dest=~/.gitconfig
+    section=diff
+    option=algorithm
+    value=histogram
+    state=present
+
+- name: git log.follow
+  ini_file:
+    dest=~/.gitconfig
+    section=log
+    option=follow
+    value=true
     state=present
 
 - name: bzr create directory
