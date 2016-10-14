@@ -134,7 +134,7 @@
     dest=~/.gitconfig
     section=core
     option=pager
-    value="less -FRX -j4"
+    value="diff-highlight | less -FRX"
     state=present
 
 - name: git diff.renames
