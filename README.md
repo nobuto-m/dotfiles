@@ -72,6 +72,7 @@ $ make full-setup
 * https://addons.mozilla.org/firefox/addon/gnotifier/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
 * https://github.com/mooz/keysnail/wiki/keysnail-japanese
+* https://testpilot.firefox.com/
 
 ### remaining manual steps
 
