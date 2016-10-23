@@ -76,6 +76,7 @@ packages:
   - tree
   - xclip
   - jq
+  - pwgen
 
   # utils - network
   - sshuttle
