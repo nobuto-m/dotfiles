@@ -59,6 +59,7 @@ packages:
   # messenger
   - pidgin
   - pidgin-plugin-pack
+  ## no SNI support in xenial yet (from 2.12.0)
   - hexchat
   - hexchat-indicator
 
