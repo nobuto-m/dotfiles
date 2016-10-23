@@ -59,6 +59,8 @@ packages:
   # messenger
   - pidgin
   - pidgin-plugin-pack
+  - hexchat
+  - hexchat-indicator
 
   # utils - apt
   - apt-listchanges
