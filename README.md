@@ -81,5 +81,5 @@ $ make full-setup
 * enable Desktop Notifications in Firefox for Gmail
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * select color profile from gnome-control-center
-* import VPN config into network-manager
+* adjust VPN routes in network-manager
 * adjust microphone volume

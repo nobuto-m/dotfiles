@@ -19,3 +19,10 @@
     - .purple/accounts.xml
     - .purple/blist.xml
     - .znc/
+
+- name: import VPNs
+  command: nmcli connection import type openvpn file "{{ item }}"
+  with_items:
+    - ~/.sesame/us-nobuto.conf
+    - ~/.sesame/us-nobuto-tcp443.conf
+    - ~/.sesame/us-nobuto-tcp443-global.conf
