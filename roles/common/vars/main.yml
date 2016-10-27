@@ -88,6 +88,10 @@ packages:
   - httping
   - zsync
   - powerwake
+  - stunnel4
+  - proxytunnel
+  - tsocks
+  - proxychains
 
   # utils - indicator
   - indicator-multiload
