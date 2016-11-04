@@ -11,3 +11,4 @@ alias proxy-ctail='lxc exec squid-deb-proxy -- tail -F /var/log/squid-deb-proxy/
 alias vpn-canonical='sudo openvpn ~/.sesame/us-nobuto.conf'
 alias vpn-canonical-tcp443='sudo openvpn ~/.sesame/us-nobuto-tcp443.conf'
 alias vpn-canonical-tcp443-global='sudo openvpn ~/.sesame/us-nobuto-tcp443-global.conf'
+lxc-exec() { lxc exec "$1" -- sudo -i -u ubuntu script /dev/null; }
