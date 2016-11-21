@@ -25,6 +25,7 @@ packages:
   # dev
   ## deb
   - dh-systemd
+  - dh-apport
   - dh-golang
   ## indicator-presentation
   - python3-distutils-extra
