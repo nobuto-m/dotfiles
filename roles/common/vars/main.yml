@@ -37,6 +37,12 @@ packages:
   - python-openstackclient
   - python-ceilometerclient
 
+  # portable mirror
+  - simplestreams
+  - ubuntu-cloudimage-keyring
+  - apt-mirror
+  - debmirror
+
   # encryption
   - encfs
   - enigmail
