@@ -55,6 +55,7 @@ packages:
   - uvtool
   - lxd
   - virt-manager
+  - ovmf
   - openvswitch-switch
 
   # doc
