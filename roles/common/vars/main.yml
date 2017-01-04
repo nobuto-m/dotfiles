@@ -136,6 +136,9 @@ packages:
   - powerstat
   - sysstat
 
+  # android
+  - android-sdk-platform-tools
+
   # restricted
   - intel-microcode
 
