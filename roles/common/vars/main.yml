@@ -102,6 +102,7 @@ packages:
   - proxytunnel
   - tsocks
   - proxychains
+  - freeipmi-tools
 
   # utils - indicator
   - indicator-multiload
@@ -115,6 +116,7 @@ packages:
   - dconf-editor
   - gimp
   - inkscape
+  - graphviz
   - chromium-browser
   - yubikey-personalization-gui
   - gedit-plugins
