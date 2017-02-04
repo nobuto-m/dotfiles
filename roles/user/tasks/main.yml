@@ -135,6 +135,14 @@
     value="diff-highlight | less -FRX"
     state=present
 
+- name: git core.autocrlf
+  ini_file:
+    dest=~/.gitconfig
+    section=core
+    option=autocrlf
+    value=input
+    state=present
+
 - name: git diff.renames
   ini_file:
     dest=~/.gitconfig
