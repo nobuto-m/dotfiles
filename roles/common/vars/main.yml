@@ -95,6 +95,7 @@ packages:
   - ipcalc
   - ipv6calc
   - jnettop
+  - speedometer
   - httping
   - zsync
   - powerwake
