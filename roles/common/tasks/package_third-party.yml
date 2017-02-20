@@ -1,5 +1,13 @@
 ---
-- name: install Juju with snap
+- name: add Juju stable PPA
+  apt_repository: repo='ppa:juju/stable' state=present update_cache=yes
+  become: yes
+
+- name: install Juju stable with deb
+  apt: name=juju state=present
+  become: yes
+
+- name: install Juju beta with snap
   command: snap install --devmode --beta juju
   become: yes
   register: install_juju
@@ -7,7 +15,7 @@
   changed_when: "install_juju.rc == 0"
 
 - name: install Charm tools with snap
-  command: snap install charm
+  command: snap install --classic charm
   become: yes
   register: install_charm
   failed_when: "install_charm.rc != 0 and 'already installed' not in install_charm.stderr"
