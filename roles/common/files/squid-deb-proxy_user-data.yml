@@ -7,3 +7,10 @@ packages:
   - squid-deb-proxy
 runcmd:
   - systemctl start squid-deb-proxy
+
+write_files:
+  - content: |
+      packages.elastic.co
+    owner: root:root
+    path: /etc/squid-deb-proxy/mirror-dstdomain.acl.d/50-thirdparty
+    permissions: '0644'
