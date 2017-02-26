@@ -50,6 +50,10 @@ packages:
   # vpn
   - network-manager-openvpn-gnome
   - network-manager-openconnect-gnome
+  - network-manager-vpnc-gnome
+  - network-manager-strongswan
+  - strongswan
+  - charon-cmd
 
   # virt
   - uvtool
