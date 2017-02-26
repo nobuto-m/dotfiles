@@ -54,6 +54,7 @@ packages:
   - network-manager-strongswan
   - strongswan
   - charon-cmd
+  - ike
 
   # virt
   - uvtool
