@@ -52,7 +52,7 @@ packages:
   - network-manager-openconnect-gnome
   - network-manager-vpnc-gnome
   - network-manager-strongswan
-  - strongswan
+  #- strongswan
   - charon-cmd
   - ike
 
