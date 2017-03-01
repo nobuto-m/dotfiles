@@ -133,6 +133,7 @@ packages:
   - desktop-webmail
   - byzanz
   - default-java-plugin
+  - midori
 
   # storage/filesystem
   - thin-provisioning-tools
