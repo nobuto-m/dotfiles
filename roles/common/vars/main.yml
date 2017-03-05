@@ -21,6 +21,7 @@ packages:
   - python3-virtualenv
   - tox
   - shellcheck
+  - snapcraft
 
   # dev
   ## deb
