@@ -40,20 +40,6 @@
   apt: name=gnome-sound-recorder-all state=present
   become: yes
 
-- name: disable auto-update of Google Hangout plugin
-  file: path=/etc/default/google-talkplugin state=touch
-  become: yes
-  changed_when: False
-
-- name: download Google Hangout plugin
-  get_url:
-    url=https://dl.google.com/linux/direct/google-talkplugin_current_amd64.deb
-    dest={{ ansible_env.HOME }}/Downloads/google-talkplugin_current_amd64.deb
-
-- name: install Google Hangout plugin
-  apt: deb={{ ansible_env.HOME }}/Downloads/google-talkplugin_current_amd64.deb
-  become: yes
-
 - name: disable auto-update of Google Music uploader
   file: path=/etc/default/google-musicmanager state=touch
   become: yes
