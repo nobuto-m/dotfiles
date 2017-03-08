@@ -10,7 +10,8 @@ user_pref("narrate.enabled", false);
 user_pref("layout.css.devPixelsPerPx", "1.8");
 
 // e10s
-user_pref("browser.tabs.remote.force-enable", true);
+// # KeySnail + Gmail didn't work
+// user_pref("browser.tabs.remote.force-enable", true);
 
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
