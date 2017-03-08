@@ -10,9 +10,7 @@ user_pref("narrate.enabled", false);
 user_pref("layout.css.devPixelsPerPx", "1.8");
 
 // e10s
-// # userContent.css does not work
-// # https://bugzilla.mozilla.org/show_bug.cgi?id=1046166
-// user_pref("browser.tabs.remote.force-enable", true);
+user_pref("browser.tabs.remote.force-enable", true);
 
 user_pref("plugin.default.state", 1);
 user_pref("plugin.state.libnpgoogletalk", 2);
@@ -25,6 +23,8 @@ user_pref("privacy.trackingprotection.enabled", true);
 
 user_pref("passhash.optGuessFullDomain", true);
 user_pref("passhash.optHashWordSizeDefault", 16);
+
+user_pref("extensions.openinchrome.chrome_path", "/usr/bin/chromium-browser");
 
 user_pref("extensions.keysnail.userscript.location", "~/.config/keysnail");
 
