@@ -33,6 +33,8 @@ packages:
   - python3-nose
   - python3-dbusmock
   - xvfb
+  ## other
+  - libffi-dev
 
   # openstack
   - python-openstackclient
