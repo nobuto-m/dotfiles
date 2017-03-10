@@ -112,6 +112,7 @@ packages:
   - tsocks
   - proxychains
   - freeipmi-tools
+  - w3m
 
   # utils - indicator
   - indicator-multiload
