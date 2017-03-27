@@ -9,6 +9,7 @@ alias encmount-private='encfs --idle=60 ~/Dropbox/private/ ~/Documents/private/ 
 alias encumount-private='cd; fusermount -u ~/Documents/private/'
 alias proxy-ctail='lxc exec squid-deb-proxy -- tail -F /var/log/squid-deb-proxy/access.log | ccze -A'
 alias vpn-canonical='sudo openvpn ~/.sesame/us-nobuto.conf'
+alias vpn-canonical-global='sudo openvpn ~/.sesame/us-nobuto-global.conf'
 alias vpn-canonical-tcp443='sudo openvpn ~/.sesame/us-nobuto-tcp443.conf'
 alias vpn-canonical-tcp443-global='sudo openvpn ~/.sesame/us-nobuto-tcp443-global.conf'
 alias juju-local-bootstrap='juju bootstrap --config apt-http-proxy="http://squid-deb-proxy.lxd:8000/" localhost && juju model-defaults apt-http-proxy="http://squid-deb-proxy.lxd:8000/"'
