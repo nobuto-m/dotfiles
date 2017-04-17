@@ -6,6 +6,13 @@ style=monokai
 # don't pass directories to pygmentize because it's slow
 [ -d "$1" ] && exit 1
 
+case "$1" in
+    *.txt)
+        # don't pass .txt
+        exit 1
+    ;;
+esac
+
 # detect some lexer without suffix
 mime_type=$(file -L -b --mime-type "$1")
 case "$mime_type" in
