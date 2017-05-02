@@ -138,6 +138,7 @@ packages:
   - byzanz
   - default-java-plugin
   - midori
+  - maas-cli
 
   # storage/filesystem
   - thin-provisioning-tools
