@@ -2,16 +2,16 @@
 - name: install Canonical Livepatch with snap
   command: snap install canonical-livepatch
   become: yes
-  register: install_charm
-  failed_when: "install_charm.rc != 0 and 'already installed' not in install_charm.stderr"
-  changed_when: "install_charm.rc == 0"
+  register: livepatch
+  failed_when: "livepatch.rc != 0 and 'already installed' not in livepatch.stderr"
+  changed_when: "livepatch.rc == 0 and 'already installed' not in livepatch.stderr"
 
 - name: install snaps
   command: snap install {{ item }}
   become: yes
   register: snaps
   failed_when: "snaps.rc != 0 and 'already installed' not in snaps.stderr"
-  changed_when: "snaps.rc == 0"
+  changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
     - conjure-up    --classic --beta
     - charm         --classic
