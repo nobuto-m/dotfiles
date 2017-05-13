@@ -10,7 +10,7 @@
     sysctl_file=/etc/sysctl.d/99-local.conf
 
 - name: LVM LXDPool
-  lvol: vg=ubuntu-vg lv=LXDPool size=300G opts='--thin'
+  lvol: vg=ubuntu-vg lv=LXDPool size=300G opts='--thin --discard nopassdown'
 
 - name: mirror-content thin LV
   command: lvcreate -T ubuntu-vg/LXDPool -V 300G -n mirror-content
