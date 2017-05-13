@@ -13,7 +13,7 @@
   failed_when: "snaps.rc != 0 and 'already installed' not in snaps.stderr"
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
-    - conjure-up    --classic --beta
+    - conjure-up    --classic --edge
     - charm         --classic
 
 - name: add my-tools PPA
