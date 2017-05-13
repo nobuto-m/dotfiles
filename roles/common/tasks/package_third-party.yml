@@ -13,8 +13,10 @@
   failed_when: "snaps.rc != 0 and 'already installed' not in snaps.stderr"
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
-    - conjure-up    --classic --edge
+    - juju          --classic --beta
     - charm         --classic
+    - kubectl       --classic
+    - kubefed       --classic
 
 - name: add my-tools PPA
   apt_repository: repo='ppa:nobuto/my-tools' state=present update_cache=yes
