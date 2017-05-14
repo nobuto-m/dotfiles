@@ -71,6 +71,14 @@ write_files:
       ## xenial-newton
       deb-amd64 http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-updates/newton main
       deb-amd64 http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-proposed/newton main
+
+      ## xenial-ocata
+      deb-amd64 http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-updates/ocata main
+      deb-amd64 http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-proposed/ocata main
+
+      ## xenial-pike
+      deb-amd64 http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-updates/pike main
+      deb-amd64 http://ubuntu-cloud.archive.canonical.com/ubuntu xenial-proposed/pike main
       
       # PPAs
       
