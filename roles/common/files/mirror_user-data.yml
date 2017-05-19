@@ -11,6 +11,22 @@ packages:
 write_files:
   - content: |
       #!/bin/sh
+      set -e
+
+      debmirror -p -h "$1"
+      debmirror -p
+
+      apt-mirror
+      /var/spool/apt-mirror/var/clean.sh
+
+      sstream-mirror-cloud-images
+      sstream-mirror-maas
+      sstream-mirror-juju
+    owner: root:root
+    path: /usr/local/bin/update-mirror
+    permissions: '0755'
+  - content: |
+      #!/bin/sh
       sstream-mirror --progress --max=2 \
           --path streams/v1/index.json \
           https://cloud-images.ubuntu.com/releases/ \
