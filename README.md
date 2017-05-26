@@ -71,7 +71,6 @@ $ make full-setup
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/gnotifier/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
-* https://addons.mozilla.org/firefox/addon/open-in-chrome/
 * https://github.com/mooz/keysnail/wiki/keysnail-japanese
 * https://testpilot.firefox.com/
 

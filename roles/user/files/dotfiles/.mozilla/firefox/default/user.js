@@ -21,8 +21,6 @@ user_pref("privacy.trackingprotection.enabled", true);
 user_pref("passhash.optGuessFullDomain", true);
 user_pref("passhash.optHashWordSizeDefault", 16);
 
-user_pref("extensions.openinchrome.chrome_path", "/usr/bin/chromium-browser");
-
 user_pref("extensions.keysnail.userscript.location", "~/.config/keysnail");
 
 user_pref("font.default.x-unicode", "sans-serif");
