@@ -13,6 +13,8 @@ user_pref("layout.css.devPixelsPerPx", "1.8");
 // # KeySnail + Gmail didn't work
 // user_pref("browser.tabs.remote.force-enable", true);
 
+user_pref("media.autoplay.enabled", false);
+
 user_pref("layout.spellcheckDefault", 2);
 user_pref("spellchecker.dictionary", "en-US");
 
