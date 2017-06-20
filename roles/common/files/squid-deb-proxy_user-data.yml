@@ -11,6 +11,7 @@ runcmd:
 write_files:
   - content: |
       packages.elastic.co
+      download.docker.com
     owner: root:root
     path: /etc/squid-deb-proxy/mirror-dstdomain.acl.d/50-thirdparty
     permissions: '0644'
