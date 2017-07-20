@@ -55,6 +55,7 @@ packages:
   - network-manager-openconnect-gnome
   - network-manager-vpnc-gnome
   - network-manager-strongswan
+  - ike-scan
   #- charon-cmd
   #- network-manager-l2tp-gnome
   #- ike
