@@ -55,9 +55,9 @@ packages:
   - network-manager-openconnect-gnome
   - network-manager-vpnc-gnome
   - network-manager-strongswan
-  #- strongswan
-  - charon-cmd
-  - ike
+  #- charon-cmd
+  #- network-manager-l2tp-gnome
+  #- ike
 
   # virt
   - uvtool
