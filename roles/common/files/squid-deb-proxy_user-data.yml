@@ -10,6 +10,7 @@ runcmd:
 
 write_files:
   - content: |
+      images.maas.io
       packages.elastic.co
       download.docker.com
     owner: root:root
