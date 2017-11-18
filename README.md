@@ -37,29 +37,29 @@ for setting up my laptop
 1. clone the repo
 
     ```bash
-$ git clone https://github.com/nobuto-m/dotfiles.git
-```
+    $ git clone https://github.com/nobuto-m/dotfiles.git
+    ```
 
 1. execute
 
     ```bash
-$ cd dotfiles/
-$ make setup
-```
+    $ cd dotfiles/
+    $ make setup
+    ```
 
 1. download backup
 
    Login to the backup server from console with password, then copy temporary ssh public key.
 
     ```bash
-$ make restore
-```
+    $ make restore
+    ```
 
 1. full setup
 
     ```bash
-$ make full-setup
-```
+    $ make full-setup
+    ```
 
 ## Manual setup
 
