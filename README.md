@@ -19,8 +19,8 @@ for setting up my laptop
 
 1. Shrink / to 120G
 
-    ```bash
-    $ sudo lvresize /dev/ubuntu-vg/root -L 120G --resizefs
+```bash
+$ sudo lvresize /dev/ubuntu-vg/root -L 120G --resizefs
 ```
 
 1. reboot
@@ -31,8 +31,8 @@ for setting up my laptop
 1. install git and ansible first
 
     ```bash
-$ sudo apt update && sudo apt install git ansible
-```
+    $ sudo apt update && sudo apt install git ansible
+    ```
 
 1. clone the repo
 
