@@ -1,18 +1,4 @@
 ---
-# https://github.com/lxc/lxd/blob/master/doc/production-setup.md
-- name: sysctl for lxd
-  sysctl:
-    name={{ item }} value=1048576 state=present
-    sysctl_file=/etc/sysctl.d/99-local.conf
-  with_items:
-    - fs.inotify.max_queued_events
-    - fs.inotify.max_user_instances
-    - fs.inotify.max_user_watches
-
-- sysctl:
-    name=vm.max_map_count value=262144 state=present
-    sysctl_file=/etc/sysctl.d/99-local.conf
-
 - name: debconf lxd
   debconf: name=lxd question=lxd/bridge-ipv4 vtype=boolean value=true
   register: lxd_bridge
