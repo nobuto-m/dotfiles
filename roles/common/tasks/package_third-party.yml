@@ -1,11 +1,4 @@
 ---
-- name: install Canonical Livepatch with snap
-  command: snap install canonical-livepatch
-  become: yes
-  register: livepatch
-  failed_when: "livepatch.rc != 0 and 'already installed' not in livepatch.stderr"
-  changed_when: "livepatch.rc == 0 and 'already installed' not in livepatch.stderr"
-
 - name: install snaps
   command: snap install {{ item }}
   become: yes
@@ -14,10 +7,6 @@
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
     - juju          --classic --beta
-    - juju-wait     --classic
-    - charm         --classic
-    - kubectl       --classic
-    - kubefed       --classic
 
 - name: add my-tools PPA
   apt_repository: repo='ppa:nobuto/my-tools' state=present update_cache=yes
