@@ -9,13 +9,10 @@ for setting up my laptop
 
 1. create a USB startup disk ([Ubuntu](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu), [Windows](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows))
 
-1. copy SHA256SUM and SHA256SUM.gpg into the USB stick to verify signature later 
-
 1. boot up with the USB stick
 
 1. install Ubuntu Desktop with the options below
    * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
-   * Encrypt my home folder (eCryptfs)
 
 1. Shrink / to 120G
 
