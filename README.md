@@ -70,6 +70,6 @@ for setting up my laptop
 * login to Firefox Sync
 * pin tabs of e-mails, calendar, task-management, time-tracking and grammar-checker
 * enable Desktop Notifications in Firefox for Gmail
-* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
+* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts) ([Known issue](https://github.com/greasemonkey/greasemonkey/issues/2631))
 * select color profile from gnome-control-center
 * adjust VPN routes in network-manager
