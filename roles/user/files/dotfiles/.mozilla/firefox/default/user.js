@@ -1,17 +1,13 @@
 //
 
-user_pref("browser.startup.homepage", "about:home");
-user_pref("browser.newtabpage.enabled", false);
+user_pref("browser.uidensity", 1);
 
-user_pref("browser.urlbar.suggest.searches", true);
-user_pref("narrate.enabled", false);
+user_pref("browser.startup.homepage", "about:home");
+user_pref("browser.newtabpage.activity-stream.showTopSites", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 
 // HiDPI tweak
 user_pref("layout.css.devPixelsPerPx", "1.8");
-
-// e10s
-// # KeySnail + Gmail didn't work
-// user_pref("browser.tabs.remote.force-enable", true);
 
 user_pref("media.autoplay.enabled", false);
 
@@ -19,11 +15,6 @@ user_pref("layout.spellcheckDefault", 2);
 user_pref("spellchecker.dictionary", "en-US");
 
 user_pref("privacy.trackingprotection.enabled", true);
-
-user_pref("passhash.optGuessFullDomain", true);
-user_pref("passhash.optHashWordSizeDefault", 16);
-
-user_pref("extensions.keysnail.userscript.location", "~/.config/keysnail");
 
 user_pref("font.default.x-unicode", "sans-serif");
 user_pref("font.name.monospace.x-unicode", "DejaVu Sans Mono");
