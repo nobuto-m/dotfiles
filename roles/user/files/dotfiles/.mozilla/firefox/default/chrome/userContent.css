@@ -1,20 +1,5 @@
-@-moz-document domain("www.tumblr.com") {
-  input#post_one, textarea#post_two {
-    font-family: monospace !important;
-  }
-}
-
 @-moz-document domain("mail.google.com") {
-  .nM, .xY, .gt, .Am {
-    font-size: 87.5% !important;
-  }
-  input, textarea, .editable {
+  .editable {
     font-family: monospace !important;
-  }
-}
-
-@-moz-document domain("app.clicktime.com") {
-  #screencast {
-    display: none !important;
   }
 }
