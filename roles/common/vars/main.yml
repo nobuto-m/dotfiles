@@ -145,6 +145,7 @@ packages:
   - thin-provisioning-tools
   - xfsprogs
   - zfsutils-linux
+  - exfat-fuse
 
   # investigation
   - powertop

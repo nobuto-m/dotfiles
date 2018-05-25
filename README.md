@@ -5,17 +5,14 @@ for setting up my laptop
 
 ## Install Ubuntu Desktop
 
-1. get [the latest daily-live image](http://cdimage.ubuntu.com/daily-live/current/)
+1. get [the latest LTS image](https://www.ubuntu.com/download/desktop) or [the latest daily-live image](http://cdimage.ubuntu.com/daily-live/current/)
 
-1. create a USB startup disk ([Ubuntu](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu), [Windows](http://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows))
-
-1. copy SHA256SUM and SHA256SUM.gpg into the USB stick to verify signature later 
+1. create a USB startup disk ([Ubuntu](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu), [Windows](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows), [macOS](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos))
 
 1. boot up with the USB stick
 
 1. install Ubuntu Desktop with the options below
    * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
-   * Encrypt my home folder (eCryptfs)
 
 1. Shrink / to 120G
 
@@ -65,21 +62,14 @@ for setting up my laptop
 
 ### Firefox add-ons
 
-* https://addons.mozilla.org/firefox/addon/password-hasher/
-* https://addons.mozilla.org/firefox/addon/searchwp/
-* https://addons.mozilla.org/firefox/addon/searchbox-sync/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
-* https://addons.mozilla.org/firefox/addon/gnotifier/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
-* https://github.com/mooz/keysnail/wiki/keysnail-japanese
-* https://testpilot.firefox.com/
 
 ### remaining manual steps
 
 * login to Firefox Sync
 * pin tabs of e-mails, calendar, task-management, time-tracking and grammar-checker
-* enable Desktop Notifications in Firefox for Gmail
-* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
+* (enable Desktop Notifications in Firefox for Gmail)
+* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts) ([known issue](https://github.com/greasemonkey/greasemonkey/issues/2631))
 * select color profile from gnome-control-center
 * adjust VPN routes in network-manager
-* adjust microphone volume

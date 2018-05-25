@@ -1,18 +1,4 @@
 ---
-# https://github.com/lxc/lxd/blob/master/doc/production-setup.md
-- name: sysctl for lxd
-  sysctl:
-    name={{ item }} value=1048576 state=present
-    sysctl_file=/etc/sysctl.d/99-local.conf
-  with_items:
-    - fs.inotify.max_queued_events
-    - fs.inotify.max_user_instances
-    - fs.inotify.max_user_watches
-
-- sysctl:
-    name=vm.max_map_count value=262144 state=present
-    sysctl_file=/etc/sysctl.d/99-local.conf
-
 - name: debconf lxd
   debconf: name=lxd question=lxd/bridge-ipv4 vtype=boolean value=true
   register: lxd_bridge
@@ -29,6 +15,10 @@
   file: path=/etc/default/lxd-bridge state=absent
   when: lxd_bridge|changed
 
+- name: static leases
+  copy: content="dhcp-host=squid-deb-proxy,10.0.8.2,336h\ndhcp-host=mirror,10.0.8.3,336h" dest=/var/lib/lxd/dnsmasq.lxdbr0.conf owner=root group=root mode=0644
+  register: leases
+
 - name: dpkg-reconfigure lxd
   command: dpkg-reconfigure -fnoninteractive lxd
   when: lxd_bridge|changed
@@ -36,10 +26,6 @@
 - name: lxd init
   command: lxd init --auto
   when: lxd_bridge|changed
-
-- name: static leases
-  copy: content="dhcp-host=squid-deb-proxy,10.0.8.2,336h\ndhcp-host=mirror,10.0.8.3,336h" dest=/var/lib/lxd/dnsmasq.lxdbr0.conf owner=root group=root mode=0644
-  register: leases
 
 - name: restart lxd-bridge
   service: name=lxd-bridge state=restarted
