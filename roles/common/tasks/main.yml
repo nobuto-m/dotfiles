@@ -2,6 +2,9 @@
 - include: package_apt.yml
   become: yes
 
+- include: package_config.yml
+  become: yes
+
 - include: locale.yml
   become: yes
 
