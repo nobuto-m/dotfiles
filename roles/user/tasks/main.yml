@@ -2,9 +2,11 @@
 - name: generate ssh key
   command: ssh-keygen -N '' -f ~/.ssh/id_rsa
     creates=~/.ssh/id_rsa.pub
+  tags: [minimal]
 
 - name: create ssh controlmasters directory
-  file: path=~/.ssh/controlmasters state=directory mode=0700
+  file: path=~/.ssh/masters state=directory mode=0700
+  tags: [minimal]
 
 - name: make XDG directories
   file: path={{ item }} state=directory
@@ -38,9 +40,11 @@
     src=files/dotfiles/
     dest=~/
   register: dotfiles
+  tags: [minimal]
 
 - name: make .lessfilter executable
   file: path=~/.lessfilter mode=0755
+  tags: [minimal]
 
 - name: generate ICC profile
   command: |
@@ -48,14 +52,17 @@
       --output ~/.local/share/icc/Gamma.icc \
       ~/.local/share/icc/Gamma.xml
   when: dotfiles|changed
+  tags: [minimal]
 
 - name: create autostart directory
   file: path=~/.config/autostart state=directory
+  tags: [minimal]
 
 - name: enable autostart of indicator-multiload
   copy:
     src=/usr/share/applications/indicator-multiload.desktop
     dest=~/.config/autostart/indicator-multiload.desktop
+  tags: [minimal]
 
 - name: DEBFULLNAME
   lineinfile:
@@ -100,6 +107,7 @@
           [ "$exit" = 0 ] || printf '\[\e[7m\]%d\[\e[0m\] ' "$exit"
       }
       PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$GIT_PS1__BASE" "$GIT_PS1__PROMPT "'
+  tags: [minimal]
 
 - name: git username
   ini_file:
@@ -109,6 +117,7 @@
     value={{ debfullname }}
     state=present
   when: "debfullname != ''"
+  tags: [minimal]
 
 - name: git email
   ini_file:
@@ -118,6 +127,7 @@
     value={{ debemail }}
     state=present
   when: "debemail != ''"
+  tags: [minimal]
 
 - name: git push.default
   ini_file:
@@ -134,6 +144,7 @@
     option=pager
     value="diff-highlight | less -FRX"
     state=present
+  tags: [minimal]
 
 - name: git core.autocrlf
   ini_file:
@@ -209,18 +220,22 @@
     src=templates/dconf.ini.j2
     dest=~/.config/dconf/user.ini
   register: dconf
+  tags: [minimal]
 
 - name: reset dconf
   command: dconf reset -f /
-  when: dconf|changed
+  when: dconf is changed
+  tags: [minimal]
 
 - name: pause to prevent dconf race conditions
   pause: seconds=5
-  when: dconf|changed
+  when: dconf is changed
+  tags: [minimal]
 
 - name: import dconf
   shell: dconf load / < ~/.config/dconf/user.ini
-  when: dconf|changed
+  when: dconf is changed
+  tags: [minimal]
 
 - name: 'workaround for LP: #1422290 - UNZIP'
   lineinfile:
