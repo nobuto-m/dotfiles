@@ -48,5 +48,9 @@
 - name: keep Firefox as primary browser - x-www-browser
   alternatives: name=x-www-browser path=/usr/bin/firefox
 
+- name: build diff-highlight
+  command: make -C /usr/share/doc/git/contrib/diff-highlight/
+  changed_when: False
+
 - name: diff-highlight executable
   copy: src=/usr/share/doc/git/contrib/diff-highlight/diff-highlight dest=/usr/local/bin/diff-highlight mode=0755
