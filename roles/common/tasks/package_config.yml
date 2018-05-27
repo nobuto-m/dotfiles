@@ -1,4 +1,11 @@
 ---
+- name: use unity-session
+  lineinfile:
+    dest="/var/lib/AccountsService/users/{{ ansible_user_id }}"
+    regexp='^XSession='
+    line='XSession=unity'
+    state=present
+
 - name: configure apt-listchanges
   copy:
     src=files/listchanges.conf
