@@ -28,7 +28,7 @@ for setting up my laptop
 1. install git and ansible first
 
     ```bash
-    $ sudo apt update && sudo apt install git ansible
+    $ sudo apt update && sudo apt install git make ansible
     ```
 
 1. clone the repo

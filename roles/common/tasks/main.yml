@@ -1,9 +1,11 @@
 ---
 - include: package_apt.yml
   become: yes
+  tags: [minimal]
 
 - include: package_config.yml
   become: yes
+  tags: [minimal]
 
 - include: locale.yml
   become: yes
