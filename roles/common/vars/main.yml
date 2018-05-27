@@ -130,7 +130,7 @@ packages:
   - python-gi
 
   # other
-  #- ibus-mozc
+  - ibus-mozc
   - dconf-editor
   - gimp
   - inkscape

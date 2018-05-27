@@ -9,14 +9,13 @@
 
 - include: locale.yml
   become: yes
+  tags: [minimal]
 
 - include: filesystem.yml
   become: yes
 
 - include: lxd.yml
   become: yes
-
-- include: lightdm.yml
 
 - include: vpn.yml
 
