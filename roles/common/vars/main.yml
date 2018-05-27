@@ -5,40 +5,46 @@ packages:
 
   - etckeeper
 
+  - intel-microcode
+
+  # unity desktop
+  - unity-session
+  - notify-osd
+
   # minimal dev
   - packaging-dev
-  - bikeshed
+  #- bikeshed
   - git
   - git-review
   - bzr
   - bzrtools
-  - python-pip
-  - python-dev
-  - python-virtualenv
-  - python3-pip
-  - python3-dev
-  - python3-hacking
-  - python3-virtualenv
+  #- python-pip
+  #- python-dev
+  #- python-virtualenv
+  #- python3-pip
+  #- python3-dev
+  #- python3-hacking
+  #- python3-virtualenv
   - tox
   - shellcheck
-  - snapcraft
+  #- snapcraft
 
   # dev
   ## deb
-  - dh-systemd
-  - dh-apport
-  - dh-golang
+  #- dh-systemd
+  #- dh-apport
+  #- dh-golang
   ## indicator-presentation
-  - python3-distutils-extra
-  - python3-nose
-  - python3-dbusmock
-  - xvfb
+  #- python3-distutils-extra
+  #- python3-nose
+  #- python3-dbusmock
+  #- xvfb
   ## other
-  - libffi-dev
+  #- libffi-dev
 
   # openstack
-  - python-openstackclient
-  - python-ceilometerclient
+  #- python-openstackclient
+  #- python-ceilometerclient
 
   # portable mirror
   - simplestreams
@@ -48,7 +54,7 @@ packages:
 
   # encryption
   - encfs
-  - enigmail
+  #- enigmail
 
   # vpn
   - network-manager-openvpn-gnome
@@ -57,20 +63,20 @@ packages:
   - network-manager-strongswan
   - ike-scan
   #- charon-cmd
-  #- network-manager-l2tp-gnome
+  - network-manager-l2tp-gnome
   #- ike
 
   # virt
   - uvtool
-  - lxd
+  #- lxd
   - virt-manager
   - ovmf
   - openvswitch-switch
 
   # doc
-  - pandoc
-  - texlive-latex-recommended
-  - diffpdf
+  #- pandoc
+  #- texlive-latex-recommended
+  #- diffpdf
 
   # fonts
   - fonts-dejavu
@@ -104,14 +110,14 @@ packages:
   - ipcalc
   - ipv6calc
   - jnettop
-  - speedometer
+  #- speedometer
   - httping
   - zsync
   - powerwake
-  - stunnel4
-  - proxytunnel
-  - tsocks
-  - proxychains
+  #- stunnel4
+  #- proxytunnel
+  #- tsocks
+  #- proxychains
   - freeipmi-tools
   - w3m
 
@@ -121,42 +127,41 @@ packages:
 
   # backup
   - duplicity
+  - python-gi
 
   # other
-  - ibus-mozc
+  #- ibus-mozc
   - dconf-editor
   - gimp
   - inkscape
-  - graphviz
+  #- graphviz
   - chromium-browser
   - yubikey-personalization-gui
   - gedit-plugins
   - gnome-sound-recorder
-  - sox
-  - gstreamer1.0-libav
-  - gstreamer1.0-vaapi
+  #- sox
+  #- gstreamer1.0-libav
+  #- gstreamer1.0-vaapi
   - desktop-webmail
-  - byzanz
-  - default-java-plugin
-  - midori
-  - maas-cli
+  #- byzanz
+  #- default-java-plugin
+  #- midori
+  #- maas-cli
 
   # storage/filesystem
   - thin-provisioning-tools
-  - xfsprogs
-  - zfsutils-linux
+  #- xfsprogs
+  #- zfsutils-linux
   - exfat-fuse
 
   # investigation
   - powertop
-  - powerstat
+  #- powerstat
   - sysstat
 
   # android
-  - android-sdk-platform-tools
+  #- android-sdk-platform-tools
 
-  # restricted
-  - intel-microcode
 
   # multiverse
   - nautilus-dropbox
