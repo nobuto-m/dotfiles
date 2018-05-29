@@ -10,6 +10,7 @@ packages:
   # unity desktop
   - unity-session
   - notify-osd
+  - xserver-xorg-input-synaptics
 
   # minimal dev
   - packaging-dev
