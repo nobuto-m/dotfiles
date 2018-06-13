@@ -9,11 +9,11 @@
     name=vm.swappiness value=1 state=present
     sysctl_file=/etc/sysctl.d/99-local.conf
 
-- name: LVM LXDPool
-  lvol: vg=ubuntu-vg lv=LXDPool size=300G opts='--thin --discard nopassdown'
+- name: LVM LXDThinPool
+  lvol: vg=ubuntu-vg lv=LXDThinPool size=300G opts='--thin --discard nopassdown'
 
 - name: mirror-content thin LV
-  command: lvcreate -T ubuntu-vg/LXDPool -V 300G -n mirror-content
+  command: lvcreate -T ubuntu-vg/LXDThinPool -V 300G -n mirror-content
   register: mirror_content_thin
   failed_when: "mirror_content_thin.rc != 0 and 'already exists' not in mirror_content_thin.stderr"
   changed_when: "mirror_content_thin.rc == 0"
