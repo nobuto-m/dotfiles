@@ -19,6 +19,7 @@ packages:
   - git-review
   - bzr
   - bzrtools
+  - python3-pip
   #- python-pip
   #- python-dev
   #- python-virtualenv
