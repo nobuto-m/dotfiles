@@ -7,6 +7,15 @@
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
     - juju          --classic --beta
+    - lxd
+    - conjure-up    --classic
+    - multipass     --classic --beta
+
+- name: add user to lxd group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: lxd
+    append: yes
 
 - name: add my-tools PPA
   apt_repository: repo='ppa:nobuto/my-tools' state=present update_cache=yes
@@ -19,8 +28,3 @@
 - name: install gnome-sound-recorder-all
   apt: name=gnome-sound-recorder-all state=present
   become: yes
-
-- name: disable auto-update of Google Music uploader
-  file: path=/etc/default/google-musicmanager state=touch
-  become: yes
-  changed_when: False

@@ -13,6 +13,7 @@
 
 - include: filesystem.yml
   become: yes
+  tags: [minimal]
 
 - include: lxd.yml
   become: yes
@@ -22,3 +23,4 @@
 - include: workaround.yml
 
 - include: package_third-party.yml
+  tags: [minimal]

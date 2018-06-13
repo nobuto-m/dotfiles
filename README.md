@@ -11,7 +11,7 @@ for setting up my laptop
 
 1. boot up with the USB stick
 
-1. install Ubuntu Desktop with the options below
+1. install Ubuntu Desktop with the options below (NOTE: installer may crash due to [LP: #1751252](https://launchpad.net/bugs/1751252). In that case, apply [the workaround](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes#line-403))
    * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
 
 1. Shrink / to 120G

@@ -22,15 +22,15 @@
     - ~/Music
     - ~/Pictures
     - ~/Videos
-  when: xdg_dir|changed
+  when: xdg_dir is changed
 
 - name: clean up example link
   file: path=~/examples.desktop state=absent
-  when: xdg_dir|changed
+  when: xdg_dir is changed
 
 - name: clear gtk bookmarks
   file: path=~/.config/gtk-3.0/bookmarks state=absent
-  when: xdg_dir|changed
+  when: xdg_dir is changed
 
 - name: create dev directory
   file: path=~/dev state=directory
@@ -51,7 +51,7 @@
     cd-create-profile \
       --output ~/.local/share/icc/Gamma.icc \
       ~/.local/share/icc/Gamma.xml
-  when: dotfiles|changed
+  when: dotfiles is changed
   tags: [minimal]
 
 - name: create autostart directory
@@ -85,6 +85,7 @@
     dest: ~/.bashrc
     block: |
       unset ${!LC_*}
+      unset LD_PRELOAD
       
       export LESS='-R -j4'
       export LESS_TERMCAP_md=$'\e[01;38;5;180m'
