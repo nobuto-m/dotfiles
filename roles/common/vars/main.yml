@@ -59,13 +59,16 @@ packages:
   #- enigmail
 
   # vpn
-  - network-manager-openvpn-gnome
+  - network-manager-fortisslvpn-gnome
+  - network-manager-iodine-gnome
+  - network-manager-l2tp-gnome
   - network-manager-openconnect-gnome
+  - network-manager-openvpn-gnome
+  - network-manager-ssh-gnome
   - network-manager-vpnc-gnome
   - network-manager-strongswan
   - ike-scan
   #- charon-cmd
-  - network-manager-l2tp-gnome
   #- ike
 
   # virt
