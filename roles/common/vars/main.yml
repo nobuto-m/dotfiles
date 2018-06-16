@@ -96,6 +96,7 @@ packages:
   - ppa-purge
 
   # utils - terminal
+  - byobu
   - colordiff
   - dwdiff
   - ccze
