@@ -20,6 +20,7 @@ packages:
   - bzr
   - bzrtools
   - python3-pip
+  - python3-flake8
   #- python-pip
   #- python-dev
   #- python-virtualenv
