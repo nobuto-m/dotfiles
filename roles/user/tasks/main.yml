@@ -1,7 +1,15 @@
 ---
+- name: restrict home access
+  file:
+    path: "{{ ansible_env.HOME }}"
+    mode: 'o-rwx'
+  tags: [minimal]
+
 - name: generate ssh key
-  command: ssh-keygen -N '' -f ~/.ssh/id_rsa
-    creates=~/.ssh/id_rsa.pub
+  user:
+    name: "{{ ansible_env.USER }}"
+    generate_ssh_key: yes
+    ssh_key_comment: "{{ ansible_env.USER }}-default@{{ ansible_hostname }}"
   tags: [minimal]
 
 - name: create ssh controlmasters directory
@@ -201,3 +209,8 @@
   with_items:
     - UNZIP
     - ZIPINFO
+
+- name: Dropbox disable LAN sync
+  command: dropbox lansync n
+  changed_when: False
+  tags: [minimal]
