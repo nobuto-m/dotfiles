@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+set -u
+
+secret_file=~/.otp-ubuntu.secret
+count_file=~/.otp-ubuntu.count
+
+# make sure those files are private
+chmod 600 "$secret_file" "$count_file"
+
+secret=$(cat "$secret_file")
+
+if [ -e "$count_file" ]; then
+    count=$(cat "$count_file")
+else
+    count=1
+fi
+
+otp=$(oathtool --hotp -c "$count" "$secret")
+echo "$otp"
+
+if [ -x /usr/bin/xclip ]; then
+    echo "$otp" | xclip -selection clip
+fi
+
+echo "$((count+1))" > "$count_file"

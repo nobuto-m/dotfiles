@@ -110,6 +110,7 @@ packages:
   - python-pygments
   - tree
   - xclip
+  - oathtool
   - jq
   - pwgen
 
