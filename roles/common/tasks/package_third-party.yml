@@ -6,10 +6,11 @@
   failed_when: "snaps.rc != 0 and 'already installed' not in snaps.stderr"
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
-    - juju          --classic --beta
+    - juju              --classic --beta
     - lxd
-    - conjure-up    --classic
-    - multipass     --classic --beta
+    - conjure-up        --classic
+    - multipass         --classic --beta
+    - openstackclients  --classic --edge
 
 - name: add user to lxd group
   user:
