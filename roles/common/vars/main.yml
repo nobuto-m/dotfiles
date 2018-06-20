@@ -23,7 +23,7 @@ packages:
   - python3-examples
   - python3-pip
   - python3-flake8
-  - pylint3
+  - python-autopep8
   #- python-pip
   #- python-dev
   #- python-virtualenv
