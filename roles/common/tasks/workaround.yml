@@ -1,7 +1,0 @@
----
-- name: workaround- change background color for bzr cdiff
-  replace: >
-    dest=/usr/lib/python2.7/dist-packages/bzrlib/plugins/bzrtools/colordiff.py
-    regexp="'longline':      'cyan'"
-    replace="'longline':      'black'"
-  become: yes

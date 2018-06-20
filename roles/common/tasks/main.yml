@@ -20,7 +20,5 @@
 
 - include: vpn.yml
 
-- include: workaround.yml
-
 - include: package_third-party.yml
   tags: [minimal]
