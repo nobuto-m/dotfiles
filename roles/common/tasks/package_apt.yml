@@ -9,6 +9,9 @@
     src=files/proposed
     dest=/etc/apt/preferences.d/proposed
 
+- name: purge thunderbird
+  apt: name=thunderbird state=absent purge=yes
+
 - name: apt update
   apt: update_cache=yes cache_valid_time=3600
 

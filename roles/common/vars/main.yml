@@ -64,7 +64,6 @@ packages:
 
   # encryption
   - encfs
-  #- enigmail
 
   # vpn
   - network-manager-fortisslvpn-gnome
@@ -159,7 +158,6 @@ packages:
   #- sox
   #- gstreamer1.0-libav
   #- gstreamer1.0-vaapi
-  - desktop-webmail
   #- byzanz
   #- default-java-plugin
   #- midori
