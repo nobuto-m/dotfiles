@@ -108,6 +108,7 @@ packages:
 
   # utils - terminal
   - byobu
+  - autojump
   - colordiff
   - dwdiff
   - ccze

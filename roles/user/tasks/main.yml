@@ -88,19 +88,20 @@
     state=present
   when: "debemail != ''"
 
-- name: git PS1
+- name: bashrc
   blockinfile:
     dest: ~/.bashrc
     block: |
       unset ${!LC_*}
       unset LD_PRELOAD
-      
+
       export LESS='-R -j4'
       export LESS_TERMCAP_md=$'\e[01;38;5;180m'
       export LESS_TERMCAP_me=$'\e[0m'
       export LESS_TERMCAP_ue=$'\e[0m'
       export LESS_TERMCAP_us=$'\e[04;38;5;139m'
       
+      [ -r /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
       [ -r ~/.byobu/prompt ] && . ~/.byobu/prompt
       
       GIT_PS1_SHOWDIRTYSTATE=true
