@@ -19,8 +19,11 @@ packages:
   - git-review
   - bzr
   - bzrtools
+  - python3-doc
+  - python3-examples
   - python3-pip
   - python3-flake8
+  - pylint3
   #- python-pip
   #- python-dev
   #- python-virtualenv
