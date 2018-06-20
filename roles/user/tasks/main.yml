@@ -12,6 +12,31 @@
     ssh_key_comment: "{{ ansible_env.USER }}-default@{{ ansible_hostname }}"
   tags: [minimal]
 
+- name: download 16.04 wallpaper
+  get_url:
+    url: https://launchpad.net/ubuntu/+archive/primary/+files/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb
+    dest: ~/Downloads/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb
+  register: wallpaper
+  tags: [minimal]
+
+- name: extract 16.04 wallpaper
+  command: dpkg-deb -x ~/Downloads/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb ~/Downloads/ubuntu-wallpapers/
+  when: wallpaper is changed
+  tags: [minimal]
+
+- name: make sure wallpaper dir exists
+  file: path=~/.local/share/backgrounds state=directory
+  when: wallpaper is changed
+  tags: [minimal]
+
+- name: copy 16.04 wallpaper
+  copy:
+    src: ~/Downloads/ubuntu-wallpapers/usr/share/backgrounds/warty-final-ubuntu.png
+    dest: ~/.local/share/backgrounds/warty-final-ubuntu-16.04.png
+    remote_src: yes
+  when: wallpaper is changed
+  tags: [minimal]
+
 - name: create ssh controlmasters directory
   file: path=~/.ssh/masters state=directory mode=0700
   tags: [minimal]
