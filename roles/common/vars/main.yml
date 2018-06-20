@@ -12,6 +12,10 @@ packages:
   - notify-osd
   - xserver-xorg-input-synaptics
 
+  # xkeysnail
+  - python3-xlib
+  - python3-evdev
+
   # minimal dev
   - packaging-dev
   #- bikeshed
