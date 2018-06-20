@@ -18,6 +18,13 @@
     groups: lxd
     append: yes
 
+- name: install xkeysnail
+  pip:
+    name: xkeysnail
+    executable: pip3
+    version: 0.1.0
+  become: yes
+
 - name: add my-tools PPA
   apt_repository: repo='ppa:nobuto/my-tools' state=present update_cache=yes
   become: yes
