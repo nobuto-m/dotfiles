@@ -54,6 +54,10 @@
   file: path=~/.lessfilter mode=0755
   tags: [minimal]
 
+- name: make otp-ubuntu executable
+  file: path=~/.local/bin/otp-ubuntu mode=0755
+  tags: [minimal]
+
 - name: generate ICC profile
   command: |
     cd-create-profile \
