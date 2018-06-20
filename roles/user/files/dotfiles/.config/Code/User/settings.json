@@ -1,0 +1,11 @@
+{
+    "editor.fontFamily": "'Ubuntu Mono', monospace",
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorStyle": "block",
+    "editor.minimap.enabled": false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 60000,
+    "python.pythonPath": "python3",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Quiet Light",
+}
