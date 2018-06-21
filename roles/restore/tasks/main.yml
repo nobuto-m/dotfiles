@@ -5,8 +5,10 @@
 
 - name: restore files
   copy:
-    src=~/backup{{ ansible_env.HOME }}/{{ item }}
-    dest=~/{{ item }}
+    src: ~/backup{{ ansible_env.HOME }}/{{ item }}
+    dest: ~/{{ item }}
+    mode: 'go-rwx'
+    backup: yes
   with_items:
     - .vpn/
     - .sesame/
