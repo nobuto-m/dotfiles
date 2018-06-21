@@ -69,8 +69,7 @@ for setting up my laptop
 
 * login to Firefox Sync
 * pin tabs of e-mails, calendar, task-management, time-tracking and grammar-checker
-* (enable Desktop Notifications in Firefox for Gmail)
-* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts) ([known issue](https://github.com/greasemonkey/greasemonkey/issues/2631))
+* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
 * adjust VPN routes in network-manager
