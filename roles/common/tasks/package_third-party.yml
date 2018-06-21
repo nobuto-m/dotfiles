@@ -11,6 +11,7 @@
     - conjure-up        --classic
     - multipass         --classic --beta
     - openstackclients  --classic --edge
+    - vscode            --classic
 
 - name: add user to lxd group
   user:
