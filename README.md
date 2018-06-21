@@ -72,4 +72,5 @@ for setting up my laptop
 * (enable Desktop Notifications in Firefox for Gmail)
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts) ([known issue](https://github.com/greasemonkey/greasemonkey/issues/2631))
 * select color profile from gnome-control-center
+* disable Dropbox LAN sync by `dropbox lansync n`
 * adjust VPN routes in network-manager

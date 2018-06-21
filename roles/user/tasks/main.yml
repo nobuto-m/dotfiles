@@ -247,7 +247,16 @@
     - UNZIP
     - ZIPINFO
 
-- name: Dropbox disable LAN sync
-  command: dropbox lansync n
+- name: check if Dropbox is running
+  command: dropbox running
+  register: dropbox
   changed_when: False
+  ignore_errors: True
+  tags: [minimal]
+
+- name: Dropbox start
+  command: dropbox start -i
+  environment:
+    DISPLAY: ''
+  when: dropbox is success
   tags: [minimal]
