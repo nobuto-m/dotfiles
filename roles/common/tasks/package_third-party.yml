@@ -17,6 +17,7 @@
     name: "{{ ansible_user_id }}"
     groups: lxd
     append: yes
+  become: yes
 
 - name: install xkeysnail
   pip:
