@@ -10,10 +10,6 @@
       prompt: 'Your e-mail address for VCS'
       private: no
 
-    - name: launchpad_username
-      prompt: 'Your launchpad ID'
-      private: no
-
     - name: archive_mirror
       prompt: 'Archive mirror'
       default: http://jp.archive.ubuntu.com/ubuntu
