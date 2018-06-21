@@ -4,4 +4,3 @@ Name=OTP Ubuntu
 Keywords=key;password;
 Exec=otp-ubuntu
 Icon=stock_keyring
-NoDisplay=true
