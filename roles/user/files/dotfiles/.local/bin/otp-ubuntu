@@ -6,9 +6,6 @@ set -u
 secret_file=~/.otp-ubuntu.secret
 count_file=~/.otp-ubuntu.count
 
-# make sure those files are private
-chmod 600 "$secret_file" "$count_file"
-
 secret=$(cat "$secret_file")
 
 if [ -e "$count_file" ]; then
@@ -25,3 +22,6 @@ if [ -x /usr/bin/xclip ]; then
 fi
 
 echo "$((count+1))" > "$count_file"
+
+# make sure those files are private
+chmod 600 "$secret_file" "$count_file"
