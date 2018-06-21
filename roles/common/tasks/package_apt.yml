@@ -9,9 +9,6 @@
     src=files/proposed
     dest=/etc/apt/preferences.d/proposed
 
-- name: purge thunderbird
-  apt: name=thunderbird state=absent purge=yes
-
 - name: apt update
   apt: update_cache=yes cache_valid_time=3600
 
@@ -39,3 +36,6 @@
   apt: name={{ item }} state=present
   with_items: "{{ language_support.stdout.split() }}"
   environment: "{{ eatmydata }}"
+
+- name: purge thunderbird
+  apt: name=thunderbird state=absent purge=yes
