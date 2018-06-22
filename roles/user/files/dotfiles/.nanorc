@@ -11,6 +11,3 @@ set speller "aspell -x -c"
 set suspend
 set tabsize 4
 set tabstospaces
-set whitespace "» "
-
-include "/usr/share/nano/*.nanorc"

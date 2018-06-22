@@ -1,7 +1,5 @@
 [Default Applications]
 application/x-deb=org.gnome.FileRoller.desktop
-x-scheme-handler/mailto=desktop-webmail.desktop
 
 [Added Associations]
 application/x-deb=org.gnome.FileRoller.desktop;
-x-scheme-handler/mailto=desktop-webmail.desktop;

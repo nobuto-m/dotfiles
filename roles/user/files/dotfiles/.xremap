@@ -1,3 +1,0 @@
-window class_only: 'Navigator' do
-  remap 'C-n', to: 'Down'
-end
