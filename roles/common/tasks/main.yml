@@ -11,7 +11,7 @@
 - include: filesystem.yml
   become: yes
 
+- include: package_third-party.yml
+
 - include: lxd.yml
   become: yes
-
-- include: package_third-party.yml
