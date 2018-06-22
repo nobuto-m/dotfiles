@@ -1,39 +1,6 @@
 ---
-- name: debconf lxd
-  debconf: name=lxd question=lxd/bridge-ipv4 vtype=boolean value=true
-  register: lxd_bridge
-- debconf: name=lxd question=lxd/bridge-ipv4-address vtype=string value=10.0.8.1
-- debconf: name=lxd question=lxd/bridge-ipv4-netmask vtype=string value=24
-- debconf: name=lxd question=lxd/bridge-ipv4-dhcp-first vtype=string value=10.0.8.51
-- debconf: name=lxd question=lxd/bridge-ipv4-dhcp-last vtype=string value=10.0.8.200
-- debconf: name=lxd question=lxd/bridge-ipv4-dhcp-leases vtype=string value=255
-- debconf: name=lxd question=lxd/bridge-ipv6 vtype=boolean value=false
-- debconf: name=lxd question=lxd/bridge-dnsmasq vtype=string value=/var/lib/lxd/dnsmasq.lxdbr0.conf
-- debconf: name=lxd question=lxd/bridge-http-proxy vtype=boolean value=false
-
-- name: clear lxd bridge
-  file: path=/etc/default/lxd-bridge state=absent
-  when: lxd_bridge|changed
-
-- name: static leases
-  copy: content="dhcp-host=squid-deb-proxy,10.0.8.2,336h\ndhcp-host=mirror,10.0.8.3,336h" dest=/var/lib/lxd/dnsmasq.lxdbr0.conf owner=root group=root mode=0644
-  register: leases
-
-- name: dpkg-reconfigure lxd
-  command: dpkg-reconfigure -fnoninteractive lxd
-  when: lxd_bridge|changed
-
 - name: lxd init
-  command: lxd init --auto
-  when: lxd_bridge|changed
-
-- name: restart lxd-bridge
-  service: name=lxd-bridge state=restarted
-  when: leases|changed
-
-- name: set LVM thin pool storage backend
-  command: lxc config set storage.lvm_vg_name 'ubuntu-vg'
-  changed_when: False
+  shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
 
 - name: enable jumbo frame
   command: lxc profile device set default eth0 mtu 9000
@@ -46,7 +13,7 @@
   register: squid_deb_proxy
 
 - name: launch squid-deb-proxy container
-  command: lxc launch ubuntu:xenial --config=user.user-data="{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" squid-deb-proxy
+  command: lxc init ubuntu:bionic --config=user.user-data="{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" squid-deb-proxy
   when: "squid_deb_proxy.rc != 0"
 
 - name: set default profile
@@ -60,7 +27,7 @@
   register: mirror
 
 - name: launch mirror container
-  command: lxc launch ubuntu:xenial --config=user.user-data="{{ lookup('file', 'files/mirror_user-data.yml') }}" mirror
+  command: lxc init ubuntu:bionic --config=user.user-data="{{ lookup('file', 'files/mirror_user-data.yml') }}" mirror
   when: "mirror.rc != 0"
 
 - name: attach LV to mirror container
@@ -69,5 +36,15 @@
   failed_when: "attach_lv_mirror.rc != 0 and 'already exists' not in attach_lv_mirror.stderr"
   changed_when: "attach_lv_mirror.rc == 0"
 
-- name: modify LV filesystem permission for mirror container
-  file: path=/var/lib/lxd/devices/mirror/disk.srv-mirror state=directory owner=165536 group=165536 mode=0755
+#- name: modify LV filesystem permission for mirror container
+#  file: path=/var/lib/lxd/devices/mirror/disk.srv-mirror state=directory owner=165536 group=165536 mode=0755
+
+- name: static leases
+  shell: |
+    lxc network attach lxdbr0 "{{ item.container }}" eth0 eth0 \
+        && lxc config device set "{{ item.container }}" eth0 ipv4.address "{{ item.ipv4 }}" \
+        || true
+  with_items:
+    - { container: squid-deb-proxy, ipv4: 10.0.8.2 }
+    - { container: mirror, ipv4: 10.0.8.3 }
+  chenged_when: False

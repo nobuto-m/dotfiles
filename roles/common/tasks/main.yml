@@ -17,6 +17,7 @@
 
 - include: lxd.yml
   become: yes
+  tags: [minimal]
 
 - include: vpn.yml
 
