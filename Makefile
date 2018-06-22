@@ -11,4 +11,5 @@ restore:
 
 .PHONY: full-setup
 full-setup:
+	@rm -f ~/.config/dconf/user.ini
 	@ansible-playbook -vv --ask-become-pass local.yml
