@@ -1,8 +1,0 @@
----
-- name: create vpnc hook directory for openconnect
-  file: path=/etc/vpnc/connect.d state=directory recurse=yes
-  become: yes
-
-- name: disable remote DNS for openconnect
-  copy: content='unset INTERNAL_IP4_DNS\n' dest=/etc/vpnc/connect.d/disable-dns
-  become: yes

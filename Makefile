@@ -2,10 +2,6 @@
 setup:
 	@ansible-playbook -vv --ask-become-pass --skip-tags=restore local.yml
 
-.PHONY: minimal
-minimal:
-	@ansible-playbook -vv --ask-become-pass --tags=minimal local.yml
-
 .PHONY: restore
 restore:
 	duplicity restore \

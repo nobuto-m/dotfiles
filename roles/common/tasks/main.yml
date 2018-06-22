@@ -1,25 +1,17 @@
 ---
 - include: package_apt.yml
   become: yes
-  tags: [minimal]
 
 - include: package_config.yml
   become: yes
-  tags: [minimal]
 
 - include: locale.yml
   become: yes
-  tags: [minimal]
 
 - include: filesystem.yml
   become: yes
-  tags: [minimal]
 
 - include: lxd.yml
   become: yes
-  tags: [minimal]
-
-- include: vpn.yml
 
 - include: package_third-party.yml
-  tags: [minimal]

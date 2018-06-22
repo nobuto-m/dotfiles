@@ -3,44 +3,37 @@
   file:
     path: "{{ ansible_env.HOME }}"
     mode: 'o-rwx'
-  tags: [minimal]
 
 - name: generate ssh key
   user:
     name: "{{ ansible_env.USER }}"
     generate_ssh_key: yes
     ssh_key_comment: "{{ ansible_env.USER }}-default@{{ ansible_hostname }}"
-  tags: [minimal]
 
 - name: make sure ~/.local/bin/ exists
   file:
     path: ~/.local/bin
     state: directory
-  tags: [minimal]
 
 - name: disable CSD with Firefox
   file:
     src: /usr/bin/gtk3-nocsd
     dest: ~/.local/bin/firefox
     state: link
-  tags: [minimal]
 
 - name: download 16.04 wallpaper
   get_url:
     url: https://launchpad.net/ubuntu/+archive/primary/+files/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb
     dest: ~/Downloads/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb
   register: wallpaper
-  tags: [minimal]
 
 - name: extract 16.04 wallpaper
   command: dpkg-deb -x ~/Downloads/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb ~/Downloads/ubuntu-wallpapers/
   when: wallpaper is changed
-  tags: [minimal]
 
 - name: make sure wallpaper dir exists
   file: path=~/.local/share/backgrounds state=directory
   when: wallpaper is changed
-  tags: [minimal]
 
 - name: copy 16.04 wallpaper
   copy:
@@ -48,11 +41,9 @@
     dest: ~/.local/share/backgrounds/warty-final-ubuntu-16.04.png
     remote_src: yes
   when: wallpaper is changed
-  tags: [minimal]
 
 - name: create ssh controlmasters directory
   file: path=~/.ssh/masters state=directory mode=0700
-  tags: [minimal]
 
 - name: make XDG directories
   file: path={{ item }} state=directory
@@ -86,15 +77,12 @@
     src=files/dotfiles/
     dest=~/
   register: dotfiles
-  tags: [minimal]
 
 - name: make .lessfilter executable
   file: path=~/.lessfilter mode=0755
-  tags: [minimal]
 
 - name: make otp-ubuntu executable
   file: path=~/.local/bin/otp-ubuntu mode=0755
-  tags: [minimal]
 
 - name: generate ICC profile
   command: |
@@ -102,17 +90,14 @@
       --output ~/.local/share/icc/Gamma.icc \
       ~/.local/share/icc/Gamma.xml
   when: dotfiles is changed
-  tags: [minimal]
 
 - name: create autostart directory
   file: path=~/.config/autostart state=directory
-  tags: [minimal]
 
 - name: enable autostart of indicator-multiload
   copy:
     src=/usr/share/applications/indicator-multiload.desktop
     dest=~/.config/autostart/indicator-multiload.desktop
-  tags: [minimal]
 
 - name: DEBFULLNAME
   lineinfile:
@@ -158,7 +143,6 @@
           [ "$exit" = 0 ] || printf '\[\e[7m\]%d\[\e[0m\] ' "$exit"
       }
       PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$GIT_PS1__BASE" "\$ "'
-  tags: [minimal]
 
 - name: git username
   ini_file:
@@ -168,7 +152,6 @@
     value={{ debfullname }}
     state=present
   when: "debfullname != ''"
-  tags: [minimal]
 
 - name: git email
   ini_file:
@@ -178,7 +161,6 @@
     value={{ debemail }}
     state=present
   when: "debemail != ''"
-  tags: [minimal]
 
 - name: git core.pager
   ini_file:
@@ -187,7 +169,6 @@
     option=pager
     value="diff-highlight | less -FRX"
     state=present
-  tags: [minimal]
 
 - name: git core.autocrlf
   ini_file:
@@ -226,22 +207,18 @@
     src=templates/dconf.ini.j2
     dest=~/.config/dconf/user.ini
   register: dconf
-  tags: [minimal]
 
 - name: reset dconf
   command: dconf reset -f /
   when: dconf is changed
-  tags: [minimal]
 
 - name: pause to prevent dconf race conditions
   pause: seconds=5
   when: dconf is changed
-  tags: [minimal]
 
 - name: import dconf
   shell: dconf load / < ~/.config/dconf/user.ini
   when: dconf is changed
-  tags: [minimal]
 
 - name: 'workaround for LP: #1422290 - UNZIP'
   lineinfile:
@@ -258,11 +235,9 @@
   register: dropbox
   changed_when: False
   ignore_errors: True
-  tags: [minimal]
 
 - name: Dropbox start
   command: dropbox start -i
   environment:
     DISPLAY: ''
   when: dropbox is success
-  tags: [minimal]
