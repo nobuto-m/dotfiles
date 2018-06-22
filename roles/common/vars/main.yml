@@ -21,6 +21,8 @@ packages:
   - git-review
   - bzr
   - bzrtools
+  - shellcheck
+  - tox
   - python3-doc
   - python3-examples
   - python3-pip
@@ -29,12 +31,9 @@ packages:
   #- python-pip
   #- python-dev
   #- python-virtualenv
-  #- python3-pip
   #- python3-dev
   #- python3-hacking
   #- python3-virtualenv
-  - tox
-  - shellcheck
   #- snapcraft
 
   # dev
@@ -49,10 +48,6 @@ packages:
   #- xvfb
   ## other
   #- libffi-dev
-
-  # openstack
-  #- python-openstackclient
-  #- python-ceilometerclient
 
   # portable mirror
   - simplestreams
