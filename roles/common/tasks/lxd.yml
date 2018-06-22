@@ -3,6 +3,11 @@
   shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
   changed_when: False
 
+- name: lxc alias
+  command: lxc alias add ubuntu 'exec @ARGS@ -- sudo --login --user ubuntu'
+  changed_when: False
+  ignore_errors: True
+
 - name: enable jumbo frame
   command: lxc profile device set default eth0 mtu 9000
   changed_when: False

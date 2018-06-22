@@ -1,5 +1,3 @@
 * xkeysnail
 * network-manager - shared
 * git find file
-* LXD alias
-* try ahci.mobile_lpm_policy=3 or 4 once v4.16 is available
