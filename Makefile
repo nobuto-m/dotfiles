@@ -9,10 +9,6 @@ restore:
 	    gio+sftp://backup/srv/backup \
 	    ~/backup
 
-.PHONY: restore-copy-back
-restore-copy-back:
-	@ansible-playbook -vv --ask-become-pass --tags=restore local.yml
-
 .PHONY: full-setup
 full-setup:
 	@ansible-playbook -vv --ask-become-pass local.yml

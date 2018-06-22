@@ -13,6 +13,9 @@ packages:
   # laptop
   - pm-utils
 
+  # classic deb
+  - gnome-characters
+
   # xkeysnail
   - python3-xlib
   - python3-evdev

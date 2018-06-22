@@ -13,6 +13,18 @@
     - openstackclients  --classic --edge
     - vscode            --classic
 
+- name: remove some snaps
+  command: snap remove {{ item }}
+  become: yes
+  with_items:
+    - gnome-3-26-1604
+    - gnome-calculator
+    - gnome-characters
+    - gnome-logs
+    - gnome-system-monitor
+  changed_when: False
+  ignore_errors: True
+
 - name: add user to lxd group
   user:
     name: "{{ ansible_user_id }}"
