@@ -1,15 +1,17 @@
 #cloud-config
 
-debconf_selections: |
-  squid-deb-proxy squid-deb-proxy/ppa-enable boolean true
 packages:
   - anacron
   - squid-deb-proxy
 
 write_files:
   - content: |
+      ppa.launchpad.net
       images.maas.io
       artifacts.elastic.co
     owner: root:root
     path: /etc/squid-deb-proxy/mirror-dstdomain.acl.d/50-thirdparty
     permissions: '0644'
+
+run_cmd:
+  - service squid-deb-proxy restart

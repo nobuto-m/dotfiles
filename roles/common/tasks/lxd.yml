@@ -8,17 +8,13 @@
   changed_when: False
   ignore_errors: True
 
-- name: enable jumbo frame
-  command: lxc profile device set default eth0 mtu 9000
-  changed_when: False
-
 - name: check squid-deb-proxy
   command: lxc info squid-deb-proxy
   changed_when: False
   ignore_errors: True
   register: squid_deb_proxy
 
-- name: launch squid-deb-proxy container
+- name: init squid-deb-proxy container
   command: lxc init ubuntu:bionic --config=user.user-data="{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" squid-deb-proxy
   when: "squid_deb_proxy.rc != 0"
 
@@ -32,7 +28,7 @@
   ignore_errors: True
   register: mirror
 
-- name: launch mirror container
+- name: init mirror container
   command: lxc init ubuntu:bionic --config=user.user-data="{{ lookup('file', 'files/mirror_user-data.yml') }}" mirror
   when: "mirror.rc != 0"
 
