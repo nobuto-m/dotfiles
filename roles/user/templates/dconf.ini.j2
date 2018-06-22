@@ -23,9 +23,6 @@ icon-size=26
 launcher-capture-mouse=false
 show-minimized-windows=false
 
-[com/canonical/unity/webapps]
-integration-allowed=false
-
 [com/canonical/unity/lenses]
 remote-content-search='none'
 always-search=['applications.scope']
@@ -38,8 +35,8 @@ hsize=2
 initiate-edge='BottomLeft'
 overlay-icon=1
 
-[org/gnome/desktop/privacy]
-remember-recent-files=false
+[org/gnome/settings-daemon/plugins/xrandr]
+default-monitors-setup='do-nothing'
 
 
 #### touchpad ####
@@ -76,9 +73,6 @@ xkb-options=['ctrl:nocaps']
 [desktop/ibus/general]
 preload-engine-mode=0
 preload-engines=['mozc-jp', 'xkb:jp::jpn']
-
-[desktop/ibus/panel]
-auto-hide-timeout=500
 
 [com/canonical/indicator/keyboard]
 migrated=true
@@ -173,22 +167,6 @@ mic-volume=1.0
 [org/gnome/gedit/preferences/encodings]
 candidate-encodings=['UTF-8', 'CURRENT', 'CP932', 'ISO-8859-15', 'UTF-16']
 
-[org/gnome/gedit/preferences/editor]
-display-right-margin=true
-highlight-current-line=true
-bracket-matching=true
-auto-save=true
-scheme='cobalt'
-create-backup-copy=false
-tabs-size=uint32 4
-display-line-numbers=true
-insert-spaces=true
-auto-indent=true
-auto-save-interval=uint32 5
-
-[org/gnome/gedit/plugins]
-active-plugins=['joinlines', 'git', 'codecomment', 'textsize', 'terminal', 'modelines', 'bracketcompletion', 'drawspaces', 'spell', 'time', 'filebrowser', 'docinfo']
-
 
 #### deja-dup ####
 
@@ -199,5 +177,5 @@ periodic=true
 delete-after=182
 exclude-list=['{{ ansible_env.HOME }}/.local/share/Trash', '{{ ansible_env.HOME }}/Canonical', '{{ ansible_env.HOME }}/Documents/private', '{{ ansible_env.HOME }}/Downloads', '{{ ansible_env.HOME }}/dev', '{{ ansible_env.HOME }}/pbuilder', '{{ ansible_env.HOME }}/.dropbox', '{{ ansible_env.HOME }}/.dropbox-dist', '{{ ansible_env.HOME }}/.local/share/zeitgeist', '{{ ansible_env.HOME }}/.thunderbird/default/ImapMail', '{{ ansible_env.HOME }}/.vagrant.d/boxes', '{{ ansible_env.HOME }}/VirtualBox VMs', '{{ ansible_env.HOME }}/backup', '{{ ansible_env.HOME }}/tools', '{{ ansible_env.HOME }}/.atom/packages', '{{ ansible_env.HOME }}/.ansible/tmp']
 
-[org/gnome/deja-dup/file]
-path='sftp://backup/srv/backup'
+[org/gnome/deja-dup/remote]
+uri='sftp://backup/srv/backup'
