@@ -1,6 +1,7 @@
 ---
 - name: lxd init
   shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
+  changed_when: False
 
 - name: enable jumbo frame
   command: lxc profile device set default eth0 mtu 9000
@@ -47,4 +48,4 @@
   with_items:
     - { container: squid-deb-proxy, ipv4: 10.0.8.2 }
     - { container: mirror, ipv4: 10.0.8.3 }
-  chenged_when: False
+  changed_when: False
