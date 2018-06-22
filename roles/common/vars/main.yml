@@ -5,8 +5,6 @@ packages:
 
   - etckeeper
 
-  - intel-microcode
-
   # unity desktop
   - unity-session
   - notify-osd
