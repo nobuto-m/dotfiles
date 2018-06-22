@@ -10,9 +10,6 @@ packages:
   - notify-osd
   - xserver-xorg-input-synaptics
 
-  # laptop
-  - pm-utils
-
   # classic deb
   - gnome-characters
 
