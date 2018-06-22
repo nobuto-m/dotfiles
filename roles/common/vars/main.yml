@@ -10,6 +10,9 @@ packages:
   - notify-osd
   - xserver-xorg-input-synaptics
 
+  # laptop
+  - pm-utils
+
   # xkeysnail
   - python3-xlib
   - python3-evdev

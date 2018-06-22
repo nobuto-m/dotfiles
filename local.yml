@@ -22,7 +22,7 @@
     - { role: restore, tags: restore }
 
     # laptop specific
-    - { role: laptop, when: "ansible_form_factor == 'Notebook'" }
+    - { role: laptop, when: "ansible_form_factor == 'Notebook'", tags: minimal }
 
     # hardware specific
     - { role: fmvs90tb, when: "ansible_product_name == 'FMVS90TB'", tags: minimal }
