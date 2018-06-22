@@ -20,6 +20,12 @@
     append: yes
   become: yes
 
+- name: vscode plugins
+  command: vscode --install-extension {{ item }}
+  with_items:
+    - ms-python.python
+  changed_when: False
+
 - name: install xkeysnail
   pip:
     name: xkeysnail
