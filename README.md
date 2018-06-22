@@ -46,7 +46,7 @@ for setting up my laptop
 
 1. download backup
 
-   Login to the backup server from console with password, then copy temporary ssh public key.
+   Login to the backup server from console with password, then copy temporary ssh public key. Once SSH connection is confirmed, execute duplicity.
 
     ```bash
     $ make restore

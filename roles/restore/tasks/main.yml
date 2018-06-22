@@ -13,11 +13,7 @@
     - .vpn/
     - .sesame/
     - .ssh/
-    - .gnupg/pubring.gpg
-    - .gnupg/secring.gpg
-    - .gnupg/trustdb.gpg
-    - .gnupg/private-keys-v1.d/
-    - .local/share/keyrings/login.keyring
+    - .gnupg/
     - .purple/accounts.xml
     - .purple/blist.xml
     - .znc/

@@ -8,7 +8,10 @@ minimal:
 
 .PHONY: restore
 restore:
-	@deja-dup --restore
+	duplicity restore \
+	    --verbosity=info \
+	    gio+sftp://backup/srv/backup \
+	    ~/backup
 
 .PHONY: restore-copy-back
 restore-copy-back:
