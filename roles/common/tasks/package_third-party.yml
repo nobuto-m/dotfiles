@@ -47,13 +47,20 @@
   become: yes
 
 - name: add my-tools PPA
-  apt_repository: repo='ppa:nobuto/my-tools' state=present update_cache=yes
+  apt_repository:
+    repo: 'ppa:nobuto/my-tools'
+    state: present
+    update_cache: yes
   become: yes
 
 - name: install indicator-presentation
-  apt: name=indicator-presentation state=present
+  apt:
+    name: indicator-presentation
+    state: present
   become: yes
 
 - name: install gnome-sound-recorder-all
-  apt: name=gnome-sound-recorder-all state=present
+  apt:
+    name: gnome-sound-recorder-all
+    state: present
   become: yes
