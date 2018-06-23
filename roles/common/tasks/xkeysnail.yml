@@ -1,0 +1,10 @@
+---
+- name: make config dir
+  file:
+    path: /etc/xkeysnail
+    state: directory
+
+- name: copy config.py
+  copy:
+    src: files/xkeysnail.config.py
+    dest: /etc/xkeysnail/config.py
