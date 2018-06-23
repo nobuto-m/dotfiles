@@ -31,7 +31,11 @@ packages:
   - python3-examples
   - python3-pip
   - python3-flake8
-  - python-autopep8
+  - python3-hacking
+  - python3-yapf
+  - python-flake8
+  - python-hacking
+  - python-yapf
   #- python-pip
   #- python-dev
   #- python-virtualenv

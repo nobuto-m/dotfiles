@@ -5,6 +5,7 @@
     "editor.minimap.enabled": false,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 60000,
+    "python.formatting.provider": "yapf",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
     "python.pythonPath": "python3",
