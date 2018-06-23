@@ -9,6 +9,7 @@
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
     "python.pythonPath": "python3",
+    "python.sortImports.args": ["--force-single-line-imports", "--force-alphabetical-sort"],
     "window.zoomLevel": 1,
     "workbench.colorTheme": "Quiet Light",
 }
