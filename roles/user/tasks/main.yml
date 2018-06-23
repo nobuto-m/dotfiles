@@ -162,6 +162,14 @@
     state=present
   when: "debemail != ''"
 
+- name: git core.excludesfile
+  ini_file:
+    dest=~/.gitconfig
+    section=core
+    option=excludesfile
+    value="~/.gitignore_global"
+    state=present
+
 - name: git core.pager
   ini_file:
     dest=~/.gitconfig
