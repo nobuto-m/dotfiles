@@ -256,3 +256,29 @@
     - ms-python.python
     - redhat.vscode-yaml
   changed_when: False
+
+- name: download docsets for Zeal
+  get_url:
+    url: "https://tokyo.kapeli.com/feeds/{{ item }}.tgz"
+    dest: ~/Downloads/{{ item }}.tgz
+  register: docsets
+  with_items:
+    - Ansible
+    - Jinja
+    - Python_3
+
+- name: create docsets dir
+  file:
+    path: ~/.local/share/Zeal/Zeal/docsets/
+    state: directory
+
+- name: extract docsets
+  unarchive:
+    src: ~/Downloads/{{ item }}.tgz
+    dest: ~/.local/share/Zeal/Zeal/docsets/
+    remote_src: yes
+  with_items:
+    - Ansible
+    - Jinja
+    - Python_3
+  when: docsets is changed
