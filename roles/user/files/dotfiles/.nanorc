@@ -1,9 +1,5 @@
 set autoindent
-# set cut
 set fill 72
-# set nohelp
-set nowrap
-# set quickblank
 set smarthome
 set smooth
 set softwrap
@@ -11,3 +7,4 @@ set speller "aspell -x -c"
 set suspend
 set tabsize 4
 set tabstospaces
+set trimblanks
