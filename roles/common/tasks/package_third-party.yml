@@ -1,7 +1,6 @@
 ---
 - name: install snaps
   command: snap install {{ item }}
-  become: yes
   register: snaps
   failed_when: "snaps.rc != 0 and 'already installed' not in snaps.stderr"
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
@@ -15,7 +14,6 @@
 
 - name: remove some snaps
   command: snap remove {{ item }}
-  become: yes
   with_items:
     - gnome-3-26-1604
     - gnome-calculator
@@ -30,37 +28,25 @@
     name: "{{ ansible_user_id }}"
     groups: lxd
     append: yes
-  become: yes
-
-- name: vscode plugins
-  command: vscode --install-extension {{ item }}
-  with_items:
-    - ms-python.python
-    - redhat.vscode-yaml
-  changed_when: False
 
 - name: install xkeysnail
   pip:
     name: xkeysnail
     executable: pip3
     version: 0.1.0
-  become: yes
 
 - name: add my-tools PPA
   apt_repository:
     repo: 'ppa:nobuto/my-tools'
     state: present
     update_cache: yes
-  become: yes
 
 - name: install indicator-presentation
   apt:
     name: indicator-presentation
     state: present
-  become: yes
 
 - name: install gnome-sound-recorder-all
   apt:
     name: gnome-sound-recorder-all
     state: present
-  become: yes

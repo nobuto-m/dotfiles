@@ -249,3 +249,10 @@
   environment:
     DISPLAY: ''
   when: dropbox is success
+
+- name: vscode plugins
+  command: vscode --install-extension {{ item }}
+  with_items:
+    - ms-python.python
+    - redhat.vscode-yaml
+  changed_when: False
