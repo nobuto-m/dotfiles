@@ -4,6 +4,7 @@ Description=Service for xkeysnail
 [Service]
 Environment=DISPLAY=:0
 ExecStart=/usr/local/bin/xkeysnail /etc/xkeysnail/config.py
+StandardOutput=null
 Restart=always
 Type=simple
 
