@@ -4,6 +4,7 @@ from xkeysnail.transform import define_keymap
 from xkeysnail.transform import define_modmap
 from xkeysnail.transform import K
 from xkeysnail.transform import Key
+
 import re
 
 # [Global modemap]
