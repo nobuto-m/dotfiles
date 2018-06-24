@@ -15,4 +15,6 @@
   /dev/input/* rw,
   /dev/uinput rw,
   /tmp/.X11-unix/X0 rw,
+
+  /etc/passwd r,
 }
