@@ -8,3 +8,14 @@
   copy:
     src: files/xkeysnail.config.py
     dest: /etc/xkeysnail/config.py
+
+# relies on ~/.xsessionrc to execute xhost +SI:localuser:root
+- name: install systemd service
+  copy:
+    src: files/xkeysnail.service
+    dest: /etc/systemd/system/xkeysnail.service
+
+- name: enable systemd service
+  systemd:
+    name: xkeysnail
+    enabled: True
