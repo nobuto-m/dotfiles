@@ -1,4 +1,9 @@
 ---
+- name: apparmor
+  copy:
+    src: files/usr.local.bin.xkeysnail
+    dest: /etc/apparmor.d/usr.local.bin.xkeysnail
+
 - name: make config dir
   file:
     path: /etc/xkeysnail

@@ -1,0 +1,18 @@
+#include <tunables/global>
+
+/usr/local/bin/xkeysnail {
+  #include <abstractions/base>
+  #include <abstractions/python>
+
+  /usr/local/bin/xkeysnail r,
+
+  /usr/local/lib/python3.*/dist-packages/xkeysnail/ r,
+  /usr/local/lib/python3.*/dist-packages/xkeysnail/**.pyc mr,
+
+  /etc/xkeysnail/config.py r,
+
+  /dev/input/ r,
+  /dev/input/* rw,
+  /dev/uinput rw,
+  /tmp/.X11-unix/X0 rw,
+}
