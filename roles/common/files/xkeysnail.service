@@ -7,6 +7,7 @@ ExecStart=/usr/local/bin/xkeysnail /etc/xkeysnail/config.py
 StandardOutput=null
 Restart=always
 Type=simple
+RestartSec=10
 
 [Install]
 WantedBy=graphical.target
