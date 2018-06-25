@@ -27,6 +27,7 @@ packages:
   - shellcheck
   - tox
   - zeal
+  - exuberant-ctags
   - python3-doc
   - python3-examples
   - python3-pip

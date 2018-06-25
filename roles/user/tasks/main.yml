@@ -255,6 +255,7 @@
   with_items:
     - ms-python.python
     - redhat.vscode-yaml
+    - ms-vscode.go
   changed_when: False
 
 - name: download docsets for Zeal
