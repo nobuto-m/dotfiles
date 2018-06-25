@@ -1,5 +1,6 @@
 set autoindent
 set fill 72
+set nowrap
 set smarthome
 set smooth
 set softwrap
