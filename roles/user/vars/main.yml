@@ -1,0 +1,53 @@
+---
+git_repos:
+  - { name: maas, repo: 'https://git.launchpad.net/maas' }
+  - { name: juju, repo: 'https://github.com/juju/juju.git' }
+
+openstack_projects:
+  - aodh
+  - barbican
+  - ceilometer
+  - cinder
+  - designate
+  - glance
+  - heat
+  - horizon
+  - keystone
+  - neutron
+  - neutron-lbaas
+  - nova
+  - nova-lxd
+  - openstack-manuals
+  - oslo.messaging
+  - refstack-client
+  - swift
+  - tempest
+
+  - charm-aodh
+  - charm-ceilometer-agent
+  - charm-ceilometer
+  - charm-ceph-mon
+  - charm-ceph-osd.git
+  - charm-ceph-radosgw
+  - charm-cinder-ceph
+  - charm-cinder
+  - charm-designate
+  - charm-glance
+  - charm-guide
+  - charm-hacluster
+  - charm-heat
+  - charm-interface-mysql-shared
+  - charm-keystone
+  - charm-lxd
+  - charm-neutron-api
+  - charm-neutron-gateway
+  - charm-neutron-openvswitch
+  - charm-nova-cloud-controller
+  - charm-nova-compute
+  - charm-openstack-dashboard
+  - charm-percona-cluster
+  - charm-rabbitmq-server
+  - charms.openstack
+  - charm-swift-proxy
+  - charm-swift-storage
+  - charm-tempest
