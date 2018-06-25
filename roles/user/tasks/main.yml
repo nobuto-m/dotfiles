@@ -252,6 +252,14 @@
     DISPLAY: ''
   when: dropbox is success
 
+- name: check vscode plugins
+  find:
+    paths: ~/.vscode/extensions/
+    recurse: no
+    file_type: directory
+    patterns: 'ms-vscode.go-*'
+  register: vscode_plugin
+
 - name: vscode plugins
   command: vscode --install-extension {{ item }}
   with_items:
@@ -259,6 +267,7 @@
     - redhat.vscode-yaml
     - ms-vscode.go
   changed_when: False
+  when: vscode_plugin.matched == 0
 
 - name: download docsets for Zeal
   get_url:
