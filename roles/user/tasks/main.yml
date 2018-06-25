@@ -15,6 +15,8 @@
     path: ~/.local/bin
     state: directory
 
+# GTK_CSD=0 for gnome-terminal is handled by:
+# files/dotfiles/.config/systemd/user/gnome-terminal-server.service.d/override.conf
 - name: disable CSD with Firefox
   file:
     src: /usr/bin/gtk3-nocsd
