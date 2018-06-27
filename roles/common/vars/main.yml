@@ -25,6 +25,7 @@ packages:
   - bzr
   - bzrtools
   - shellcheck
+  - shunit2
   - tox
   - zeal
   - exuberant-ctags
