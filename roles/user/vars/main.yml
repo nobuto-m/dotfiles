@@ -25,6 +25,7 @@ openstack_projects:
   - tempest
 
   - charm-aodh
+  - charm-barbican
   - charm-ceilometer-agent
   - charm-ceilometer
   - charm-ceph-mon
@@ -32,13 +33,16 @@ openstack_projects:
   - charm-ceph-radosgw
   - charm-cinder-ceph
   - charm-cinder
+  - charm-deployment-guide
   - charm-designate
   - charm-glance
+  - charm-gnocchi
   - charm-guide
   - charm-hacluster
   - charm-heat
   - charm-interface-mysql-shared
   - charm-keystone
+  - charm-layer-openstack
   - charm-lxd
   - charm-neutron-api
   - charm-neutron-gateway
