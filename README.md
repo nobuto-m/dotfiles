@@ -73,3 +73,5 @@ for setting up my laptop
 * select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
 * adjust VPN routes in network-manager
+* create `~/.gitconfig_COMPANY` with `[user] email = EMAIL` and include it from `~/.gitconfig` by `[includeIf "gitdir:~/dev/openstack/"] path = ~/.gitconfig_COMPANY`
+* set gerrit username with `git config --global --add gitreview.username "USER"`
