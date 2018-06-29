@@ -19,6 +19,7 @@ packages:
 
   # minimal dev
   - packaging-dev
+  - debian-goodies
   #- bikeshed
   - git
   - git-review
