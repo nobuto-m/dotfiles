@@ -3,6 +3,7 @@ git_repos:
   - { name: maas, repo: 'https://git.launchpad.net/maas' }
   - { name: juju, repo: 'https://github.com/juju/juju.git' }
   - { name: lxd, repo: 'https://github.com/lxc/lxd.git' }
+  - { name: ceph, repo: 'https://github.com/ceph/ceph.git' }
 
 openstack_projects:
   - aodh
