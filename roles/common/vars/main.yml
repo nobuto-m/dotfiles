@@ -175,8 +175,11 @@ packages:
 
   # investigation
   - powertop
-  #- powerstat
+  - powerstat
   - sysstat
+  - dstat
+  - linux-tools-common
+  - linux-tools-generic
 
   # android
   #- android-sdk-platform-tools
