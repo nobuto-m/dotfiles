@@ -14,6 +14,7 @@ storage_pools:
 - config:
     source: ubuntu-vg
     lvm.thinpool_name: LXDThinPool
+    volume.block.mount_options: noatime,nobarrier,data=writeback
   description: ""
   name: default
   driver: lvm
