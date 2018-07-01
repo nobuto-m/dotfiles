@@ -3,6 +3,7 @@
     "editor.renderWhitespace": "boundary",
     "editor.cursorStyle": "block",
     "editor.minimap.enabled": false,
+    "editor.scrollBeyondLastLine": false,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 60000,
     "python.formatting.provider": "yapf",
