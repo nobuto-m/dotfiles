@@ -125,6 +125,7 @@ packages:
   # utils - network
   - curl
   - sshuttle
+  - pdsh
   - nmap
   - sipcalc
   - ipcalc
