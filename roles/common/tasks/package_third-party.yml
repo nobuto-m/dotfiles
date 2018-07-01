@@ -9,9 +9,15 @@
     - charm
     - lxd
     - conjure-up        --classic
+    - microk8s          --classic --beta
     - multipass         --classic --beta
     - openstackclients  --classic --edge
     - vscode            --classic
+
+- name: stop microk8s
+  command: snap disable microk8s
+  changed_when: False
+  when: snaps is changed
 
 - name: remove some snaps
   command: snap remove {{ item }}
