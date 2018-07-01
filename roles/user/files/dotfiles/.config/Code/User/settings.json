@@ -6,6 +6,7 @@
     "editor.scrollBeyondLastLine": false,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 60000,
+    "files.insertFinalNewline": true,
     "python.formatting.provider": "yapf",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
