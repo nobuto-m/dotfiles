@@ -6,7 +6,7 @@
 
 - name: set swappiness
   sysctl:
-    name=vm.swappiness value=1 state=present
+    name=vm.swappiness value=30 state=present
     sysctl_file=/etc/sysctl.d/99-local.conf
 
 - name: LVM LXDThinPool
