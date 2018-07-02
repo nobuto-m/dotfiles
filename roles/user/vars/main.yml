@@ -21,6 +21,7 @@ openstack_projects:
   - nova-lxd
   - openstack-manuals
   - oslo.messaging
+  - python-openstackclient
   - refstack-client
   - swift
   - tempest
@@ -30,7 +31,7 @@ openstack_projects:
   - charm-ceilometer-agent
   - charm-ceilometer
   - charm-ceph-mon
-  - charm-ceph-osd.git
+  - charm-ceph-osd
   - charm-ceph-radosgw
   - charm-cinder-backup
   - charm-cinder-ceph
