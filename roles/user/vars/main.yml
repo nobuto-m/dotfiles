@@ -32,6 +32,7 @@ openstack_projects:
   - charm-ceph-mon
   - charm-ceph-osd.git
   - charm-ceph-radosgw
+  - charm-cinder-backup
   - charm-cinder-ceph
   - charm-cinder
   - charm-deployment-guide
