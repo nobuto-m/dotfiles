@@ -4,6 +4,7 @@ git_repos:
   - { name: juju, repo: 'https://github.com/juju/juju.git' }
   - { name: lxd, repo: 'https://github.com/lxc/lxd.git' }
   - { name: ceph, repo: 'https://github.com/ceph/ceph.git' }
+  - { name: kubernetes, repo: 'https://github.com/kubernetes/kubernetes.git' }
 
 openstack_projects:
   - aodh
