@@ -5,6 +5,8 @@ git_repos:
   - { name: lxd, repo: 'https://github.com/lxc/lxd.git' }
   - { name: ceph, repo: 'https://github.com/ceph/ceph.git' }
   - { name: kubernetes, repo: 'https://github.com/kubernetes/kubernetes.git' }
+  - { name: openstack-on-lxd, repo: 'https://github.com/openstack-charmers/openstack-on-lxd.git' }
+  - { name: openstack-bundles, repo: 'https://github.com/openstack-charmers/openstack-bundles.git' }
 
 openstack_projects:
   - aodh
