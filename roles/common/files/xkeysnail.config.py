@@ -35,4 +35,5 @@ define_keymap(
         K("C-a"): K("HOME"),
         K("C-e"): K("END"),
         K("C-h"): K("BACKSPACE"),
+        K("C-k"): [K("END"), K("Shift-HOME"), K("C-x")],
     }, "VS Code")
