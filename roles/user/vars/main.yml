@@ -58,6 +58,7 @@ openstack_projects:
   - charm-openstack-dashboard
   - charm-percona-cluster
   - charm-rabbitmq-server
+  - charms.ceph
   - charms.openstack
   - charm-swift-proxy
   - charm-swift-storage
