@@ -5,6 +5,7 @@ networks:
 - config:
     ipv4.address: 10.0.8.1/24
     ipv4.nat: "true"
+    ipv4.dhcp.ranges: 10.0.8.51-10.0.8.200
     ipv6.address: none
   description: ""
   managed: true
