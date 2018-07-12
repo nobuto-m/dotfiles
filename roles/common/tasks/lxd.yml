@@ -55,3 +55,7 @@
     - { container: squid-deb-proxy, ipv4: 10.0.8.2 }
     - { container: mirror, ipv4: 10.0.8.3 }
   changed_when: False
+
+- name: juju profile
+  shell: echo "{{ lookup('file', 'files/lxd-juju-profile.yaml') }}" | lxc profile edit juju-default
+  changed_when: False
