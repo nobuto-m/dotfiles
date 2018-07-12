@@ -3,6 +3,11 @@
   shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
   changed_when: False
 
+- name: ubuntu-minimal
+  command: lxc remote add --protocol simplestreams ubuntu-minimal 'https://cloud-images.ubuntu.com/minimal/releases'
+  changed_when: False
+  ignore_errors: True
+
 - name: lxc alias
   command: lxc alias add ubuntu 'exec @ARGS@ -- sudo --login --user ubuntu'
   changed_when: False
