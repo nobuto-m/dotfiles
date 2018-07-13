@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from xkeysnail.transform import define_keymap
 from xkeysnail.transform import define_modmap
@@ -22,6 +21,8 @@ define_keymap(
         K("C-f"): K("RIGHT"),  # override Google Docs "Find"
         K("C-h"): K("BACKSPACE"),  # override Google Docs "Find and replace"
         K("C-Shift-f"): K("C-f"),  # Firefox "Find in this page"
+        K("C-a"): K("HOME"),
+        K("C-e"): K("END"),
     },
     "Firefox")
 
