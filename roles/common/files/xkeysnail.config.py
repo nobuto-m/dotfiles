@@ -21,8 +21,9 @@ define_keymap(
         K("C-f"): K("RIGHT"),  # override Google Docs "Find"
         K("C-h"): K("BACKSPACE"),  # override Google Docs "Find and replace"
         K("C-Shift-f"): K("C-f"),  # Firefox "Find in this page"
-        K("C-a"): K("HOME"),
-        K("C-e"): K("END"),
+        K("C-a"): K("HOME"),  # For Google Docs
+        K("C-e"): K("END"), # For Google Docs
+        K("C-d"): K("DELETE"), # For Google Docs
     },
     "Firefox")
 
