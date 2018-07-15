@@ -175,6 +175,7 @@ packages:
   - dstat
   - linux-tools-common
   - linux-tools-generic
+  - linux-doc
 
   # android
   #- android-sdk-platform-tools
