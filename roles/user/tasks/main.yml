@@ -130,7 +130,6 @@
       export LESS_TERMCAP_ue=$'\e[0m'
       export LESS_TERMCAP_us=$'\e[04;38;5;139m'
       
-      [ -r /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
       [ -r ~/.byobu/prompt ] && . ~/.byobu/prompt
       
       GIT_PS1_SHOWDIRTYSTATE=true
@@ -148,6 +147,8 @@
           [ -n "$VIRTUAL_ENV" ] && printf '(%s) ' "$(basename "$VIRTUAL_ENV")"
       }
       PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)$GIT_PS1__BASE" "\$ "'
+      
+      [ -r /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
 
 - name: git username
   ini_file:
