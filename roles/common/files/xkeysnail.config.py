@@ -24,6 +24,7 @@ define_keymap(
         K("C-a"): K("HOME"),  # For Google Docs
         K("C-e"): K("END"), # For Google Docs
         K("C-d"): K("DELETE"), # For Google Docs
+        K("C-Shift-d"): K("C-d"), # For Google Meets
     },
     "Firefox")
 
