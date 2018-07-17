@@ -82,6 +82,7 @@ packages:
   - virt-manager
   - ovmf
   - openvswitch-switch
+  - docker.io
 
   # doc
   #- pandoc
