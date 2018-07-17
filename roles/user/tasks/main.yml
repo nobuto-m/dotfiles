@@ -144,7 +144,10 @@
           local exit=$?
           [ "$exit" = 0 ] || printf '\[\e[7m\]%d\[\e[0m\] ' "$exit"
       }
-      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$GIT_PS1__BASE" "\$ "'
+      __show_venv() {
+          [ -n "$VIRTUAL_ENV" ] && printf '(%s) ' "$(basename "$VIRTUAL_ENV")"
+      }
+      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)$GIT_PS1__BASE" "\$ "'
 
 - name: git username
   ini_file:
