@@ -15,6 +15,7 @@ openstack_projects:
   - ceilometer
   - cinder
   - designate
+  - designate-tempest-plugin
   - glance
   - heat
   - horizon
