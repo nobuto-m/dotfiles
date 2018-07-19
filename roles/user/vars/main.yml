@@ -27,6 +27,7 @@ openstack_projects:
   - openstack-manuals
   - oslo.messaging
   - python-openstackclient
+  - python-tempestconf
   - refstack-client
   - swift
   - tempest
