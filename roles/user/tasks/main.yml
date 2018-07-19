@@ -141,12 +141,20 @@
       GIT_PS1__BASE="${GIT_PS1__BASE%\\}"
       __show_exit_status() {
           local exit=$?
-          [ "$exit" = 0 ] || printf '\[\e[7m\]%d\[\e[0m\] ' "$exit"
+          [ "$exit" = 0 ] || printf '\\[\\e[7m\\]%d\\[\\e[0m\\] ' "$exit"
       }
       __show_venv() {
           [ -n "$VIRTUAL_ENV" ] && printf '(%s) ' "$(basename "$VIRTUAL_ENV")"
       }
-      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)$GIT_PS1__BASE" "\$ "'
+      __show_openstack() {
+          if [ -n "$OS_CLOUD" ]; then
+              printf '(OS_CLOUD:\\e[96m%s\\e[0m)' "$OS_CLOUD"
+          elif [ -n "$OS_USERNAME" ]; then
+              printf '(OS_USERNAME:\\e[96m%s\\e[0m)' "$OS_USERNAME"
+          fi
+      }
+      
+      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)$GIT_PS1__BASE" "$(__show_openstack)\$ "'
       
       [ -r /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
 
