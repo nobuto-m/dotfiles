@@ -44,6 +44,7 @@ openstack_projects:
   - charm-cinder
   - charm-deployment-guide
   - charm-designate
+  - charm-designate-bind
   - charm-glance
   - charm-gnocchi
   - charm-guide
