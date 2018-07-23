@@ -1,5 +1,5 @@
 alias cdtemp='cd $(mktemp -d)'
-alias check-connectivity='httping -sGb -c3 -t5 www.google.co.jp | ccze -A'
+alias check-connectivity='httping -sGblY -c3 -t5 https://www.google.co.jp'
 alias xclips='xclip -selection clip'
 alias xclips-indent='xclips -o | sed -e "s/^/    /" | xclips'
 alias xclips-blockquote='xclips -o | sed -e "s/^/> /" | xclips'
