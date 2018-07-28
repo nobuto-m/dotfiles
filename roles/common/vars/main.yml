@@ -30,6 +30,7 @@ packages:
   - tox
   - zeal
   - exuberant-ctags
+  - npm
   - python3-doc
   - python3-examples
   - python3-pip
