@@ -11,6 +11,7 @@
     - lxd
     - conjure-up        --classic
     #- microk8s          --classic --beta
+    - snapcraft         --classic
     - multipass         --classic --beta
     - openstackclients  --classic --edge
     - vscode            --classic
