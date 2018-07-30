@@ -31,6 +31,7 @@ packages:
   - zeal
   - exuberant-ctags
   - npm
+  - libgconf-2-4 # electron
   - python3-doc
   - python3-examples
   - python3-pip
