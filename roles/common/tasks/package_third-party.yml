@@ -5,8 +5,9 @@
   failed_when: "snaps.rc != 0 and 'already installed' not in snaps.stderr"
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
-    - juju              --classic --beta
+    - juju              --classic --candidate
     - juju-wait         --classic
+    - juju-crashdump    --classic
     - charm
     - lxd
     - conjure-up        --classic
