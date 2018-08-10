@@ -1,4 +1,0 @@
----
-- name: update grub
-  command: update-grub
-  become: yes

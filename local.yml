@@ -16,6 +16,9 @@
       private: no
 
   roles:
+    # hardware specific
+    - { role: fmvs90tb, when: "ansible_product_name == 'FMVS90TB'" }
+
     - common
     - user
 
@@ -23,6 +26,3 @@
 
     # laptop specific
     - { role: laptop, when: "ansible_form_factor == 'Notebook'" }
-
-    # hardware specific
-    - { role: fmvs90tb, when: "ansible_product_name == 'FMVS90TB'" }
