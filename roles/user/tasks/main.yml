@@ -74,6 +74,9 @@
 - name: create dev directory
   file: path=~/dev state=directory
 
+- name: create sandpit directory
+  file: path=~/sandpit state=directory
+
 - name: copy dotfiles
   copy:
     src=files/dotfiles/
