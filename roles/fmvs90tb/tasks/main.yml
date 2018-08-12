@@ -8,7 +8,9 @@
     src=files/lp1500504.cfg
     dest=/etc/default/grub.d/lp1500504.cfg
   become: yes
+  register: lp_1500504
 
 - name: 'workaround for LP: #1500504 - update-grub'
   command: update-grub
   become: yes
+  when: lp_1500504 is changed

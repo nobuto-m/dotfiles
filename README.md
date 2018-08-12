@@ -64,6 +64,7 @@ for setting up my laptop
 
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
+* https://addons.mozilla.org/firefox/addon/toggl-button-time-tracker/
 
 ### remaining manual steps
 

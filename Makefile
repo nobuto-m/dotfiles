@@ -9,6 +9,10 @@ restore:
 	    gio+sftp://backup/srv/backup \
 	    ~/backup
 
+.PHONY: restore-copy-back
+restore-copy-back:
+	@ansible-playbook -vv --ask-become-pass --tags=restore local.yml
+
 .PHONY: full-setup
 full-setup:
 	@rm -f ~/.config/dconf/user.ini

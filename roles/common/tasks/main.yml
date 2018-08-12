@@ -14,7 +14,8 @@
 - include: package_third-party.yml
   become: yes
 
-- include: lxd.yml
+#- include: lxd.yml
+#  become: yes
 
 - include: xkeysnail.yml
   become: yes
