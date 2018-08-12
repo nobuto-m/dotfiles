@@ -11,7 +11,7 @@ for setting up my laptop
 
 1. boot up with the USB stick
 
-1. install Ubuntu Desktop with the options below (NOTE: installer may crash due to [LP: #1751252](https://launchpad.net/bugs/1751252). In that case, apply [the workaround](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes#line-403))
+1. install Ubuntu Desktop with the options below
    * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
 
 1. Shrink / to 120G
@@ -74,5 +74,7 @@ for setting up my laptop
 * select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
 * adjust VPN routes in network-manager
-* create `~/.gitconfig_COMPANY` with `[user] email = EMAIL` and include it from `~/.gitconfig` by `[includeIf "gitdir:~/dev/openstack/"] path = ~/.gitconfig_COMPANY`
+* create `~/.gitconfig_COMPANY` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
+  - `[includeIf "gitdir:~/dev/openstack/"] path = ~/.gitconfig_COMPANY`
+  - `[includeIf "gitdir:~/dev/COMPANY/"] path = ~/.gitconfig_COMPANY`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
