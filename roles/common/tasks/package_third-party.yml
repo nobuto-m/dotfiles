@@ -9,7 +9,7 @@
     - juju-wait         --classic
     - juju-crashdump    --classic
     - charm
-    - lxd               --channel 3.0/stable
+    - lxd
     - conjure-up        --classic
     #- microk8s          --classic --beta
     - kubectl           --classic
