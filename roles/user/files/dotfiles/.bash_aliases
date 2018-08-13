@@ -13,4 +13,5 @@ alias vpn-canonical-global='sudo openvpn ~/.sesame/us-nobuto-global.conf'
 alias vpn-canonical-tcp443='sudo openvpn ~/.sesame/us-nobuto-tcp443.conf'
 alias vpn-canonical-tcp443-global='sudo openvpn ~/.sesame/us-nobuto-tcp443-global.conf'
 alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" localhost'
+alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 lxc-exec() { lxc exec "$1" -- sudo -i -u ubuntu script /dev/null; }
