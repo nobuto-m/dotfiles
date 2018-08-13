@@ -176,6 +176,7 @@ packages:
   - powerstat
   - sysstat
   - dstat
+  - fio
   - linux-tools-common
   - linux-tools-generic
   - linux-doc
