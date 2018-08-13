@@ -177,6 +177,7 @@ packages:
   - sysstat
   - dstat
   - fio
+  - iperf3
   - linux-tools-common
   - linux-tools-generic
   - linux-doc
