@@ -27,6 +27,7 @@
   command: snap remove {{ item }}
   with_items:
     - gnome-3-26-1604
+    - gtk-common-themes
     - gnome-calculator
     - gnome-characters
     - gnome-logs
