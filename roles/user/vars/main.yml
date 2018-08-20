@@ -22,6 +22,7 @@ openstack_projects:
   - horizon
   - keystone
   - neutron
+  - neutron-dynamic-routing
   - neutron-lbaas
   - nova
   - nova-lxd
