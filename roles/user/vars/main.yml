@@ -30,6 +30,7 @@ openstack_projects:
   - oslo.messaging
   - python-openstackclient
   - python-tempestconf
+  - rally
   - refstack-client
   - swift
   - tempest
