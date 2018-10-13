@@ -15,7 +15,7 @@
     - kubectl           --classic
     - snapcraft         --classic
     - multipass         --classic --beta
-    - openstackclients  --classic --edge
+    - openstackclients  --classic
     - vscode            --classic
 
 #- name: stop microk8s
