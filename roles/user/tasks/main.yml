@@ -144,7 +144,7 @@
       GIT_PS1__BASE="${GIT_PS1__BASE%\\}"
       __show_exit_status() {
           local exit=$?
-          [ -z "$BYOBU_TERM" ] || return
+          [ -z "$BYOBU_TERM" -a -z "$BYOBU_TTY" ] || return
           [ "$exit" = 0 ] || printf '\\[\\e[7m\\]%d\\[\\e[0m\\] ' "$exit"
       }
       __show_venv() {
