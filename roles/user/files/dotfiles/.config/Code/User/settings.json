@@ -14,5 +14,6 @@
     "python.pythonPath": "python3",
     "python.sortImports.args": ["--force-single-line-imports", "--force-alphabetical-sort"],
     "window.zoomLevel": 1,
+    "window.titleBarStyle": "native",
     "workbench.colorTheme": "Quiet Light",
 }
