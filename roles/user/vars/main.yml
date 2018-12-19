@@ -27,6 +27,7 @@ openstack_projects:
   - neutron-lbaas
   - nova
   - nova-lxd
+  - octavia
   - openstack-manuals
   - oslo.messaging
   - python-openstackclient
