@@ -228,6 +228,14 @@
     value=true
     state=present
 
+- name: git merge.conflictStyle
+  ini_file:
+    dest=~/.gitconfig
+    section=merge
+    option=conflictStyle
+    value=diff3
+    state=present
+
 - name: render dconf
   template:
     src=templates/dconf.ini.j2
