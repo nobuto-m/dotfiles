@@ -14,7 +14,16 @@ user_pref("media.autoplay.enabled", false);
 user_pref("layout.spellcheckDefault", 2);
 user_pref("spellchecker.dictionary", "en-US");
 
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);
+
+user_pref("browser.contentblocking.category", "strict");
 user_pref("privacy.trackingprotection.enabled", true);
+user_pref("network.cookie.cookieBehavior", 4);
+user_pref("permissions.default.desktop-notification", 2);
+
+user_pref("services.sync.engine.history", false);
+user_pref("services.sync.engine.prefs", false);
+user_pref("services.sync.engine.tabs", false);
 
 user_pref("font.default.x-unicode", "sans-serif");
 user_pref("font.name.monospace.x-unicode", "DejaVu Sans Mono");
