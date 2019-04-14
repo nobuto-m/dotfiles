@@ -86,6 +86,11 @@
   shell: echo "{{ lookup('file', 'files/lxd-juju-profile-openstack.yaml') }}" | lxc profile edit juju-openstack
   changed_when: False
 
+- name: create juju kubernetes profile
+  shell: lxc profile create juju-kubernetes
+  changed_when: False
+  ignore_errors: True
+
 - name: import juju kubernetes profile
   shell: echo "{{ lookup('file', 'files/lxd-juju-profile-kubernetes.yaml') }}" | lxc profile edit juju-kubernetes
   changed_when: False
