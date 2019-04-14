@@ -40,6 +40,7 @@
   ignore_errors: True
   register: squid_deb_proxy
 
+# TODO: resize the root volume to 40+ GB or change squid config
 - name: init squid-deb-proxy container
   command: lxc init ubuntu:bionic --config=user.user-data="{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" squid-deb-proxy
   when: "squid_deb_proxy.rc != 0"
