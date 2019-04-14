@@ -80,7 +80,7 @@ packages:
 
   # virt
   - uvtool
-  #- lxd
+  - lxd
   - virt-manager
   - ovmf
   - openvswitch-switch
