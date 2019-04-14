@@ -5,23 +5,16 @@
   failed_when: "snaps.rc != 0 and 'already installed' not in snaps.stderr"
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
-    - juju              --classic --candidate
+    - juju              --classic
     - juju-wait         --classic
     - juju-crashdump    --classic
-    - charm
-    - lxd
+    - charm             --classic
     - conjure-up        --classic
-    #- microk8s          --classic --beta
     - kubectl           --classic
     - snapcraft         --classic
     - multipass         --classic --beta
     - openstackclients  --classic
-    - vscode            --classic
-
-#- name: stop microk8s
-#  command: snap disable microk8s
-#  changed_when: False
-#  when: snaps is changed
+    - code              --classic
 
 - name: remove some snaps
   command: snap remove {{ item }}
@@ -34,12 +27,6 @@
     - gnome-system-monitor
   changed_when: False
   ignore_errors: True
-
-- name: add user to lxd group
-  user:
-    name: "{{ ansible_user_id }}"
-    groups: lxd
-    append: yes
 
 - name: install xkeysnail
   pip:
