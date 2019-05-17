@@ -26,6 +26,7 @@ packages:
   - bzr
   - bzrtools
   - shellcheck
+  - yamllint
   - shunit2
   - tox
   - zeal
