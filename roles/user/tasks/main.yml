@@ -212,14 +212,6 @@
     value=true
     state=present
 
-- name: git diff.algorithm
-  ini_file:
-    dest=~/.gitconfig
-    section=diff
-    option=algorithm
-    value=histogram
-    state=present
-
 - name: git log.follow
   ini_file:
     dest=~/.gitconfig
