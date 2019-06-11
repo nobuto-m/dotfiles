@@ -319,6 +319,6 @@
 
 - name: clone openstack repos
   git:
-    repo: "https://git.openstack.org/openstack/{{ item }}"
+    repo: "https://opendev.org/openstack/{{ item }}"
     dest: "~/dev/openstack/{{ item }}"
   with_items: "{{ openstack_projects }}"
