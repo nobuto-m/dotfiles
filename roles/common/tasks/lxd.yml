@@ -1,13 +1,4 @@
 ---
-# https://github.com/lxc/lxd/issues/4645
-- name: periodically update LVM cache due to inconsistent cache with LXD snap
-  cron:
-    cron_file: /etc/cron.d/lxd-snap-lvm
-    name: 'Update LVM cache due to inconsistent cache with LXD snap'
-    minute: '*/2'
-    user: root
-    job: /sbin/lvscan --cache
-
 - name: LVM LXDThinPool
   lvol: vg=ubuntu-vg lv=LXDThinPool size=300G opts='--thin --discard nopassdown'
 
