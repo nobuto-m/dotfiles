@@ -68,7 +68,6 @@ for setting up my laptop
 
 ### remaining manual steps
 
-* try and install linux-signed-generic-hwe-18.04-edge for LVM thin provisioning stability on 18.04
 * login to Firefox Sync
 * pin tabs of e-mails, calendar, task-management, time-tracking, grammar-checker and messengers
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
