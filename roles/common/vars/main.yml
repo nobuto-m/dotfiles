@@ -8,7 +8,7 @@ packages:
   # unity desktop
   - unity-session
   - notify-osd
-  - xserver-xorg-input-synaptics
+  - xserver-xorg-input-synaptics-hwe-18.04
 
   # classic deb
   - gnome-characters
@@ -180,7 +180,7 @@ packages:
   - fio
   - iperf3
   - linux-tools-common
-  #- linux-tools-generic
+  - linux-tools-generic-hwe-18.04
   - linux-doc
 
   # android
