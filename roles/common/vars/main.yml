@@ -180,7 +180,7 @@ packages:
   - fio
   - iperf3
   - linux-tools-common
-  - linux-tools-generic
+  #- linux-tools-generic
   - linux-doc
 
   # android
