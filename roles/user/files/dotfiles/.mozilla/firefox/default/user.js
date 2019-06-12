@@ -30,6 +30,7 @@ user_pref("services.sync.engine.history", false);
 user_pref("services.sync.engine.prefs", false);
 user_pref("services.sync.engine.tabs", false);
 
+user_pref("media.eme.enabled", true);  // Play DRM-controlled content
 
 // Fonts
 user_pref("font.default.x-unicode", "sans-serif");
