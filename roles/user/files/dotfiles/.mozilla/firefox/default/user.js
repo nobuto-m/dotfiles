@@ -18,6 +18,7 @@ user_pref("layout.spellcheckDefault", 2);
 user_pref("spellchecker.dictionary", "en-US");
 
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
+user_pref("findbar.highlightAll", true);
 
 user_pref("browser.contentblocking.category", "strict");
 user_pref("privacy.trackingprotection.enabled", true);
