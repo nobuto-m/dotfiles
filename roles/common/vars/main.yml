@@ -118,6 +118,7 @@ packages:
   - xclip
   - oathtool
   - jq
+  - libxml-xpath-perl
   - pwgen
 
   # utils - network
