@@ -6,15 +6,15 @@
   changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
   with_items:
     - juju              --classic
-    - juju-wait         --classic
     - juju-crashdump    --classic
+    - juju-wait         --classic
     - charm             --classic
-    - conjure-up        --classic
     - kubectl           --classic
     - snapcraft         --classic
     - multipass         --classic --beta
     - openstackclients  --classic
     - code              --classic
+    - aws-cli           --classic
 
 - name: remove some snaps
   command: snap remove {{ item }}
