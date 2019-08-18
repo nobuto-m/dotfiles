@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Wi-Fi rescan
+Keywords=wifi;rescan;
+Exec=nmcli device wifi rescan
+Icon=network-wireless
