@@ -1,15 +1,15 @@
 ---
 - name: LVM LXDThinPool
-  lvol: vg=ubuntu-vg lv=LXDThinPool size=300G opts='--thin --discard nopassdown'
+  lvol: vg=vgubuntu lv=LXDThinPool size=300G opts='--thin --discard nopassdown'
 
 - name: mirror-content thin LV
-  command: lvcreate -T ubuntu-vg/LXDThinPool -V 300G -n mirror-content
+  command: lvcreate -T vgubuntu/LXDThinPool -V 300G -n mirror-content
   register: mirror_content_thin
   failed_when: "mirror_content_thin.rc != 0 and 'already exists' not in mirror_content_thin.stderr"
   changed_when: "mirror_content_thin.rc == 0"
 
 - name: mirror-content thin LV filesystem
-  filesystem: fstype=ext4 dev=/dev/ubuntu-vg/mirror-content
+  filesystem: fstype=ext4 dev=/dev/vgubuntu/mirror-content
 
 - name: lxd init
   shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
@@ -51,7 +51,7 @@
   when: "mirror.rc != 0"
 
 - name: attach LV to mirror container
-  command: lxc config device add mirror mirror_disk disk source=/dev/ubuntu-vg/mirror-content path=srv/mirror
+  command: lxc config device add mirror mirror_disk disk source=/dev/vgubuntu/mirror-content path=srv/mirror
   register: attach_lv_mirror
   failed_when: "attach_lv_mirror.rc != 0 and 'already exists' not in attach_lv_mirror.stderr"
   changed_when: "attach_lv_mirror.rc == 0"

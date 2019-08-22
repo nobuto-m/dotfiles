@@ -13,7 +13,7 @@ networks:
   type: ""
 storage_pools:
 - config:
-    source: ubuntu-vg
+    source: vgubuntu
     lvm.thinpool_name: LXDThinPool
     volume.block.mount_options: noatime,nobarrier,data=writeback
   description: ""

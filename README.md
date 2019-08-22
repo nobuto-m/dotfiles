@@ -17,8 +17,9 @@ for setting up my laptop
 1. Shrink / to 120G
 
     ```bash
-    $ sudo lvresize /dev/ubuntu-vg/root -L 120G --resizefs -v
+    $ sudo lvresize /dev/vgubuntu/root -L 120G --resizefs -v
     ```
+    NOTE: older Ubuntu may have "ubuntu-vg" as the VG name instead
 
 1. reboot
 
