@@ -1,12 +1,15 @@
 ---
 - name: configure apt-listchanges
   copy:
-    src=files/listchanges.conf
-    dest=/etc/apt/listchanges.conf
+    src: files/listchanges.conf
+    dest: /etc/apt/listchanges.conf
 
 - name: build git diff-highlight
   command: make -C /usr/share/doc/git/contrib/diff-highlight/
   changed_when: False
 
 - name: make git diff-highlight executable
-  copy: src=/usr/share/doc/git/contrib/diff-highlight/diff-highlight dest=/usr/local/bin/diff-highlight mode=0755
+  copy:
+    src: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
+    dest: /usr/local/bin/diff-highlight
+    mode: '0755'
