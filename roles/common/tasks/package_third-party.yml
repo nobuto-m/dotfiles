@@ -14,7 +14,6 @@
     - multipass         --classic --beta
     - openstackclients  --classic
     - code              --classic
-    - aws-cli           --classic
 
 - name: remove some snaps
   command: snap remove {{ item }}
@@ -33,19 +32,3 @@
     name: xkeysnail
     executable: pip3
     version: 0.2.0
-
-- name: add my-tools PPA
-  apt_repository:
-    repo: 'ppa:nobuto/my-tools'
-    state: present
-    update_cache: yes
-
-- name: install indicator-presentation
-  apt:
-    name: indicator-presentation
-    state: present
-
-- name: install gnome-sound-recorder-all
-  apt:
-    name: gnome-sound-recorder-all
-    state: present
