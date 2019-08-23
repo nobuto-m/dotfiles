@@ -1,6 +1,6 @@
 ---
 - name: LVM LXDThinPool
-  lvol: vg=vgubuntu lv=LXDThinPool size=300G opts='--thin --discard nopassdown'
+  lvol: vg=vgubuntu lv=LXDThinPool size=300G opts='--thin'
 
 - name: mirror-content thin LV
   command: lvcreate -T vgubuntu/LXDThinPool -V 300G -n mirror-content
