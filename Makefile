@@ -1,6 +1,8 @@
 .PHONY: setup
 setup:
-	@ansible-playbook -vv --ask-become-pass --skip-tags=restore local.yml
+	@ansible-playbook -vv --ask-become-pass \
+	    --skip-tags=restore \
+	    local.yml
 
 .PHONY: restore
 restore:
@@ -11,9 +13,12 @@ restore:
 
 .PHONY: restore-copy-back
 restore-copy-back:
-	@ansible-playbook -vv --ask-become-pass --tags=restore local.yml
+	@ansible-playbook -vv --ask-become-pass \
+	    --tags=restore \
+	    local.yml
 
 .PHONY: full-setup
 full-setup:
 	@rm -f ~/.config/dconf/user.ini
-	@ansible-playbook -vv --ask-become-pass local.yml
+	@ansible-playbook -vv --ask-become-pass \
+	    local.yml
