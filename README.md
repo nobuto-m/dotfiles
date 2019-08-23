@@ -14,7 +14,7 @@ for setting up my laptop
 1. install Ubuntu Desktop with the options below
    * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
 
-1. Shrink / to 120G
+1. Shrink / to 120G manually before reboot
 
     ```bash
     $ sudo lvresize /dev/vgubuntu/root -L 120G --resizefs -v
@@ -26,7 +26,13 @@ for setting up my laptop
 
 ## Use this repository
 
-1. install git and ansible first
+1. Tweak keybind for terminal operations per your prefrence first. For example:
+
+   ```bash
+   $ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+   ```
+
+1. install git, make and ansible
 
     ```bash
     $ sudo apt update && sudo apt install git make ansible
