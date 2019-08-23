@@ -2,7 +2,6 @@
 - name: install TLP
   apt:
     name: tlp
-    install_recommends: no
   become: yes
 
 - name: respect device power status on previous boot
