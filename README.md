@@ -5,9 +5,13 @@ for setting up my laptop
 
 ## Install Ubuntu Desktop
 
-1. get [the latest LTS image](https://www.ubuntu.com/download/desktop) or [the latest daily-live image](http://cdimage.ubuntu.com/daily-live/current/)
+1. get [the latest LTS image](https://www.ubuntu.com/download/desktop)
+   or [the latest daily-live image](http://cdimage.ubuntu.com/daily-live/current/)
 
-1. create a USB startup disk ([Ubuntu](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu), [Windows](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows), [macOS](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos))
+1. create a USB startup disk
+   ([Ubuntu](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu),
+   [Windows](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows),
+   [macOS](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos))
 
 1. boot up with the USB stick
 
@@ -53,7 +57,9 @@ for setting up my laptop
 
 1. download backup
 
-   Login to the backup server from console with password, then copy temporary ssh public key. Once SSH connection is confirmed, execute duplicity.
+   Login to the backup server from console with password, then copy
+   temporary ssh public key. Once SSH connection is confirmed, execute
+   duplicity.
 
     ```bash
     $ make restore
