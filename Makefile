@@ -6,7 +6,7 @@ setup:
 restore:
 	duplicity restore \
 	    --verbosity=info \
-	    gio+sftp://backup/srv/backup \
+	    gio+sftp://backup/srv/backup/$(shell hostname) \
 	    ~/backup
 
 .PHONY: restore-copy-back
