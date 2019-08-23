@@ -2,9 +2,6 @@
 - hosts: localhost
 
   roles:
-    # hardware specific
-    - { role: fmvs90tb, when: "ansible_product_name == 'FMVS90TB'" }
-
     - common
     - user
 
