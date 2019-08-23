@@ -1,17 +1,19 @@
 ---
 - name: setup tmpfs
   copy:
-    src=/usr/share/systemd/tmp.mount
-    dest=/etc/systemd/system/tmp.mount
+    src: /usr/share/systemd/tmp.mount
+    dest: /etc/systemd/system/tmp.mount
 
 - name: set swappiness
   sysctl:
-    name=vm.swappiness value=30 state=present
-    sysctl_file=/etc/sysctl.d/99-local.conf
+    name: vm.swappiness
+    value: '30'
+    state: present
+    sysctl_file: /etc/sysctl.d/99-local.conf
 
 - name: fuse allow_other for non-root users
   lineinfile:
-    dest=/etc/fuse.conf
-    regexp='^user_allow_other'
-    line='user_allow_other'
-    state=present
+    dest: /etc/fuse.conf
+    regexp: '^user_allow_other'
+    line: 'user_allow_other'
+    state: present
