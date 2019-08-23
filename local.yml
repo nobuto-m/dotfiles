@@ -1,20 +1,6 @@
 ---
 - hosts: localhost
 
-  vars_prompt:
-    - name: debfullname
-      prompt: 'Your full name for VCS'
-      private: no
-
-    - name: debemail
-      prompt: 'Your e-mail address for VCS'
-      private: no
-
-    - name: archive_mirror
-      prompt: 'Archive mirror'
-      default: http://jp.archive.ubuntu.com/ubuntu
-      private: no
-
   roles:
     # hardware specific
     - { role: fmvs90tb, when: "ansible_product_name == 'FMVS90TB'" }

@@ -1,4 +1,14 @@
 ---
+- name: get archive mirror URL
+  command: awk '$1 == "deb" {print $2; exit}' /etc/apt/sources.list
+  register: archive_mirror_parsed
+  changed_when: false
+
+- name: set archive mirror URL
+  set_fact:
+    archive_mirror: "{{ archive_mirror_parsed.stdout }}"
+  changed_when: false
+
 - name: enable -proposed
   template:
     src=templates/proposed.list.j2
