@@ -1,6 +1,9 @@
 ---
 eatmydata: { LD_LIBRARY_PATH: /usr/lib/libeatmydata, LD_PRELOAD: libeatmydata.so }
 
+snaps:
+  - chromium
+
 packages:
 
   - etckeeper
