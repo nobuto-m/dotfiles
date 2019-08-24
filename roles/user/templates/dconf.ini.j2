@@ -3,6 +3,9 @@
 [org/gnome/mutter]
 experimental-features=['x11-randr-fractional-scaling']
 
+[org/gnome/desktop/wm/preferences]
+button-layout='close,minimize,maximize:'
+
 [org/gnome/shell/extensions/dash-to-dock]
 dash-max-icon-size=26
 
@@ -10,14 +13,16 @@ dash-max-icon-size=26
 show-home=false
 show-trash=false
 
+[org/gnome/desktop/interface]
+gtk-key-theme='Emacs'
+clock-show-weekday=true
+clock-show-seconds=true
+
 [org/gnome/desktop/background]
 picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
 
 [org/gnome/desktop/screensaver]
 picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
-
-[org/gnome/desktop/interface]
-gtk-key-theme='Emacs'
 
 
 #### location service ####
