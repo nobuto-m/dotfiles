@@ -1,27 +1,19 @@
 ---
 - name: restrict home access
   file:
-    path: "{{ ansible_env.HOME }}"
+    path: "{{ ansible_user_dir }}"
     mode: 'o-rwx'
 
 - name: generate ssh key
   user:
-    name: "{{ ansible_env.USER }}"
+    name: "{{ ansible_user_id }}"
     generate_ssh_key: yes
-    ssh_key_comment: "{{ ansible_env.USER }}-default@{{ ansible_hostname }}"
+    ssh_key_comment: "{{ ansible_user_id }}-default@{{ ansible_hostname }}"
 
 - name: make sure ~/.local/bin/ exists
   file:
     path: ~/.local/bin
     state: directory
-
-# GTK_CSD=0 for gnome-terminal is handled by:
-# files/dotfiles/.config/systemd/user/gnome-terminal-server.service.d/override.conf
-- name: disable CSD with Firefox
-  file:
-    src: /usr/bin/gtk3-nocsd
-    dest: ~/.local/bin/firefox
-    state: link
 
 - name: download 16.04 wallpaper
   get_url:
@@ -104,28 +96,11 @@
     src=/usr/share/applications/indicator-multiload.desktop
     dest=~/.config/autostart/indicator-multiload.desktop
 
-- name: DEBFULLNAME
-  lineinfile:
-    dest=~/.bashrc
-    regexp='^export DEBFULLNAME='
-    line="export DEBFULLNAME='{{ debfullname }}'"
-    state=present
-  when: "debfullname != ''"
-
-- name: DEBEMAIL
-  lineinfile:
-    dest=~/.bashrc
-    regexp='^export DEBEMAIL='
-    line="export DEBEMAIL='{{ debemail }}'"
-    state=present
-  when: "debemail != ''"
-
 - name: bashrc
   blockinfile:
     dest: ~/.bashrc
     block: |
       unset ${!LC_*}
-      unset LD_PRELOAD
       
       export LESS='-R -j4'
       export LESS_TERMCAP_md=$'\e[01;38;5;180m'
@@ -159,26 +134,6 @@
       }
       
       PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)${GIT_PS1__BASE}" "$(__show_openstack)\$ "'
-      
-      [ -r /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
-
-- name: git username
-  ini_file:
-    dest=~/.gitconfig
-    section=user
-    option=name
-    value={{ debfullname }}
-    state=present
-  when: "debfullname != ''"
-
-- name: git email
-  ini_file:
-    dest=~/.gitconfig
-    section=user
-    option=email
-    value={{ debemail }}
-    state=present
-  when: "debemail != ''"
 
 - name: git core.excludesfile
   ini_file:
@@ -202,14 +157,6 @@
     section=core
     option=autocrlf
     value=input
-    state=present
-
-- name: git diff.renames
-  ini_file:
-    dest=~/.gitconfig
-    section=diff
-    option=renames
-    value=true
     state=present
 
 - name: git log.follow
@@ -311,14 +258,14 @@
     - Python_3
   when: docsets is changed
 
-- name: clone git repos
-  git:
-    repo: "{{ item.repo }}"
-    dest: "~/dev/{{ item.name }}"
-  with_items: "{{ git_repos }}"
+#- name: clone git repos
+#  git:
+#    repo: "{{ item.repo }}"
+#    dest: "~/dev/{{ item.name }}"
+#  with_items: "{{ git_repos }}"
 
-- name: clone openstack repos
-  git:
-    repo: "https://opendev.org/openstack/{{ item }}"
-    dest: "~/dev/openstack/{{ item }}"
-  with_items: "{{ openstack_projects }}"
+#- name: clone openstack repos
+#  git:
+#    repo: "https://opendev.org/openstack/{{ item }}"
+#    dest: "~/dev/openstack/{{ item }}"
+#  with_items: "{{ openstack_projects }}"

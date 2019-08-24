@@ -1,4 +1,2 @@
-export GTK_CSD=1
-
 # for xkeysnail
 xhost +SI:localuser:root
