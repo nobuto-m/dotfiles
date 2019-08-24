@@ -46,7 +46,7 @@
 
 - name: make XDG directories
   file:
-    path: {{ item }}
+    path: "{{ item }}"
     state: directory
   with_items:
     - ~/Documents/Music
