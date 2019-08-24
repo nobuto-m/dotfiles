@@ -1,60 +1,43 @@
 #### UI ####
 
-[com/ubuntu/user-interface]
-scale-factor={'eDP1': 12, 'eDP-1': 11}
-
-[org/compiz/profiles/unity/plugins/expo]
-x-offset=58
+[org/gnome/mutter]
+experimental-features=['x11-randr-fractional-scaling']
 
 [org/gnome/desktop/background]
 picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
 
+[org/gnome/desktop/screensaver]
+picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
+
 [org/gnome/desktop/interface]
-scaling-factor=uint32 1
-cursor-size=33
-text-scaling-factor=1.375
 gtk-key-theme='Emacs'
 
-[com/canonical/unity/launcher]
-favorites=['application://org.gnome.Nautilus.desktop', 'application://firefox.desktop', 'application://pidgin.desktop', 'application://vscode_vscode.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'unity://devices', 'unity://expo-icon']
 
-[org/compiz/profiles/unity/plugins/unityshell]
-icon-size=26
-launcher-capture-mouse=false
-show-minimized-windows=false
-
-[com/canonical/unity/lenses]
-remote-content-search='none'
-always-search=['applications.scope']
-home-lens-default-view=['applications.scope']
-
-[org/compiz/profiles/unity/plugins/core]
-hsize=2
-
-[org/compiz/profiles/unity/plugins/scale]
-initiate-edge='BottomLeft'
-overlay-icon=1
-
-[org/gnome/settings-daemon/plugins/xrandr]
-default-monitors-setup='do-nothing'
+#### location service ####
+[org/gnome/system/location]
+enabled=true
 
 
-#### touchpad ####
+#### touchpad and mouse ####
 
 [org/gnome/desktop/peripherals/touchpad]
 natural-scroll=false
-scroll-method='edge-scrolling'
+edge-scrolling-enabled=true
+two-finger-scrolling-enabled=false
+speed=1.0
+
+[org/gnome/desktop/peripherals/mouse]
 speed=1.0
 
 
 #### power #####
 
 [org/gnome/settings-daemon/plugins/power]
-button-power='suspend'
+power-button-action='suspend'
 critical-battery-action='shutdown'
 lid-close-ac-action='nothing'
 lid-close-battery-action='nothing'
-sleep-inactive-ac-timeout=0
+sleep-inactive-ac-type='nothing'
 sleep-inactive-battery-timeout=3600
 
 [org/gnome/desktop/screensaver]
@@ -90,22 +73,6 @@ audible-bell=false
 background-transparency-percent=10
 use-transparent-background=true
 visible-name='default'
-
-
-#### indicator ####
-
-[com/canonical/indicator/power]
-show-time=true
-
-[com/canonical/indicator/datetime]
-show-date=true
-locations=['America/Los_Angeles San Francisco', 'America/Denver Denver', 'America/Chicago Austin', 'America/New_York Boston', 'UTC UTC', 'Europe/London London', 'Europe/Paris Paris', 'Europe/Helsinki Helsinki', 'Europe/Moscow Moscow', 'Asia/Kolkata Bangalore', 'Asia/Shanghai Beijing', 'Asia/Taipei Taipei', 'Asia/Tokyo Tokyo', 'Australia/Sydney Sydney', 'Pacific/Auckland Wellington']
-show-day=true
-time-format='24-hour'
-show-week-numbers=true
-show-locations=true
-show-auto-detected-location=true
-show-seconds=true
 
 
 #### indicator-multiload ####
@@ -147,12 +114,6 @@ custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybin
 binding='<Primary><Alt>c'
 command='diodon'
 name='Diodon'
-
-
-#### indicator-presentation ####
-
-[net/launchpad/indicator-presentation]
-inhibit-interrupts=true
 
 
 #### gnome-sound-recorder ####
