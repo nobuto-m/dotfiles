@@ -8,6 +8,11 @@ packages:
 
   - etckeeper
 
+  # GNOME shell
+  - gnome-shell-extension-impatience
+  - gnome-shell-extension-remove-dropdown-arrows
+  - gnome-shell-extension-system-monitor
+
   # xkeysnail deps
   - python3-xlib
   - python3-evdev
