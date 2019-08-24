@@ -5,57 +5,31 @@ packages:
 
   - etckeeper
 
-  # unity desktop
-  - unity-session
-  - notify-osd
-  - xserver-xorg-input-synaptics-hwe-18.04
-
-  # classic deb
-  - gnome-characters
-
-  # xkeysnail
+  # xkeysnail deps
   - python3-xlib
   - python3-evdev
 
-  # minimal dev
+  # dev - minimal
   - packaging-dev
-  - debian-goodies
-  #- bikeshed
+  - debian-goodies  # dman
   - git
   - git-review
   - bzr
   - bzrtools
   - shellcheck
   - yamllint
-  - shunit2
   - tox
   - zeal
-  - exuberant-ctags
-  - npm
-  - libgconf-2-4 # electron
   - python3-doc
   - python3-examples
   - python3-pip
   - python3-flake8
   - python3-hacking
-  - python3-yapf
-  - python-dev
-  - python-flake8
-  - python-hacking
-  - python-yapf
 
   # dev
-  ## deb
-  #- dh-systemd
-  #- dh-apport
-  #- dh-golang
-  ## indicator-presentation
-  #- python3-distutils-extra
-  #- python3-nose
-  #- python3-dbusmock
-  #- xvfb
-  ## other
-  #- libffi-dev
+  #- exuberant-ctags
+  #- npm
+  #- python3-yapf
 
   # portable mirror
   - simplestreams
@@ -72,35 +46,21 @@ packages:
   - network-manager-l2tp-gnome
   - network-manager-openconnect-gnome
   - network-manager-openvpn-gnome
-  - network-manager-ssh-gnome
   - network-manager-vpnc-gnome
   - network-manager-strongswan
   - ike-scan
-  #- charon-cmd
-  #- ike
 
   # virt
   - uvtool
-  - lxd
   - virt-manager
   - ovmf
-  - openvswitch-switch
-  - docker.io
 
   # doc
-  #- pandoc
-  #- texlive-latex-recommended
-  #- diffpdf
+  - diffpdf
 
   # fonts
   - fonts-dejavu
-
-  # messenger
-  - pidgin
-  - pidgin-plugin-pack
-  ## no SNI support in xenial yet (from 2.12.0)
-  - hexchat
-  - hexchat-indicator
+  - fonts-ipafont
 
   # utils - apt
   - apt-listchanges
@@ -109,11 +69,10 @@ packages:
 
   # utils - terminal
   - byobu
-  - autojump
   - colordiff
   - dwdiff
   - ccze
-  - python-pygments
+  - python3-pygments
   - tree
   - xclip
   - oathtool
@@ -124,20 +83,12 @@ packages:
   # utils - network
   - curl
   - sshuttle
-  - pdsh
   - nmap
   - sipcalc
   - ipcalc
-  - ipv6calc
   - jnettop
-  #- speedometer
   - httping
   - zsync
-  - powerwake
-  #- stunnel4
-  #- proxytunnel
-  #- tsocks
-  #- proxychains
   - freeipmi-tools
   - w3m
 
@@ -150,27 +101,15 @@ packages:
   - python-gi
 
   # other
-  - ibus-mozc
   - dconf-editor
+  - gnome-tweaks
   - gimp
   - inkscape
-  #- graphviz
-  - chromium-browser
   - yubikey-personalization-gui
-  - gedit-plugins
   - gnome-sound-recorder
-  #- sox
-  #- gstreamer1.0-libav
-  #- gstreamer1.0-vaapi
-  #- byzanz
-  #- default-java-plugin
-  #- midori
-  #- maas-cli
 
   # storage/filesystem
   - thin-provisioning-tools
-  #- xfsprogs
-  #- zfsutils-linux
   - exfat-fuse
 
   # investigation
@@ -180,12 +119,7 @@ packages:
   - dstat
   - fio
   - iperf3
-  - linux-tools-common
-  - linux-tools-generic-hwe-18.04
   - linux-doc
-
-  # android
-  #- android-sdk-platform-tools
 
 
   # multiverse
