@@ -26,7 +26,9 @@
   when: wallpaper is changed
 
 - name: make sure wallpaper dir exists
-  file: path=~/.local/share/backgrounds state=directory
+  file:
+    path: ~/.local/share/backgrounds
+    state: directory
   when: wallpaper is changed
 
 - name: copy 16.04 wallpaper
@@ -37,10 +39,15 @@
   when: wallpaper is changed
 
 - name: create ssh controlmasters directory
-  file: path=~/.ssh/masters state=directory mode=0700
+  file:
+    path: ~/.ssh/masters
+    state: directory
+    mode: 0700
 
 - name: make XDG directories
-  file: path={{ item }} state=directory
+  file:
+    path: {{ item }}
+    state: directory
   with_items:
     - ~/Documents/Music
     - ~/Documents/Pictures
@@ -56,30 +63,42 @@
   when: xdg_dir is changed
 
 - name: clean up example link
-  file: path=~/examples.desktop state=absent
+  file:
+    path: ~/examples.desktop
+    state: absent
   when: xdg_dir is changed
 
 - name: clear gtk bookmarks
-  file: path=~/.config/gtk-3.0/bookmarks state=absent
+  file:
+    path: ~/.config/gtk-3.0/bookmarks
+    state: absent
   when: xdg_dir is changed
 
 - name: create dev directory
-  file: path=~/dev state=directory
+  file:
+    path: ~/dev
+    state: directory
 
 - name: create sandpit directory
-  file: path=~/sandpit state=directory
+  file:
+    path: ~/sandpit
+    state: directory
 
 - name: copy dotfiles
   copy:
-    src=files/dotfiles/
-    dest=~/
+    src: files/dotfiles/
+    dest: ~/
   register: dotfiles
 
 - name: make .lessfilter executable
-  file: path=~/.lessfilter mode=0755
+  file:
+    path: ~/.lessfilter
+    mode: 0755
 
 - name: make otp-ubuntu executable
-  file: path=~/.local/bin/otp-ubuntu mode=0755
+  file:
+    path: ~/.local/bin/otp-ubuntu
+    mode: 0755
 
 - name: generate ICC profile
   command: |
@@ -89,12 +108,14 @@
   when: dotfiles is changed
 
 - name: create autostart directory
-  file: path=~/.config/autostart state=directory
+  file:
+    path: ~/.config/autostart
+    state: directory
 
 - name: enable autostart of indicator-multiload
   copy:
-    src=/usr/share/applications/indicator-multiload.desktop
-    dest=~/.config/autostart/indicator-multiload.desktop
+    src: /usr/share/applications/indicator-multiload.desktop
+    dest: ~/.config/autostart/indicator-multiload.desktop
 
 - name: bashrc
   blockinfile:
@@ -137,48 +158,48 @@
 
 - name: git core.excludesfile
   ini_file:
-    dest=~/.gitconfig
-    section=core
-    option=excludesfile
-    value="~/.gitignore_global"
-    state=present
+    dest: ~/.gitconfig
+    section: core
+    option: excludesfile
+    value: "~/.gitignore_global"
+    state: present
 
 - name: git core.pager
   ini_file:
-    dest=~/.gitconfig
-    section=core
-    option=pager
-    value="diff-highlight | less -FRX"
-    state=present
+    dest: ~/.gitconfig
+    section: core
+    option: pager
+    value: "diff-highlight | less -FRX"
+    state: present
 
 - name: git core.autocrlf
   ini_file:
-    dest=~/.gitconfig
-    section=core
-    option=autocrlf
-    value=input
-    state=present
+    dest: ~/.gitconfig
+    section: core
+    option: autocrlf
+    value: input
+    state: present
 
 - name: git log.follow
   ini_file:
-    dest=~/.gitconfig
-    section=log
-    option=follow
-    value=true
-    state=present
+    dest: ~/.gitconfig
+    section: log
+    option: follow
+    value: true
+    state: present
 
 - name: git merge.conflictStyle
   ini_file:
-    dest=~/.gitconfig
-    section=merge
-    option=conflictStyle
-    value=diff3
-    state=present
+    dest: ~/.gitconfig
+    section: merge
+    option: conflictStyle
+    value: diff3
+    state: present
 
 - name: render dconf
   template:
-    src=templates/dconf.ini.j2
-    dest=~/.config/dconf/user.ini
+    src: templates/dconf.ini.j2
+    dest: ~/.config/dconf/user.ini
   register: dconf
 
 - name: reset dconf
@@ -186,7 +207,8 @@
   when: dconf is changed
 
 - name: pause to prevent dconf race conditions
-  pause: seconds=5
+  pause:
+    seconds: 5
   when: dconf is changed
 
 - name: import dconf
@@ -195,10 +217,10 @@
 
 - name: 'workaround for LP: #1422290 - UNZIP'
   lineinfile:
-    dest=~/.profile
-    regexp="^export {{ item }}="
-    line="export {{ item }}='-O CP932 -I CP932'"
-    state=present
+    dest: ~/.profile
+    regexp: "^export {{ item }}="
+    line: "export {{ item }}='-O CP932 -I CP932'"
+    state: present
   with_items:
     - UNZIP
     - ZIPINFO
