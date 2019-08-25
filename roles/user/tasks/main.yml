@@ -38,6 +38,25 @@
     remote_src: yes
   when: wallpaper is changed
 
+- name: download unite extension
+  get_url:
+    url: https://extensions.gnome.org/extension-data/unitehardpixel.eu.v31.shell-extension.zip
+    dest: ~/Downloads/unitehardpixel.eu.v31.shell-extension.zip
+  register: unite
+
+- name: make sure unite extension dir exists
+  file:
+    path: ~/.local/share/gnome-shell/extensions/unite@hardpixel.eu
+    state: directory
+  when: unite is changed
+
+- name: extract unite extension
+  unarchive:
+    src: ~/Downloads/unitehardpixel.eu.v31.shell-extension.zip
+    dest: ~/.local/share/gnome-shell/extensions/unite@hardpixel.eu
+    remote_src: yes
+  when: unite is changed
+
 - name: create ssh controlmasters directory
   file:
     path: ~/.ssh/masters
