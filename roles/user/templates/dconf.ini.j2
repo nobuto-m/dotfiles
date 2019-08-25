@@ -1,38 +1,39 @@
 #### UI ####
 
-[org/gnome/mutter]
-experimental-features=['x11-randr-fractional-scaling']
-
-[org/gnome/desktop/wm/preferences]
-button-layout='close,minimize,maximize:'
-
-[org/gnome/shell/extensions/dash-to-dock]
-dash-max-icon-size=26
-
-[org/gnome/shell/extensions/desktop-icons]
-show-home=false
-show-trash=false
+[org/gnome/desktop/background]
+picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
 
 [org/gnome/desktop/interface]
 gtk-key-theme='Emacs'
 clock-show-weekday=true
 clock-show-seconds=true
 
-[org/gnome/desktop/background]
-picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
-
 [org/gnome/desktop/screensaver]
 picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
 
+[org/gnome/desktop/wm/preferences]
+button-layout='close,minimize,maximize:'
+
+[org/gnome/mutter]
+experimental-features=['x11-randr-fractional-scaling']
+
 [org/gnome/shell]
 enable-hot-corners=true
+enabled-extensions=['impatience@gfxmonk.net', 'remove-dropdown-arrows@mpdeimos.com', 'system-monitor@paradoxxx.zero.gmail.com']
 favorite-apps=['org.gnome.Nautilus.desktop', 'firefox.desktop', 'code_code.desktop', 'gnome-control-center.desktop']
 
 [org/gnome/shell/extensions/dash-to-dock]
+dash-max-icon-size=24
 transparency-mode='FIXED'
+background-opacity=0.9
+show-apps-at-top=true
+
+[org/gnome/shell/extensions/desktop-icons]
+show-home=false
+show-trash=false
 
 [org/gnome/shell/extensions/net/gfxmonk/impatience]
-speed-factor=0.5
+speed-factor=0.75
 
 
 #### location service ####
@@ -96,6 +97,7 @@ default='b1dcc9dd-5262-4d8d-a863-c897e6d979b9'
 [org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 audible-bell=false
 background-transparency-percent=10
+use-theme-transparency=false
 use-transparent-background=true
 visible-name='default'
 
