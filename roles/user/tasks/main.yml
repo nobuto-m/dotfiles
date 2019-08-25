@@ -236,7 +236,7 @@
   register: vscode_plugin
 
 - name: vscode plugins
-  command: vscode --install-extension {{ item }}
+  command: code --install-extension {{ item }}
   with_items:
     - ms-python.python
     - redhat.vscode-yaml
