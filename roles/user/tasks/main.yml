@@ -107,16 +107,6 @@
       ~/.local/share/icc/Gamma.xml
   when: dotfiles is changed
 
-- name: create autostart directory
-  file:
-    path: ~/.config/autostart
-    state: directory
-
-- name: enable autostart of indicator-multiload
-  copy:
-    src: /usr/share/applications/indicator-multiload.desktop
-    dest: ~/.config/autostart/indicator-multiload.desktop
-
 - name: bashrc
   blockinfile:
     dest: ~/.bashrc

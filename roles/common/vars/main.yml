@@ -101,7 +101,6 @@ packages:
   - w3m
 
   # utils - indicator
-  - indicator-multiload
   - diodon
 
   # backup
