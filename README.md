@@ -55,6 +55,8 @@ for setting up my laptop
     $ make setup
     ```
 
+1. reboot
+
 1. download backup
 
    Login to the backup server from console with password, then copy

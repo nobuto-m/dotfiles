@@ -15,18 +15,6 @@
     - openstackclients  --classic
     - code              --classic
 
-- name: remove some snaps
-  command: snap remove {{ item }}
-  with_items:
-    - gnome-3-26-1604
-    - gtk-common-themes
-    - gnome-calculator
-    - gnome-characters
-    - gnome-logs
-    - gnome-system-monitor
-  changed_when: False
-  ignore_errors: True
-
 - name: install xkeysnail
   pip:
     name: xkeysnail
