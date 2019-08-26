@@ -27,17 +27,3 @@ define_keymap(
         K("C-Shift-d"): K("C-d"), # For Google Meets
     },
     "Firefox")
-
-# Keybindings for VS Code
-define_keymap(
-    re.compile("^Code$"), {
-        K("C-p"): K("UP"),
-        K("C-n"): K("DOWN"),
-        K("C-b"): K("LEFT"),
-        K("C-f"): K("RIGHT"),
-        K("C-a"): K("HOME"),
-        K("C-e"): K("END"),
-        K("C-h"): K("BACKSPACE"),
-        K("C-d"): K("DELETE"),
-        K("C-k"): [K("END"), K("Shift-HOME"), K("C-x")],
-    }, "VS Code")
