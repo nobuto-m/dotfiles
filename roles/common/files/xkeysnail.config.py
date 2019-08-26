@@ -20,10 +20,10 @@ define_keymap(
         K("C-p"): K("UP"),  # override Google Docs "Print"
         K("C-f"): K("RIGHT"),  # override Google Docs "Find"
         K("C-h"): K("BACKSPACE"),  # override Google Docs "Find and replace"
-        K("C-Shift-f"): K("C-f"),  # Firefox "Find in this page"
+        K("C-Shift-f"): K("C-f"),  # Replacement of the original C-f
         K("C-a"): K("HOME"),  # For Google Docs
         K("C-e"): K("END"), # For Google Docs
         K("C-d"): K("DELETE"), # For Google Docs
-        K("C-Shift-d"): K("C-d"), # For Google Meets
+        K("C-Shift-d"): K("C-d"), # Replacement of the original C-d
     },
     "Firefox")
