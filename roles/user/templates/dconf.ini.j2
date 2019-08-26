@@ -7,15 +7,13 @@ picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-
 gtk-key-theme='Emacs'
 clock-show-weekday=true
 clock-show-seconds=true
+text-scaling-factor=1.4
 
 [org/gnome/desktop/screensaver]
 picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
 
 [org/gnome/desktop/wm/preferences]
 button-layout='close,minimize,maximize:'
-
-[org/gnome/mutter]
-experimental-features=['x11-randr-fractional-scaling']
 
 [org/gnome/shell]
 enable-hot-corners=true
@@ -25,7 +23,7 @@ favorite-apps=['org.gnome.Nautilus.desktop', 'firefox.desktop', 'code_code.deskt
 [org/gnome/shell/extensions/dash-to-dock]
 background-color='#5e2750'
 custom-background-color=true
-dash-max-icon-size=24
+dash-max-icon-size=32
 transparency-mode='FIXED'
 background-opacity=0.9
 show-apps-at-top=true
