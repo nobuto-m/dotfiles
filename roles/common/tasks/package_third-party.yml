@@ -1,20 +1,4 @@
 ---
-- name: install snaps
-  command: snap install {{ item }}
-  register: snaps
-  failed_when: "snaps.rc != 0 and 'already installed' not in snaps.stderr"
-  changed_when: "snaps.rc == 0 and 'already installed' not in snaps.stderr"
-  with_items:
-    - juju              --classic
-    - juju-crashdump    --classic
-    - juju-wait         --classic
-    - charm             --classic
-    - kubectl           --classic
-    - snapcraft         --classic
-    - multipass         --classic --beta
-    - openstackclients  --classic
-    - code              --classic
-
 - name: install xkeysnail
   pip:
     name: xkeysnail

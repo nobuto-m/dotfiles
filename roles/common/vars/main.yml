@@ -3,6 +3,16 @@ eatmydata: { LD_LIBRARY_PATH: /usr/lib/libeatmydata, LD_PRELOAD: libeatmydata.so
 
 snaps:
   - chromium
+  - code                --classic
+  - lxd
+  - juju                --classic
+  - juju-crashdump      --classic
+  - juju-wait           --classic
+  - charm               --classic
+  - snapcraft           --classic
+  - kubectl             --classic
+  - openstackclients    --classic
+  - multipass           --classic --beta
 
 packages:
 

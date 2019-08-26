@@ -1,0 +1,6 @@
+---
+- name: install snaps
+  command: snap install {{ item }}
+  register: snap
+  changed_when: "snap.rc == 0 and 'is already installed' not in snap.stderr"
+  with_items: "{{ snaps }}"
