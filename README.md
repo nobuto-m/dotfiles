@@ -45,7 +45,7 @@ for setting up my laptop
 1. clone the repo
 
     ```bash
-    $ git clone https://github.com/nobuto-m/dotfiles.git -b t480
+    $ git clone https://github.com/nobuto-m/dotfiles.git
     ```
 
 1. execute
