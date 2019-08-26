@@ -75,13 +75,7 @@ for setting up my laptop
 
 ## Manual setup
 
-### Firefox add-ons
-
-* https://addons.mozilla.org/firefox/addon/markdown-here/
-* https://addons.mozilla.org/firefox/addon/greasemonkey/
-* https://addons.mozilla.org/firefox/addon/mousedictionary/
-
-### remaining manual steps
+### Remaining manual steps
 
 * login to Firefox Sync
 * pin tabs of e-mails, calendar, task-management, time-tracking, grammar-checker and messengers
@@ -93,3 +87,9 @@ for setting up my laptop
   - `[includeIf "gitdir:~/dev/openstack/"] path = ~/.gitconfig_COMPANY`
   - `[includeIf "gitdir:~/dev/COMPANY/"] path = ~/.gitconfig_COMPANY`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
+
+### Firefox add-ons
+
+* https://addons.mozilla.org/firefox/addon/markdown-here/
+* https://addons.mozilla.org/firefox/addon/greasemonkey/
+* https://addons.mozilla.org/firefox/addon/mousedictionary/
