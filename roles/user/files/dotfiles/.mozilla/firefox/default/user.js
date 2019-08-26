@@ -11,7 +11,7 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
 
 // HiDPI tweak
-user_pref("layout.css.devPixelsPerPx", "1.8");
+user_pref("layout.css.devPixelsPerPx", "1.6");
 
 // Enable spellchecker for multi-line controls and single-line controls
 user_pref("layout.spellcheckDefault", 2);
@@ -21,8 +21,6 @@ user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 user_pref("findbar.highlightAll", true);
 
 user_pref("browser.contentblocking.category", "strict");
-user_pref("privacy.trackingprotection.enabled", true);
-user_pref("network.cookie.cookieBehavior", 4);  // Block cookies from trackers
 user_pref("permissions.default.desktop-notification", 2);  // deny by default
 user_pref("permissions.default.geo", 2);  // deny by default
 user_pref("accessibility.force_disabled", 1);
