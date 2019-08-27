@@ -7,6 +7,7 @@ picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-
 gtk-key-theme='Emacs'
 clock-show-weekday=true
 clock-show-seconds=true
+cursor-size=32
 show-battery-percentage=true
 text-scaling-factor=1.4
 
@@ -70,8 +71,10 @@ automatic-timezone=true
 speed=1.0
 
 [org/gnome/desktop/peripherals/mouse]
-locate-pointer=true
 speed=1.0
+
+[org/gnome/settings-daemon/peripherals/mouse]
+locate-pointer=true
 
 
 #### power #####
