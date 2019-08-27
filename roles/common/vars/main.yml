@@ -130,6 +130,7 @@ packages:
   - exfat-fuse
 
   # investigation
+  - htop
   - powertop
   - powerstat
   - sysstat
