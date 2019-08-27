@@ -197,7 +197,7 @@
     dest: ~/.gitconfig
     section: log
     option: follow
-    value: true
+    value: 'true'
     state: present
 
 - name: git merge.conflictStyle
