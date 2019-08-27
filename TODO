@@ -2,3 +2,4 @@
 * git find file
 * git top dir
 * auto-lock with lid-close without suspend
+* fix backup mount with gio
