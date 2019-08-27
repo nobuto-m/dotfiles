@@ -83,7 +83,6 @@ for setting up my laptop
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
-* adjust VPN routes in network-manager
 * set git `user.name` and `user.name` with `git config --global`
 * create `~/.gitconfig_COMPANY` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
   - `git config --global includeIf.'gitdir:~/dev/openstack/'.path ~/.gitconfig_COMPANY`
