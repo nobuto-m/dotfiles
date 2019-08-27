@@ -87,6 +87,10 @@ for setting up my laptop
   - `[includeIf "gitdir:~/dev/openstack/"] path = ~/.gitconfig_COMPANY`
   - `[includeIf "gitdir:~/dev/COMPANY/"] path = ~/.gitconfig_COMPANY`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
+* configure Chromium with:
+  - set the default camera as a non-IR one
+  - set `https://meet.google.com/` as a start-up page
+  - `Offer to translate pages that aren't in a language you read` - off
 
 ### Firefox add-ons
 
