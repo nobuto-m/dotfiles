@@ -1,4 +1,12 @@
 ---
+- name: disable lid-close suspend
+  blockinfile:
+    dest: /etc/systemd/logind.conf
+    block: |
+      HandleLidSwitch=ignore
+      HandleLidSwitchExternalPower=ignore
+  become: yes
+
 - name: install TLP
   apt:
     name: tlp

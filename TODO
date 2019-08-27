@@ -1,4 +1,4 @@
 * network-manager - shared connection from Wi-Fi to wired
 * git find file
 * git top dir
-* disable lid-close suspend properly
+* auto-lock with lid-close without suspend
