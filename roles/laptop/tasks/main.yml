@@ -1,10 +1,10 @@
 ---
-- name: disable lid-close suspend
+- name: disable lid-close suspend, but lock
   blockinfile:
     dest: /etc/systemd/logind.conf
     block: |
-      HandleLidSwitch=ignore
-      HandleLidSwitchExternalPower=ignore
+      HandleLidSwitch=lock
+      HandleLidSwitchExternalPower=lock
   become: yes
 
 - name: install TLP
