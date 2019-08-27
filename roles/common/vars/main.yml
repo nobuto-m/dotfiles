@@ -135,6 +135,7 @@ packages:
   - powerstat
   - sysstat
   - dstat
+  - stress-ng
   - fio
   - iperf3
   - linux-doc
