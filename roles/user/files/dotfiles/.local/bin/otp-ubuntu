@@ -6,7 +6,7 @@ set -u
 secret_file=~/.otp-ubuntu.secret
 count_file=~/.otp-ubuntu.count
 
-secret=$(cat "$secret_file")
+secret=$(cat "$secret_file" | sed -e 's/ //g')
 
 if [ -e "$count_file" ]; then
     count=$(cat "$count_file")
