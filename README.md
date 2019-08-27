@@ -84,9 +84,10 @@ for setting up my laptop
 * select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
 * adjust VPN routes in network-manager
+* set git `user.name` and `user.name` with `git config --global`
 * create `~/.gitconfig_COMPANY` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
-  - `[includeIf "gitdir:~/dev/openstack/"] path = ~/.gitconfig_COMPANY`
-  - `[includeIf "gitdir:~/dev/COMPANY/"] path = ~/.gitconfig_COMPANY`
+  - `git config --global includeIf.'gitdir:~/dev/openstack/'.path ~/.gitconfig_COMPANY`
+  - `git config --global includeIf.'gitdir:~/dev/COMPANY/'.path ~/.gitconfig_COMPANY`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
 * configure Chromium with:
   - set the default camera as a non-IR one
