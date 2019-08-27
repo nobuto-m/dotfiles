@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<profile>
+  <name>Gamma6400K</name>
+  <type>temperature</type>
+  <description>D64</description>
+  <copyright>This profile is free of known copyright restrictions</copyright>
+  <license>CC0</license>
+  <temperature>6400</temperature>
+  <gamma>1.0</gamma>
+</profile>

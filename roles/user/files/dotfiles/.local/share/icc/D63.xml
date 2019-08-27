@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <profile>
-  <name>Gamma6500K</name>
+  <name>Gamma6300K</name>
   <type>temperature</type>
   <description>D63</description>
   <copyright>This profile is free of known copyright restrictions</copyright>
   <license>CC0</license>
-  <temperature>6304</temperature>
+  <temperature>6300</temperature>
   <gamma>1.0</gamma>
 </profile>

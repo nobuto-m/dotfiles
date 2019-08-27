@@ -122,9 +122,12 @@
 - name: generate ICC profile
   command: |
     cd-create-profile \
-      --output ~/.local/share/icc/Gamma.icc \
-      ~/.local/share/icc/Gamma.xml
+      --output ~/.local/share/icc/{{ item }}.icc \
+      ~/.local/share/icc/{{ item }}.xml
   when: dotfiles is changed
+  with_items:
+    - D63
+    - D64
 
 - name: bashrc
   blockinfile:
