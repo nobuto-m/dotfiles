@@ -5,7 +5,13 @@
     - common
     - user
 
-    - { role: restore, tags: restore }
+    - role: restore
+      tags: restore
 
     # laptop specific
-    - { role: laptop, when: "ansible_form_factor == 'Notebook'" }
+    - role: laptop
+      when: "ansible_form_factor == 'Notebook'"
+
+    # hardware specific
+    - role: hardware_t480
+      when: "ansible_product_version == 'ThinkPad T480'"
