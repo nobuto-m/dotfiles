@@ -11,9 +11,9 @@ define_modmap({
     Key.CAPSLOCK: Key.LEFT_CTRL  # xkb-options=['ctrl:nocaps']
 })
 
-# Keybindings for Firefox
+# Keybindings for Web browser
 define_keymap(
-    re.compile("^Firefox$"),
+    re.compile("^(Firefox|Chromium)$"),
     {
         K("C-n"): K("DOWN"),  # override Firefox "New Window"
         K("C-b"): K("LEFT"),  # override Gmail, Google Docs "Bold"
@@ -26,4 +26,4 @@ define_keymap(
         K("C-d"): K("DELETE"), # For Google Docs
         K("C-Shift-d"): K("C-d"), # Replacement of the original C-d
     },
-    "Firefox")
+    "Web browser")
