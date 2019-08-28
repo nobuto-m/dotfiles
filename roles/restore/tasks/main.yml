@@ -1,8 +1,4 @@
 ---
-- name: download backup
-  command: duplicity restore sftp://vps-jp/srv/backup ~/backup
-    creates=~/backup
-
 - name: restore files
   copy:
     src: ~/backup{{ ansible_env.HOME }}/{{ item }}
@@ -14,13 +10,4 @@
     - .sesame/
     - .ssh/
     - .gnupg/
-    - .purple/accounts.xml
-    - .purple/blist.xml
     - .znc/
-
-- name: import VPNs
-  command: nmcli connection import type openvpn file "{{ item }}"
-  with_items:
-    - ~/.sesame/us-nobuto.conf
-    - ~/.sesame/us-nobuto-tcp443.conf
-    - ~/.sesame/us-nobuto-tcp443-global.conf
