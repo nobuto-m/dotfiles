@@ -1,0 +1,1 @@
+SUBSYSTEM=="usb", ATTRS{product}=="Integrated IR Camera", ATTR{authorized}="0"
