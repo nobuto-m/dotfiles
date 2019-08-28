@@ -1,4 +1,7 @@
 * network-manager - shared connection from Wi-Fi to wired
 * git find file
 * fix backup mount with gio
-* cannot unlock after logout/login
+* world clock
+* fix clock spacing
+* lxd with snap
+* tilix
