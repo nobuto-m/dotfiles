@@ -23,6 +23,7 @@ define_keymap(
         K("C-Shift-f"): K("C-f"),  # Replacement of the original C-f
         K("C-a"): K("HOME"),  # For Google Docs
         K("C-e"): K("END"), # For Google Docs
+        K("C-Shift-e"): K("C-e"), # Replacement of the original C-e
         K("C-d"): K("DELETE"), # For Google Docs
         K("C-Shift-d"): K("C-d"), # Replacement of the original C-d
     },
