@@ -38,24 +38,35 @@
     remote_src: yes
   when: wallpaper is changed
 
-- name: download unite extension
+- name: set the list of extensions
+  set_fact:
+    extensions:
+      - id: unite@hardpixel.eu
+        file: unitehardpixel.eu.v31.shell-extension.zip
+      - id: clock-override@gnomeshell.kryogenix.org
+        file: clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip
+
+- name: download extension
   get_url:
-    url: https://extensions.gnome.org/extension-data/unitehardpixel.eu.v31.shell-extension.zip
-    dest: ~/Downloads/unitehardpixel.eu.v31.shell-extension.zip
-  register: unite
+    url: https://extensions.gnome.org/extension-data/{{ item.file }}
+    dest: ~/Downloads/{{ item.file }}
+  register: extension
+  with_items: "{{ extensions }}"
 
-- name: make sure unite extension dir exists
+- name: make sure extension dir exists
   file:
-    path: ~/.local/share/gnome-shell/extensions/unite@hardpixel.eu
+    path: ~/.local/share/gnome-shell/extensions/{{ item.id}}
     state: directory
-  when: unite is changed
+  with_items: "{{ extensions }}"
+  when: extension is changed
 
-- name: extract unite extension
+- name: extract extension
   unarchive:
-    src: ~/Downloads/unitehardpixel.eu.v31.shell-extension.zip
-    dest: ~/.local/share/gnome-shell/extensions/unite@hardpixel.eu
+    src: ~/Downloads/{{ item.file }}
+    dest: ~/.local/share/gnome-shell/extensions/{{ item.id }}
     remote_src: yes
-  when: unite is changed
+  with_items: "{{ extensions }}"
+  when: extension is changed
 
 - name: create ssh controlmasters directory
   file:
