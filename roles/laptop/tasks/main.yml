@@ -18,10 +18,12 @@
     name: tlp
   become: yes
 
-- name: respect device power status on previous boot
-  lineinfile:
-    dest: /etc/default/tlp
-    regexp: '^RESTORE_DEVICE_STATE_ON_STARTUP='
-    line: 'RESTORE_DEVICE_STATE_ON_STARTUP=1'
-    state: present
+- name: update TLP config
+  blockinfile:
+    path: /etc/default/tlp
+    block: |
+      # ------------------------------------------------------------------------------
+      RESTORE_DEVICE_STATE_ON_STARTUP=1
+      START_CHARGE_THRESH_BAT1=80
+      STOP_CHARGE_THRESH_BAT1=95
   become: yes
