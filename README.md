@@ -78,8 +78,9 @@ for setting up my laptop
 ### Remaining manual steps
 
 * login to Firefox Sync
+* pin tabs in Firefox including e-mails, calendar, task-management, time-tracking, grammar-checker and messengers
+* enable notifications from specific tabs
 * setup an OTP device
-* pin tabs of e-mails, calendar, task-management, time-tracking, grammar-checker and messengers
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
