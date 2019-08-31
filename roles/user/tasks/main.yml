@@ -45,6 +45,8 @@
         file: unitehardpixel.eu.v31.shell-extension.zip
       - id: clock-override@gnomeshell.kryogenix.org
         file: clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip
+      - id: donotdisturb@kylecorry31.github.io
+        file: donotdisturbkylecorry31.github.io.v12.shell-extension.zip
 
 - name: download extension
   get_url:
