@@ -5,4 +5,6 @@
 * lxd with snap
 * tilix
 * title of active windows is left in top bar in lock screen
+* clock rendering is fragile
 * caffeine
+* add "menu" key by changing key assignment
