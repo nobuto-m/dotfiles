@@ -132,6 +132,22 @@
     path: ~/.local/bin/otp-ubuntu
     mode: 0755
 
+- name: copy chromium.desktop locally
+  copy:
+    src: /var/lib/snapd/desktop/applications/chromium_chromium.desktop
+    dest: ~/.local/share/applications/chromium_chromium.desktop
+
+- name: get scale factor of Firefox to be copied to Chromium
+  shell: 'grep layout.css.devPixelsPerPx files/dotfiles/.mozilla/firefox/default/user.js | cut -d\" -f4'
+  register: scale_factor
+  changed_when: False
+
+- name: edit chromium.desktop to set the scale factor - LP: #1837746
+  replace:
+    path: ~/.local/share/applications/chromium_chromium.desktop
+    regexp: '/snap/bin/chromium .*%U'
+    replace: '/snap/bin/chromium --force-device-scale-factor={{ scale_factor.stdout }} %U'
+
 - name: generate ICC profile
   command: |
     cd-create-profile \
