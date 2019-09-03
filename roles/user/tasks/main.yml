@@ -136,9 +136,10 @@
   copy:
     src: /var/lib/snapd/desktop/applications/chromium_chromium.desktop
     dest: ~/.local/share/applications/chromium_chromium.desktop
+    force: no
 
 - name: get scale factor of Firefox to be copied to Chromium
-  shell: 'grep layout.css.devPixelsPerPx files/dotfiles/.mozilla/firefox/default/user.js | cut -d\" -f4'
+  shell: 'grep layout.css.devPixelsPerPx ~/.mozilla/firefox/default/user.js | cut -d\" -f4'
   register: scale_factor
   changed_when: False
 
