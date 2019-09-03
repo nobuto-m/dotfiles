@@ -142,7 +142,7 @@
   register: scale_factor
   changed_when: False
 
-- name: edit chromium.desktop to set the scale factor - LP: #1837746
+- name: 'edit chromium.desktop to set the scale factor - LP: #1837746'
   replace:
     path: ~/.local/share/applications/chromium_chromium.desktop
     regexp: '/snap/bin/chromium .*%U'
