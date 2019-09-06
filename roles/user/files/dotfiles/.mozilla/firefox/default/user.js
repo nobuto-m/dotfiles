@@ -20,6 +20,8 @@ user_pref("spellchecker.dictionary", "en-US");
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 user_pref("findbar.highlightAll", true);
 
+user_pref("middlemouse.paste", false);
+
 user_pref("browser.contentblocking.category", "strict");
 user_pref("permissions.default.desktop-notification", 2);  // deny by default
 user_pref("permissions.default.geo", 2);  // deny by default
