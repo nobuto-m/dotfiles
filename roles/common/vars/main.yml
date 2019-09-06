@@ -138,6 +138,7 @@ packages:
   - stress-ng
   - fio
   - iperf3
+  - sysprof
   - linux-doc
 
 
