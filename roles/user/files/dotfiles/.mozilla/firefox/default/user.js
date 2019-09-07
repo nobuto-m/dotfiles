@@ -1,5 +1,8 @@
 //
 
+// experimental
+user_pref("gfx.webrender.all", true)
+
 // Density as Compact
 user_pref("browser.uidensity", 1);
 
