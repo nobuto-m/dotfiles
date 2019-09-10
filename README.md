@@ -95,6 +95,7 @@ for setting up my laptop
 
 ### Firefox add-ons
 
+* https://addons.mozilla.org/firefox/addon/multi-account-containers/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
