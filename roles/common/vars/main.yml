@@ -34,6 +34,7 @@ packages:
   - git-review
   - bzr
   - bzrtools
+  - bzr-fastimport
   - shellcheck
   - yamllint
   - tox
