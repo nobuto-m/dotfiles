@@ -6,7 +6,6 @@ picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-
 [org/gnome/desktop/interface]
 gtk-enable-primary-paste=false
 gtk-key-theme='Emacs'
-gtk-theme='Yaru-dark'
 clock-show-weekday=true
 clock-show-seconds=true
 cursor-size=32
@@ -145,6 +144,11 @@ background-transparency-percent=10
 use-theme-transparency=false
 use-transparent-background=true
 visible-name='default'
+
+# FIXME: remove this once the theme updated
+# https://github.com/ubuntu/yaru/commit/7d69b64d76045581be28129dfb4738d4a143b912
+background-color='#300A24'
+foreground-color='white'
 
 
 #### diodon ####
