@@ -32,6 +32,7 @@ packages:
   - debian-goodies  # dman
   - git
   - git-review
+  - hub
   - bzr
   - bzrtools
   - bzr-fastimport
