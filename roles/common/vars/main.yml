@@ -115,6 +115,10 @@ packages:
   # utils - indicator
   - diodon
 
+  # backup
+  - duplicity
+  - python-gi
+
   # other
   - dconf-editor
   - gnome-tweaks
