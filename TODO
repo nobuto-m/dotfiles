@@ -12,3 +12,4 @@
   Oct 15 10:50:43 t480 kernel: psmouse serio2: TrackPoint at rmi4-00.fn03/serio0/input0 lost synchronization, throwing 2 bytes away.
   Oct 15 10:50:43 t480 kernel: psmouse serio2: resync failed, issuing reconnect request
 * chromium ~/.chromium-browser.init https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1837746
+* store one SSH key in TPM
