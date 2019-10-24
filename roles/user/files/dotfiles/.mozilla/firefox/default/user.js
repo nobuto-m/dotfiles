@@ -28,6 +28,7 @@ user_pref("middlemouse.paste", false);
 user_pref("browser.contentblocking.category", "strict");
 user_pref("permissions.default.desktop-notification", 2);  // deny by default
 user_pref("permissions.default.geo", 2);  // deny by default
+user_pref("media.autoplay.default", 5);  // block autoplay of audio and video
 user_pref("accessibility.force_disabled", 1);
 
 user_pref("services.sync.engine.history", false);
