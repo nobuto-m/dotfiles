@@ -133,6 +133,7 @@ packages:
   - powertop
   - powerstat
   - intel-gpu-tools
+  - vainfo
   - sysstat
   - dstat
   - stress-ng
