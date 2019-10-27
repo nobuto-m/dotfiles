@@ -132,6 +132,7 @@ packages:
   - htop
   - powertop
   - powerstat
+  - intel-gpu-tools
   - sysstat
   - dstat
   - stress-ng
