@@ -12,6 +12,7 @@ snaps:
   - snapcraft           --classic
   - kubectl             --classic
   - openstackclients    --classic
+  - vault
   - multipass           --classic --beta
 
 packages:
