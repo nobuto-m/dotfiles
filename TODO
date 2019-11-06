@@ -13,11 +13,3 @@
   Oct 15 10:50:43 t480 kernel: psmouse serio2: resync failed, issuing reconnect request
 * chromium ~/.chromium-browser.init https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1837746
 * store one SSH key in TPM
-* stop auto-play of video in addition to audio
-* take notes of BIOS config
-  Load setup defaults
-  OS optimized defaults - Enabled
-  Keyboard
-  F1-F12 as primary function - Enabled
-  swap fn, ctrl
-  bump VRAM

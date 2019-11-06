@@ -3,6 +3,20 @@ dotfiles
 
 for setting up my laptop
 
+## BIOS setup
+
+An example with ThinkPad.
+
+* Restart
+  - OS Opmimized Defaults - Enabled
+  - Load Setup Defaults - Yes
+* Config
+  - Keyboard/Mouse
+    - Fn and Ctrl Key swap - Enabled
+    - F1-F12 as Primary Function - Enabled
+  - Display
+    - Total Graphics Memory - 512MB
+
 ## Install Ubuntu Desktop
 
 1. get [the latest LTS image](https://www.ubuntu.com/download/desktop)
