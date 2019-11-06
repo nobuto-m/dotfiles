@@ -91,6 +91,7 @@ An example with ThinkPad.
 
 ### Remaining manual steps
 
+* check firmware updates - `fwupdmgr refresh && fwupdmgr get-updates`
 * login to Firefox Sync
 * pin tabs in Firefox including e-mails, calendar, task-management, time-tracking, grammar-checker and messengers
 * enable notifications from specific tabs
