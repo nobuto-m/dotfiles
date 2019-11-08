@@ -1,6 +1,7 @@
 //
 
 // experimental
+user_pref("layers.acceleration.force-enabled", true);
 user_pref("gfx.webrender.all", true);
 
 // Density as Compact
