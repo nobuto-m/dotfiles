@@ -12,13 +12,10 @@ networks:
   name: lxdbr0
   type: ""
 storage_pools:
-- config:
-    source: vgubuntu
-    lvm.thinpool_name: LXDThinPool
-    volume.block.mount_options: noatime,nobarrier,data=writeback
+- config: {}
   description: ""
   name: default
-  driver: lvm
+  driver: dir
 profiles:
 - config: {}
   description: ""
