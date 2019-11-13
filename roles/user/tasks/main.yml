@@ -204,14 +204,6 @@
       
       PROMPT_COMMAND='history -a; __git_ps1 "$(__show_exit_status)$(__show_venv)${GIT_PS1__BASE}" "$(__show_openstack)\$ "'
 
-- name: git core.excludesfile
-  ini_file:
-    dest: ~/.gitconfig
-    section: core
-    option: excludesfile
-    value: "~/.gitignore_global"
-    state: present
-
 - name: git core.pager
   ini_file:
     dest: ~/.gitconfig
