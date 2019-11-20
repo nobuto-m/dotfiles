@@ -205,7 +205,7 @@
           fi
       }
       
-      PROMPT_COMMAND='history -a; __git_ps1 "$(__show_exit_status)$(__show_venv)${GIT_PS1__BASE}" "$(__show_openstack)\$ "'
+      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)${GIT_PS1__BASE}" "$(__show_openstack)\$ "; history -a'
 
 - name: git core.pager
   ini_file:

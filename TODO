@@ -13,4 +13,3 @@
   Oct 15 10:50:43 t480 kernel: psmouse serio2: resync failed, issuing reconnect request
 * chromium ~/.chromium-browser.init https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1837746
 * store one SSH key in TPM
-* exit status not working any more
