@@ -171,6 +171,9 @@
     block: |
       unset ${!LC_*}
       
+      HISTSIZE=10000
+      HISTFILESIZE=20000
+      
       export LESS='-R -j4'
       export LESS_TERMCAP_md=$'\e[01;38;5;180m'
       export LESS_TERMCAP_me=$'\e[0m'
