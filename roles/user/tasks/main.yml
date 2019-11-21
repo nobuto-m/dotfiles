@@ -294,6 +294,7 @@
     - ms-python.python
     - redhat.vscode-yaml
     - ms-vscode.go
+    - ms-vscode.cpptools
   changed_when: False
   when: vscode_plugin.matched == 0
 
