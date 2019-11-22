@@ -11,7 +11,3 @@
     # laptop specific
     - role: laptop
       when: "ansible_form_factor == 'Notebook'"
-
-    # hardware specific
-    - role: hardware_t480
-      when: "ansible_product_version == 'ThinkPad T480'"

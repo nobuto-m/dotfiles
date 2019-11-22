@@ -1,8 +1,0 @@
----
-- name: set thinkpad as the fan for system-monitor
-  command: dconf write /org/gnome/shell/extensions/system-monitor/fan-sensor-file "'/sys/class/hwmon/hwmon3/fan1_input'"
-  changed_when: False
-
-- name: set acpitz as the thermal sensor for system-monitor
-  command: dconf write /org/gnome/shell/extensions/system-monitor/thermal-sensor-file "'/sys/class/hwmon/hwmon0/temp1_input'"
-  changed_when: False
