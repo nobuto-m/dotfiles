@@ -1,8 +1,6 @@
 * network-manager - shared connection from Wi-Fi to wired
 * git find file
-* fix backup mount with gio
 * world clock
-* lxd with snap
 * tilix
 * title of active windows is left in top bar in lock screen
 * clock rendering is fragile
