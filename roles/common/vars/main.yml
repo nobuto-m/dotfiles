@@ -21,7 +21,6 @@ packages:
 
   # GNOME shell
   - chrome-gnome-shell
-  - gnome-shell-extension-remove-dropdown-arrows
   - gnome-shell-extension-system-monitor
 
   # xkeysnail deps
