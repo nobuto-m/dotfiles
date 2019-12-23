@@ -33,7 +33,13 @@ runcmd:
   - cp -v code-server*-linux-x86_64/code-server /usr/local/bin/
   - echo PASSWORD=$(pwgen -sB 32) | install -o ubuntu -g ubuntu -m 0600 /dev/stdin ~ubuntu/.code-server
   - |
-      cat > /home/ubuntu/.local/share/code-server/User/settings.json <<EOF
+      sudo -u ubuntu -H code-server \
+        --install-extension ms-python.python \
+        --install-extension redhat.vscode-yaml \
+        --install-extension ms-vscode.Go \
+        --install-extension ms-vscode.cpptools
+  - |
+      cat <<EOF | install -o ubuntu -g ubuntu -m 0600 /dev/stdin ~ubuntu/.local/share/code-server/User/settings.json
       {
           "editor.fontFamily": "'Ubuntu Mono', monospace",
           "editor.renderWhitespace": "boundary",
@@ -49,11 +55,5 @@ runcmd:
           "files.trimFinalNewlines": true
       }
       EOF
-  - |
-      sudo -u ubuntu -H code-server \
-        --install-extension ms-python.python \
-        --install-extension redhat.vscode-yaml \
-        --install-extension ms-vscode.Go \
-        --install-extension ms-vscode.cpptools
   - systemctl daemon-reload
   - systemctl enable --now code-server.service
