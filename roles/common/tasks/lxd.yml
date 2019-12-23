@@ -13,6 +13,7 @@
   systemd:
     name: snap.lxd.daemon
     state: reloaded
+  changed_when: False
 
 - name: lxd init
   shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
@@ -31,7 +32,12 @@
 
 # TODO: resize the root volume to 40+ GB or change squid config
 - name: init squid-deb-proxy container
-  shell: echo "{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" | lxc init ubuntu:bionic --config=user.user-data="$(cat -)" squid-deb-proxy
+  shell: |
+    echo "{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" \
+        | lxc init ubuntu:bionic \
+            --config=user.vendor-data='{}' \
+            --config=user.user-data="$(cat -)" \
+            squid-deb-proxy
   when: "squid_deb_proxy.rc != 0"
 
 - name: set default profile
