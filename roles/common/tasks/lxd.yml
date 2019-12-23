@@ -63,7 +63,7 @@
   register: code_server
 
 - name: init code-server container
-  shell: echo "{{ lookup('file', 'files/code-server_user-data.yaml') }}" | lxc init ubuntu:bionic --config=user.user-data="$(cat -)" code-server
+  shell: echo '{{ lookup('file', 'files/code-server_user-data.yaml') }}' | lxc init ubuntu:bionic --config=user.user-data="$(cat -)" code-server
   when: "code_server.rc != 0"
 
 - name: set port-forwarding to code-server
