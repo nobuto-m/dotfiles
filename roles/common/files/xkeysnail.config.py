@@ -11,6 +11,11 @@ define_modmap({
     Key.CAPSLOCK: Key.LEFT_CTRL  # xkb-options=['ctrl:nocaps']
 })
 
+# [Global keymap]
+define_keymap(None, {
+    K("KATAKANAHIRAGANA"): K("Shift-F10")  # as MENU key
+})
+
 # Keybindings for Web browser
 define_keymap(
     re.compile("^(Firefox|Chromium)$"),
