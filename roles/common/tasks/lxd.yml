@@ -55,3 +55,17 @@
 - name: import juju kubernetes profile
   shell: echo "{{ lookup('file', 'files/lxd-juju-profile-kubernetes.yaml') }}" | lxc profile edit juju-kubernetes
   changed_when: False
+
+- name: check code-server
+  command: lxc info code-server
+  changed_when: False
+  ignore_errors: True
+  register: code_server
+
+- name: init code-server container
+  shell: lxc init ubuntu:bionic --config=user.user-data="$(cat files/code-server_user-data.yaml)" code-server
+  when: "code_server.rc != 0"
+
+- name: set port-forwarding to code-server
+  command: lxc config device add code-server coder-server-proxy proxy listen=tcp:127.0.0.1:8080 connect=tcp:127.0.0.1:8080
+  when: "code_server.rc != 0"
