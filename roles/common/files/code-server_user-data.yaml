@@ -27,7 +27,13 @@ write_files:
       WantedBy=multi-user.target
     path: /etc/systemd/system/code-server.service
 
-  - content: |
+runcmd:
+  - wget "$(curl https://api.github.com/repos/cdr/code-server/releases/latest | jq -r .assets[].browser_download_url | grep linux-x86_64)"
+  - tar xvf code-server*-linux-x86_64.tar.gz
+  - cp -v code-server*-linux-x86_64/code-server /usr/local/bin/
+  - echo PASSWORD=$(pwgen -sB 32) | install -o ubuntu -g ubuntu -m 0600 /dev/stdin ~ubuntu/.code-server
+  - |
+      cat > /home/ubuntu/.local/share/code-server/User/settings.json <<EOF
       {
           "editor.fontFamily": "'Ubuntu Mono', monospace",
           "editor.renderWhitespace": "boundary",
@@ -42,14 +48,7 @@ write_files:
           "files.insertFinalNewline": true,
           "files.trimFinalNewlines": true
       }
-    owner: ubuntu:ubuntu
-    path: /home/ubuntu/.local/share/code-server/User/settings.json
-
-runcmd:
-  - wget "$(curl https://api.github.com/repos/cdr/code-server/releases/latest | jq -r .assets[].browser_download_url | grep linux-x86_64)"
-  - tar xvf code-server*-linux-x86_64.tar.gz
-  - cp -v code-server*-linux-x86_64/code-server /usr/local/bin/
-  - echo PASSWORD=$(pwgen -sB 32) | install -o ubuntu -g ubuntu -m 0600 /dev/stdin ~ubuntu/.code-server
+      EOF
   - |
       sudo -u ubuntu -H code-server \
         --install-extension ms-python.python \
