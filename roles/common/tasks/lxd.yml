@@ -5,6 +5,15 @@
     groups: lxd
     append: yes
 
+- name: enable shiftfs
+  command: snap set lxd shiftfs.enable=true
+  changed_when: False
+
+- name: reload lxd to enable shiftfs
+  systemd:
+    name: snap.lxd.daemon
+    state: reloaded
+
 - name: lxd init
   shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
   changed_when: False
@@ -68,4 +77,8 @@
 
 - name: set port-forwarding to code-server
   command: lxc config device add code-server coder-server-proxy proxy listen=tcp:127.0.0.1:8080 connect=tcp:127.0.0.1:8080
+  when: "code_server.rc != 0"
+
+- name: set bind-mount to code-server
+  command: lxc config device add code-server development-dir disk source={{ ansible_user_dir }}/dev path=/home/ubuntu/dev shift=true
   when: "code_server.rc != 0"
