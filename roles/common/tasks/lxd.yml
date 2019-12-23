@@ -26,7 +26,7 @@
   when: "squid_deb_proxy.rc != 0"
 
 - name: set default profile
-  command: lxc profile set default user.user-data "{{ lookup('file', 'files/lxd_default_user-data.yml') }}"
+  command: lxc profile set default user.vendor-data "{{ lookup('file', 'files/lxd_default_vendor-data.yml') }}"
   when: "squid_deb_proxy.rc != 0"
 
 - name: static leases
