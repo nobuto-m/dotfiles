@@ -1,17 +1,18 @@
 {
-    "editor.fontFamily": "'Ubuntu Mono', monospace",
-    "editor.renderWhitespace": "boundary",
     "editor.cursorStyle": "block",
+    "editor.fontFamily": "Ubuntu Mono, monospace",
+    "editor.lineHeight": 16,
     "editor.minimap.enabled": false,
-    "editor.rulers": [80, 100, 120],
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80,
+        100,
+        120
+    ],
     "editor.scrollBeyondLastLine": false,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 60000,
+    "files.autoSaveDelay": 10000,
     "files.insertFinalNewline": true,
-    "python.formatting.provider": "yapf",
-    "python.linting.flake8Enabled": true,
-    "python.linting.pylintEnabled": false,
-    "python.pythonPath": "python3",
-    "python.sortImports.args": ["--force-single-line-imports", "--force-alphabetical-sort"],
-    "window.zoomLevel": 1,
+    "files.trimFinalNewlines": true,
+    "window.zoomLevel": 1.16
 }
