@@ -12,4 +12,4 @@
 * chromium ~/.chromium-browser.init https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/1837746
 * store one SSH key in TPM
 * git-secrets
-* bind mount for code-server
+* bash prompt inside code-server
