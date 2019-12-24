@@ -1,10 +1,10 @@
 set autoindent
 set fill 72
-set nowrap
+set guidestripe 80
 set smarthome
-set smooth
 set softwrap
 set speller "aspell -x -c"
+set stripecolor normal,black
 set suspend
 set tabsize 4
 set tabstospaces
