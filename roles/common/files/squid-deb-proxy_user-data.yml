@@ -17,7 +17,3 @@ write_files:
     owner: root:root
     path: /etc/squid-deb-proxy/mirror-dstdomain.acl.d/50-thirdparty
     permissions: '0644'
-
-run_cmd:
-  - printf '\n#8G\ncache_dir aufs /var/cache/squid-deb-proxy 8000 16 256\n' >> /etc/squid-deb-proxy/squid-deb-proxy.conf
-  - service squid-deb-proxy restart
