@@ -23,6 +23,8 @@
   command: lxc alias add ubuntu 'exec @ARGS@ -- sudo --login --user ubuntu'
   changed_when: False
   ignore_errors: True
+  become: yes
+  become_user: "{{ ansible_user_id }}"
 
 - name: check squid-deb-proxy
   command: lxc info squid-deb-proxy
