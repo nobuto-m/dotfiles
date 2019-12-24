@@ -15,5 +15,6 @@
     "files.autoSaveDelay": 10000,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
+    "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 1.16
 }
