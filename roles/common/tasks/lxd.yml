@@ -35,7 +35,7 @@
   shell: |
     echo "{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" \
         | lxc init ubuntu:bionic \
-            --config=user.vendor-data='{}' \
+            --config=user.vendor-data="$(printf '#cloud-config\n{}\n')" \
             --config=user.user-data="$(cat -)" \
             squid-deb-proxy
   when: "squid_deb_proxy.rc != 0"
