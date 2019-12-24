@@ -32,6 +32,9 @@ runcmd:
   - wget "$(curl https://api.github.com/repos/cdr/code-server/releases/latest | jq -r .assets[].browser_download_url | grep linux-x86_64)"
   - tar xvf code-server*-linux-x86_64.tar.gz
   - cp -v code-server*-linux-x86_64/code-server /usr/local/bin/
+  # reset permission due to bind-mount under ~ubuntu
+  - chown ubuntu:ubuntu ~ubuntu
+  - chmod 0750 ~ubuntu
   - echo PASSWORD=$(pwgen -sB 32) | install -o ubuntu -g ubuntu -m 0600 /dev/stdin ~ubuntu/.code-server
   - |
       sudo -u ubuntu -H code-server \
