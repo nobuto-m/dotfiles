@@ -72,21 +72,3 @@
 - name: import juju kubernetes profile
   shell: echo "{{ lookup('file', 'files/lxd-juju-profile-kubernetes.yaml') }}" | lxc profile edit juju-kubernetes
   changed_when: False
-
-- name: check code-server
-  command: lxc info code-server
-  changed_when: False
-  ignore_errors: True
-  register: code_server
-
-- name: init code-server container
-  shell: echo '{{ lookup('file', 'files/code-server_user-data.yaml') }}' | lxc init ubuntu:bionic --config=user.user-data="$(cat -)" code-server
-  when: "code_server.rc != 0"
-
-- name: set port-forwarding to code-server
-  command: lxc config device add code-server coder-server-proxy proxy listen=tcp:127.0.0.1:8080 connect=tcp:127.0.0.1:8080
-  when: "code_server.rc != 0"
-
-- name: set bind-mount to code-server
-  command: lxc config device add code-server development-dir disk source={{ ansible_user_dir }}/dev path=/home/ubuntu/dev shift=true
-  when: "code_server.rc != 0"
