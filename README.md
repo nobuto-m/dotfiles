@@ -93,7 +93,8 @@ An example with ThinkPad.
 
 * check firmware updates - `fwupdmgr refresh && fwupdmgr get-updates`
 * login to Firefox Sync
-* pin tabs in Firefox including e-mails, calendar, task-management, time-tracking, grammar-checker and messengers
+* pin tabs in Firefox including e-mails, calendar, task-management,
+  time-tracking, grammar-checker and messengers
 * enable notifications from specific tabs
 * setup an OTP device
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
@@ -111,6 +112,7 @@ An example with ThinkPad.
 ### Firefox add-ons
 
 * https://addons.mozilla.org/firefox/addon/multi-account-containers/
+* https://addons.mozilla.org/firefox/addon/snoozetabs/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
