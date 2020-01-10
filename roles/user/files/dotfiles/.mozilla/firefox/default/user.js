@@ -9,8 +9,7 @@ user_pref("browser.uidensity", 1);
 
 user_pref("browser.sessionstore.warnOnQuit", true);
 user_pref("browser.startup.page", 3);  // Resume the previous browser session
-user_pref("browser.startup.homepage", "about:home");
-user_pref("browser.newtabpage.activity-stream.showTopSites", false);
+user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
 
@@ -27,7 +26,6 @@ user_pref("findbar.highlightAll", true);
 user_pref("middlemouse.paste", false);
 
 user_pref("browser.contentblocking.category", "strict");
-user_pref("permissions.default.desktop-notification", 2);  // deny by default
 user_pref("permissions.default.geo", 2);  // deny by default
 user_pref("media.autoplay.default", 5);  // block autoplay of audio and video
 user_pref("accessibility.force_disabled", 1);
