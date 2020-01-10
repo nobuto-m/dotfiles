@@ -112,7 +112,7 @@ An example with ThinkPad.
 ### Firefox add-ons
 
 * https://addons.mozilla.org/firefox/addon/multi-account-containers/
-* https://addons.mozilla.org/firefox/addon/snoozetabs/
+* https://addons.mozilla.org/firefox/addon/ff-tab-suspender/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
