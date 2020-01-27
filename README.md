@@ -102,8 +102,8 @@ An example with ThinkPad.
 * disable Dropbox LAN sync by `dropbox lansync n`
 * set git `user.name` and `user.name` with `git config --global`
 * create `~/.gitconfig_COMPANY` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
-  - `git config --global includeIf.'gitdir:~/dev/openstack/'.path ~/.gitconfig_COMPANY`
-  - `git config --global includeIf.'gitdir:~/dev/COMPANY/'.path ~/.gitconfig_COMPANY`
+  - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_COMPANY`
+  - `git config --global includeIf.'gitdir:~/src/COMPANY/'.path ~/.gitconfig_COMPANY`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
