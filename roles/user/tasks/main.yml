@@ -208,7 +208,7 @@
               model=$(juju switch 2>/dev/null | sed -e 's|:admin/|:|')
           fi
           if [ -n "$model" ]; then
-              printf ' (\\[\\e[96m\\]%s\\[\\e[0m\\])' "$model"
+              printf ' (\\[\\e[32m\\]%s\\[\\e[0m\\])' "$model"
           fi
       }
       __show_openstack() {
