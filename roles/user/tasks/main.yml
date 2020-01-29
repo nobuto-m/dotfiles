@@ -197,6 +197,20 @@
       __show_venv() {
           [ -z "$VIRTUAL_ENV" ] || printf '(%s) ' "$(basename "$VIRTUAL_ENV")"
       }
+      __show_juju() {
+          if ! command -v juju >/dev/null; then
+              return
+          fi
+          local model=
+          if [ -n "$JUJU_MODEL" ]; then
+              model="$JUJU_MODEL"
+          else
+              model=$(juju switch 2>/dev/null | sed -e 's|:admin/|:|')
+          fi
+          if [ -n "$model" ]; then
+              printf ' (\\[\\e[96m\\]%s\\[\\e[0m\\])' "$model"
+          fi
+      }
       __show_openstack() {
           if [ -n "$OS_CLOUD" ]; then
               printf ' (OS_CLOUD:\\[\\e[96m\\]%s\\[\\e[0m\\])' "$OS_CLOUD"
@@ -204,8 +218,8 @@
               printf ' (OS_USERNAME:\\[\\e[96m\\]%s\\[\\e[0m\\])' "$OS_USERNAME"
           fi
       }
-      
-      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)${GIT_PS1__BASE}" "$(__show_openstack)\$ "; history -a'
+
+      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)${GIT_PS1__BASE}" "$(__show_juju)$(__show_openstack)\$ "; history -a'
 
 - name: git core.pager
   ini_file:
