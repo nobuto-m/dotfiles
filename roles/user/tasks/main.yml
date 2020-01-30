@@ -208,7 +208,7 @@
               model=$(juju switch 2>/dev/null | sed -e 's|:admin/|:|')
           fi
           if [ -n "$model" ]; then
-              printf ' (\\[\\e[32m\\]%s\\[\\e[0m\\])' "$model"
+              printf '(\\[\\e[32m\\]%s\\[\\e[0m\\]) ' "$model"
           fi
       }
       __show_openstack() {
@@ -218,8 +218,7 @@
               printf ' (OS_USERNAME:\\[\\e[96m\\]%s\\[\\e[0m\\])' "$OS_USERNAME"
           fi
       }
-
-      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)${GIT_PS1__BASE}" "$(__show_juju)$(__show_openstack)\$ "; history -a'
+      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)$(__show_juju)${GIT_PS1__BASE}" "$(__show_openstack)\$ "; history -a'
 
 - name: git core.pager
   ini_file:
