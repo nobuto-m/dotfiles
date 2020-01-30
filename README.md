@@ -101,9 +101,10 @@ An example with ThinkPad.
 * select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
 * set git `user.name` and `user.name` with `git config --global`
-* create `~/.gitconfig_COMPANY` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
-  - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_COMPANY`
-  - `git config --global includeIf.'gitdir:~/src/COMPANY/'.path ~/.gitconfig_COMPANY`
+* create `~/.gitconfig_corporate` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
+  - `git config --global includeIf.'gitdir:~/src/private/'.path ~/.gitconfig_corporate`
+  - `git config --global includeIf.'gitdir:~/src/corporate/'.path ~/.gitconfig_corporate`
+  - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
