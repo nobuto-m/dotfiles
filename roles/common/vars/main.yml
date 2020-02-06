@@ -109,6 +109,7 @@ packages:
   - ipcalc
   - jnettop
   - httping
+  - iputils-arping
   - zsync
   - freeipmi-tools
   - w3m
