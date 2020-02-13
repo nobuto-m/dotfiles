@@ -30,6 +30,9 @@ __show_juju() {
     if ! command -v juju >/dev/null; then
         return
     fi
+    if ! grep -q '^controllers:$' ~/.local/share/juju/controllers.yaml; then
+        return
+    fi
     local model=
     if [ -n "$JUJU_MODEL" ]; then
         model="$JUJU_MODEL"
