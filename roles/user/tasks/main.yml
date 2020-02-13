@@ -168,57 +168,7 @@
 - name: bashrc
   blockinfile:
     dest: ~/.bashrc
-    block: |
-      unset ${!LC_*}
-      
-      HISTSIZE=10000
-      HISTFILESIZE=20000
-      
-      export LESS='-R -j4'
-      export LESS_TERMCAP_md=$'\e[01;38;5;180m'
-      export LESS_TERMCAP_me=$'\e[0m'
-      export LESS_TERMCAP_ue=$'\e[0m'
-      export LESS_TERMCAP_us=$'\e[04;38;5;139m'
-      
-      [ -r ~/.byobu/prompt ] && . ~/.byobu/prompt
-      
-      GIT_PS1_SHOWDIRTYSTATE=true
-      GIT_PS1_SHOWSTASHSTATE=true
-      GIT_PS1_SHOWUNTRACKEDFILES=true
-      GIT_PS1_SHOWUPSTREAM='auto'
-      GIT_PS1_SHOWCOLORHINTS=true
-      GIT_PS1__BASE="${PS1%\$*}"
-      GIT_PS1__BASE="${GIT_PS1__BASE%\\}"
-      __show_exit_status() {
-          local exit=$?
-          [ -z "$BYOBU_TERM" -a -z "$BYOBU_TTY" ] || return
-          [ "$exit" = 0 ] || printf '\\[\\e[7m\\]%d\\[\\e[0m\\] ' "$exit"
-      }
-      __show_venv() {
-          [ -z "$VIRTUAL_ENV" ] || printf '(%s) ' "$(basename "$VIRTUAL_ENV")"
-      }
-      __show_juju() {
-          if ! command -v juju >/dev/null; then
-              return
-          fi
-          local model=
-          if [ -n "$JUJU_MODEL" ]; then
-              model="$JUJU_MODEL"
-          else
-              model=$(juju switch 2>/dev/null | sed -e 's|:admin/|:|')
-          fi
-          if [ -n "$model" ]; then
-              printf '(\\[\\e[32m\\]%s\\[\\e[0m\\]) ' "$model"
-          fi
-      }
-      __show_openstack() {
-          if [ -n "$OS_CLOUD" ]; then
-              printf ' (OS_CLOUD:\\[\\e[96m\\]%s\\[\\e[0m\\])' "$OS_CLOUD"
-          elif [ -n "$OS_USERNAME" ]; then
-              printf ' (OS_USERNAME:\\[\\e[96m\\]%s\\[\\e[0m\\])' "$OS_USERNAME"
-          fi
-      }
-      PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)$(__show_juju)${GIT_PS1__BASE}" "$(__show_openstack)\$ "; history -a'
+    block: "{{ lookup('file', 'files/bashrc_block') }}"
 
 - name: git core.pager
   ini_file:
