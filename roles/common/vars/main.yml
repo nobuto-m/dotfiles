@@ -13,7 +13,8 @@ snaps:
   - kubectl             --classic
   - openstackclients    --classic
   - vault
-  - multipass           --classic --beta
+  - multipass           --classic
+  - signal-desktop
 
 packages:
 
