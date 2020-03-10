@@ -1,6 +1,5 @@
 set autoindent
 set fill 72
-set guidestripe 80
 set smarthome
 set softwrap
 set speller "aspell -x -c"
