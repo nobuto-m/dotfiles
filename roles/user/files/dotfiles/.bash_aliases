@@ -18,3 +18,4 @@ alias vpn-canonical-tcp443-global='sudo openvpn --mute-replay-warnings --config 
 alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" localhost'
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 lxc-exec() { lxc exec "$1" -- sudo -i -u ubuntu script /dev/null; }
+git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git"; }
