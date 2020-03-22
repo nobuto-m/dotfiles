@@ -287,9 +287,3 @@
 #    repo: "{{ item.repo }}"
 #    dest: "~/src/{{ item.name }}"
 #  with_items: "{{ git_repos }}"
-
-#- name: clone openstack repos
-#  git:
-#    repo: "https://opendev.org/openstack/{{ item }}"
-#    dest: "~/src/openstack/{{ item }}"
-#  with_items: "{{ openstack_projects }}"
