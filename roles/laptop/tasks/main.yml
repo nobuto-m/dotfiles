@@ -19,11 +19,7 @@
   become: yes
 
 - name: update TLP config
-  blockinfile:
-    path: /etc/default/tlp
-    block: |
-      # ------------------------------------------------------------------------------
-      RESTORE_DEVICE_STATE_ON_STARTUP=1
-      START_CHARGE_THRESH_BAT1=80
-      STOP_CHARGE_THRESH_BAT1=95
+  copy:
+    src: files/tlp-99-local.conf
+    dest: /etc/tlp.d/99-local.conf
   become: yes
