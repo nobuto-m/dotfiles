@@ -30,14 +30,9 @@ An example with ThinkPad.
 1. boot up with the USB stick
 
 1. install Ubuntu Desktop with the options below
-   * Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
-
-1. Shrink / to 120G manually before reboot
-
-    ```bash
-    $ sudo lvresize /dev/vgubuntu/root -L 120G --resizefs -v
-    ```
-    NOTE: older Ubuntu may have "ubuntu-vg" as the VG name instead
+   * Advanced features
+     - Use LVM with the new Ubuntu installation
+     - Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
 
 1. reboot
 
