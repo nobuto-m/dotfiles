@@ -1,12 +1,9 @@
 ---
 git_repos:
-  - { name: maas, repo: 'https://git.launchpad.net/maas' }
-  - { name: juju, repo: 'https://github.com/juju/juju.git' }
-  - { name: lxd, repo: 'https://github.com/lxc/lxd.git' }
-  - { name: ceph, repo: 'https://github.com/ceph/ceph.git' }
-  - { name: kubernetes, repo: 'https://github.com/kubernetes/kubernetes.git' }
-  - { name: charm-helpers, repo: 'https://github.com/juju/charm-helpers.git' }
-  - { name: openstack-on-lxd, repo: 'https://github.com/openstack-charmers/openstack-on-lxd.git' }
-  - { name: openstack-bundles, repo: 'https://github.com/openstack-charmers/openstack-bundles.git' }
-  - { name: conjure-up, repo: 'https://github.com/conjure-up/conjure-up.git' }
-  - { name: bundle-canonical-kubernetes, repo: 'https://github.com/juju-solutions/bundle-canonical-kubernetes.git' }
+  - { type: corporate, name: juju, repo: 'https://github.com/juju/juju.git' }
+  - { type: corporate, name: charm-helpers, repo: 'https://github.com/juju/charm-helpers.git' }
+  - { type: corporate, name: openstack-bundles, repo: 'https://github.com/openstack-charmers/openstack-bundles.git' }
+  - { type: corporate, name: bundle-canonical-kubernetes, repo: 'https://github.com/juju-solutions/bundle-canonical-kubernetes.git' }
+
+  - { type: misc, name: greasemonkey-scripts, repo: 'https://github.com/nobuto-m/greasemonkey-scripts.git' }
+  - { type: misc, name: quick-maas, repo: 'https://github.com/nobuto-m/quick-maas.git' }

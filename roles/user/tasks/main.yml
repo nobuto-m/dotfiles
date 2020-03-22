@@ -105,11 +105,6 @@
     state: absent
   when: xdg_dir is changed
 
-- name: create dev directory
-  file:
-    path: ~/src
-    state: directory
-
 - name: copy dotfiles
   copy:
     src: files/dotfiles/
@@ -282,8 +277,29 @@
     - Python_3
   when: docsets is changed
 
-#- name: clone git repos
-#  git:
-#    repo: "{{ item.repo }}"
-#    dest: "~/src/{{ item.name }}"
-#  with_items: "{{ git_repos }}"
+- name: create docsets dir
+  file:
+    path: ~/.local/share/Zeal/Zeal/docsets/
+    state: directory
+
+- name: create src directory
+  file:
+    path: ~/src
+    state: directory
+
+- name: create a directory for private repos
+  file:
+    path: ~/src/private
+    state: directory
+
+- name: make sure git destination exists
+  file:
+    path: ~/src/{{ item.type }}
+    state: directory
+  with_items: "{{ git_repos }}"
+
+- name: clone git repos
+  git:
+    repo: "{{ item.repo }}"
+    dest: "~/src/{{ item.type }}/{{ item.name }}"
+  with_items: "{{ git_repos }}"
