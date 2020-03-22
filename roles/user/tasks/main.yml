@@ -277,11 +277,6 @@
     - Python_3
   when: docsets is changed
 
-- name: create docsets dir
-  file:
-    path: ~/.local/share/Zeal/Zeal/docsets/
-    state: directory
-
 - name: create src directory
   file:
     path: ~/src
