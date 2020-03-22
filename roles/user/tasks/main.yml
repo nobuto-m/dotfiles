@@ -287,6 +287,11 @@
     path: ~/src/private
     state: directory
 
+- name: create a directory for openstack repos
+  file:
+    path: ~/src/openstack
+    state: directory
+
 - name: make sure git destination exists
   file:
     path: ~/src/{{ item.type }}
