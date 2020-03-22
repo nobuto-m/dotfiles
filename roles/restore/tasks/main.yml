@@ -6,8 +6,7 @@
     mode: 'go-rwx'
     backup: yes
   with_items:
-    - .vpn/
+    #- .vpn/
     - .sesame/
     - .ssh/
     - .gnupg/
-    - .znc/
