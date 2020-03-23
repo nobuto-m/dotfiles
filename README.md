@@ -88,8 +88,8 @@ An example with ThinkPad.
 
 * check firmware updates - `fwupdmgr refresh && fwupdmgr get-updates`
 * login to Firefox Sync
-* pin tabs in Firefox including e-mails, calendar, task-management,
-  time-tracking, grammar-checker and messengers
+* pin tabs in Firefox including e-mails, calendar, messengers, task-management,
+  time-tracking, grammar-checker and docs
 * enable notifications from specific tabs
 * setup an OTP device
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
@@ -102,6 +102,7 @@ An example with ThinkPad.
   - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
 * configure Chromium with:
+  - connect audio-record interface with `sudo snap connect chromium:audio-record :audio-record` (TODO: bug number)
   - set `https://meet.google.com/` as a start-up page
   - `Offer to translate pages that aren't in a language you read` - off
 
