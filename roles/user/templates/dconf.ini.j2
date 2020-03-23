@@ -186,7 +186,7 @@ periodic-period=7
 backend='remote'
 periodic=true
 delete-after=182
-exclude-list=['{{ ansible_env.HOME }}/.local/share/Trash', '{{ ansible_env.HOME }}/backup', '{{ ansible_env.HOME }}/Canonical', '{{ ansible_env.HOME }}/src', '{{ ansible_env.HOME }}/Documents/private', '{{ ansible_env.HOME }}/Downloads', '{{ ansible_env.HOME }}/pbuilder', '{{ ansible_env.HOME }}/snap/chromium/common/.cache', '{{ ansible_env.HOME }}/.ansible/tmp', '{{ ansible_env.HOME }}/.config/Code/CachedData', '{{ ansible_env.HOME }}/.dropbox', '{{ ansible_env.HOME }}/.dropbox-dist', '{{ ansible_env.HOME }}/.local/share/Zeal/Zeal/docsets', '{{ ansible_env.HOME }}/.local/share/zeitgeist', '{{ ansible_env.HOME }}/.mozilla/firefox/default/storage', '{{ ansible_env.HOME }}/.vscode/extensions']
+exclude-list=['{{ ansible_env.HOME }}/.local/share/Trash', '{{ ansible_env.HOME }}/backup', '{{ ansible_env.HOME }}/Canonical', '{{ ansible_env.HOME }}/src', '{{ ansible_env.HOME }}/Documents/private', '{{ ansible_env.HOME }}/Downloads', '{{ ansible_env.HOME }}/pbuilder', '{{ ansible_env.HOME }}/snap/chromium/common/.cache', '{{ ansible_env.HOME }}/.ansible/tmp', '{{ ansible_env.HOME }}/snap/code/common/.cache', '{{ ansible_env.HOME }}/.config/Code/Cache', '{{ ansible_env.HOME }}/.config/Code/CachedData', '{{ ansible_env.HOME }}/.dropbox', '{{ ansible_env.HOME }}/.dropbox-dist', '{{ ansible_env.HOME }}/.local/share/Zeal/Zeal/docsets', '{{ ansible_env.HOME }}/.local/share/zeitgeist', '{{ ansible_env.HOME }}/.mozilla/firefox/default/storage', '{{ ansible_env.HOME }}/.vscode/extensions']
 
 [org/gnome/deja-dup/remote]
 uri='sftp://backup/srv/backup/{{ ansible_hostname }}'
