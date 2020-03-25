@@ -121,6 +121,7 @@ packages:
   # other
   - dconf-editor
   - gnome-tweaks
+  - gnome-shell-extension-prefs
   - gimp
   - inkscape
   - yubikey-personalization-gui
