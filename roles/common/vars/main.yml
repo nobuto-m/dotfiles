@@ -22,7 +22,9 @@ packages:
 
   # GNOME shell
   - chrome-gnome-shell
+  - gnome-shell-extension-prefs
   - gnome-shell-extension-system-monitor
+  - node-typescript # for Pop Shell
 
   # xkeysnail deps
   - python3-xlib
@@ -121,7 +123,6 @@ packages:
   # other
   - dconf-editor
   - gnome-tweaks
-  - gnome-shell-extension-prefs
   - gimp
   - inkscape
   - yubikey-personalization-gui
