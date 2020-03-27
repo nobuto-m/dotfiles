@@ -24,7 +24,6 @@ packages:
   - chrome-gnome-shell
   - gnome-shell-extension-prefs
   - gnome-shell-extension-system-monitor
-  - node-typescript # for Pop Shell
 
   # xkeysnail deps
   - python3-xlib
