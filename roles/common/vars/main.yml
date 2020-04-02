@@ -11,7 +11,7 @@ snaps:
   - charm               --classic
   - snapcraft           --classic
   - kubectl             --classic
-  - openstackclients    --classic
+  - openstackclients    --classic --edge
   - vault
   - multipass           --classic
   - signal-desktop
