@@ -104,6 +104,7 @@ An example with ThinkPad.
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
   - `Offer to translate pages that aren't in a language you read` - off
+* Temporarily disable WiFi power management - `wifi.powersave = 1` in /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 
 ### Firefox add-ons
 
