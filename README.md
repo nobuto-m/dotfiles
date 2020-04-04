@@ -95,14 +95,13 @@ An example with ThinkPad.
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
-* set git `user.name` and `user.name` with `git config --global`
+* set git `user.name` and `user.email` with `git config --global`
 * create `~/.gitconfig_corporate` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
   - `git config --global includeIf.'gitdir:~/src/private/'.path ~/.gitconfig_corporate`
   - `git config --global includeIf.'gitdir:~/src/corporate/'.path ~/.gitconfig_corporate`
   - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
 * configure Chromium with:
-  - connect audio-record interface with `sudo snap connect chromium:audio-record :audio-record` (TODO: bug number)
   - set `https://meet.google.com/` as a start-up page
   - `Offer to translate pages that aren't in a language you read` - off
 

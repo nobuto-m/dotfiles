@@ -11,10 +11,9 @@ snaps:
   - charm               --classic
   - snapcraft           --classic
   - kubectl             --classic
-  - openstackclients    --classic --edge
+  - openstackclients    --classic --edge # LP: #1852373
   - vault
   - multipass           --classic
-  - signal-desktop
 
 packages:
 
