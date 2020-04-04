@@ -23,6 +23,7 @@ packages:
   - chrome-gnome-shell
   - gnome-shell-extension-prefs
   - gnome-shell-extension-system-monitor
+  - gnome-clocks
 
   # xkeysnail deps
   - python3-xlib
