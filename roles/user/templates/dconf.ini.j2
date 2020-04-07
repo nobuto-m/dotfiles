@@ -3,6 +3,9 @@
 [org/gnome/desktop/background]
 picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
 
+[org/gnome/desktop/screensaver]
+picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
+
 [org/gnome/desktop/interface]
 gtk-enable-primary-paste=false
 gtk-key-theme='Emacs'
@@ -16,9 +19,6 @@ antialiasing='grayscale'
 
 [org/gnome/desktop/notifications]
 show-in-lock-screen=false
-
-[org/gnome/desktop/screensaver]
-picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/warty-final-ubuntu-16.04.png'
 
 [org/gnome/desktop/wm/preferences]
 button-layout='close,minimize,maximize:'
@@ -45,7 +45,7 @@ multi-monitor=true
 isolate-monitors=true
 
 [org/gnome/shell/extensions/shelltile]
-edge-zone-width=40
+edge-zone-width=56
 
 [org/gnome/shell/extensions/system-monitor]
 battery-refresh-time=10000
