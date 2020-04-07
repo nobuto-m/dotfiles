@@ -13,6 +13,12 @@
     dest: /etc/udev/rules.d/99-local-disable-ir-camera.rules
   become: yes
 
+- name: disable Fire TV mount
+  copy:
+    src: files/99-local-disable-fire-tv.rules
+    dest: /etc/udev/rules.d/99-local-disable-fire-tv.rules
+  become: yes
+
 - name: install TLP
   apt:
     name: tlp
