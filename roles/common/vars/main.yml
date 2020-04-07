@@ -21,7 +21,7 @@ packages:
 
   # GNOME shell
   - chrome-gnome-shell
-  - gnome-shell-extension-prefs
+  - gnome-tweaks
   - gnome-shell-extension-system-monitor
   - gnome-clocks
 
@@ -121,7 +121,6 @@ packages:
 
   # other
   - dconf-editor
-  - gnome-tweaks
   - gimp
   - inkscape
   - yubikey-personalization-gui
