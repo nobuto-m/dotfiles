@@ -106,7 +106,6 @@ An example with ThinkPad.
   - `Offer to translate pages that aren't in a language you read` - off
 * Build gnome-shell-system-monitor-applet for focal
   https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet/pull/564
-* Temporarily disable WiFi power management - `wifi.powersave = 1` in /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
 
 ### Firefox add-ons
 
