@@ -46,6 +46,8 @@
         file: unitehardpixel.eu.v40.shell-extension.zip
       - id: clock-override@gnomeshell.kryogenix.org
         file: clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip
+      - id: sound-output-device-chooser@kgshank.net
+        file: sound-output-device-chooserkgshank.net.v29.shell-extension.zip
       - id: ShellTile@emasab.it
         file: ShellTileemasab.it.v62.shell-extension.zip
 
