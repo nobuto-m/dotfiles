@@ -104,8 +104,6 @@ An example with ThinkPad.
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
   - `Offer to translate pages that aren't in a language you read` - off
-* Build gnome-shell-system-monitor-applet for focal
-  https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet/pull/564
 
 ### Firefox add-ons
 
