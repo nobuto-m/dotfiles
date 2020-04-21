@@ -5,6 +5,7 @@
     block: |
       HandleLidSwitch=lock
       HandleLidSwitchExternalPower=lock
+      HandleLidSwitchDocked=lock
   become: yes
 
 - name: disable IR camera
