@@ -5,6 +5,7 @@
     block: |
       HandleLidSwitch=lock
       HandleLidSwitchExternalPower=lock
+      HandleLidSwitchDocked=lock
   become: yes
 
 # https://gitlab.gnome.org/GNOME/gnome-settings-daemon/issues/111
