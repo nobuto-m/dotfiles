@@ -7,6 +7,15 @@
       HandleLidSwitchExternalPower=lock
   become: yes
 
+# https://gitlab.gnome.org/GNOME/gnome-settings-daemon/issues/111
+- name: disable user-space lid-close detection as a workaround
+  lineinfile:
+    dest: /etc/UPower/UPower.conf
+    regexp: '^IgnoreLid='
+    line: 'IgnoreLid=true'
+    state: present
+  become: yes
+
 - name: disable IR camera
   copy:
     src: files/99-local-disable-ir-camera.rules
