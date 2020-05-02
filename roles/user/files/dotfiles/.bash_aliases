@@ -17,4 +17,4 @@ alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http:
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 lxc-exec() { lxc exec "$1" -- sudo -i -u ubuntu script /dev/null; }
 git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git"; }
-ddcutil-brightness() { ddcutil --display 1 setvcp 10 "$1"; }
+ddc-brightness() { ddcutil --display 1 setvcp 10 "$1"; }
