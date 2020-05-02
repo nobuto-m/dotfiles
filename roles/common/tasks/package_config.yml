@@ -13,3 +13,9 @@
     src: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
     dest: /usr/local/bin/diff-highlight
     mode: '0755'
+
+- name: add the user in i2c group set up by i2c-tools
+  user:
+    name: '{{ ansible_user_id }}'
+    groups: i2c
+    append: yes

@@ -125,6 +125,7 @@ packages:
   - inkscape
   - yubikey-personalization-gui
   - gnome-sound-recorder
+  - ddcutil
 
   # storage/filesystem
   - thin-provisioning-tools
