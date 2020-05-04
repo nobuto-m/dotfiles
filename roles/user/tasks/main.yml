@@ -54,8 +54,8 @@
 
 - name: copy 20.04 wallpaper
   copy:
-    src: ~/Downloads/ubuntu-wallpapers/Focal_Fossa_Wallpapers/PNG/Focal-Fossa_WP_4096x2304.png
-    dest: ~/.local/share/backgrounds/Focal-Fossa_WP_4096x2304.png
+    src: ~/Downloads/ubuntu-wallpapers/Focal_Fossa_Wallpapers/PNG/Focal-Fossa_Plain_WP_4096x2304.png
+    dest: ~/.local/share/backgrounds/Focal-Fossa_Plain_WP_4096x2304.png
     remote_src: yes
   when: wallpaper_focal is changed
 
