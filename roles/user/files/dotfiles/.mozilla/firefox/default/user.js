@@ -51,3 +51,7 @@ user_pref("font.name.serif.x-western", "DejaVu Serif");
 user_pref("font.name.monospace.ja", "DejaVu Sans Mono");
 user_pref("font.name.sans-serif.ja", "DejaVu Sans");
 user_pref("font.name.serif.ja", "DejaVu Serif");
+
+// override fallback order since Firefox doesn't look for LC_CTYPE to
+// display tab titles
+user_pref("font.cjk_pref_fallback_order", "ja,zh-cn,zh-hk,zh-tw,ko");
