@@ -18,3 +18,5 @@ alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 lxc-exec() { lxc exec "$1" -- sudo -i -u ubuntu script /dev/null; }
 git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git"; }
 ddc-brightness() { ddcutil --display 1 setvcp 10 "$1"; }
+ddc-volume() { ddcutil --display 1 setvcp 62 "$1"; }
+ddc-mute() { ddcutil --display 1 setvcp 8d "$1"; }
