@@ -1,0 +1,5 @@
+@-moz-document domain("mail.google.com") {
+  .editable, .a3s {
+    font-family: 'DejaVu Sans', sans-serif !important;
+  }
+}

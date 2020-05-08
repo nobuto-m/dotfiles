@@ -5,6 +5,9 @@ user_pref("layers.acceleration.force-enabled", true);
 user_pref("gfx.webrender.all", true);
 user_pref("gfx.webrender.compositor", true);
 
+// legacy
+user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+
 // Density as Compact
 user_pref("browser.uidensity", 1);
 
