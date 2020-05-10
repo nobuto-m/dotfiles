@@ -147,6 +147,11 @@
     path: ~/.local/bin/otp-ubuntu
     mode: 0755
 
+- name: make xclips-browser executable
+  file:
+    path: ~/.local/bin/xclips-browser
+    mode: 0755
+
 - name: generate ICC profile
   command: |
     cd-create-profile \
