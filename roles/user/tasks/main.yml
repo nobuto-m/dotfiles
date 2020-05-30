@@ -261,6 +261,7 @@
   with_items:
     - ms-python.python
     - redhat.vscode-yaml
+    - samuelcolvin.jinjahtml
     - ms-vscode.go
     - ms-vscode.cpptools
     - tuttieee.emacs-mcx
