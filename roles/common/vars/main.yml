@@ -141,6 +141,7 @@ packages:
   - dstat
   - stress-ng
   - fio
+  - iperf
   - iperf3
   - sysprof
   - linux-doc
