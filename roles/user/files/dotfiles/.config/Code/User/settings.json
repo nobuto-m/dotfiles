@@ -1,4 +1,5 @@
 {
+    "diffEditor.ignoreTrimWhitespace": false,
     "editor.cursorStyle": "block",
     "editor.fontFamily": "Ubuntu Mono, monospace",
     "editor.lineHeight": 16,
