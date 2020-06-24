@@ -48,6 +48,7 @@ packages:
   - python3-pip
   - python3-flake8
   - black
+  - golang-go
 
   # dev
   #- exuberant-ctags
