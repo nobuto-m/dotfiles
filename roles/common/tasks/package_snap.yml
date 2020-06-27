@@ -4,3 +4,7 @@
   register: snap
   changed_when: "snap.rc == 0 and 'is already installed' not in snap.stderr"
   with_items: "{{ snaps }}"
+
+- name: disable multipass gui autostart
+  command: multipass set client.gui.autostart=false
+  changed_when: false
