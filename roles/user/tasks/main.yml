@@ -67,11 +67,11 @@
       - id: clock-override@gnomeshell.kryogenix.org
         file: clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip
       - id: sound-output-device-chooser@kgshank.net
-        file: sound-output-device-chooserkgshank.net.v29.shell-extension.zip
+        file: sound-output-device-chooserkgshank.net.v31.shell-extension.zip
       - id: ShellTile@emasab.it
         file: ShellTileemasab.it.v62.shell-extension.zip
       - id: display-brightness-ddcutil@themightydeity.github.com
-        file: display-brightness-ddcutilthemightydeity.github.com.v3.shell-extension.zip
+        file: display-brightness-ddcutilthemightydeity.github.com.v7.shell-extension.zip
 
 - name: download extension
   get_url:
