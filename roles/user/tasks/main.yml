@@ -253,7 +253,7 @@
     paths: ~/.vscode/extensions/
     recurse: no
     file_type: directory
-    patterns: 'ms-vscode.go-*'
+    patterns: 'golang.Go-*'
   register: vscode_plugin
 
 - name: vscode plugins
@@ -262,7 +262,7 @@
     - ms-python.python
     - redhat.vscode-yaml
     - samuelcolvin.jinjahtml
-    - ms-vscode.go
+    - golang.Go
     - ms-vscode.cpptools
     - tuttieee.emacs-mcx
   changed_when: False
