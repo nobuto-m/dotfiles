@@ -1,6 +1,6 @@
 alias cdtemp='cd $(mktemp -d)'
 alias git-cdup='cd "$(git rev-parse --show-cdup)"'
-alias check-connectivity='httping -sGblY -c3 -t5 https://www.google.com/'
+alias check-connectivity='curl -s https://ipinfo.io/ | jq .; httping -sGblY -c3 -t5 https://www.google.com/'
 alias xclips='xclip -selection clip'
 alias xclips-indent='xclips -o | sed -e "s/^/    /" | xclips'
 alias xclips-blockquote='xclips -o | sed -e "s/^/> /" | xclips'
