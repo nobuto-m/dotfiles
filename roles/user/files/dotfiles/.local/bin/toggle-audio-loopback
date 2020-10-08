@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+set -u
+
+LATENCY_MSEC=25
+
+if pactl list | grep -qF module-loopback.c; then
+    pactl unload-module module-loopback
+    exit
+fi
+
+pactl load-module module-loopback latency_msec=$LATENCY_MSEC
+
+# device="$(pactl list source-outputs | grep -B1 -F module-loopback.c | head -n1 | col2 '#')"
+# pactl set-source-output-volume "$device" '100%'

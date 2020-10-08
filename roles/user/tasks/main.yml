@@ -147,6 +147,11 @@
     path: ~/.local/bin/otp-ubuntu
     mode: 0755
 
+- name: make toggle-audio-loopback executable
+  file:
+    path: ~/.local/bin/toggle-audio-loopback
+    mode: 0755
+
 - name: make xclips-browser executable
   file:
     path: ~/.local/bin/xclips-browser
