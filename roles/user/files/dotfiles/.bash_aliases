@@ -15,7 +15,7 @@ alias vpn-canonical-tcp443='sudo openvpn --mute-replay-warnings --config ~/.sesa
 alias vpn-canonical-tcp443-global='sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-tcp443-global.conf'
 alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" localhost'
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
-alias pa-enable-loopback='(pactl load-module module-loopback latency_msec=25; pactl set-source-output-volume "$(pactl list source-outputs | grep -B1 module-loopback.c | head -n1 | col2 \#)" "70%")'
+alias pa-enable-loopback='(pactl load-module module-loopback latency_msec=25; pactl set-source-output-volume "$(pactl list source-outputs | grep -B1 module-loopback.c | head -n1 | col2 \#)" "100%")'
 alias pa-enable-loopback-1='(pactl load-module module-loopback latency_msec=1; pactl set-source-output-volume "$(pactl list source-outputs | grep -B1 module-loopback.c | head -n1 | col2 \#)" "100%")'
 alias pa-disable-loopback='pactl unload-module module-loopback'
 lxc-exec() { lxc exec "$1" -- sudo -i -u ubuntu script /dev/null; }
