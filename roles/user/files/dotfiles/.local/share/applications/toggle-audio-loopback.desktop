@@ -3,4 +3,4 @@ Type=Application
 Name=Toggle Audio Loopback
 Keywords=Audio;
 Exec=toggle-audio-loopback
-Icon=audio-input-microphone-symbolic
+Icon=media-playlist-no-repeat-symbolic
