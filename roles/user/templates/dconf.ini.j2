@@ -183,7 +183,7 @@ instant-paste=false
 use-primary=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Primary><Alt>c'
@@ -194,6 +194,11 @@ name='Diodon'
 binding='<Primary><Alt>b'
 command='xclips-browser'
 name='xclips-browser'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Primary>space'
+command="xdotool search --limit 1 --name '^Meet .*- Chromium$' windowactivate key --clearmodifiers 'ctrl+d'"
+name='Mute/Unmute myself'
 
 
 #### gedit #####
