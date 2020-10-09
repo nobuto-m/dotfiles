@@ -126,6 +126,8 @@ packages:
   - yubikey-personalization-gui
   - gnome-sound-recorder
   - ddcutil
+  - xdotool
+  - wmctrl
 
   # storage/filesystem
   - thin-provisioning-tools
