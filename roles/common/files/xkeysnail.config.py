@@ -13,8 +13,7 @@ define_modmap({
 
 # [Global keymap]
 define_keymap(None, {
-    K("KATAKANAHIRAGANA"): K("Shift-F10"),  # as MENU key
-    K("MUTE"): K("C-SPACE")  # remap to "Mute/Unmute myself" in gsd-media-keys
+    K("KATAKANAHIRAGANA"): K("Shift-F10")  # as MENU key
 })
 
 # Keybindings for Web browser
