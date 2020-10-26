@@ -10,6 +10,8 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Density as Compact
 user_pref("browser.uidensity", 1);
+// Show the titlebar instead of CSD
+user_pref("browser.tabs.drawInTitlebar", false);
 
 user_pref("browser.sessionstore.warnOnQuit", true);
 user_pref("browser.startup.page", 3);  // Resume the previous browser session
