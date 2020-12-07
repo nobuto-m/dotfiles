@@ -1,1 +1,0 @@
-ACTION=="add", SUBSYSTEM=="usb", ENV{ID_MODEL_FROM_DATABASE}=="*Webcam*", ATTR{bInterfaceClass}=="01", ATTR{authorized}="0"
