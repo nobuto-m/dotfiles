@@ -15,9 +15,15 @@
     state: reloaded
   changed_when: False
 
+- name: check lxd config status
+  command: lxc network show lxdbr0
+  changed_when: False
+  ignore_errors: True
+  register: lxd_config_status
+
 - name: lxd init
   shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
-  changed_when: False
+  when: lxd_config_status is failed
 
 - name: lxc alias
   command: lxc alias add ubuntu 'exec @ARGS@ -- sudo --login --user ubuntu'
