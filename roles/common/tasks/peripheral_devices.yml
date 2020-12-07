@@ -1,0 +1,9 @@
+---
+- name: Remap a key on STMicroelectronics USB Volume Control
+  copy:
+    src: files/99-local-remap-usb-volume-control.hwdb
+    dest: /etc/udev/hwdb.d/99-local-remap-usb-volume-control.hwdb
+
+- name: Activate remapping
+  command: systemd-hwdb update
+  changed_when: False

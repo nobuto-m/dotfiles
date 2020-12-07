@@ -22,3 +22,6 @@
 
 - include: xkeysnail.yml
   become: yes
+
+- include: peripheral_devices.yml
+  become: yes

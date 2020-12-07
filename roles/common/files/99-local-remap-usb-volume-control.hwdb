@@ -1,0 +1,4 @@
+# STMicroelectronics USB Volume Control
+# Remap the click (Mute) to XF86Launch
+evdev:input:b0003v0483p572D*
+ KEYBOARD_KEY_c00e2=prog4
