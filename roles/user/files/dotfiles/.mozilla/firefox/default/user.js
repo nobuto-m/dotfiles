@@ -8,10 +8,13 @@ user_pref("gfx.webrender.compositor", true);
 // legacy
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
-// Density as Compact
-user_pref("browser.uidensity", 1);
-// Show the titlebar instead of CSD
-user_pref("browser.tabs.drawInTitlebar", false);
+// UI
+user_pref("browser.uidensity", 1);  // Density as Compact
+user_pref("browser.tabs.drawInTitlebar", false);  // Show the titlebar instead of CSD
+user_pref("layout.css.devPixelsPerPx", "1.6");  // HiDPI tweak
+user_pref("browser.ctrlTab.recentlyUsedOrder", false);
+user_pref("findbar.highlightAll", true);
+user_pref("middlemouse.paste", false);
 
 // Startup and exit
 user_pref("browser.sessionstore.warnOnQuit", true);
@@ -26,12 +29,6 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 // Enable spellchecker for multi-line controls and single-line controls
 user_pref("layout.spellcheckDefault", 2);
 user_pref("spellchecker.dictionary", "en-US");
-
-// UI
-user_pref("layout.css.devPixelsPerPx", "1.6");  // HiDPI tweak
-user_pref("browser.ctrlTab.recentlyUsedOrder", false);
-user_pref("findbar.highlightAll", true);
-user_pref("middlemouse.paste", false);
 
 // Privacy and Security
 user_pref("browser.contentblocking.category", "strict");
