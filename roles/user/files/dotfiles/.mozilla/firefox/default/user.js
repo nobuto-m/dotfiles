@@ -14,6 +14,7 @@ user_pref("browser.tabs.drawInTitlebar", false);  // Show the titlebar instead o
 user_pref("layout.css.devPixelsPerPx", "1.6");  // HiDPI tweak
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 user_pref("findbar.highlightAll", true);
+user_pref("accessibility.typeaheadfind.timeout", 30000);
 user_pref("middlemouse.paste", false);
 
 // Startup and exit
