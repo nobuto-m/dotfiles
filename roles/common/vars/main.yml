@@ -12,6 +12,7 @@ snaps:
   - snapcraft           --classic
   - kubectl             --classic
   - openstackclients    --classic --edge # LP: #1852373
+  - cmadison
   - vault
   - multipass           --classic
 
