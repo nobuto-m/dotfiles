@@ -143,7 +143,6 @@ packages:
   - sysstat
   - dstat
   - stress-ng
-  - fio
   - iperf
   - iperf3
   - sysprof
