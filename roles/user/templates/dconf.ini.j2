@@ -198,12 +198,12 @@ name='xclips-browser'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary>space'
-command="xdotool search --name '^Meet - .+ - Chromium$' windowactivate --sync keyup space key ctrl+d"
+command="sh -c \"xdotool search --name '^Meet - .+ - Chromium$' windowactivate --sync keyup space key ctrl+d || xdotool search --name '^Zoom Meeting$' windowactivate --sync keyup ctrl+space key alt+a\""
 name='Mute/Unmute myself - Keyboard'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
 binding='Launch4'
-command="xdotool search --name '^Meet - .+ - Chromium$' windowactivate --sync keyup space key ctrl+d"
+command="sh -c \"xdotool search --name '^Meet - .+ - Chromium$' windowactivate --sync keyup space key ctrl+d || xdotool search --name '^Zoom Meeting$' windowactivate --sync keyup ctrl+space key alt+a\""
 name='Mute/Unmute myself - USB volume controller'
 
 
