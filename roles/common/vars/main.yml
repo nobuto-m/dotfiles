@@ -73,6 +73,7 @@ packages:
   - network-manager-vpnc-gnome
   - network-manager-strongswan
   - ike-scan
+  - wireguard-tools
 
   # virt
   - uvtool
