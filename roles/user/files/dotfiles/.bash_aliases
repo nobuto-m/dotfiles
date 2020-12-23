@@ -16,6 +16,7 @@ alias vpn-canonical-tcp443='sudo openvpn --mute-replay-warnings --config ~/.sesa
 alias vpn-canonical-tcp443-global='sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-tcp443-global.conf'
 alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" localhost'
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
+alias wakeonlan-darkbox='wakeonlan 70:85:c2:ae:bc:08'
 lxc-exec() { lxc exec "$1" -- sudo -i -u ubuntu script /dev/null; }
 git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git"; }
 ddc-brightness() { ddcutil --display 1 setvcp 10 "$1"; }

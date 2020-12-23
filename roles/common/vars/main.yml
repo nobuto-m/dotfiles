@@ -117,6 +117,7 @@ packages:
   - zsync
   - freeipmi-tools
   - w3m
+  - wakeonlan
 
   # utils - indicator
   - diodon
