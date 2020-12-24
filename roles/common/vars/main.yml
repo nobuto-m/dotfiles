@@ -11,7 +11,7 @@ snaps:
   - charm               --classic
   - snapcraft           --classic
   - kubectl             --classic
-  - openstackclients    --classic --edge # LP: #1852373
+  - openstackclients    --channel latest/candidate # Ussuri
   - cmadison
   - vault
   - multipass           --classic
