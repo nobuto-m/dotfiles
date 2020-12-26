@@ -111,6 +111,7 @@ An example with ThinkPad.
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
+* https://addons.mozilla.org/firefox/addon/most-recent-tab/
 
 ### Chrome extensions
 
