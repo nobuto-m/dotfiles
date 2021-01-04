@@ -38,11 +38,10 @@
   ignore_errors: True
   register: squid_deb_proxy
 
-# TODO: resize the root volume to 40+ GB or change squid config
 - name: init squid-deb-proxy container
   shell: |
     echo "{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" \
-        | lxc init ubuntu:bionic \
+        | lxc init "ubuntu:{{ ansible_distribution_release }}" \
             --config=user.vendor-data="$(printf '#cloud-config\n{}\n')" \
             --config=user.user-data="$(cat -)" \
             squid-deb-proxy
