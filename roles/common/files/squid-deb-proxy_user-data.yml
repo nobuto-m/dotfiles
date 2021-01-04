@@ -14,6 +14,11 @@ write_files:
 
       images.maas.io
       artifacts.elastic.co
+
     owner: root:root
     path: /etc/squid-deb-proxy/mirror-dstdomain.acl.d/50-thirdparty
     permissions: '0644'
+
+runcmd:
+  - systemctl mask --now squid
+  - printf '\nshutdown_lifetime 3 seconds\n' >> /etc/squid-deb-proxy/squid-deb-proxy.conf
