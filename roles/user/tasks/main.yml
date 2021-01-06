@@ -306,7 +306,7 @@
 
 - name: create a directory for private repos
   file:
-    path: ~/src/private
+    path: ~/src/corporate_private
     state: directory
 
 - name: create a directory for openstack repos
