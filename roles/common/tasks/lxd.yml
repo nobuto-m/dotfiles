@@ -5,15 +5,15 @@
     groups: lxd
     append: yes
 
-- name: enable shiftfs
-  command: snap set lxd shiftfs.enable=true
-  changed_when: False
-
-- name: reload lxd to enable shiftfs
-  systemd:
-    name: snap.lxd.daemon
-    state: reloaded
-  changed_when: False
+#- name: enable shiftfs
+#  command: snap set lxd shiftfs.enable=true
+#  changed_when: False
+#
+#- name: reload lxd to enable shiftfs
+#  systemd:
+#    name: snap.lxd.daemon
+#    state: reloaded
+#  changed_when: False
 
 - name: check lxd config status
   command: lxc network show lxdbr0
@@ -69,11 +69,11 @@
   shell: echo "{{ lookup('file', 'files/lxd-juju-profile-openstack.yaml') }}" | lxc profile edit juju-openstack
   changed_when: False
 
-- name: create juju kubernetes profile
-  shell: lxc profile create juju-kubernetes
-  changed_when: False
-  ignore_errors: True
-
-- name: import juju kubernetes profile
-  shell: echo "{{ lookup('file', 'files/lxd-juju-profile-kubernetes.yaml') }}" | lxc profile edit juju-kubernetes
-  changed_when: False
+#- name: create juju kubernetes profile
+#  shell: lxc profile create juju-kubernetes
+#  changed_when: False
+#  ignore_errors: True
+#
+#- name: import juju kubernetes profile
+#  shell: echo "{{ lookup('file', 'files/lxd-juju-profile-kubernetes.yaml') }}" | lxc profile edit juju-kubernetes
+#  changed_when: False
