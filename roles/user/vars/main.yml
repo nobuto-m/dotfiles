@@ -7,3 +7,5 @@ git_repos:
 
   - { type: misc, name: greasemonkey-scripts, repo: 'https://github.com/nobuto-m/greasemonkey-scripts.git' }
   - { type: misc, name: quick-maas, repo: 'https://github.com/nobuto-m/quick-maas.git' }
+  - { type: misc, name: vps-setup, repo: 'https://github.com/nobuto-m/vps-setup.git' }
+  - { type: misc, name: darkbox, repo: 'https://github.com/nobuto-m/darkbox.git' }
