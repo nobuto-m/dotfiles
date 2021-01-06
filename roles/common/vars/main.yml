@@ -135,7 +135,6 @@ packages:
 
   # storage/filesystem
   - thin-provisioning-tools
-  - exfat-fuse
 
   # investigation
   - htop
