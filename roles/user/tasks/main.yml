@@ -137,25 +137,16 @@
     dest: ~/
   register: dotfiles
 
-- name: make .lessfilter executable
+- name: make .lessfilter and ~/.local/bin/ executable
   file:
-    path: ~/.lessfilter
+    path: "{{ item }}"
     mode: 0755
-
-- name: make otp-ubuntu executable
-  file:
-    path: ~/.local/bin/otp-ubuntu
-    mode: 0755
-
-- name: make toggle-audio-loopback executable
-  file:
-    path: ~/.local/bin/toggle-audio-loopback
-    mode: 0755
-
-- name: make xclips-browser executable
-  file:
-    path: ~/.local/bin/xclips-browser
-    mode: 0755
+  with_items:
+  - ~/.lessfilter
+  - ~/.local/bin/otp-ubuntu
+  - ~/.local/bin/toggle-audio-loopback
+  - ~/.local/bin/xclips-browser
+  - ~/.local/bin/bquote
 
 - name: generate ICC profile
   command: |

@@ -184,7 +184,7 @@ instant-paste=false
 use-primary=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Primary><Alt>c'
@@ -192,16 +192,21 @@ command='diodon'
 name='Diodon'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Primary><Alt>b'
+binding='<Primary><Alt>o'
 command='xclips-browser'
 name='xclips-browser'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Primary><Alt>b'
+command='bquote'
+name='xclips-blockquote'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
 binding='<Primary>space'
 command="sh -c \"xdotool search --name '^Meet - .+ - Chromium$' windowactivate --sync keyup space key ctrl+d || xdotool search --name '^Zoom Meeting$' windowactivate --sync keyup ctrl+space key alt+a\""
 name='Mute/Unmute myself - Keyboard'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding='Launch4'
 command="sh -c \"xdotool search --name '^Meet - .+ - Chromium$' windowactivate --sync keyup space key ctrl+d || xdotool search --name '^Zoom Meeting$' windowactivate --sync keyup ctrl+space key alt+a\""
 name='Mute/Unmute myself - USB volume controller'

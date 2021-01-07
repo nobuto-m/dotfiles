@@ -1,0 +1,2 @@
+#!/bin/sh -e
+xclip -selection clip -out | sed -e 's/^/> /' | xclip -selection clip
