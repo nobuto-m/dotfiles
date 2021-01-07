@@ -21,4 +21,5 @@ write_files:
 
 runcmd:
   - systemctl mask --now squid
-  - printf '\nshutdown_lifetime 3 seconds\n' >> /etc/squid-deb-proxy/squid-deb-proxy.conf
+  # multiple backslashes just for Ansible not to convert it to actual line breaks
+  - printf '\\\nshutdown_lifetime 3 seconds\\\n' >> /etc/squid-deb-proxy/squid-deb-proxy.conf
