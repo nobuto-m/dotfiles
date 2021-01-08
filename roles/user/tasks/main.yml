@@ -163,6 +163,14 @@
     dest: ~/.bashrc
     block: "{{ lookup('file', 'files/bashrc_block') }}"
 
+- name: git config pull.ff only
+  ini_file:
+    dest: ~/.gitconfig
+    section: pull
+    option: ff
+    value: only
+    state: present
+
 - name: git core.pager
   ini_file:
     dest: ~/.gitconfig
