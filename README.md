@@ -104,6 +104,9 @@ An example with ThinkPad.
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
   - `Offer to translate pages that aren't in a language you read` - off
+* Restore those files manually if necessary:
+  - ~/.config/hub
+  - ~/.local/share/juju/credentials.yaml
 
 ### Firefox add-ons
 
