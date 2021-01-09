@@ -269,6 +269,8 @@
     - golang.Go
     - ms-vscode.cpptools
     - tuttieee.emacs-mcx
+    - streetsidesoftware.code-spell-checker
+    - eamodio.gitlens
   changed_when: False
   when: vscode_plugin.matched == 0
 
