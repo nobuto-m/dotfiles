@@ -86,6 +86,15 @@ An example with ThinkPad.
 
 ### Remaining manual steps
 
+* override NetworkManager configuration
+  - Explicit DNS
+    - `nmcli connection modify "<AP>" ipv4.ignore-auto-dns yes`
+    - `nmcli connection modify "<AP>" ipv4.dns 8.8.8.8,8.8.4.4`
+  - Tethering AP
+    - `nmcli device wifi connect "<SSID>" password "<password>"`
+    - `nmcli connection modify "<AP>" connection.metered yes`
+  - Shared to other computers
+    - `nmcli connection add type ethernet con-name Shared autoconnect no ipv4.method shared ipv6.method disabled`
 * check firmware updates - `fwupdmgr refresh && fwupdmgr get-updates`
 * login to Firefox Sync
 * pin tabs in Firefox including e-mails, calendar, messengers, task-management,
