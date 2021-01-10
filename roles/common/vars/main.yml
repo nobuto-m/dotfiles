@@ -99,7 +99,7 @@ packages:
   - colordiff
   - dwdiff
   - ccze
-  - chroma
+  - python3-pygments
   - tree
   - xclip
   - oathtool
