@@ -1,5 +1,5 @@
 ---
-- mame: disable auto refresh on a metered network
+- name: disable auto refresh on a metered network
   command: snap set system refresh.metered=hold
   changed_when: False
 
