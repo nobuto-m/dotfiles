@@ -20,6 +20,7 @@
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
+    "terminal.integrated.allowChords": false,
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 1.16
 }
