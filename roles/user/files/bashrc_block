@@ -37,7 +37,7 @@ __show_juju() {
     if [ -n "$JUJU_MODEL" ]; then
         model="$JUJU_MODEL"
     else
-        model=$(juju switch 2>/dev/null | sed -e 's|:admin/|:|')
+        model=$(juju switch 2>/dev/null)
     fi
     if [ -n "$model" ]; then
         printf '(\\[\\e[32m\\]%s\\[\\e[0m\\]) ' "$model"
