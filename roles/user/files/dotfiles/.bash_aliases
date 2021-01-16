@@ -13,7 +13,7 @@ alias vpn-canonical='sudo openvpn --mute-replay-warnings --config ~/.sesame/us-n
 alias vpn-canonical-global='sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-global.conf'
 alias vpn-canonical-tcp443='sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-tcp443.conf'
 alias vpn-canonical-tcp443-global='sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-tcp443-global.conf'
-alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" --bootstrap-series focal localhost'
+alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" --bootstrap-series focal localhost localhost'
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 alias wakeonlan-darkbox='wakeonlan 70:85:c2:ae:bc:08'
 alias hugo='/snap/hugo/current/bin/hugo' # https://github.com/gohugoio/hugoDocs/issues/1222
