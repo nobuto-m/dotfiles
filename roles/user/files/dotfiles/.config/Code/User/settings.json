@@ -1,6 +1,5 @@
 {
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.cursorStyle": "block",
     "editor.fontFamily": "Ubuntu Mono, monospace",
     "editor.lineHeight": 16,
     "editor.minimap.enabled": false,
@@ -16,7 +15,6 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 10000,
     "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
