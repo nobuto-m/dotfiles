@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+
+import yaml
+from pathlib import Path
+
+
+def main():
+    juju_data = Path.home().joinpath(".local/share/juju")
+    with open(juju_data.joinpath("controllers.yaml")) as f:
+        controllers = yaml.safe_load(f)
+
+    current_controller = controllers.get("current-controller")
+    if not current_controller:
+        return
+
+    with open(juju_data.joinpath("models.yaml")) as f:
+        models = yaml.safe_load(f)
+
+    try:
+        current_models = models["controllers"][current_controller]
+        current_model = current_models["current-model"]
+    except KeyError:
+        pass
+
+    if current_model:
+        print("%s:%s" % (current_controller, current_model))
+
+
+if __name__ == "__main__":
+    main()

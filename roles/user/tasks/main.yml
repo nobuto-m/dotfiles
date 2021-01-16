@@ -143,10 +143,11 @@
     mode: 0755
   with_items:
   - ~/.lessfilter
+  - ~/.local/bin/bquote
+  - ~/.local/bin/juju-current-model
   - ~/.local/bin/otp-ubuntu
   - ~/.local/bin/toggle-audio-loopback
   - ~/.local/bin/xclips-browser
-  - ~/.local/bin/bquote
 
 - name: generate ICC profile
   command: |
