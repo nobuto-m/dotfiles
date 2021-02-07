@@ -63,13 +63,13 @@
   set_fact:
     extensions:
       - id: unite@hardpixel.eu
-        file: unitehardpixel.eu.v44.shell-extension.zip
+        file: unitehardpixel.eu.v45.shell-extension.zip
       - id: clock-override@gnomeshell.kryogenix.org
         file: clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip
       - id: sound-output-device-chooser@kgshank.net
-        file: sound-output-device-chooserkgshank.net.v32.shell-extension.zip
+        file: sound-output-device-chooserkgshank.net.v34.shell-extension.zip
       - id: ShellTile@emasab.it
-        file: ShellTileemasab.it.v64.shell-extension.zip
+        file: ShellTileemasab.it.v65.shell-extension.zip
 
 - name: download extension
   get_url:
