@@ -71,7 +71,7 @@ packages:
 #  - network-manager-iodine-gnome
 #  - network-manager-l2tp-gnome
 #  - network-manager-openconnect-gnome
-#  - network-manager-openvpn-gnome
+  - network-manager-openvpn-gnome
 #  - network-manager-vpnc-gnome
 #  - network-manager-strongswan
 #  - ike-scan
