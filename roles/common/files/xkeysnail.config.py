@@ -34,5 +34,6 @@ define_keymap(
         K("C-Shift-f"): K("C-f"),  # Replacement of the original C-f
         K("C-Shift-e"): K("C-e"),  # Replacement of the original C-e
         K("C-Shift-d"): K("C-d"),  # Replacement of the original C-d
+        K("C-Shift-b"): K("C-b"),  # Replacement of the original C-b
     },
     "Web browser")
