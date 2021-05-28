@@ -95,6 +95,7 @@ packages:
 
   # utils - terminal
   - byobu
+  - fzf
   - colordiff
   - dwdiff
   - ccze
