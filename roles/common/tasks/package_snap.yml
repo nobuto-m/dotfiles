@@ -3,6 +3,10 @@
   command: snap set system refresh.metered=hold
   changed_when: False
 
+- name: enable refresh app awareness
+  command: snap set core experimental.refresh-app-awareness=true
+  changed_when: False
+
 - name: install snaps
   command: snap install {{ item }}
   register: snap
