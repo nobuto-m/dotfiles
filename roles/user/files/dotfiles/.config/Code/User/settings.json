@@ -15,6 +15,9 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 10000,
     "files.insertFinalNewline": true,
+    "python.formatting.blackArgs": [
+        "--line-length=79"
+    ],
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
