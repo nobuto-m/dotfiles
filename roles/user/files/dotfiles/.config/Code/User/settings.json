@@ -1,4 +1,10 @@
 {
+    "cSpell.languageSettings": [
+        {
+            "languageId": "python, go",
+            "allowCompoundWords": false
+        }
+    ],
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.fontFamily": "Ubuntu Mono, monospace",
     "editor.lineHeight": 16,
