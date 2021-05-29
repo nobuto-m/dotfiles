@@ -256,7 +256,7 @@
     paths: ~/.vscode/extensions/
     recurse: no
     file_type: directory
-    patterns: 'golang.Go-*'
+    patterns: 'ms-python.python-*'
   register: vscode_plugin
 
 - name: vscode plugins
@@ -270,6 +270,7 @@
     - tuttieee.emacs-mcx
     - streetsidesoftware.code-spell-checker
     - eamodio.gitlens
+    - stkb.rewrap
   changed_when: False
   when: vscode_plugin.matched == 0
 
