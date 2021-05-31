@@ -30,5 +30,11 @@
     "python.linting.pylintEnabled": false,
     "terminal.integrated.allowChords": false,
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 1.16
+    "window.zoomLevel": 1.16,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ]
 }
