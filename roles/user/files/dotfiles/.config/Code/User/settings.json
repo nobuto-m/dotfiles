@@ -22,6 +22,10 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 10000,
     "files.insertFinalNewline": true,
+    "files.watcherExclude": {
+        "**/.tox/**": true,
+        "**/.venv/**": true
+    },
     "python.formatting.blackArgs": [
         "--line-length=79"
     ],
