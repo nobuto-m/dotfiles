@@ -125,6 +125,10 @@ An example with ThinkPad.
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
 * https://addons.mozilla.org/firefox/addon/most-recent-tab/
 
+#### Disabled
+
+* https://addons.mozilla.org/firefox/addon/user-agent-switcher-revived/
+
 ### Chrome extensions
 
 * https://chrome.google.com/webstore/detail/google-meet-push-to-talk/pgpidfocdapogajplhjofamgeboonmmj
