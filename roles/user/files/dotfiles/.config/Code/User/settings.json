@@ -6,6 +6,7 @@
         }
     ],
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.find.seedSearchStringFromSelection": false,
     "editor.fontFamily": "Ubuntu Mono, monospace",
     "editor.lineHeight": 16,
     "editor.minimap.enabled": false,
