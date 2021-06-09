@@ -17,7 +17,6 @@ alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http:
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 alias wakeonlan-darkbox='wakeonlan 70:85:c2:ae:bc:08'
 alias hugo='/snap/hugo/current/bin/hugo' # https://github.com/gohugoio/hugoDocs/issues/1222
-lxc-exec() { lxc exec "$1" -- sudo -i -u ubuntu script /dev/null; }
 git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git"; }
 ddc-brightness() { ddcutil --display 1 setvcp 10 "$1"; }
 ddc-volume() { ddcutil --display 1 setvcp 62 "$1"; }
