@@ -20,6 +20,9 @@
 - include: lxd.yml
   become: yes
 
+- include: vpn.yml
+  become: yes
+
 - include: xkeysnail.yml
   become: yes
 
