@@ -271,6 +271,7 @@
     - streetsidesoftware.code-spell-checker
     - eamodio.gitlens
     - stkb.rewrap
+    - njpwerner.autodocstring
   changed_when: False
   when: vscode_plugin.matched == 0
 
