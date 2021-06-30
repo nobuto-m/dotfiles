@@ -4,6 +4,8 @@ alias check-connectivity='httping -sGblY -c3 -t5 https://www.google.com/; curl -
 alias xclips='xclip -selection clip'
 alias xclips-indent='xclips -o | sed -e "s/^/    /" | xclips'
 alias xclips-blockquote='xclips -o | sed -e "s/^/> /" | xclips'
+alias xclips-fold='xclips -o | fold -sw 72 | xclips'
+alias xclips-trim-spaces='xclips -o | sed -e "s/ \+$//" | xclips'
 alias pwgenp='pwgen -sB 20 | xclips'
 alias pwgenp-nocaps='pwgen -sBA 20 | xclips'
 alias encmount-canonical='encfs -o allow_root --idle=720 ~/Dropbox/Canonical/ ~/Canonical/ && cd ~/Canonical/'
