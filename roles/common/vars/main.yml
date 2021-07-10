@@ -10,10 +10,9 @@ snaps:
   - charm               --classic
   - snapcraft           --classic
   - kubectl             --classic
-  - openstackclients    --channel latest/candidate # Ussuri
+  - openstackclients
   - cmadison
   - vault
-  - multipass           --classic
   - hugo                --channel extended
   - go                  --classic # hugo mod
 
