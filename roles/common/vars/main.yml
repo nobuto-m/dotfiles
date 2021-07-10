@@ -36,6 +36,8 @@ packages:
   - git
   - git-email
   - git-review
+  - git-secret
+  - git-secrets
   - hub
   - bzr
   - bzrtools
