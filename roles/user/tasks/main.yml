@@ -210,6 +210,18 @@
     value: origin
     state: present
 
+- name: git secrets --install
+  command: git secrets --install --force ~/.git-templates/git-secrets
+  changed_when: False
+
+- name: git secrets init.templateDir
+  command: git config --global init.templateDir ~/.git-templates/git-secrets
+  changed_when: False
+
+- name: git secrets --register-aws
+  command: git secrets --register-aws --global
+  changed_when: False
+
 - name: render dconf
   template:
     src: templates/dconf.ini.j2
