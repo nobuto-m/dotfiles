@@ -112,6 +112,7 @@ An example with ThinkPad.
 * set gerrit username with `git config --global --add gitreview.username "USER"`
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
+  - set `Show home bottun` to true and set `https://meet.google.com/`
   - `Offer to translate pages that aren't in a language you read` - off
 * Restore those files manually if necessary:
   - ~/.config/hub
