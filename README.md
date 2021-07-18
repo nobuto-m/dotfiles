@@ -128,7 +128,3 @@ An example with ThinkPad.
 #### Disabled
 
 * https://addons.mozilla.org/firefox/addon/user-agent-switcher-revived/
-
-### Chrome extensions
-
-* https://chrome.google.com/webstore/detail/google-meet-push-to-talk/pgpidfocdapogajplhjofamgeboonmmj
