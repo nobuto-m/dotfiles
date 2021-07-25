@@ -1,8 +1,6 @@
-* git find file
 * clock rendering is fragile
 * caffeine
 * flaky trackpoint
   Oct 15 10:50:43 t480 kernel: psmouse serio2: TrackPoint at rmi4-00.fn03/serio0/input0 lost synchronization, throwing 2 bytes away.
   Oct 15 10:50:43 t480 kernel: psmouse serio2: resync failed, issuing reconnect request
 * store one SSH key in TPM
-* git-secrets
