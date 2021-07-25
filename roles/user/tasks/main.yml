@@ -22,6 +22,11 @@
     dest: ~/Downloads/Focal_Fossa_Wallpapers_All.tar.xz
   register: wallpaper_focal
 
+- name: make sure ~/Downloads/ubuntu-wallpapers/ exists
+  file:
+    path: ~/Downloads/ubuntu-wallpapers
+    state: directory
+
 - name: extract 20.04 wallpaper
   unarchive:
     src: ~/Downloads/Focal_Fossa_Wallpapers_All.tar.xz
