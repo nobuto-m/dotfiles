@@ -222,6 +222,10 @@
   command: git secrets --register-aws --global
   changed_when: False
 
+- name: git secrets --add BEGIN PRIVATE KEY
+  command: git secrets --add --global '(-){5}BEGIN .*PRIVATE KEY.*(-){5}'
+  changed_when: False
+
 - name: render dconf
   template:
     src: templates/dconf.ini.j2
