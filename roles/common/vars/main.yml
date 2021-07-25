@@ -33,6 +33,7 @@ packages:
   # dev - minimal
   - packaging-dev
   - debian-goodies  # dman
+  - nullmailer
   - git
   - git-email
   - git-review

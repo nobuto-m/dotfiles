@@ -34,6 +34,13 @@
     upgrade: dist
   environment: "{{ eatmydata }}"
 
+- name: debconf nullmailer - empty remotes
+  debconf:
+    name: nullmailer
+    question: nullmailer/relayhost
+    value: '#'
+    vtype: string
+
 - name: apt install packages
   apt:
     name: "{{ packages }}"
