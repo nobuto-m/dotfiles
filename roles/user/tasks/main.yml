@@ -16,21 +16,11 @@
     path: ~/.local/bin
     state: directory
 
-- name: download 16.04 wallpaper
-  get_url:
-    url: https://launchpad.net/ubuntu/+archive/primary/+files/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb
-    dest: ~/Downloads/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb
-  register: wallpaper
-
 - name: download 20.04 plain wallpaper
   get_url:
     url: https://people.ubuntu.com/~flexiondotorg/Focal_Fossa_Wallpapers_All.tar.xz
     dest: ~/Downloads/Focal_Fossa_Wallpapers_All.tar.xz
   register: wallpaper_focal
-
-- name: extract 16.04 wallpaper
-  command: dpkg-deb -x ~/Downloads/ubuntu-wallpapers_16.04.1-0ubuntu1_all.deb ~/Downloads/ubuntu-wallpapers/
-  when: wallpaper is changed
 
 - name: extract 20.04 wallpaper
   unarchive:
@@ -43,14 +33,6 @@
   file:
     path: ~/.local/share/backgrounds
     state: directory
-  when: wallpaper is changed
-
-- name: copy 16.04 wallpaper
-  copy:
-    src: ~/Downloads/ubuntu-wallpapers/usr/share/backgrounds/warty-final-ubuntu.png
-    dest: ~/.local/share/backgrounds/warty-final-ubuntu-16.04.png
-    remote_src: yes
-  when: wallpaper is changed
 
 - name: copy 20.04 wallpaper
   copy:
