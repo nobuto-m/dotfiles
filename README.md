@@ -86,6 +86,7 @@ An example with ThinkPad.
 
 ### Remaining manual steps
 
+* login with X session
 * check firmware updates - `fwupdmgr refresh && fwupdmgr get-updates`
 * select color profile from gnome-control-center
 * Firefox
