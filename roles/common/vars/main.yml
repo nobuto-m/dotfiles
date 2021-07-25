@@ -2,19 +2,19 @@
 eatmydata: { LD_LIBRARY_PATH: /usr/lib/libeatmydata, LD_PRELOAD: libeatmydata.so }
 
 snaps:
-  - chromium
-  - lxd
-  - juju                --classic
-  - juju-crashdump      --classic
-  - juju-wait           --classic
-  - charm               --classic
-  - snapcraft           --classic
-  - kubectl             --classic
-  - openstackclients
-  - cmadison
-  - vault
-  - hugo                --channel extended
-  - go                  --classic # hugo mod
+  - {name: chromium,            classic: no, channel: null}
+  - {name: lxd,                 classic: no, channel: null}
+  - {name: juju,                classic: yes, channel: null}
+  - {name: juju-crashdump,      classic: yes, channel: null}
+  - {name: juju-wait,           classic: yes, channel: null}
+  - {name: charm,               classic: yes, channel: null}
+  - {name: snapcraft,           classic: yes, channel: null}
+  - {name: kubectl,             classic: yes, channel: null}
+  - {name: openstackclients,    classic: no, channel: null}
+  - {name: cmadison,            classic: no, channel: null}
+  - {name: vault,               classic: no, channel: null}
+  - {name: hugo,                classic: no, channel: 'extended'}
+  - {name: go,                  classic: yes, channel: null} # hugo mod
 
 packages:
 

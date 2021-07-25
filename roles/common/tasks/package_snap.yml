@@ -8,7 +8,8 @@
   changed_when: False
 
 - name: install snaps
-  command: snap install {{ item }}
-  register: snap
-  changed_when: "snap.rc == 0 and 'is already installed' not in snap.stderr"
+  snap:
+    name: "{{ item.name }}"
+    classic: "{{ item.classic }}"
+    channel: "{{ item.channel }}"
   with_items: "{{ snaps }}"
