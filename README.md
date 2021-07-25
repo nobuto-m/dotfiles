@@ -86,6 +86,14 @@ An example with ThinkPad.
 
 ### Remaining manual steps
 
+* check firmware updates - `fwupdmgr refresh && fwupdmgr get-updates`
+* select color profile from gnome-control-center
+* Firefox
+  - login to Firefox Sync
+  - pin tabs in Firefox including e-mails, calendar, messengers, task-management,
+    and docs
+  - enable notifications from specific tabs
+* setup an OTP device
 * override NetworkManager configuration
   - Explicit DNS
     - `nmcli connection modify "<AP>" ipv4.ignore-auto-dns yes`
@@ -95,14 +103,7 @@ An example with ThinkPad.
     - `nmcli -t -f GENERAL.METERED dev show "<iface>"` -> `yes (guessed)`
   - Shared to other computers
     - `nmcli connection add type ethernet con-name Shared autoconnect no ipv4.method shared ipv6.method disabled`
-* check firmware updates - `fwupdmgr refresh && fwupdmgr get-updates`
-* login to Firefox Sync
-* pin tabs in Firefox including e-mails, calendar, messengers, task-management,
-  time-tracking, grammar-checker and docs
-* enable notifications from specific tabs
-* setup an OTP device
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
-* select color profile from gnome-control-center
 * disable Dropbox LAN sync by `dropbox lansync n`
 * set git `user.name` and `user.email` with `git config --global`
 * create `~/.gitconfig_corporate` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
