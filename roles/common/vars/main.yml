@@ -131,6 +131,7 @@ packages:
   - gimp
   - inkscape
   - yubikey-personalization-gui
+  - gstreamer1.0-libav
   - gnome-sound-recorder
   - ddcutil
   - xdotool
