@@ -1,7 +1,6 @@
 //
 
 // experimental
-user_pref("layers.acceleration.force-enabled", true);
 user_pref("gfx.webrender.all", true);
 user_pref("gfx.webrender.compositor", true);
 
@@ -11,10 +10,11 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 // UI
 user_pref("browser.uidensity", 1);  // Density as Compact
 user_pref("browser.tabs.drawInTitlebar", false);  // Show the titlebar instead of CSD
+user_pref("browser.toolbars.bookmarks.visibility", "never");
 user_pref("layout.css.devPixelsPerPx", "1.6");  // HiDPI tweak
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 user_pref("findbar.highlightAll", true);
-user_pref("accessibility.typeaheadfind.timeout", 30000);
+user_pref("accessibility.typeaheadfind.timeout", 300000);
 user_pref("middlemouse.paste", false);
 
 // Startup and exit
