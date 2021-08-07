@@ -122,7 +122,7 @@ An example with ThinkPad.
 
 ### Firefox add-ons
 
-* https://addons.mozilla.org/firefox/addon/yaru-hybrid/
+* https://addons.mozilla.org/firefox/addon/yaru-hybrid-unofficial/
 * https://addons.mozilla.org/firefox/addon/multi-account-containers/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
