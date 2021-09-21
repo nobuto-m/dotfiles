@@ -16,35 +16,16 @@
     path: ~/.local/bin
     state: directory
 
-- name: download 20.04 plain wallpaper
-  get_url:
-    url: https://people.ubuntu.com/~flexiondotorg/Focal_Fossa_Wallpapers_All.tar.xz
-    dest: ~/Downloads/Focal_Fossa_Wallpapers_All.tar.xz
-  register: wallpaper_focal
-
-- name: make sure ~/Downloads/ubuntu-wallpapers/ exists
-  file:
-    path: ~/Downloads/ubuntu-wallpapers
-    state: directory
-
-- name: extract 20.04 wallpaper
-  unarchive:
-    src: ~/Downloads/Focal_Fossa_Wallpapers_All.tar.xz
-    dest: ~/Downloads/ubuntu-wallpapers/
-    remote_src: yes
-  when: wallpaper_focal is changed
-
 - name: make sure wallpaper dir exists
   file:
     path: ~/.local/share/backgrounds
     state: directory
 
-- name: copy 20.04 wallpaper
-  copy:
-    src: ~/Downloads/ubuntu-wallpapers/Focal_Fossa_Wallpapers/PNG/Focal-Fossa_Plain_WP_4096x2304.png
-    dest: ~/.local/share/backgrounds/Focal-Fossa_Plain_WP_4096x2304.png
-    remote_src: yes
-  when: wallpaper_focal is changed
+- name: download plain wallpaper
+  get_url:
+    url: "https://drive.google.com/uc?export=download&id=19d0NJ6zBRSFSxkfyD1tploOEOh-SvRTx"
+    dest: ~/.local/share/backgrounds/blank.png
+  register: wallpaper
 
 - name: set the list of extensions
   set_fact:
