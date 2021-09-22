@@ -180,6 +180,10 @@
   command: git secrets --install --force ~/.git-templates/git-secrets
   changed_when: False
 
+- name: git secrets -- disable auto-scanning of merge commits
+  file: ~/.git-templates/git-secrets/hooks/prepare-commit-msg
+  state: absent
+
 - name: git secrets init.templateDir
   command: git config --global init.templateDir ~/.git-templates/git-secrets
   changed_when: False
