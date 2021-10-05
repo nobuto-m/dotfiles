@@ -14,4 +14,8 @@ echo "$otp"
 
 if which xclip > /dev/null; then
     echo "$otp" | xclip -selection clip
+
+    if which xdotool > /dev/null; then
+        xdotool sleep 0.5 key ctrl+v Return
+    fi
 fi
