@@ -2,11 +2,12 @@
     "autoDocstring.docstringFormat": "sphinx",
     "cSpell.languageSettings": [
         {
-            "languageId": "python, go",
-            "allowCompoundWords": false
+            "allowCompoundWords": false,
+            "languageId": "python, go"
         }
     ],
     "diffEditor.ignoreTrimWhitespace": false,
+    "editor.bracketPairColorization.enabled": true,
     "editor.find.seedSearchStringFromSelection": false,
     "editor.fontFamily": "Ubuntu Mono, monospace",
     "editor.lineHeight": 16,
@@ -28,20 +29,22 @@
         "**/.tox/**": true,
         "**/.venv/**": true
     },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
     "python.formatting.blackArgs": [
         "--line-length=79"
     ],
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
+    "redhat.telemetry.enabled": false,
     "rewrap.wrappingColumn": 79,
     "terminal.integrated.allowChords": false,
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 1.16,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ]
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    }
 }
