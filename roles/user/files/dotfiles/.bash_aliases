@@ -20,7 +20,7 @@ alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 alias wakeonlan-darkbox='wakeonlan 70:85:c2:ae:bc:08'
 alias hugo='/snap/hugo/current/bin/hugo' # https://github.com/gohugoio/hugoDocs/issues/1222
 alias code-use-tox='test ! -e .vscode/ && (mkdir -p $_; echo "{\"python.defaultInterpreterPath\":\".tox/py3/bin/python3\"}" > $_/settings.json) || printf "%s already exists\n" "$_"'
-git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git"; }
+git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git" && cd "$1"; }
 ddc-brightness() { ddcutil --display 1 setvcp 10 "$1"; }
 ddc-volume() { ddcutil --display 1 setvcp 62 "$1"; }
 ddc-mute() { ddcutil --display 1 setvcp 8d "$1"; }
