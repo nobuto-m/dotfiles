@@ -5,8 +5,7 @@ user_pref("gfx.webrender.all", true);
 user_pref("gfx.webrender.compositor", true);
 // unavailable by runtime: Wayland support missing
 //user_pref("gfx.webrender.compositor.force-enabled", true);
-// fall back to legacy OpenGL compositor
-user_pref("layers.acceleration.force-enabled", true);
+user_pref("gfx.x11-egl.force-enabled", true);
 
 // legacy
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
