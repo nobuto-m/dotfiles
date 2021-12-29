@@ -1,4 +1,5 @@
 alias cdtemp='cd $(mktemp -d)'
+alias lsblk-e7='lsblk -e7'
 alias git-cdup='cd "$(git rev-parse --show-cdup)"'
 alias check-connectivity='httping -sGblY -c3 -t5 https://www.google.com/; curl -s https://ipinfo.io/ | jq .'
 alias xclips='xclip -selection clip'
