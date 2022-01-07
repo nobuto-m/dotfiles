@@ -176,34 +176,6 @@
     value: origin
     state: present
 
-- name: git secrets --install
-  command: git secrets --install --force ~/.git-templates/git-secrets
-  changed_when: False
-
-- name: git secrets -- disable auto-scanning of merge commits
-  file:
-    path: ~/.git-templates/git-secrets/hooks/prepare-commit-msg
-    state: absent
-  changed_when: False
-
-- name: git secrets init.templateDir
-  command: git config --global init.templateDir ~/.git-templates/git-secrets
-  changed_when: False
-
-- name: git secrets --register-aws
-  command: git secrets --register-aws --global
-  changed_when: False
-
-- name: git secrets --add GitHub token
-  command: git secrets --add --global 'gh[a-z]_[A-Za-z0-9_]+'
-  changed_when: False
-  ignore_errors: True
-
-- name: git secrets --add BEGIN PRIVATE KEY
-  command: git secrets --add --global '(-){5}BEGIN .*PRIVATE KEY.*(-){5}'
-  changed_when: False
-  ignore_errors: True
-
 - name: render dconf
   template:
     src: templates/dconf.ini.j2
