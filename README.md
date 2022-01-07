@@ -96,9 +96,8 @@ An example with ThinkPad.
   - enable notifications from specific tabs
 * setup an OTP device
 * override NetworkManager configuration
-  - Explicit DNS
-    - `nmcli connection modify "<AP>" ipv4.ignore-auto-dns yes`
-    - `nmcli connection modify "<AP>" ipv4.dns 8.8.8.8,8.8.4.4`
+  - Explicit BSSID
+    - `nmcli connection modify "<AP>" 802-11-wireless.bssid "<BSSID>"`
   - Tethering AP
     - `nmcli device wifi connect "<SSID>" password "<password>"`
     - `nmcli -t -f GENERAL.METERED dev show "<iface>"` -> `yes (guessed)`
