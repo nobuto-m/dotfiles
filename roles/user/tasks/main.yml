@@ -184,6 +184,7 @@
   file:
     path: ~/.git-templates/git-secrets/hooks/prepare-commit-msg
     state: absent
+  changed_when: False
 
 - name: git secrets init.templateDir
   command: git config --global init.templateDir ~/.git-templates/git-secrets
