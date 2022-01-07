@@ -123,11 +123,11 @@ An example with ThinkPad.
 
 * https://addons.mozilla.org/firefox/addon/yaru-hybrid-unofficial/
 * https://addons.mozilla.org/firefox/addon/multi-account-containers/
-* https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/greasemonkey/
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
 * https://addons.mozilla.org/firefox/addon/most-recent-tab/
 
 #### Disabled
 
+* https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/user-agent-switcher-revived/
