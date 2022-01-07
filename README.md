@@ -115,6 +115,7 @@ An example with ThinkPad.
   - set `https://meet.google.com/` as a start-up page
   - set `Show home bottun` to true and set `https://meet.google.com/`
   - `Offer to translate pages that aren't in a language you read` - off
+* install tailscale and activate it with `tailscale up --shields-up`
 * Restore those files manually if necessary:
   - ~/.config/hub
   - ~/.local/share/juju/credentials.yaml
