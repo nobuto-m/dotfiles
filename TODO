@@ -3,3 +3,4 @@
   - make it as the default browser
   - title bar compatibility with unite
 * caffeine
+* pulseaudio doesn't recover the previous volume
