@@ -1,2 +1,2 @@
 #!/bin/sh -e
-x-www-browser "$(xclip -selection clip -out)"
+firefox "$(xclip -selection clip -out)"
