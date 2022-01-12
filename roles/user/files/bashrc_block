@@ -12,7 +12,7 @@ export LESS_TERMCAP_us=$'\e[04;38;5;139m'
 [ -r ~/.byobu/prompt ] && . ~/.byobu/prompt
 
 . /usr/share/doc/fzf/examples/key-bindings.bash
-. /usr/share/doc/fzf/examples/completion.bash
+. /usr/share/bash-completion/completions/fzf
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
