@@ -96,12 +96,12 @@ An example with ThinkPad.
   - enable notifications from specific tabs
 * setup an OTP device
 * override NetworkManager configuration
-  - Explicit BSSID
+  - Set an explicit BSSID to the main access point
     - `nmcli connection modify "<AP>" 802-11-wireless.bssid "<BSSID>"`
   - Tethering AP
     - `nmcli device wifi connect "<SSID>" password "<password>"`
-    - `nmcli -t -f GENERAL.METERED dev show "<iface>"` -> `yes (guessed)`
   - Shared to other computers
+    - `nmcli connection add type ethernet con-name Wired` (default)
     - `nmcli connection add type ethernet con-name Shared autoconnect no ipv4.method shared ipv6.method disabled`
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * disable Dropbox LAN sync by `dropbox lansync n`
