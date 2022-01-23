@@ -87,6 +87,7 @@ An example with ThinkPad.
 ### Remaining manual steps
 
 * login with X session
+* Add another key to LUKS with `sudo cryptsetup luksAddKey /dev/nvme0n1p3`
 * check firmware updates - `fwupdmgr refresh; fwupdmgr get-updates`
 * select color profile from gnome-control-center
 * Firefox
