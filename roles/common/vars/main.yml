@@ -111,6 +111,7 @@ packages:
   - curl
   - sshuttle
   - nmap
+  - tcpflow
   - sipcalc
   - ipcalc
   - jnettop
