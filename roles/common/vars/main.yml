@@ -114,6 +114,7 @@ packages:
   - tcpflow
   - sipcalc
   - ipcalc
+  - whois
   - jnettop
   - httping
   - iputils-arping
