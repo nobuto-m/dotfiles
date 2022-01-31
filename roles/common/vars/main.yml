@@ -8,6 +8,7 @@ snaps:
   - {name: juju-crashdump,      classic: yes, channel: null}
   - {name: juju-wait,           classic: yes, channel: null}
   - {name: charm,               classic: yes, channel: null}
+  - {name: charmcraft,          classic: yes, channel: null}
   - {name: snapcraft,           classic: yes, channel: null}
   - {name: kubectl,             classic: yes, channel: null}
   - {name: openstackclients,    classic: no, channel: null}
