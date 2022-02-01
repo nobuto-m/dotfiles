@@ -13,6 +13,7 @@ snaps:
   - {name: kubectl,             classic: yes, channel: null}
   - {name: openstackclients,    classic: no, channel: null}
   - {name: cmadison,            classic: no, channel: null}
+  - {name: git-ubuntu,          classic: yes, channel: null}
   - {name: vault,               classic: no, channel: null}
   - {name: hugo,                classic: no, channel: 'extended'}
   - {name: go,                  classic: yes, channel: null} # hugo mod
