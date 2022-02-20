@@ -125,6 +125,7 @@ packages:
   - freeipmi-tools
   - w3m
   - wakeonlan
+  - wireshark
 
   # utils - indicator
   - diodon
