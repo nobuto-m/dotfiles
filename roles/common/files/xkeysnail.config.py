@@ -18,7 +18,7 @@ define_keymap(None, {
 
 # Keybindings for Web browser
 define_keymap(
-    re.compile("^(Firefox|Chromium)$"),
+    re.compile("^(firefox|Chromium)$"),
     {
         K("C-n"): K("DOWN"),  # override Firefox "New Window"
         K("C-b"): K("LEFT"),  # override Gmail, Google Docs "Bold"
