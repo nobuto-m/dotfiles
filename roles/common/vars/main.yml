@@ -140,6 +140,7 @@ packages:
   - gnome-sushi
   - ddcutil
   - xdotool
+  - gddrescue
 
   # storage/filesystem
   - thin-provisioning-tools
