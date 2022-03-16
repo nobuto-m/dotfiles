@@ -66,10 +66,10 @@ write_files:
       $mirrordir='/srv/mirror/archive.ubuntu.com/ubuntu';
       $download_method='http';
       @rsync_extra='none';
-      @dists='xenial,xenial-security,xenial-updates,xenial-proposed,xenial-backports';
-      @skip_installer='xenial,xenial-security,xenial-updates,xenial-proposed,xenial-backports';
+      @dists='focal,focal-security,focal-updates,focal-proposed,focal-backports';
+      @skip_installer='focal,focal-security,focal-updates,focal-proposed,focal-backports';
       @sections='main,universe,restricted,multiverse';
-      @keyrings='/etc/apt/trusted.gpg';
+      @keyrings='/etc/debmirror.gpg';
       @arches='i386,amd64';
       $do_source=1;
       $diff_mode='none';
@@ -117,5 +117,6 @@ write_files:
     path: /etc/apt/mirror.list
     permissions: '0644'
 runcmd:
+  - cat /etc/apt/trusted.gpg.d/ubuntu-keyring-2012-cdimage.gpg /etc/apt/trusted.gpg.d/ubuntu-keyring-2018-archive.gpg > /etc/debmirror.gpg
   - rm -rf /var/www/html/
   - ln -s /srv/mirror /var/www/html
