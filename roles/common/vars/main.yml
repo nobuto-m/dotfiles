@@ -53,6 +53,8 @@ packages:
   - python3-flake8
   - black
   - libffi-dev
+  - libxml2-dev
+  - libxslt1-dev
 
   # dev
   #- exuberant-ctags
