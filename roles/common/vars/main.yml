@@ -23,10 +23,9 @@ packages:
   - etckeeper
 
   # GNOME shell
-  - chrome-gnome-shell
   - gnome-tweaks
-  - gnome-shell-extension-system-monitor
   - gnome-clocks
+  - gir1.2-gtop-2.0  # gnome-shell-extension-system-monitor
 
   # xkeysnail deps
   - python3-xlib
