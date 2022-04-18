@@ -191,7 +191,8 @@ use-primary=false
 
 [org/gnome/settings-daemon/plugins/media-keys]
 play=['Favorites']
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
+rotate-video-lock-static=['XF86RotationLockToggle']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Primary><Alt>c'
@@ -209,11 +210,16 @@ command='bquote'
 name='xclips-blockquote'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Super>o'
+command='otp-ubuntu'
+name='otp-ubuntu'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding='<Primary>space'
 command="sh -c \"xdotool search --name '^Meet - .+ - Chromium$' windowactivate --sync keyup space key ctrl+d || xdotool search --name '^Zoom Meeting$' windowactivate --sync keyup ctrl+space key alt+a\""
 name='Mute/Unmute myself - Keyboard'
 
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
 binding='Launch4'
 command="sh -c \"xdotool search --name '^Meet - .+ - Chromium$' windowactivate --sync keyup space key ctrl+d || xdotool search --name '^Zoom Meeting$' windowactivate --sync keyup ctrl+space key alt+a\""
 name='Mute/Unmute myself - USB volume controller'
