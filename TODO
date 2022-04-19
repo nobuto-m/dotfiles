@@ -2,5 +2,5 @@
 * Firefox snap
   - make it as the default browser
   - title bar compatibility with unite
+  - add it as a startup application
 * caffeine
-* pulseaudio doesn't recover the previous volume
