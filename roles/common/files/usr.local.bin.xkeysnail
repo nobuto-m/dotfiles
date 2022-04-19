@@ -14,7 +14,15 @@
   /dev/input/ r,
   /dev/input/* rw,
   /dev/uinput rw,
-  /tmp/.X11-unix/X0 rw,
 
-  /etc/passwd r,
+  /tmp/.X11-unix/X[0-9]* rw,
+
+  deny /etc/passwd r,
+  deny /etc/nsswitch.conf r,
+  deny /etc/ssl/openssl.cnf r,
+  deny /{usr/,}bin/uname x,
+  deny /usr/local/bin/ r,
+  deny owner @{PROC}/@{pid}/fd/ r,
+  deny capability dac_override,
+  deny capability dac_read_search,
 }

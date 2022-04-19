@@ -2,7 +2,7 @@
 Description=Service for xkeysnail
 
 [Service]
-Environment=DISPLAY=:0
+Environment=DISPLAY=:1
 ExecStart=/usr/local/bin/xkeysnail --quiet /etc/xkeysnail/config.py
 Restart=always
 Type=simple
