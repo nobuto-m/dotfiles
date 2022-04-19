@@ -70,14 +70,14 @@ packages:
   - encfs
 
   # vpn
-#  - network-manager-fortisslvpn-gnome
-#  - network-manager-iodine-gnome
-#  - network-manager-l2tp-gnome
+  #- network-manager-fortisslvpn-gnome
+  #- network-manager-iodine-gnome
+  #- network-manager-l2tp-gnome
   - network-manager-openconnect-gnome
   - network-manager-openvpn-gnome
-#  - network-manager-vpnc-gnome
-#  - network-manager-strongswan
-#  - ike-scan
+  #- network-manager-vpnc-gnome
+  #- network-manager-strongswan
+  #- ike-scan
   - wireguard-tools
 
   # virt
@@ -105,7 +105,6 @@ packages:
   - ccze
   - python3-pygments
   - tree
-  - xclip
   - oathtool
   - jq
   - libxml-xpath-perl
@@ -140,6 +139,7 @@ packages:
   - gnome-sound-recorder
   - gnome-sushi
   - ddcutil
+  - xclip
   - xdotool
   - gddrescue
 
