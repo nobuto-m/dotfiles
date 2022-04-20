@@ -25,6 +25,7 @@ packages:
   # GNOME shell
   - gnome-tweaks
   - gnome-shell-extension-prefs
+  - gnome-shell-extension-manager
   - gnome-clocks
   - gir1.2-gtop-2.0  # gnome-shell-extension-system-monitor
 
