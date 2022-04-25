@@ -111,6 +111,7 @@ packages:
   - jq
   - libxml-xpath-perl
   - pwgen
+  - pv
 
   # utils - network
   - curl
