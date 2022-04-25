@@ -3,6 +3,7 @@ eatmydata: { LD_LIBRARY_PATH: /usr/lib/libeatmydata, LD_PRELOAD: libeatmydata.so
 
 snaps:
   - {name: chromium,            classic: no, channel: null}
+  - {name: zoom-client,         classic: no, channel: null}
   - {name: lxd,                 classic: no, channel: null}
   - {name: juju,                classic: yes, channel: null}
   - {name: juju-crashdump,      classic: yes, channel: null}
