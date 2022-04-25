@@ -244,6 +244,7 @@
     - eamodio.gitlens
     - stkb.rewrap
     - njpwerner.autodocstring
+    - pomdtr.excalidraw-editor
   changed_when: False
   when: vscode_plugin.matched == 0
 
