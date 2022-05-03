@@ -120,6 +120,8 @@ An example with ThinkPad.
 * Restore those files manually if necessary:
   - ~/.config/hub
   - ~/.local/share/juju/credentials.yaml
+* install sshuttle 1.1.0 by hand for the time being
+  - https://bugs.launchpad.net/ubuntu/+source/sshuttle/+bug/1962286
 
 ### Firefox add-ons
 
