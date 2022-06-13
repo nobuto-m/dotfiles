@@ -140,6 +140,7 @@ packages:
   - inkscape
   - yubikey-personalization-gui
   - gstreamer1.0-libav
+  - gstreamer1.0-plugins-bad
   - gnome-sound-recorder
   - gnome-sushi
   - ddcutil
