@@ -141,6 +141,7 @@ packages:
   - yubikey-personalization-gui
   - gstreamer1.0-libav
   - gstreamer1.0-plugins-bad
+  - v4l-utils
   - gnome-sound-recorder
   - gnome-sushi
   - ddcutil
