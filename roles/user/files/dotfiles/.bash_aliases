@@ -18,6 +18,8 @@ alias vpn-canonical-tcp443='sudo openvpn --mute-replay-warnings --config ~/.sesa
 alias vpn-canonical-tcp443-global='sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-tcp443-global.conf'
 alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" localhost localhost'
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
+alias watch-juju-status='watch -c juju status --color'
+alias kubectl-wait-deployment='kubectl wait deployment --all --for condition=Available=True --timeout=1h'
 alias wakeonlan-darkbox='wakeonlan 70:85:c2:ae:bc:08'
 alias hugo='/snap/hugo/current/bin/hugo' # https://github.com/gohugoio/hugoDocs/issues/1222
 alias code-use-tox='test ! -e .vscode/ && (mkdir -p $_; echo "{\"python.defaultInterpreterPath\":\".tox/py3/bin/python3\"}" > $_/settings.json) || printf "%s already exists\n" "$_"'
