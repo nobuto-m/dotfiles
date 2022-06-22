@@ -102,6 +102,7 @@ packages:
 
   # utils - terminal
   - byobu
+  - moreutils
   - fzf
   - colordiff
   - dwdiff
