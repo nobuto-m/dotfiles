@@ -106,6 +106,7 @@ packages:
   - fzf
   - colordiff
   - dwdiff
+  - lnav
   - ccze
   - python3-pygments
   - tree
