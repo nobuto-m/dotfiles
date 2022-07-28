@@ -176,6 +176,14 @@
     value: origin
     state: present
 
+- name: git url.insteadOf opendev
+  ini_file:
+    dest: ~/.gitconfig
+    section: 'url "https://opendev.org/"'
+    option: insteadOf
+    value: "opendev:"
+    state: present
+
 - name: render dconf
   template:
     src: templates/dconf.ini.j2
