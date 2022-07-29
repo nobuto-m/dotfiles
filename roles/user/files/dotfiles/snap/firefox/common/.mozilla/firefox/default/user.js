@@ -14,7 +14,7 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.uidensity", 1);  // Density as Compact
 user_pref("browser.tabs.drawInTitlebar", false);  // Show the titlebar instead of CSD
 user_pref("browser.toolbars.bookmarks.visibility", "never");
-user_pref("layout.css.devPixelsPerPx", "1.05");  // HiDPI tweak
+user_pref("layout.css.devPixelsPerPx", "1.03");  // HiDPI tweak
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 user_pref("findbar.highlightAll", true);
 user_pref("accessibility.typeaheadfind.timeout", 300000);
