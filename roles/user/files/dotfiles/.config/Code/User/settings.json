@@ -43,6 +43,7 @@
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
+    "python.linting.mypyEnabled": true,
     "python.venvPath": ".tox",
     "redhat.telemetry.enabled": false,
     "rewrap.wrappingColumn": 79,
