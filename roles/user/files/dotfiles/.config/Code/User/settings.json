@@ -37,13 +37,13 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
+    "python.analysis.typeCheckingMode": "basic",
     "python.formatting.blackArgs": [
         "--line-length=79"
     ],
     "python.formatting.provider": "black",
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
-    "python.linting.mypyEnabled": true,
     "python.venvPath": ".tox",
     "redhat.telemetry.enabled": false,
     "rewrap.wrappingColumn": 79,
