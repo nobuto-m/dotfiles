@@ -22,6 +22,10 @@
     "editor.scrollBeyondLastLine": false,
     "editor.selectionClipboard": false,
     "editor.wordWrap": "on",
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning"
+    ],
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 10000,
     "files.insertFinalNewline": true,

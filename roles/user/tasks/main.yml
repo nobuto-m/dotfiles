@@ -247,6 +247,7 @@
     - stkb.rewrap
     - njpwerner.autodocstring
     - pomdtr.excalidraw-editor
+    - usernamehw.errorlens
   changed_when: False
   when: vscode_plugin.matched == 0
 
