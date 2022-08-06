@@ -10,12 +10,12 @@ chmod 600 "$secret_file"
 secret=$(cat "$secret_file" | sed -e 's/ //g')
 
 otp=$(oathtool --totp "$secret")
-echo "$otp"
 
-if which xclip > /dev/null; then
+if which xdotool > /dev/null; then
+    xdotool sleep 0.5 type "$otp"
+    xdotool key Return
+    exit
+elif which xclip > /dev/null; then
     echo "$otp" | xclip -selection clip
-
-    if which xdotool > /dev/null; then
-        xdotool sleep 0.5 key ctrl+v Return
-    fi
 fi
+echo "$otp"
