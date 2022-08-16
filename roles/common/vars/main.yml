@@ -151,6 +151,7 @@ packages:
   - ddcutil
   - xclip
   - xdotool
+  - wmctrl
   - gddrescue
 
   # storage/filesystem
