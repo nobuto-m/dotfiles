@@ -4,3 +4,16 @@
 * frequent disconnection from WiFi AP
   Aug 16 10:28:33 t480 kernel: iwlwifi 0000:03:00.0: No beacon heard and the time event is over already...
   nmcli con mod "<AP>" 802-11-wireless.powersave 2
+  /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+  TLP_ENABLE=0
+  /etc/default/grub.d/wifi.cfg
+  disabling IPv6
+  /etc/modprobe.d/iwlwifi.conf
+  https://wiki.archlinux.org/title/Lenovo_ThinkPad_T480s#Fix_frequent_WiFi_disconnects
+# grep -r . /sys/module/mac80211/parameters/
+/sys/module/mac80211/parameters/probe_wait_ms:2000
+/sys/module/mac80211/parameters/ieee80211_default_rc_algo:minstrel_ht
+/sys/module/mac80211/parameters/max_probe_tries:1000
+/sys/module/mac80211/parameters/minstrel_vht_only:Y
+/sys/module/mac80211/parameters/max_nullfunc_tries:1000
+/sys/module/mac80211/parameters/beacon_loss_count:1000
