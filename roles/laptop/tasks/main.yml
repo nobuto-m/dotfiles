@@ -33,3 +33,9 @@
     src: files/tlp-99-local.conf
     dest: /etc/tlp.d/99-local.conf
   become: yes
+
+- name: enable TLP
+  systemd:
+    name: tlp
+    enabled: yes
+  become: yes
