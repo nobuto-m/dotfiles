@@ -34,6 +34,12 @@
     dest: /etc/tlp.d/99-local.conf
   become: yes
 
+- name: control wifi.powersave by TLP
+  copy:
+    src: files/default-wifi-powersave-on.conf
+    dest: /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+  become: yes
+
 - name: enable TLP
   systemd:
     name: tlp
