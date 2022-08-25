@@ -6,7 +6,15 @@
   wlp3s0: Connection to AP 6c:5a:b0:xx:yy:zz lost
   wlp3s0: CTRL-EVENT-DISCONNECTED bssid=6c:5a:b0:xx:yy:zz reason=4 locally_generated=1
 
-  grep 'reason=4 locally_generated=1' /var/log/syslog{.1,} | col2 : | uniq -c | sed -e 's/$/:00/;s/^ *//;s/\([0-9]\+\) \(.*\)/\2\t\1/' | xclips
+  (zgrep -w reason=4 /var/log/syslog.{4..2}.gz; grep -w reason=4 /var/log/syslog{.1,}) | col2 : | uniq -c | sed -e 's/$/:00/;s/^ *//;s/\([0-9]\+\) \(.*\)/\2\t\1/' | xclips
 
   Beacon request: No valid channels
   https://bugs.launchpad.net/ubuntu/+source/wpa/+bug/1987252
+
+  sudo apt install iwd
+  cat <<EOF | sudo tee /etc/NetworkManager/conf.d/iwd.conf
+[device]
+wifi.backend=iwd
+EOF
+
+  sudo systemctl mask wpa_supplicant
