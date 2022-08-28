@@ -12,7 +12,7 @@ secret=$(cat "$secret_file" | sed -e 's/ //g')
 otp=$(oathtool --totp "$secret")
 
 if which xdotool > /dev/null; then
-    xdotool sleep 0.5 type "$otp"
+    xdotool type --clearmodifiers "$otp"
     xdotool key Return
     exit
 elif which xclip > /dev/null; then
