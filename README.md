@@ -111,6 +111,7 @@ An example with ThinkPad.
   - `git config --global includeIf.'gitdir:~/src/corporate/'.path ~/.gitconfig_corporate`
   - `git config --global includeIf.'gitdir:~/src/corporate_private/'.path ~/.gitconfig_corporate`
   - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
+* add `export DEBEMAIL=` into `~/.bashrc`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
