@@ -24,3 +24,6 @@ EOF
 
 
   Aug 25 19:30:41 t480 iwd[1935]: Received Deauthentication event, reason: 4, from_ap: false
+
+
+  sudo apt install backport-iwlwifi-dkms
