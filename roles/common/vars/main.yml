@@ -170,6 +170,7 @@ packages:
   - iperf3
   - sysprof
   - linux-doc
+  - apparmor-utils
 
 
   # multiverse
