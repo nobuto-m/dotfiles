@@ -104,7 +104,6 @@ An example with ThinkPad.
   - Shared to other computers
     - `nmcli connection add type ethernet con-name Wired` (default)
     - `nmcli connection add type ethernet con-name Shared autoconnect no ipv4.method shared ipv6.method disabled`
-* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 * disable Dropbox LAN sync by `dropbox lansync n`
 * set git `user.name` and `user.email` with `git config --global`
 * create `~/.gitconfig_corporate` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
@@ -123,6 +122,7 @@ An example with ThinkPad.
   - ~/.local/share/juju/credentials.yaml
 * install sshuttle 1.1.0 by hand for the time being
   - https://bugs.launchpad.net/ubuntu/+source/sshuttle/+bug/1962286
+* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 
 ### Firefox add-ons
 
