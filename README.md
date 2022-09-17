@@ -42,26 +42,26 @@ An example with ThinkPad.
 1. Tweak keybind for terminal operations per your prefrence first. For example:
 
    ```bash
-   $ gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
+   gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
    ```
 
 1. install git, make and ansible
 
     ```bash
-    $ sudo apt update && sudo apt install git make ansible
+    sudo apt update && sudo apt install git make ansible
     ```
 
 1. clone the repo
 
     ```bash
-    $ git clone https://github.com/nobuto-m/dotfiles.git
+    git clone https://github.com/nobuto-m/dotfiles.git
     ```
 
 1. execute
 
     ```bash
-    $ cd dotfiles/
-    $ make setup
+    cd dotfiles/
+    make setup
     ```
 
 1. reboot
@@ -73,13 +73,13 @@ An example with ThinkPad.
    duplicity.
 
     ```bash
-    $ make restore
+    make restore
     ```
 
 1. full setup
 
     ```bash
-    $ make full-setup
+    make full-setup
     ```
 
 ## Manual setup
