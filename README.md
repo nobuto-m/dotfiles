@@ -3,19 +3,19 @@ dotfiles
 
 for setting up my laptop
 
-## BIOS setup
+## BIOS/UEFI setup
 
 An example with ThinkPad.
 
 * Restart
-  - OS Opmimized Defaults - Enabled
+  - OS Opmimized Defaults - On
   - Load Setup Defaults - Yes
 * Config
   - Keyboard/Mouse
-    - Fn and Ctrl Key swap - Enabled
-    - F1-F12 as Primary Function - Enabled
-  - Display
-    - Total Graphics Memory - 512MB
+    - Fn and Ctrl Key swap - On
+    - F1-F12 as Primary Function - On
+* Security
+  - Allow Microsoft 3rd Party UEFI CA - On
 
 ## Install Ubuntu Desktop
 
