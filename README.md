@@ -57,6 +57,8 @@ An example with ThinkPad.
     git clone https://github.com/nobuto-m/dotfiles.git
     ```
 
+1. choose a mirror server (optional); replace the default mirror URL
+
 1. execute
 
     ```bash
@@ -97,8 +99,6 @@ An example with ThinkPad.
   - enable notifications from specific tabs
 * setup an OTP device
 * override NetworkManager configuration
-  - Set an explicit BSSID to the main access point
-    - `nmcli connection modify "<AP>" 802-11-wireless.bssid "<BSSID>"`
   - Tethering AP
     - `nmcli device wifi connect "<SSID>" password "<password>"`
   - Shared to other computers
@@ -110,8 +110,8 @@ An example with ThinkPad.
   - `git config --global includeIf.'gitdir:~/src/corporate/'.path ~/.gitconfig_corporate`
   - `git config --global includeIf.'gitdir:~/src/corporate_private/'.path ~/.gitconfig_corporate`
   - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
-* add `export DEBEMAIL=` into `~/.bashrc`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
+* add `export DEBEMAIL=` into `~/.bashrc`
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
   - set `Show home bottun` to true and set `https://meet.google.com/`

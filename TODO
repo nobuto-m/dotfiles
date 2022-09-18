@@ -1,29 +1,4 @@
 * flaky trackpoint - running xeyes can prevent this issue somehow?
   Oct 15 10:50:43 t480 kernel: psmouse serio2: TrackPoint at rmi4-00.fn03/serio0/input0 lost synchronization, throwing 2 bytes away.
   https://wiki.archlinux.org/title/Touchpad_Synaptics#Touchpad_synchronization_issues
-* frequent disconnection from WiFi AP
-
-  wlp3s0: Connection to AP 6c:5a:b0:xx:yy:zz lost
-  wlp3s0: CTRL-EVENT-DISCONNECTED bssid=6c:5a:b0:xx:yy:zz reason=4 locally_generated=1
-
-join -t $'\t' --nocheck-order -a1 -o 1.1,2.2 -e 0 \
-    <((find /var/log/ -name syslog.*.gz 2>/dev/null | sort -Vr | xargs zcat; cat /var/log/syslog{.1,}) | col1 : | uniq | sed -e 's/$/:00/;s/$/\t0/' | sort) \
-    <((find /var/log/ -name syslog.*.gz 2>/dev/null | sort -Vr | xargs zcat; cat /var/log/syslog{.1,}) | egrep -w 'reason(=|: )4' | col1 : | uniq -c | sed -e 's/$/:00/;s/^ *//;s/\([0-9]\+\) \(.*\)/\2\t\1/' | sort)
-
-
-  Beacon request: No valid channels
-  https://bugs.launchpad.net/ubuntu/+source/wpa/+bug/1987252
-
-  sudo apt install iwd
-  cat <<EOF | sudo tee /etc/NetworkManager/conf.d/iwd.conf
-[device]
-wifi.backend=iwd
-EOF
-
-  sudo systemctl mask wpa_supplicant
-
-
-  Aug 25 19:30:41 t480 iwd[1935]: Received Deauthentication event, reason: 4, from_ap: false
-
-
-  sudo apt install backport-iwlwifi-dkms
+* lost trackpoint after plugging USB-C
