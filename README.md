@@ -45,6 +45,10 @@ An example with ThinkPad.
    gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
    ```
 
+1. choose a mirror server(optional) and enroll fingerprints(optional)
+   - replace the default mirror URL in `/etc/apt/sources.list`
+   - enroll fingerprints and update pam configuration with `pam-auth-update --enable fprintd`
+
 1. install git, make and ansible
 
     ```bash
@@ -56,8 +60,6 @@ An example with ThinkPad.
     ```bash
     git clone https://github.com/nobuto-m/dotfiles.git
     ```
-
-1. choose a mirror server (optional); replace the default mirror URL
 
 1. execute
 
