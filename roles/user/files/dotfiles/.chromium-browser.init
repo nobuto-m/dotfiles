@@ -1,1 +1,1 @@
-CHROMIUM_FLAGS='--force-device-scale-factor=1.6'
+CHROMIUM_FLAGS='--force-device-scale-factor=1.4'
