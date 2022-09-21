@@ -122,6 +122,8 @@
   with_items:
     - D63
     - D64
+    - D66
+    - D67
 
 - name: bashrc
   blockinfile:
