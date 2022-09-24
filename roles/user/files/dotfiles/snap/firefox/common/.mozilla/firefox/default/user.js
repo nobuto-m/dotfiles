@@ -23,7 +23,7 @@ user_pref("middlemouse.paste", false);
 // Startup and exit
 user_pref("browser.sessionstore.warnOnQuit", true);
 user_pref("browser.startup.page", 3);  // Resume the previous browser session
-user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
+//user_pref("browser.sessionstore.restore_pinned_tabs_on_demand", true);
 
 // Top sites and Highlights
 user_pref("browser.urlbar.suggest.topsites", false);
