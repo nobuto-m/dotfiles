@@ -124,6 +124,8 @@
     - D64
     - D66
     - D67
+    - D66_gamma09
+    - D67_gamma09
 
 - name: bashrc
   blockinfile:
