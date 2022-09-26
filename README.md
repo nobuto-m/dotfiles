@@ -122,6 +122,8 @@ An example with ThinkPad.
 * Restore those files manually if necessary:
   - ~/.config/hub
   - ~/.local/share/juju/credentials.yaml
+* install a patched wpasupplicant by hand for the time being
+  - https://bugs.launchpad.net/ubuntu/+source/wpa/+bug/1987252
 * install sshuttle 1.1.0 by hand for the time being
   - https://bugs.launchpad.net/ubuntu/+source/sshuttle/+bug/1962286
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
