@@ -45,20 +45,3 @@
     name: tlp
     enabled: yes
   become: yes
-
-- name: 'install iwd - LP: #1987252'
-  apt:
-    name: iwd
-  become: yes
-
-- name: 'use iwd - LP: #1987252'
-  copy:
-    src: files/iwd.conf
-    dest: /etc/NetworkManager/conf.d/iwd.conf
-  become: yes
-
-- name: mask wpa_supplicant in favor of iwd
-  systemd:
-    name: wpa_supplicant
-    masked: yes
-  become: yes
