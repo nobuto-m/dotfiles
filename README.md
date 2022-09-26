@@ -15,7 +15,8 @@ An example with ThinkPad.
     - Fn and Ctrl Key swap - On
     - F1-F12 as Primary Function - On
 * Security
-  - Allow Microsoft 3rd Party UEFI CA - On
+  - Secure Boot
+    - Allow Microsoft 3rd Party UEFI CA - On
 
 ## Install Ubuntu Desktop
 
