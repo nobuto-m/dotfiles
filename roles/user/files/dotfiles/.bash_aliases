@@ -20,7 +20,7 @@ alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http:
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 alias watch-juju-status='watch -c juju status --color'
 alias kubectl-wait-deployment='kubectl wait deployment --all --for condition=Available=True --timeout=1h'
-alias wakeonlan-darkbox='wakeonlan 70:85:c2:ae:bc:08'
+alias wakeonlan-darkbox='wakeonlan 70:85:c2:ae:bc:08 c0:06:c3:a1:23:e2'
 alias code-use-tox='test ! -e .vscode/ && (mkdir -p $_; echo "{\"python.defaultInterpreterPath\":\".tox/py3/bin/python3\"}" > $_/settings.json) || printf "%s already exists\n" "$_"'
 git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git" && cd "$1"; }
 ddc-brightness() { ddcutil --display 1 setvcp 10 "$1"; }
