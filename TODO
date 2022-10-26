@@ -4,3 +4,6 @@
 * lost trackpoint after plugging USB-C or closing/opening the lid
   Oct 11 14:10:29 t14 kernel: psmouse serio1: TrackPoint at isa0060/serio1/input0 lost synchronization, throwing 2 bytes away.
   Oct 11 14:10:30 t14 kernel: psmouse serio1: resync failed, issuing reconnect request
+* frequent wakeup from s2idle
+  - when trackpoint or mouse button is touched
+  - when power source is connected, etc.
