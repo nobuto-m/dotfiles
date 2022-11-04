@@ -4,6 +4,7 @@
   roles:
     # hardware specific
     - { role: fmvs90tb, when: "ansible_product_name == 'FMVS90TB'" }
+    - { role: t14_gen3_amd, when: "ansible_product_name == '21CFCTO1WW'" }
 
     - common
     - user
