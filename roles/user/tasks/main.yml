@@ -132,61 +132,17 @@
     dest: ~/.bashrc
     block: "{{ lookup('file', 'files/bashrc_block') }}"
 
-- name: git config pull.ff only
-  ini_file:
-    dest: ~/.gitconfig
-    section: pull
-    option: ff
-    value: only
-    state: present
-
-- name: git core.pager
-  ini_file:
-    dest: ~/.gitconfig
-    section: core
-    option: pager
-    value: "diff-highlight | less -FRX"
-    state: present
-
-- name: git core.autocrlf
-  ini_file:
-    dest: ~/.gitconfig
-    section: core
-    option: autocrlf
-    value: input
-    state: present
-
-- name: git log.follow
-  ini_file:
-    dest: ~/.gitconfig
-    section: log
-    option: follow
-    value: 'true'
-    state: present
-
-- name: git merge.conflictStyle
-  ini_file:
-    dest: ~/.gitconfig
-    section: merge
-    option: conflictStyle
-    value: diff3
-    state: present
-
-- name: git checkout.defaultRemote
-  ini_file:
-    dest: ~/.gitconfig
-    section: checkout
-    option: defaultRemote
-    value: origin
-    state: present
-
-- name: git url.insteadOf opendev
-  ini_file:
-    dest: ~/.gitconfig
-    section: 'url "https://opendev.org/"'
-    option: insteadOf
-    value: "opendev:"
-    state: present
+- name: git config
+  command: git config --global "{{ item.key }}" "{{ item.value }}"
+  with_dict:
+    - { pull.ff: only }
+    - { core.pager: "diff-highlight | less -FRX" }
+    - { core.autocrlf: input }
+    - { log.follow: "true" }
+    - { merge.conflictStyle: diff3 }
+    - { checkout.defaultRemote: origin }
+    - { rebase.autoSquash: "true" }
+    - { "url.https://opendev.org/.insteadOf": "opendev:" }
 
 - name: render dconf
   template:
