@@ -91,6 +91,7 @@ packages:
 
   # doc
   - diffpdf
+  - ocrmypdf
 
   # fonts
   - fonts-dejavu
