@@ -1,9 +1,4 @@
 ---
-- name: use oem kernel package
-  apt:
-    name: linux-oem-22.04
-    state: present
-
 - name: mkdir grub.d
   file:
     path: /etc/default/grub.d
