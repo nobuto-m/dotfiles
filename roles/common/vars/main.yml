@@ -117,6 +117,7 @@ packages:
   - libxml-xpath-perl
   - pwgen
   - pv
+  - ripgrep
 
   # utils - network
   - curl
