@@ -118,6 +118,8 @@ packages:
   - pwgen
   - pv
   - ripgrep
+  - sq
+  - paperkey
 
   # utils - network
   - curl
