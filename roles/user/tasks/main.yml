@@ -36,6 +36,8 @@
         file: sound-output-device-chooserkgshank.net.v42.shell-extension.zip
       - id: system-monitor-next@paradoxxx.zero.gmail.com
         file: system-monitor-nextparadoxxx.zero.gmail.com.v41.shell-extension.zip
+      - id: tiling-assistant@leleat-on-github
+        file: tiling-assistantleleat-on-github.v36.shell-extension.zip
 
 - name: download extension
   get_url:
