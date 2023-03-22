@@ -142,6 +142,7 @@ packages:
   - diodon
 
   # other
+  - gnome-screenshot
   - dconf-editor
   - gimp
   - inkscape
