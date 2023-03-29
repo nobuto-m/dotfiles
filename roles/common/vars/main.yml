@@ -163,6 +163,7 @@ packages:
 
   # investigation
   - htop
+  - health-check
   - powertop
   - powerstat
   - nvme-cli
