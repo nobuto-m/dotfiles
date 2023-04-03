@@ -1,9 +1,13 @@
 * flaky trackpoint - running xeyes can prevent this issue somehow?
   Oct 15 10:50:43 t480 kernel: psmouse serio2: TrackPoint at rmi4-00.fn03/serio0/input0 lost synchronization, throwing 2 bytes away.
   https://wiki.archlinux.org/title/Touchpad_Synaptics#Touchpad_synchronization_issues
-* lost trackpoint after plugging USB-C or closing/opening the lid
+* lost trackpoint after closing/opening the lid
   Oct 11 14:10:29 t14 kernel: psmouse serio1: TrackPoint at isa0060/serio1/input0 lost synchronization, throwing 2 bytes away.
   Oct 11 14:10:30 t14 kernel: psmouse serio1: resync failed, issuing reconnect request
+
+  Apr 03 22:55:18 t14 kernel: psmouse serio1: TrackPoint at isa0060/serio1/input0 lost synchronization, throwing 2 bytes away.
+  Apr 03 22:55:18 t14 kernel: psmouse serio1: resync failed, issuing reconnect request
+
 * frequent wakeup from s2idle
   - when trackpoint or mouse button is touched
   - when power source is connected, etc.

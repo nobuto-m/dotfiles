@@ -7,11 +7,3 @@
       HandleLidSwitchExternalPower=suspend
       HandleLidSwitchDocked=suspend
   become: yes
-
-- name: as above, re-enable user-space lid-close detection
-  lineinfile:
-    dest: /etc/UPower/UPower.conf
-    regexp: '^IgnoreLid='
-    line: 'IgnoreLid=false'
-    state: present
-  become: yes
