@@ -63,7 +63,7 @@
 
 - name: create ssh controlmasters directory
   file:
-    path: ~/.ssh/masters
+    path: ~/.ssh/sockets/
     state: directory
     mode: 0700
 
