@@ -2,9 +2,6 @@
 - hosts: localhost
 
   roles:
-    # hardware specific
-    - { role: fmvs90tb, when: "ansible_product_name == 'FMVS90TB'" }
-
     - common
     - user
 
@@ -14,3 +11,7 @@
     # laptop specific
     - role: laptop
       when: "ansible_form_factor == 'Notebook'"
+
+    # hardware specific
+    - { role: fmvs90tb,   when: "ansible_product_name == 'FMVS90TB'" }
+    - { role: t14gen3amd, when: "ansible_product_name == '21CFCTO1WW'" }
