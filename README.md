@@ -110,7 +110,7 @@ An example with ThinkPad.
 * disable Dropbox LAN sync by `dropbox lansync n`
 * set git `user.name` and `user.email` with `git config --global`
 * create `~/.gitconfig_corporate` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
-  - `git config --global includeIf.'gitdir:~/src/corporate/'.path ~/.gitconfig_corporate`
+  - `git config --global includeIf.'gitdir:~/src/work/'.path ~/.gitconfig_corporate`
   - `git config --global includeIf.'gitdir:~/src/corporate_private/'.path ~/.gitconfig_corporate`
   - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
 * set gerrit username with `git config --global --add gitreview.username "USER"`
