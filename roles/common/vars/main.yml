@@ -143,6 +143,7 @@ packages:
 
   # other
   - gnome-screenshot
+  - shutter
   - dconf-editor
   - gimp
   - inkscape
