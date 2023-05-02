@@ -18,6 +18,7 @@ snaps:
   - {name: git-ubuntu,          classic: yes, channel: null}
   - {name: vault,               classic: no, channel: null}
   - {name: hugo,                classic: no, channel: 'extended'}
+  - {name: kdiskmark,           classic: no, channel: null}
 
 packages:
 
