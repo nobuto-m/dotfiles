@@ -9,3 +9,4 @@ git_repos:
   - { type: misc, name: quick-maas, repo: 'https://github.com/nobuto-m/quick-maas.git' }
   - { type: misc, name: vps-setup, repo: 'https://github.com/nobuto-m/vps-setup.git' }
   - { type: misc, name: darkbox, repo: 'https://github.com/nobuto-m/darkbox.git' }
+  - { type: misc, name: website, repo: 'https://github.com/nobuto-m/website.git' }

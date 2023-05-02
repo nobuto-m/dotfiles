@@ -264,4 +264,5 @@
   git:
     repo: "{{ item.repo }}"
     dest: "~/src/{{ item.type }}/{{ item.name }}"
+    update: false
   with_items: "{{ git_repos }}"
