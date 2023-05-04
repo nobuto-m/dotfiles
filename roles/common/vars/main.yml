@@ -144,6 +144,7 @@ packages:
 
   # other
   - gnome-screenshot
+  - libimage-exiftool-perl
   - shutter
   - dconf-editor
   - gimp
