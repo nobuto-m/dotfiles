@@ -138,6 +138,7 @@ packages:
   - w3m
   - wakeonlan
   - wireshark
+  - wavemon
 
   # utils - indicator
   - diodon
