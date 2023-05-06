@@ -163,6 +163,7 @@ packages:
   - xdotool
   - wmctrl
   - gddrescue
+  - tidy
 
   # storage/filesystem
   - thin-provisioning-tools
