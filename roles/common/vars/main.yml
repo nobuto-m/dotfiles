@@ -34,6 +34,7 @@ packages:
   # xkeysnail deps
   - python3-xlib
   - python3-evdev
+  - python3-appdirs
 
   # dev - minimal
   - packaging-dev
