@@ -116,6 +116,7 @@ packages:
   - tree
   - oathtool
   - jq
+  - libxml2-utils
   - libxml-xpath-perl
   - pwgen
   - pv
