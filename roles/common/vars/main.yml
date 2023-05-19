@@ -177,6 +177,7 @@ packages:
   - powertop
   - powerstat
   - nvme-cli
+  - smartmontools
   - intel-gpu-tools
   - vainfo
   - sysstat
