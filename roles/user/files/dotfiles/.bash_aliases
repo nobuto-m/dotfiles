@@ -31,4 +31,4 @@ git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git" && cd "
 ddc-brightness() { ddcutil --display 1 setvcp 10 "$1"; }
 ddc-volume() { ddcutil --display 1 setvcp 62 "$1"; }
 ddc-mute() { ddcutil --display 1 setvcp 8d "$1"; }
-spd-pdf() { pdftotext "$1" - | fmt -u -w 720 | spd-say -e -w; }
+spd-pdf() { pdftotext "$1" - | fmt -u -w 2500 | sed -e 's/  /\n/g' | spd-say -e -w; }
