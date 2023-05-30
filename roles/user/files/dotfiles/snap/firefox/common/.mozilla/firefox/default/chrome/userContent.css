@@ -3,3 +3,14 @@
     font-family: 'DejaVu Sans', sans-serif !important;
   }
 }
+
+/* https://git.launchpad.net/launchpad/commit/?id=9f6a669485db9708d6b07fac76013193e16349e2 */
+/* https://bugs.launchpad.net/launchpad/+bug/2021576 */
+@-moz-document domain("bugs.launchpad.net") {
+  div#edit-description,
+  .comment-text,
+  .bug-activity,
+  .lazr-multiline-edit {
+    font-size: 14px !important;
+  }
+}
