@@ -173,6 +173,7 @@ packages:
 
   # investigation
   - htop
+  - btop
   - health-check
   - powertop
   - powerstat
