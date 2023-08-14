@@ -108,6 +108,7 @@ packages:
   - byobu
   - moreutils
   - fzf
+  - ranger
   - colordiff
   - dwdiff
   - lnav
