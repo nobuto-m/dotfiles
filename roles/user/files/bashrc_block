@@ -33,6 +33,9 @@ __show_exit_status() {
 __show_venv() {
     [ -z "$VIRTUAL_ENV" ] || printf '(%s) ' "$(basename "$VIRTUAL_ENV")"
 }
+__show_ranger() {
+    [ -z "$RANGER_LEVEL" ] || printf '(ranger) '
+}
 __show_juju() {
     if ! command -v juju >/dev/null; then
         return
@@ -57,4 +60,4 @@ __show_openstack() {
         printf ' (OS_USERNAME:\\[\\e[96m\\]%s\\[\\e[0m\\])' "$OS_USERNAME"
     fi
 }
-PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)$(__show_juju)${GIT_PS1__BASE}" "$(__show_openstack)\$ "; history -a'
+PROMPT_COMMAND='__git_ps1 "$(__show_exit_status)$(__show_venv)$(__show_ranger)$(__show_juju)${GIT_PS1__BASE}" "$(__show_openstack)\$ "; history -a'
