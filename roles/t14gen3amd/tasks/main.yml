@@ -1,9 +1,0 @@
----
-- name: force lid-close suspend, otherwise trackpoint will be lost
-  blockinfile:
-    dest: /etc/systemd/logind.conf
-    block: |
-      HandleLidSwitch=suspend
-      HandleLidSwitchExternalPower=suspend
-      HandleLidSwitchDocked=suspend
-  become: yes
