@@ -10,7 +10,23 @@ if pactl list | grep -qF module-loopback.c; then
     exit
 fi
 
+active_sink=$(pactl --format json list sinks | jq -r '.[] | select(.state=="RUNNING")')
+active_port=$(echo "$active_sink" | jq -r .active_port | sed -e 's/\[Out\] //')
+mute=$(echo "$active_sink" | jq -r .mute)
+
+if [ "$mute" = false ] && echo "$active_port" | grep -q -E 'Speaker|HDMI'; then
+    notify-send \
+        -i audio-speakers-symbolic \
+        -h int:transient:1 \
+        "${active_port} is in use"
+    exit
+fi
+
 pactl load-module module-loopback latency_msec=$LATENCY_MSEC
+notify-send \
+    -i media-playlist-repeat-symbolic \
+    -h int:transient:1 \
+    'Audio loopback enabled'
 
 # device="$(pactl list source-outputs | grep -B1 -F module-loopback.c | head -n1 | col2 '#')"
 # pactl set-source-output-volume "$device" '100%'
