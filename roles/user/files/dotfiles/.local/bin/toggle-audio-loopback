@@ -23,10 +23,11 @@ if [ "$mute" = false ] && echo "$active_port" | grep -q -E 'Speaker|HDMI'; then
 fi
 
 pactl load-module module-loopback latency_msec=$LATENCY_MSEC
+loopback_media=$(pactl --format json list sink-inputs | jq -r '.[] | select(.driver=="module-loopback.c").properties."media.name"')
 notify-send \
     -i media-playlist-repeat-symbolic \
     -h int:transient:1 \
-    'Audio loopback enabled'
+    "${loopback_media}"
 
 # device="$(pactl list source-outputs | grep -B1 -F module-loopback.c | head -n1 | col2 '#')"
 # pactl set-source-output-volume "$device" '100%'
