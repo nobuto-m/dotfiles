@@ -1,5 +1,14 @@
 ---
-- name: restore files
+- name: restore files at home
+  copy:
+    src: "{{ item }}"
+    dest: ~/
+    mode: "go-rwx"
+    backup: yes
+  with_fileglob:
+    - "~/backup{{ ansible_env.HOME }}/*"
+
+- name: restore some dot directories
   copy:
     src: ~/backup{{ ansible_env.HOME }}/{{ item }}
     dest: ~/{{ item }}
