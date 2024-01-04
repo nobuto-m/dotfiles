@@ -28,6 +28,15 @@ An example with ThinkPad.
    [Windows](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows),
    [macOS](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos))
 
+   or
+
+   ```bash
+   sudo dd \
+       if=/PATH/TO/*-desktop-amd64.iso \
+       of=/dev/disk/by-id/usb-PATH-TO-USB-DRIVE-0\:0 \
+       bs=4M oflag=direct,sync status=progress
+   ```
+
 1. boot up with the USB stick
 
 1. install Ubuntu Desktop with the options below
