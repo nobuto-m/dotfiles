@@ -60,21 +60,3 @@
   with_items:
     - { container: squid-deb-proxy, ipv4: 10.0.8.2 }
   changed_when: False
-
-- name: create juju openstack profile
-  shell: lxc profile create juju-openstack
-  changed_when: False
-  ignore_errors: True
-
-- name: import juju openstack profile
-  shell: echo "{{ lookup('file', 'files/lxd-juju-profile-openstack.yaml') }}" | lxc profile edit juju-openstack
-  changed_when: False
-
-#- name: create juju kubernetes profile
-#  shell: lxc profile create juju-kubernetes
-#  changed_when: False
-#  ignore_errors: True
-#
-#- name: import juju kubernetes profile
-#  shell: echo "{{ lookup('file', 'files/lxd-juju-profile-kubernetes.yaml') }}" | lxc profile edit juju-kubernetes
-#  changed_when: False
