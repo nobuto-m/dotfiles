@@ -1,8 +1,4 @@
 ---
-- name: 'workaround for LP: #1500504 - mkdir grub.d'
-  file: path=/etc/default/grub.d state=directory
-  become: yes
-
 - name: 'workaround for LP: #1500504 - i8042.nomux to kernel cmdline'
   copy:
     src=files/lp1500504.cfg

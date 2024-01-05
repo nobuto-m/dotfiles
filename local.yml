@@ -13,4 +13,5 @@
       when: "ansible_form_factor == 'Notebook'"
 
     # hardware specific
-    - { role: fmvs90tb,   when: "ansible_product_name == 'FMVS90TB'" }
+    - role: laptop_fmvs90tb
+      when: "ansible_product_name == 'FMVS90TB'"
