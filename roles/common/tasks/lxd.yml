@@ -5,16 +5,6 @@
     groups: lxd
     append: yes
 
-#- name: enable shiftfs
-#  command: snap set lxd shiftfs.enable=true
-#  changed_when: False
-#
-#- name: reload lxd to enable shiftfs
-#  systemd:
-#    name: snap.lxd.daemon
-#    state: reloaded
-#  changed_when: False
-
 - name: check lxd config status
   command: lxc network show lxdbr0
   changed_when: False
@@ -24,13 +14,6 @@
 - name: lxd init
   shell: echo "{{ lookup('file', 'files/lxd_preseed.yaml') }}" | lxd init --preseed
   when: lxd_config_status is failed
-
-- name: lxc alias
-  command: lxc alias add ubuntu 'exec @ARGS@ -- sudo --login --user ubuntu'
-  changed_when: False
-  ignore_errors: True
-  become: yes
-  become_user: "{{ ansible_user_id }}"
 
 - name: check squid-deb-proxy
   command: lxc info squid-deb-proxy
