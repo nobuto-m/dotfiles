@@ -4,10 +4,6 @@
     src: files/listchanges.conf
     dest: /etc/apt/listchanges.conf
 
-- name: build git diff-highlight
-  command: make -C /usr/share/doc/git/contrib/diff-highlight/
-  changed_when: False
-
 - name: make git diff-highlight executable
   copy:
     src: /usr/share/doc/git/contrib/diff-highlight/diff-highlight
