@@ -4,7 +4,7 @@
   changed_when: False
 
 - name: install snaps
-  snap:
+  community.general.snap:
     name: "{{ item.name }}"
     classic: "{{ item.classic }}"
     channel: "{{ item.channel }}"
