@@ -40,6 +40,7 @@ An example with ThinkPad.
 1. boot up with the USB stick
 
 1. install Ubuntu Desktop with the options below
+   * Full installation (not to remove LibreOffice, Remmina, Shotwell, Simple Scan, etc.)
    * Advanced features
      - Use LVM with the new Ubuntu installation
      - Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
@@ -57,7 +58,7 @@ An example with ThinkPad.
 
 1. choose a mirror server(optional) and enroll fingerprints(optional)
    - replace the default mirror URL in `/etc/apt/sources.list`
-   - enroll fingerprints and update pam configuration with `pam-auth-update --enable fprintd`
+   - enroll fingerprints and update pam configuration with `sudo pam-auth-update --enable fprintd`
 
 1. install git, make and ansible
 
