@@ -14,10 +14,11 @@
     src=templates/proposed.list.j2
     dest=/etc/apt/sources.list.d/proposed.list
 
-- name: set apt_preferences for -proposed
-  copy:
-    src=files/proposed
-    dest=/etc/apt/preferences.d/proposed
+# no longer necessary?
+#- name: set apt_preferences for -proposed
+#  copy:
+#    src=files/proposed
+#    dest=/etc/apt/preferences.d/proposed
 
 - name: apt update
   apt:
