@@ -49,9 +49,6 @@ packages:
   - shellcheck
   - yamllint
   - tox
-  - zeal
-  - python3-doc
-  - python3-examples
   - python3-pip
   - python3-flake8
   - mypy
@@ -59,6 +56,12 @@ packages:
   - libffi-dev
   - libxml2-dev
   - libxslt1-dev
+
+  # dev - docs
+  - zeal
+  - python3-doc
+  - python3-examples
+  - linux-doc
 
   # dev
   #- exuberant-ctags
@@ -73,6 +76,8 @@ packages:
 
   # encryption
   - encfs
+  - paperkey
+  - sq
 
   # vpn
   #- network-manager-fortisslvpn-gnome
@@ -116,13 +121,11 @@ packages:
   - tree
   - oathtool
   - jq
-  - libxml2-utils
+  - libxml2-utils  # xmllint
   - libxml-xpath-perl
   - pwgen
   - pv
   - ripgrep
-  - sq
-  - paperkey
 
   # utils - network
   - curl
@@ -145,16 +148,18 @@ packages:
   # utils - indicator
   - diodon
 
-  # other
+  # utils - images
   - gnome-screenshot
   - libimage-exiftool-perl
   - jhead
   - libjpeg-turbo-progs
   - webp
   - shutter
-  - dconf-editor
   - gimp
   - inkscape
+
+  # other
+  - dconf-editor
   - yubikey-personalization-gui
   - gstreamer1.0-libav
   - gstreamer1.0-plugins-bad
@@ -188,7 +193,6 @@ packages:
   - iperf
   - iperf3
   - sysprof
-  - linux-doc
   - apparmor-utils
 
 
