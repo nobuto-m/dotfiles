@@ -16,7 +16,6 @@ write_files:
       keyserver.ubuntu.com
 
       images.maas.io
-      artifacts.elastic.co
 
     owner: root:root
     path: /etc/squid-deb-proxy/mirror-dstdomain.acl.d/50-thirdparty
