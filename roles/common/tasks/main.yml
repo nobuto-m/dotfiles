@@ -1,30 +1,30 @@
 ---
-- include: package_apt.yml
+- import_tasks: package_apt.yml
   become: yes
 
-- include: package_config.yml
+- import_tasks: package_config.yml
   become: yes
 
-- include: package_snap.yml
+- import_tasks: package_snap.yml
   become: yes
 
-- include: locale.yml
+- import_tasks: locale.yml
   become: yes
 
-- include: filesystem.yml
+- import_tasks: filesystem.yml
   become: yes
 
-- include: package_third-party.yml
+- import_tasks: package_third-party.yml
   become: yes
 
-- include: lxd.yml
+- import_tasks: lxd.yml
   become: yes
 
-- include: vpn.yml
+- import_tasks: vpn.yml
   become: yes
 
-- include: xkeysnail.yml
+- import_tasks: xkeysnail.yml
   become: yes
 
-- include: peripheral_devices.yml
+- import_tasks: peripheral_devices.yml
   become: yes
