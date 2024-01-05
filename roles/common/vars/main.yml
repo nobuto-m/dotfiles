@@ -79,6 +79,10 @@ packages:
   - paperkey
   - sq
 
+  # backup
+  - deja-dup
+  - duplicity
+
   # vpn
   #- network-manager-fortisslvpn-gnome
   #- network-manager-iodine-gnome
@@ -149,6 +153,7 @@ packages:
   - diodon
 
   # utils - images
+  - shotwell
   - gnome-screenshot
   - libimage-exiftool-perl
   - jhead
