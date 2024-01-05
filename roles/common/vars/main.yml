@@ -35,23 +35,24 @@ packages:
   - python3-appdirs
 
   # dev - minimal
-  - packaging-dev
+  - packaging-dev  # build-essential, devscripts
   - debian-goodies  # dman
-  - nullmailer
+  - nullmailer  # not to install other MTA accidentally
   - git
   - git-email
   - git-review
+  - gh
   - hub
-  - bzr
-  - bzrtools
-  - bzr-fastimport
   - shellcheck
+  - universal-ctags
+  - libxml2-utils  # xmllint
   - yamllint
   - tox
+  - pipx
   - python3-pip
   - python3-flake8
-  - mypy
   - black
+  - mypy
   - libffi-dev
   - libxml2-dev
   - libxslt1-dev
@@ -61,11 +62,6 @@ packages:
   - python3-doc
   - python3-examples
   - linux-doc
-
-  # dev
-  #- exuberant-ctags
-  #- npm
-  #- python3-yapf
 
   # portable mirror
   - simplestreams
@@ -96,7 +92,6 @@ packages:
   # virt
   - uvtool
   - virt-manager
-  - ovmf
 
   # doc
   - diffpdf
@@ -124,7 +119,6 @@ packages:
   - tree
   - oathtool
   - jq
-  - libxml2-utils  # xmllint
   - libxml-xpath-perl
   - pwgen
   - pv
@@ -134,19 +128,14 @@ packages:
   - curl
   - sshuttle
   - nmap
-  - tcpflow
   - sipcalc
   - ipcalc
   - whois
-  - jnettop
   - httping
-  - iputils-arping
   - zsync
   - freeipmi-tools
   - w3m
   - wakeonlan
-  - wireshark
-  - wavemon
 
   # utils - indicator
   - diodon
@@ -154,11 +143,11 @@ packages:
   # utils - images
   - shotwell
   - gnome-screenshot
+  - shutter
   - libimage-exiftool-perl
   - jhead
-  - libjpeg-turbo-progs
+  - libjpeg-turbo-progs  # exifautotran
   - webp
-  - shutter
   - gimp
   - inkscape
 
@@ -166,7 +155,7 @@ packages:
   - dconf-editor
   - yubikey-personalization-gui
   - gstreamer1.0-libav
-  - gstreamer1.0-plugins-bad
+  #- gstreamer1.0-plugins-bad
   - v4l-utils
   - gnome-sound-recorder
   - gnome-sushi
@@ -176,9 +165,6 @@ packages:
   - wmctrl
   - gddrescue
   - tidy
-
-  # storage/filesystem
-  - thin-provisioning-tools
 
   # investigation
   - htop
@@ -190,6 +176,11 @@ packages:
   - smartmontools
   - intel-gpu-tools
   - vainfo
+  - tcpflow
+  - jnettop
+  - iputils-arping
+  - wireshark
+  - wavemon
   - sysstat
   - dstat
   - stress-ng
