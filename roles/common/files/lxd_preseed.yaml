@@ -8,7 +8,6 @@ networks:
     ipv4.dhcp.ranges: 10.0.8.51-10.0.8.200
     ipv6.address: none
   description: ""
-  managed: true
   name: lxdbr0
   type: ""
 storage_pools:
