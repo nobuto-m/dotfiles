@@ -2,23 +2,22 @@
 eatmydata: { LD_LIBRARY_PATH: /usr/lib/libeatmydata, LD_PRELOAD: libeatmydata.so }
 
 snaps:
-  - {name: chromium,            classic: no, channel: null}
-  - {name: zoom-client,         classic: no, channel: null}
-  - {name: lxd,                 classic: no, channel: null}
-  - {name: juju,                classic: no, channel: null}
-  - {name: juju-crashdump,      classic: yes, channel: null}
-  - {name: juju-wait,           classic: yes, channel: null}
-  - {name: charm,               classic: yes, channel: null}
-  - {name: charmcraft,          classic: yes, channel: null}
-  - {name: snapcraft,           classic: yes, channel: null}
-  - {name: kubectl,             classic: yes, channel: null}
-  - {name: openstackclients,    classic: no, channel: null}
-  - {name: cmadison,            classic: no, channel: null}
-  - {name: yq,                  classic: no, channel: null}
-  - {name: git-ubuntu,          classic: yes, channel: null}
-  - {name: vault,               classic: no, channel: null}
-  - {name: hugo,                classic: no, channel: null}
-  - {name: kdiskmark,           classic: no, channel: null}
+  - {name: chromium,            classic: no,   channel: null}
+  - {name: zoom-client,         classic: no,   channel: null}
+  - {name: lxd,                 classic: no,   channel: null}
+  - {name: juju,                classic: no,   channel: 'latest/stable'}
+  - {name: juju-crashdump,      classic: yes,  channel: null}
+  - {name: juju-wait,           classic: yes,  channel: null}
+  - {name: charm,               classic: yes,  channel: null}
+  - {name: charmcraft,          classic: yes,  channel: null}
+  - {name: snapcraft,           classic: yes,  channel: null}
+  - {name: kubectl,             classic: yes,  channel: null}
+  - {name: openstackclients,    classic: no,   channel: null}
+  - {name: cmadison,            classic: no,   channel: null}
+  - {name: yq,                  classic: no,   channel: null}
+  - {name: git-ubuntu,          classic: yes,  channel: null}
+  - {name: vault,               classic: no,   channel: null}
+  - {name: hugo,                classic: no,   channel: null}
 
 packages:
 

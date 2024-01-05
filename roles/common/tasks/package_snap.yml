@@ -9,7 +9,3 @@
     classic: "{{ item.classic }}"
     channel: "{{ item.channel }}"
   with_items: "{{ snaps }}"
-
-- name: "kdiskmark:removable-media connection"
-  command: "snap connect kdiskmark:removable-media"
-  changed_when: False
