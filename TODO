@@ -4,6 +4,7 @@
 * frequent wakeup from s2idle
   - when trackpoint or mouse button is touched
   - when power source is connected, etc.
+* /etc/locale.conf and dpkg-reconfigure locale
 * async snap installation
 * https://metrics.ubuntu.com is down for ubuntu-report
 * check-language-support doesn't work unless the lang is explicitly specified
