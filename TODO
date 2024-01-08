@@ -4,3 +4,27 @@
 * frequent wakeup from s2idle
   - when trackpoint or mouse button is touched
   - when power source is connected, etc.
+* async snap installation
+* https://metrics.ubuntu.com is down for ubuntu-report
+* check-language-support doesn't work unless the lang is explicitly specified
+
+```
+$ locale ; check-language-support; check-language-support -l ja
+LANG=ja_JP.UTF-8
+LANGUAGE=
+LC_CTYPE="ja_JP.UTF-8"
+LC_NUMERIC="ja_JP.UTF-8"
+LC_TIME="ja_JP.UTF-8"
+LC_COLLATE="ja_JP.UTF-8"
+LC_MONETARY="ja_JP.UTF-8"
+LC_MESSAGES="ja_JP.UTF-8"
+LC_PAPER="ja_JP.UTF-8"
+LC_NAME="ja_JP.UTF-8"
+LC_ADDRESS="ja_JP.UTF-8"
+LC_TELEPHONE="ja_JP.UTF-8"
+LC_MEASUREMENT="ja_JP.UTF-8"
+LC_IDENTIFICATION="ja_JP.UTF-8"
+LC_ALL=
+
+fonts-noto-cjk-extra gimp-help-ja gnome-user-docs-ja ibus-mozc language-pack-gnome-ja language-pack-ja libreoffice-help-ja libreoffice-l10n-ja mozc-utils-gui
+```
