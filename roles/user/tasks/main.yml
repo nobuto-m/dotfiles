@@ -143,6 +143,7 @@
     - { checkout.defaultRemote: origin }
     - { rebase.autoSquash: "true" }
     - { "url.https://opendev.org/.insteadOf": "opendev:" }
+  changed_when: False
 
 - name: render dconf
   template:
