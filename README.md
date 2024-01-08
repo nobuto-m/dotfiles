@@ -128,7 +128,7 @@ An example with ThinkPad.
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
   - set `Show home bottun` to true and set `https://meet.google.com/`
-  - `Offer to translate pages that aren't in a language you read` - off
+  - `Use Google Translate` - off
 * install tailscale and activate it with `sudo tailscale up --shields-up`
 * Restore those files manually if necessary:
   - ~/.config/hub
