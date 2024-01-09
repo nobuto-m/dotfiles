@@ -30,8 +30,6 @@
 - name: set the list of extensions
   set_fact:
     extensions:
-      - id: sound-output-device-chooser@kgshank.net
-        file: sound-output-device-chooserkgshank.net.v42.shell-extension.zip
       - id: system-monitor-next@paradoxxx.zero.gmail.com
         file: system-monitor-nextparadoxxx.zero.gmail.com.v41.shell-extension.zip
 
