@@ -128,6 +128,15 @@
     dest: ~/.bashrc
     block: "{{ lookup('file', 'files/bashrc_block') }}"
 
+- name: profile
+  blockinfile:
+    dest: ~/.profile
+    block: "{{ lookup('file', 'files/profile_block') }}"
+
+- name: install viddy
+  command: go install github.com/sachaos/viddy@v0.4.0
+  changed_when: False
+
 - name: git config
   command: git config --global "{{ item.key }}" "{{ item.value }}"
   with_dict:
