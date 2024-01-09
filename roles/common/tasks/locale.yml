@@ -1,4 +1,15 @@
 ---
+- name: make sure en_US locale is enabled
+  lineinfile:
+    dest: /etc/locale.gen
+    regexp: '^# en_US.UTF-8 UTF-8$'
+    line: 'en_US.UTF-8 UTF-8'
+    state: present
+
+- name: make sure en_US locale is generated
+  command: locale-gen
+  changed_when: false
+
 - name: reset system locale
   copy:
     src=files/locale.conf
