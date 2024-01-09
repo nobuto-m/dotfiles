@@ -12,6 +12,7 @@
 * check-language-support doesn't work unless the lang is explicitly specified
 * Chromium - visual effects are disabled
   - https://support.google.com/meet/answer/10058482?hl=en
+* rewrite pactl to native Pipewire commands
 
 ```
 $ locale ; check-language-support; check-language-support -l ja

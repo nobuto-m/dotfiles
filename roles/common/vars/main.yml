@@ -190,6 +190,9 @@ packages:
   - sysprof
   - apparmor-utils
 
+  # backward compatibility
+  - pulseaudio-utils
+
 
   # multiverse
   - nautilus-dropbox

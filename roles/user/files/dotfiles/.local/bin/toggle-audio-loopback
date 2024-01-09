@@ -5,7 +5,7 @@ set -u
 
 LATENCY_MSEC=25
 
-if pactl list | grep -qF module-loopback.c; then
+if pactl list | grep -qw module-loopback; then
     pactl unload-module module-loopback
     exit
 fi
