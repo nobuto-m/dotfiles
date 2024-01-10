@@ -141,7 +141,7 @@
   command: git config --global "{{ item.key }}" "{{ item.value }}"
   with_dict:
     - { pull.ff: only }
-    - { core.pager: "diff-highlight | less -FRX" }
+    - { core.pager: "delta --diff-highlight" }
     - { core.autocrlf: input }
     - { log.follow: "true" }
     - { merge.conflictStyle: diff3 }
