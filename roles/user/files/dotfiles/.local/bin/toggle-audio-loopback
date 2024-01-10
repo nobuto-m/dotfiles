@@ -5,31 +5,47 @@ set -u
 
 LATENCY_MSEC=25
 
+# pactl is used mostly due to:
+#   $ pw-cli unload-module libpipewire-module-loopback
+#   Error: "Command "unload-module" not yet implemented"
+# or `pw-cli destroy` needs to be used
+# https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/709
+
 if pactl list | grep -qw module-loopback; then
     pactl unload-module module-loopback
     exit
 fi
 
-active_sink=$(pactl --format json list sinks | jq -r '.[] | select(.state=="RUNNING")')
-active_port=$(echo "$active_sink" | jq -r .active_port | sed -e 's/\[Out\] //')
-mute=$(echo "$active_sink" | jq -r .mute)
+pw_dump=$(pw-dump)
+# equivalent to pw-metadata but in JSON
+pw_metadata=$(echo "$pw_dump" | jq '.[] | select(.props."metadata.name"=="default").metadata[]')
 
-if [ "$mute" = false ] && echo "$active_port" | grep -q -E 'Speaker|HDMI'; then
+default_sink_name=$(echo "$pw_metadata" | jq -r 'select(.key=="default.audio.sink").value.name')
+default_sink_id=$(echo "$pw_dump" | jq -r ".[] | select(.info.props.\"node.name\"==\"$default_sink_name\") | .info.props.\"device.id\"")
+
+route_output=$(echo "$pw_dump" | jq -r ".[] | select(.id==$default_sink_id) | .info.params.Route[] | select(.direction==\"Output\")")
+route_output_description=$(echo "$route_output" | jq -r .description)
+route_output_mute=$(echo "$route_output" | jq -r .props.mute)
+
+if [ "$route_output_mute" = false ] && echo "$route_output_description" | grep -q -E 'Speaker|HDMI'; then
     notify-send \
         -i audio-speakers-symbolic \
         -h int:transient:1 \
         "Audio loopback not enabled" \
-        "${active_port} is in use"
+        "${route_output_description} is in use"
     exit
 fi
 
-pactl load-module module-loopback latency_msec=$LATENCY_MSEC
-active_source=$(pactl --format json list sources | jq -r '.[] | select(.state=="RUNNING").description')
+pactl load-module module-loopback latency_msec=$LATENCY_MSEC >/dev/null
+default_source_name=$(echo "$pw_metadata" | jq -r 'select(.key=="default.audio.source").value.name')
+default_source_id=$(echo "$pw_dump" | jq -r ".[] | select(.info.props.\"node.name\"==\"$default_source_name\") | .info.props.\"device.id\"")
+
+default_source_nick=$(echo "$pw_dump" | jq -r ".[] | select(.id==$default_source_id) | .info.props.\"device.nick\"")
+route_input=$(echo "$pw_dump" | jq -r ".[] | select(.id==$default_source_id) | .info.params.Route[] | select(.direction==\"Input\")")
+route_input_description=$(echo "$route_input" | jq -r .description)
+
 notify-send \
     -i media-playlist-repeat-symbolic \
     -h int:transient:1 \
     'Audio loopback enabled' \
-    "${active_source}"
-
-# device="$(pactl list source-outputs | grep -B1 -F module-loopback.c | head -n1 | col2 '#')"
-# pactl set-source-output-volume "$device" '100%'
+    "${default_source_nick}\n${route_input_description}"
