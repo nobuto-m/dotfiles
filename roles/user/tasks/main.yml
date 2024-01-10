@@ -148,6 +148,7 @@
     - { checkout.defaultRemote: origin }
     - { rebase.autoSquash: "true" }
     - { "url.https://opendev.org/.insteadOf": "opendev:" }
+    - { delta.color-only: "true" }
     - { delta.diff-highlight: "true" }
   changed_when: False
 
