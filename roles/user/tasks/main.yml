@@ -141,13 +141,14 @@
   command: git config --global "{{ item.key }}" "{{ item.value }}"
   with_dict:
     - { pull.ff: only }
-    - { core.pager: "delta --diff-highlight" }
+    - { core.pager: "delta" }
     - { core.autocrlf: input }
     - { log.follow: "true" }
     - { merge.conflictStyle: diff3 }
     - { checkout.defaultRemote: origin }
     - { rebase.autoSquash: "true" }
     - { "url.https://opendev.org/.insteadOf": "opendev:" }
+    - { delta.diff-highlight: "true" }
   changed_when: False
 
 - name: render dconf
