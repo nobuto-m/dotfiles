@@ -114,6 +114,7 @@ packages:
   - ranger
   - colordiff
   - dwdiff
+  - git-delta
   - lnav
   - ccze
   - python3-pygments
