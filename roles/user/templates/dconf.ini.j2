@@ -217,12 +217,12 @@ name='otp-ubuntu'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
 binding='<Shift><Super>a'
-command="sh -c \"(xdotool search --name '^Meet - .+ - Chromium$' && xdotool search --class chromium windowactivate --sync keyup shift+super+a key ctrl+d) || (xdotool search --name '^Microsoft Teams .*- Chromium$' && xdotool search --class chromium windowactivate --sync keyup shift+super+a key ctrl+shift+m) || xdotool search --name '^Zoom Meeting$' windowactivate --sync keyup shift+super+a key alt+a\""
+command="sh -c \"(xdotool search --name '^Meet - .+ - Chromium$' && xdotool search --class chromium windowactivate --sync keyup shift+super+a key ctrl+d) || (xdotool search --name 'Microsoft Teams .*- Chromium$' && xdotool search --class chromium windowactivate --sync keyup shift+super+a key ctrl+shift+m) || xdotool search --name '^Zoom Meeting$' windowactivate --sync keyup shift+super+a key alt+a\""
 name='Mute/Unmute myself - Keyboard'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
 binding='Launch4'
-command="sh -c \"(xdotool search --name '^Meet - .+ - Chromium$' && xdotool search --class chromium windowactivate --sync key ctrl+d) || (xdotool search --name '^Microsoft Teams .*- Chromium$' && xdotool search --class chromium windowactivate --sync key ctrl+shift+m) || xdotool search --name '^Zoom Meeting$' windowactivate --sync key alt+a\""
+command="sh -c \"(xdotool search --name '^Meet - .+ - Chromium$' && xdotool search --class chromium windowactivate --sync key ctrl+d) || (xdotool search --name 'Microsoft Teams .*- Chromium$' && xdotool search --class chromium windowactivate --sync key ctrl+shift+m) || xdotool search --name '^Zoom Meeting$' windowactivate --sync key alt+a\""
 name='Mute/Unmute myself - USB volume controller'
 
 
