@@ -1,0 +1,30 @@
+#!/bin/bash
+
+set -e
+set -u
+
+interval=10
+invalid_misc_p=
+
+while true; do
+    if [ -n "$invalid_misc_p" ]; then
+        invalid_misc_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $10}')
+    fi
+    sleep "$interval"
+    invalid_misc=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $10}')
+
+    if [ -n "$invalid_misc_p" ] && [ -n "$invalid_misc" ]; then
+        count=$((invalid_misc - invalid_misc_p))
+        if [ "$count" -gt 0 ]; then
+            notify-send \
+                -i network-wireless-hardware-disabled-symbolic \
+                -h int:transient:1 \
+                'Wireless packet loss detected' \
+                "${count} invalid packets in ${interval}s"
+
+            echo "total ${invalid_misc}: ${count} invalid packets in ${interval}s" >&2
+        fi
+    fi
+
+    invalid_misc_p="$invalid_misc"
+done

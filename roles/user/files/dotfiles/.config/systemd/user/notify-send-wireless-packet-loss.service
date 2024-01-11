@@ -1,0 +1,10 @@
+[Unit]
+Description=Notify wireless packet loss
+
+[Service]
+Type=simple
+ExecStart=%h/.local/lib/notify-send-wireless-packet-loss
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

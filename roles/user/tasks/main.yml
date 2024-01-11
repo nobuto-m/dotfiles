@@ -97,7 +97,7 @@
     dest: ~/
   register: dotfiles
 
-- name: make .lessfilter and ~/.local/bin/ executable
+- name: make .lessfilter and ~/.local/* executable
   file:
     path: "{{ item }}"
     mode: 0755
@@ -108,6 +108,13 @@
   - ~/.local/bin/otp-ubuntu
   - ~/.local/bin/toggle-audio-loopback
   - ~/.local/bin/xclips-browser
+  - ~/.local/lib/notify-send-wireless-packet-loss
+
+- name: enable notify-send-wireless-packet-loss service
+  systemd:
+    scope: user
+    name: notify-send-wireless-packet-loss
+    enabled: true
 
 - name: generate ICC profile
   command: |
