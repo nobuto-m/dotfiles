@@ -19,7 +19,7 @@ case "$mime_type" in
     text/x-shellscript)
         lexer=sh
     ;;
-    text/x-python)
+    text/x-script.python)
         lexer=python
     ;;
     *)
