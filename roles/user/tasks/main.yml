@@ -23,7 +23,7 @@
 
 - name: download plain wallpaper
   get_url:
-    url: "https://drive.google.com/uc?export=download&id=19d0NJ6zBRSFSxkfyD1tploOEOh-SvRTx"
+    url: "https://drive.google.com/uc?export=download&id=1rK9AK_CBSTunWJXo8vN8OS7kYghPU5yY"
     dest: ~/.local/share/backgrounds/blank.png
   register: wallpaper
 
