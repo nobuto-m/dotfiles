@@ -23,3 +23,29 @@
   apt:
     name: code
     state: present
+
+- name: download speedtest cli
+  get_url:
+    url: https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz
+    dest: "{{ ansible_user_dir }}/Downloads/ookla-speedtest-linux-x86_64.tgz"
+  register: speedtest
+
+- name: make sure speedtest directory exists
+  file:
+    path: /usr/local/lib/ookla-speedtest
+    state: directory
+
+- name: extract speedteset cli
+  unarchive:
+    src: "{{ ansible_user_dir }}/Downloads/ookla-speedtest-linux-x86_64.tgz"
+    dest: /usr/local/lib/ookla-speedtest/
+    remote_src: yes
+    owner: root
+    group: root
+  when: speedtest is changed
+
+- name: make speedtest executable
+  file:
+    src: /usr/local/lib/ookla-speedtest/speedtest
+    dest: /usr/local/bin/speedtest
+    state: link
