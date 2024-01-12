@@ -9,6 +9,7 @@
 * async snap installation
 * https://metrics.ubuntu.com is down for ubuntu-report
 * spellcheck seems disabled in Firefox somehow
+* Steam initialization to satisfy dependencies
 * Chromium - visual effects are disabled
   - https://support.google.com/meet/answer/10058482?hl=en
   - looks like most snaps are broken when it comes to libGL

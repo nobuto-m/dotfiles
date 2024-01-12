@@ -24,6 +24,17 @@
     name: code
     state: present
 
+- name: download steam
+  get_url:
+    url: https://repo.steampowered.com/steam/archive/stable/steam_latest.deb
+    dest: "{{ ansible_user_dir }}/Downloads/steam_latest.deb"
+  register: steam
+
+- name: install steam
+  apt:
+    deb: "{{ ansible_user_dir }}/Downloads/steam_latest.deb"
+  when: steam is changed
+
 - name: download speedtest cli
   get_url:
     url: https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz
