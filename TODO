@@ -9,26 +9,6 @@
 * async snap installation
 * spellcheck seems disabled in Firefox somehow
 * Steam initialization to satisfy dependencies
-* Chromium - visual effects are disabled
-  - https://support.google.com/meet/answer/10058482?hl=en
-  - looks like most snaps are broken when it comes to libGL
-
-```
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: /usr/share/libdrm/amdgpu.ids: No such file or directory
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: libGL error: No matching fbConfigs or visuals found
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: libGL error: failed to load driver: radeonsi
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: /usr/share/libdrm/amdgpu.ids: No such file or directory
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: libGL error: No matching fbConfigs or visuals found
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: libGL error: failed to load driver: radeonsi
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: libGL error: No matching fbConfigs or visuals found
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: libGL error: failed to load driver: swrast
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: [58619:58619:0112/000642.812820:ERROR:angle_platform_impl.cc(44)] Display.cpp:1052 (initialize): ANGLE Display::initialize error 12289: Could not create a backing OpenGL context.
-...
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58619]: [58619:58619:0112/000642.825360:ERROR:viz_main_impl.cc(196)] Exiting GPU process due to errors during initialization
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58635]: /usr/share/libdrm/amdgpu.ids: No such file or directory
-Jan 12 00:06:42 t14 chromium_chromium.desktop[58635]: /usr/share/libdrm/amdgpu.ids: No such file or directory
-```
-
 * check-language-support doesn't work unless the lang is explicitly specified
 ```
 $ locale ; check-language-support; check-language-support -l ja
