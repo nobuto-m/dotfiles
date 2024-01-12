@@ -5,9 +5,12 @@ from pathlib import Path
 
 
 def main():
-    juju_data = Path.home().joinpath(".local/share/juju")
-    with open(juju_data.joinpath("controllers.yaml")) as f:
-        controllers = yaml.safe_load(f)
+    try:
+        juju_data = Path.home().joinpath(".local/share/juju")
+        with open(juju_data.joinpath("controllers.yaml")) as f:
+            controllers = yaml.safe_load(f)
+    except FileNotFoundError:
+        return
 
     current_controller = controllers.get("current-controller")
     if not current_controller:
@@ -16,14 +19,10 @@ def main():
     with open(juju_data.joinpath("models.yaml")) as f:
         models = yaml.safe_load(f)
 
-    try:
-        current_models = models["controllers"][current_controller]
-        current_model = current_models["current-model"]
-    except KeyError:
-        pass
+    current_models = models["controllers"][current_controller]
+    current_model = current_models.get("current-model")
 
-    if current_model:
-        print("%s:%s" % (current_controller, current_model))
+    print("%s:%s" % (current_controller, current_model))
 
 
 if __name__ == "__main__":
