@@ -11,7 +11,10 @@ while true; do
         invalid_misc_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $10}')
     fi
     sleep "$interval"
-    invalid_misc=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $10}')
+    wireless=$(cat /proc/net/wireless)
+    iface=$(echo "$wireless" | tail -n -1 | grep : || true)
+    invalid_misc=$(echo "$iface" | awk '{print $10}')
+    link_quality=$(echo "$iface" | awk '{print $3}' | tr -d .)
 
     if [ -n "$invalid_misc_p" ] && [ -n "$invalid_misc" ]; then
         count=$((invalid_misc - invalid_misc_p))
@@ -22,7 +25,20 @@ while true; do
                 'Wireless packet loss detected' \
                 "${count} invalid packets in ${interval}s"
 
-            echo "total ${invalid_misc}: ${count} invalid packets in ${interval}s" >&2
+            echo "${count} invalid packets in ${interval}s" >&2
+            echo "$wireless" >&2
+        elif [ "$link_quality" -le 49 ]; then
+            # notify < -60dBm situation
+            # Link quality 49 = -61dBm + 110
+            # Link quality percent 70% = 49/70
+            link_quality_percent=$((link_quality * 100 / 70))
+            notify-send \
+                -i network-wireless-signal-weak-symbolic \
+                -h int:transient:1 \
+                'Link quality is low' \
+                "${link_quality_percent}%"
+
+            echo "$wireless" >&2
         fi
     fi
 
