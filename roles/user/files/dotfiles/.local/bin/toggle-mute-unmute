@@ -8,7 +8,7 @@ window_teams='Microsoft Teams .*- Chromium$'
 window_zoom='^Zoom Meeting$'
 
 function release_all_keys() {
-    # ugly but this script never know which key short cut was used to
+    # ugly but this script never knows which key short cut was used to
     # invoke it so we have to cancel all key events first. Also, all key
     # cannot be sent at once due to
     # malloc(): invalid next size (unsorted)
@@ -22,10 +22,12 @@ function release_all_keys() {
     wait
 }
 
-# `xdotool search --name` returns two window identifiers while
-# `xdotool search --name` returns only one. But we need to use names to
-# know if it's a window for Meet or Teams to send different key events
-# so will use two separate steps.
+# `xdotool search --name` returns two window identifiers although
+# `xdotool search --name` returns only one. That's because of
+# WM_CLASS="mutter-x11-frames" as an outer of the actual contents. We
+# could use the class name as "chromium", but we also need to know if
+# it's a window for Meet or Teams to send different key events so will
+# use two separate steps as searching with names and classes.
 if [ -n "$(xdotool search --name "$window_meet")" ]; then
     release_all_keys
     xdotool search --class chromium windowactivate --sync key ctrl+d
