@@ -31,7 +31,7 @@
   set_fact:
     extensions:
       - id: system-monitor-next@paradoxxx.zero.gmail.com
-        file: system-monitor-nextparadoxxx.zero.gmail.com.v41.shell-extension.zip
+        file: system-monitor-nextparadoxxx.zero.gmail.com.v64.shell-extension.zip
 
 - name: download extension
   get_url:
