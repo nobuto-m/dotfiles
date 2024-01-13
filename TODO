@@ -6,6 +6,7 @@
   - when power source is connected, etc.
 * general font size in UI
 * console font to prioritize ja glyphs
+* cannot select color profiles
 * async snap installation
 * spellcheck and smart composing in Gmail are not working in Firefox somehow
 * Steam initialization to satisfy dependencies
