@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+set -u
+
+window_meet='^Meet - .+ - Chromium$'
+window_teams='Microsoft Teams .*- Chromium$'
+window_zoom='^Zoom Meeting$'
+
+function release_all_keys() {
+    # ugly but this script never know which key short cut was used to
+    # invoke it so we have to cancel all key events first. Also, all key
+    # cannot be sent at once due to
+    # malloc(): invalid next size (unsorted)
+    xdotool keyup alt+ctrl+shift+super &
+    xdotool keyup a+b+c+d+e+f+g &
+    xdotool keyup h+i+j+k+l+m+n &
+    xdotool keyup o+p+q+r+s+t+u &
+    xdotool keyup v+w+x+y+z &
+    xdotool keyup 0+1+2+3+4 &
+    xdotool keyup 5+6+7+8+9 &
+    wait
+}
+
+# `xdotool search --name` returns two window identifiers while
+# `xdotool search --name` returns only one. But we need to use names to
+# know if it's a window for Meet or Teams to send different key events
+# so will use two separate steps.
+if [ -n "$(xdotool search --name "$window_meet")" ]; then
+    release_all_keys
+    xdotool search --class chromium windowactivate --sync key ctrl+d
+elif [ -n "$(xdotool search --name "$window_teams")" ]; then
+    release_all_keys
+    xdotool search --class chromium windowactivate --sync key ctrl+shift+m
+elif [ -n "$(xdotool search --name "$window_zoom")" ]; then
+    release_all_keys
+    # `--class zoom` returns 10 identifies for Zoom so we have to use
+    # the name and try to guess the child one
+    zoom_child_window=$(xdotool search --name "$window_zoom" | tail -n1)
+    xdotool windowactivate --sync "$zoom_child_window" key alt+a
+fi

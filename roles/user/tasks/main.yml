@@ -107,6 +107,7 @@
   - ~/.local/bin/juju-current-model
   - ~/.local/bin/otp-ubuntu
   - ~/.local/bin/toggle-audio-loopback
+  - ~/.local/bin/toggle-mute-unmute
   - ~/.local/bin/xclips-browser
   - ~/.local/lib/notify-send-wireless-packet-loss
 
