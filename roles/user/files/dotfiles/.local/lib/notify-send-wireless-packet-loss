@@ -4,8 +4,14 @@ set -e
 set -u
 
 interval=10
-invalid_misc_p=
 
+# notify < -60dBm situation
+# Link quality 49 = -61dBm + 110
+# Link quality percent 70% = 49/70
+#link_quality_threshold=49
+link_quality_threshold=35
+
+invalid_misc_p=
 while true; do
     if [ -n "$invalid_misc_p" ]; then
         invalid_misc_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $10}')
@@ -27,10 +33,7 @@ while true; do
 
             echo "${count} invalid packets in ${interval}s" >&2
             echo "$wireless" >&2
-        elif [ "$link_quality" -le 49 ]; then
-            # notify < -60dBm situation
-            # Link quality 49 = -61dBm + 110
-            # Link quality percent 70% = 49/70
+        elif [ "$link_quality" -le "$link_quality_threshold" ]; then
             link_quality_percent=$((link_quality * 100 / 70))
             notify-send \
                 -i network-wireless-signal-weak-symbolic \
