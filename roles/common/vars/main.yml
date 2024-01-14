@@ -177,6 +177,8 @@ packages:
   - nvme-cli
   - smartmontools
   - intel-gpu-tools
+  - nvtop
+  - radeontop
   - vainfo
   - tcpflow
   - jnettop
