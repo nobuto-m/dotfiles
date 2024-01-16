@@ -9,7 +9,7 @@ interval=10
 # Link quality 49 = -61dBm + 110
 # Link quality percent 70% = 49/70
 #link_quality_threshold=49
-link_quality_threshold=35
+link_quality_threshold=34
 
 invalid_misc_p=
 while true; do
