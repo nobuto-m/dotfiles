@@ -12,26 +12,41 @@ interval=10
 link_quality_threshold=34
 
 invalid_misc_p=
+retries_p=
 while true; do
     if [ -n "$invalid_misc_p" ]; then
         invalid_misc_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $10}')
+    fi
+    if [ -n "$retries_p" ]; then
+        invalid_misc_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $9}')
     fi
     sleep "$interval"
     wireless=$(cat /proc/net/wireless)
     iface=$(echo "$wireless" | tail -n -1 | grep : || true)
     invalid_misc=$(echo "$iface" | awk '{print $10}')
+    retries=$(echo "$iface" | awk '{print $9}')
     link_quality=$(echo "$iface" | awk '{print $3}' | tr -d .)
 
     if [ -n "$invalid_misc_p" ] && [ -n "$invalid_misc" ]; then
-        count=$((invalid_misc - invalid_misc_p))
-        if [ "$count" -gt 0 ]; then
+        count_invalid=$((invalid_misc - invalid_misc_p))
+        count_retries=$((retries - retries_p))
+        if [ "$count_invalid" -gt 0 ]; then
             notify-send \
                 -i network-wireless-hardware-disabled-symbolic \
                 -h int:transient:1 \
                 'Wireless packet loss detected' \
-                "${count} invalid packets in ${interval}s"
+                "${count_invalid} invalid packets in ${interval}s"
 
-            echo "${count} invalid packets in ${interval}s" >&2
+            echo "${count_invalid} invalid packets in ${interval}s" >&2
+            echo "$wireless" >&2
+        elif [ "$count_retries" -gt 0 ]; then
+            notify-send \
+                -i network-wireless-hardware-disabled-symbolic \
+                -h int:transient:1 \
+                'Wireless packet loss detected' \
+                "${count_retries} excessive retries in ${interval}s"
+
+            echo "${count_retries} excessive retries in ${interval}s" >&2
             echo "$wireless" >&2
         elif [ "$link_quality" -le "$link_quality_threshold" ]; then
             link_quality_percent=$((link_quality * 100 / 70))
@@ -46,4 +61,5 @@ while true; do
     fi
 
     invalid_misc_p="$invalid_misc"
+    retries_p="$retries"
 done
