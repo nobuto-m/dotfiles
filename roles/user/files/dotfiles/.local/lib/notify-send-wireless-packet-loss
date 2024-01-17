@@ -18,7 +18,7 @@ while true; do
         invalid_misc_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $10}')
     fi
     if [ -n "$retries_p" ]; then
-        invalid_misc_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $9}')
+        retries_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $9}')
     fi
     sleep "$interval"
     wireless=$(cat /proc/net/wireless)
