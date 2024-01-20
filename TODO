@@ -9,6 +9,13 @@
 * cannot select color profiles
 * async snap installation
 * spellcheck and smart composing in Gmail are not working in Firefox somehow
+* wayland migration
+  - Firefox title bar is not merged into the top bar
+  - xdotool: Super+Shift doesn't work somehow whlie Shift+Super works
+  - xdotool: type doesn't work, wtype or ydotool?
+  - diodon: keyboard operation doesn't work
+  - replace xkeysnail
+  - screen sharing in a video call
 * check-language-support doesn't work unless the lang is explicitly specified
 ```
 $ locale ; check-language-support; check-language-support -l ja
