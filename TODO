@@ -9,7 +9,6 @@
 * cannot select color profiles
 * async snap installation
 * spellcheck and smart composing in Gmail are not working in Firefox somehow
-* Steam initialization to satisfy dependencies
 * check-language-support doesn't work unless the lang is explicitly specified
 ```
 $ locale ; check-language-support; check-language-support -l ja
