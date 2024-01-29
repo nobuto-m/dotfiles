@@ -3,7 +3,7 @@ Description=Service for xkeysnail
 
 [Service]
 Environment=DISPLAY=:0
-ExecStart=/usr/local/bin/xkeysnail --quiet /etc/xkeysnail/config.py
+ExecStart=/usr/local/bin/xkeysnail --quiet /etc/xkeysnail/config.py --devices 'AT Translated Set 2 keyboard' 'TrackPoint Keyboard II'
 Restart=always
 Type=simple
 RestartSec=10

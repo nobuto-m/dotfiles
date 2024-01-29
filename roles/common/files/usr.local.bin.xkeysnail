@@ -2,12 +2,14 @@
 
 /usr/local/bin/xkeysnail {
   #include <abstractions/base>
+  #include <abstractions/nameservice>
+  #include <abstractions/openssl>
   #include <abstractions/python>
+  #include <abstractions/user-tmp>
+  #include <abstractions/X>
 
-  /usr/local/bin/xkeysnail r,
-
-  /usr/local/lib/python3.*/dist-packages/xkeysnail/ r,
-  /usr/local/lib/python3.*/dist-packages/xkeysnail/**.pyc mr,
+  /usr/{local/,}bin/ r,
+  /usr/{local/,}bin/xkeysnail r,
 
   /etc/xkeysnail/config.py r,
 
@@ -15,14 +17,5 @@
   /dev/input/* rw,
   /dev/uinput rw,
 
-  /tmp/.X11-unix/X[0-9]* rw,
-
-  deny /etc/passwd r,
-  deny /etc/nsswitch.conf r,
-  deny /etc/ssl/openssl.cnf r,
-  deny /{usr/,}bin/uname x,
-  deny /usr/local/bin/ r,
-  deny owner @{PROC}/@{pid}/fd/ r,
-  deny capability dac_override,
-  deny capability dac_read_search,
+  /usr/bin/uname ix,
 }
