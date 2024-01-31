@@ -37,6 +37,8 @@ packages:
 
   # dev - minimal
   - packaging-dev  # build-essential, devscripts
+  - ubuntu-dev-tools
+  - pbuilder
   - debian-goodies  # dman
   - nullmailer  # not to install other MTA accidentally
   - git
