@@ -118,12 +118,14 @@ An example with ThinkPad.
     - `nmcli connection add type ethernet con-name Wired` (default)
     - `nmcli connection add type ethernet con-name Shared autoconnect no ipv4.method shared ipv6.method disabled`
 * disable Dropbox LAN sync by `dropbox lansync n`
-* set git `user.name` and `user.email` with `git config --global`
-* create `~/.gitconfig_corporate` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
-  - `git config --global includeIf.'gitdir:~/src/work/'.path ~/.gitconfig_corporate`
-  - `git config --global includeIf.'gitdir:~/src/corporate_private/'.path ~/.gitconfig_corporate`
-  - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
-* set gerrit username with `git config --global --add gitreview.username "USER"`
+* git
+  - set git `user.name` and `user.email` with `git config --global`
+  - create `~/.gitconfig_corporate` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
+    - `git config --global includeIf.'gitdir:~/src/work/'.path ~/.gitconfig_corporate`
+    - `git config --global includeIf.'gitdir:~/src/corporate_private/'.path ~/.gitconfig_corporate`
+    - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
+  - set launchpad username with `git config --global gitubuntu.lpuser "USER"`
+  - set gerrit username with `git config --global --add gitreview.username "USER"`
 * add `export DEBEMAIL=` into `~/.bashrc`
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
