@@ -1,2 +1,2 @@
-UBUNTUTOOLS_UBUNTU_MIRROR='http://jp.archive.ubuntu.com/ubuntu'
+UBUNTUTOOLS_UBUNTU_MIRROR='http://ftp.riken.jp/Linux/ubuntu/'
 UBUNTUTOOLS_BUILDER='pbuilder-dist'
