@@ -215,6 +215,8 @@
   command: code --install-extension {{ item }}
   with_items:
     - ms-python.python
+    - ms-python.black-formatter
+    - ms-python.flake8
     - redhat.vscode-yaml
     - samuelcolvin.jinjahtml
     - golang.Go
