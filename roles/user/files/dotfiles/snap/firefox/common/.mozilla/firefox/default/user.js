@@ -40,7 +40,6 @@ user_pref("spellchecker.dictionary", "en-US");
 user_pref("browser.contentblocking.category", "strict");
 user_pref("permissions.default.geo", 2);  // deny by default
 user_pref("media.autoplay.default", 5);  // block autoplay of audio and video
-user_pref("accessibility.force_disabled", 1);
 user_pref("dom.security.https_first", true);
 //user_pref("dom.security.https_only_mode", true);
 
