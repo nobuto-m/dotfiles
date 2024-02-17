@@ -178,6 +178,7 @@ packages:
   - powertop
   - powerstat
   - nvme-cli
+  - sg3-utils
   - smartmontools
   - s-tui
   - intel-gpu-tools
