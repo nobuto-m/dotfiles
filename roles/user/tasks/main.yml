@@ -154,7 +154,7 @@
     - { core.pager: "delta" }
     - { core.autocrlf: input }
     - { log.follow: "true" }
-    - { merge.conflictStyle: diff3 }
+    - { merge.conflictStyle: zdiff3 }
     - { checkout.defaultRemote: origin }
     - { rebase.autoSquash: "true" }
     - { "url.https://opendev.org/.insteadOf": "opendev:" }
