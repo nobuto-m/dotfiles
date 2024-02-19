@@ -170,6 +170,7 @@ packages:
   - wmctrl
   - gddrescue
   - tidy
+  - meld
 
   # investigation
   - htop
