@@ -138,8 +138,6 @@ An example with ThinkPad.
 * install [unite-shell](https://github.com/hardpixel/unite-shell) extension by hand
 * install a patched wpasupplicant by hand for the time being
   - https://bugs.launchpad.net/ubuntu/+source/wpa/+bug/1987252
-* install sshuttle 1.1.0 by hand for the time being
-  - https://bugs.launchpad.net/ubuntu/+source/sshuttle/+bug/1962286
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 
 ### Firefox add-ons
