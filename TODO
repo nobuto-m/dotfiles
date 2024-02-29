@@ -8,7 +8,7 @@
 * console font to prioritize ja glyphs
 * cannot select color profiles
 * async snap installation
-* spellcheck and smart composing in Gmail are not working in Firefox somehow
+* revisit conflict between tlp and power-profiles-daemon
 * Kazam's menu is grayed out to stop recording
 * mouse cursor is not captured with gnome-shell recording
   https://gitlab.gnome.org/GNOME/mutter/-/issues/3182
