@@ -15,3 +15,6 @@
     # hardware specific
     - role: laptop_fmvs90tb
       when: "ansible_product_name == 'FMVS90TB'"
+
+    - role: t14gen3amd
+      when: "ansible_product_name == '21CFCTO1WW'"
