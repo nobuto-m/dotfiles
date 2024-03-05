@@ -15,7 +15,6 @@ snaps:
   - {name: openstackclients,    classic: no,   channel: null}
   - {name: cmadison,            classic: no,   channel: null}
   - {name: go,                  classic: yes,   channel: null}
-  - {name: yq,                  classic: no,   channel: null}
   - {name: git-ubuntu,          classic: yes,  channel: null}
   - {name: vault,               classic: no,   channel: null}
   - {name: hugo,                classic: no,   channel: null}
@@ -123,6 +122,7 @@ packages:
   - tree
   - oathtool
   - jq
+  - yq
   - libxml-xpath-perl
   - pwgen
   - pv
