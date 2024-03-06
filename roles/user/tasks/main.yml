@@ -155,6 +155,8 @@
     - { core.autocrlf: input }
     - { log.follow: "true" }
     - { merge.conflictStyle: zdiff3 }
+    - { merge.tool: meld }
+    - { mergetool.keepBackup: "false" }
     - { checkout.defaultRemote: origin }
     - { rebase.autoSquash: "true" }
     - { "url.https://opendev.org/.insteadOf": "opendev:" }
