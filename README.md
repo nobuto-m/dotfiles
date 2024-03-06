@@ -143,7 +143,7 @@ An example with ThinkPad.
 ### Firefox add-ons
 
 * https://addons.mozilla.org/firefox/addon/yaru-hybrid-unofficial/
-* https://addons.mozilla.org/firefox/addon/greasemonkey/
+* https://addons.mozilla.org/firefox/addon/tampermonkey/
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
 * https://addons.mozilla.org/firefox/addon/most-recent-tab/
 * https://addons.mozilla.org/firefox/addon/tab-session-manager/
