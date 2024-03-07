@@ -16,6 +16,9 @@
   /dev/input/ r,
   /dev/input/* rw,
   /dev/uinput rw,
+  /sys/devices/virtual/input/** r,
 
   /usr/bin/uname ix,
+
+  deny /usr/lib/python3/dist-packages/** w,
 }
