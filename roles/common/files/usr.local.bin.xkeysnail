@@ -21,4 +21,6 @@
   /usr/bin/uname ix,
 
   deny /usr/lib/python3/dist-packages/** w,
+
+  /usr/bin/lsb_release Px -> lsb_release,
 }
