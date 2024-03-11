@@ -127,6 +127,7 @@ packages:
   - pwgen
   - pv
   - ripgrep
+  - libsecret-tools
 
   # utils - network
   - curl

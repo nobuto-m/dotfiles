@@ -3,15 +3,28 @@
 set -e
 set -u
 
-secret_file=~/.otp-ubuntu.secret
-# make sure those files are private
-chmod 600 "$secret_file"
+sec_attribute='application'
+sec_value='otp-ubuntu'
+otp_secret="$(secret-tool lookup "$sec_attribute" "$sec_value" || true)"
 
-secret=$(cat "$secret_file" | sed -e 's/ //g')
+if [ -z "$otp_secret" ]; then
+    if [ ! -t 0 ]; then
+        notify-send 'OTP Ubuntu - No secret found' 'Use terminal to set the secret'
+        exit 1
+    else
+        printf 'No existing secret found. Please enter the base32-encoded string:\n'
+        read -r otp_secret
+        [ -z "$otp_secret" ] && (printf 'No secret entered.\n'; exit 1)
+        # verify it before saving to the store
+        oathtool --totp --base32 "$otp_secret"
+        printf '%s' "$otp_secret" | secret-tool store --label 'OTP Ubuntu' "$sec_attribute" "$sec_value"
+        exit
+    fi
+fi
 
-otp=$(oathtool --totp "$secret")
+otp=$(oathtool --totp --base32 "$otp_secret")
 
-if which xdotool > /dev/null; then
+if [ ! -t 0 ] && which xdotool > /dev/null; then
     # "xdotool type" doesn't work in Wayland.
     # "--clearmodifiers" will press Super at the end.
     echo "$otp" | sed -e 's/./key \0\n/g' \
