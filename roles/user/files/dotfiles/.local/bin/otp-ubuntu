@@ -12,7 +12,10 @@ secret=$(cat "$secret_file" | sed -e 's/ //g')
 otp=$(oathtool --totp "$secret")
 
 if which xdotool > /dev/null; then
-    xdotool type --clearmodifiers "$otp"
+    # "xdotool type" doesn't work in Wayland.
+    # "--clearmodifiers" will press Super at the end.
+    echo "$otp" | sed -e 's/./key \0\n/g' \
+        | xargs xdotool keyup super+ctrl+shift+alt
     xdotool key Return
     exit
 elif which xclip > /dev/null; then
