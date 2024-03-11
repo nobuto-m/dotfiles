@@ -3,6 +3,9 @@
 set -e
 set -u
 
+# To be invoked by a GNOME keyboard shortcut, in my case "Super + o"
+# https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html#custom
+
 sec_attribute='application'
 sec_value='otp-ubuntu'
 otp_secret="$(secret-tool lookup "$sec_attribute" "$sec_value" || true)"
@@ -15,7 +18,7 @@ if [ -z "$otp_secret" ]; then
         printf 'No existing secret found. Please enter the base32-encoded string:\n'
         read -r otp_secret
         [ -z "$otp_secret" ] && (printf 'No secret entered.\n'; exit 1)
-        # verify it before saving to the store
+        # verify it before saving it to the store
         oathtool --totp --base32 "$otp_secret"
         printf '%s' "$otp_secret" | secret-tool store --label 'OTP Ubuntu' "$sec_attribute" "$sec_value"
         exit
