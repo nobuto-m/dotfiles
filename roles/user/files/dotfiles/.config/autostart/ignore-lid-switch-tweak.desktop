@@ -1,5 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=ignore-lid-switch-tweak
-Exec=/usr/libexec/gnome-tweak-tool-lid-inhibitor
-
+Exec=/bin/sh -c '$HOME/.local/lib/gnome-tweak-tool-lid-inhibitor'
