@@ -147,6 +147,11 @@ An example with ThinkPad.
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
 * https://addons.mozilla.org/firefox/addon/most-recent-tab/
 * https://addons.mozilla.org/firefox/addon/tab-session-manager/
+* https://addons.mozilla.org/firefox/addon/ublock-origin/
+  - `no-cosmetic-filtering: *`
+  - with the following [filters](https://adguard.com/kb/general/ad-filtering/adguard-filters/#adguard-filters):
+    + `adguard-widgets`
+    + `adguard-cookies`, `ublock-cookies-adguard`
 
 #### Disabled
 
