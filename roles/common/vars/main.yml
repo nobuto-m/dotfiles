@@ -58,6 +58,7 @@ packages:
   - libffi-dev
   - libxml2-dev
   - libxslt1-dev
+  - jsonnet
 
   # dev - docs
   - zeal
