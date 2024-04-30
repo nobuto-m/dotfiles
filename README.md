@@ -151,6 +151,7 @@ An example with ThinkPad.
   - Manage Extension Shortcuts
     + "Main: Jump to the previously viewed tab, the most recent tab": `Alt+0`
 * https://addons.mozilla.org/firefox/addon/tab-session-manager/
+  - "Save the session regularly": `false`
 * https://addons.mozilla.org/firefox/addon/ublock-origin/
   - userSettings
     + contextMenuEnabled: `false` (Uncheck "Make use of context menu where appropriate")
