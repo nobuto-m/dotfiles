@@ -145,7 +145,11 @@ An example with ThinkPad.
 * https://addons.mozilla.org/firefox/addon/yaru-hybrid-unofficial/
 * https://addons.mozilla.org/firefox/addon/tampermonkey/
 * https://addons.mozilla.org/firefox/addon/mousedictionary/
+  - Manage Extension Shortcuts
+    + "Activate the extension": `Alt+Z`
 * https://addons.mozilla.org/firefox/addon/most-recent-tab/
+  - Manage Extension Shortcuts
+    + "Main: Jump to the previously viewed tab, the most recent tab": `Alt+0`
 * https://addons.mozilla.org/firefox/addon/tab-session-manager/
 * https://addons.mozilla.org/firefox/addon/ublock-origin/
   - `userSettings` -> `contextMenuEnabled: false` (Uncheck `Make use of context menu where appropriate`)
