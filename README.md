@@ -152,13 +152,16 @@ An example with ThinkPad.
     + "Main: Jump to the previously viewed tab, the most recent tab": `Alt+0`
 * https://addons.mozilla.org/firefox/addon/tab-session-manager/
 * https://addons.mozilla.org/firefox/addon/ublock-origin/
-  - `userSettings` -> `contextMenuEnabled: false` (Uncheck `Make use of context menu where appropriate`)
-  - `dynamicFilteringString` -> `no-cosmetic-filtering: *` (Check `Disable cosmetic filtering`)
+  - userSettings
+    + contextMenuEnabled: `false` (Uncheck "Make use of context menu where appropriate")
+  - dynamicFilteringString
+    + no-cosmetic-filtering: `*` (Check "Disable cosmetic filtering")
   - with the following [filters](https://adguard.com/kb/general/ad-filtering/adguard-filters/#adguard-filters):
-    + `adguard-widgets` (`AdGuard – Widgets`) to suppress live support chats
-    + `adguard-cookies`, `ublock-cookies-adguard` (`AdGuard/uBO – Cookie Notices`) to suppress cookie notices
-  - `userFilters` -> `@@||www.googletagmanager.com^$script` not to break or slow down page loadings
-  - `Trusted sites`
+    + `adguard-widgets` ("AdGuard – Widgets") to suppress live support chats
+    + `adguard-cookies`, `ublock-cookies-adguard` ("AdGuard/uBO – Cookie Notices") to suppress cookie notices
+  - userFilters
+    + `@@||www.googletagmanager.com^$script` not to break or slow down page loadings
+  - Trusted sites
     + `google.com`
     + `amazon.co.jp`
 
