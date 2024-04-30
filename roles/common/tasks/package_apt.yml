@@ -1,6 +1,6 @@
 ---
 - name: get archive mirror URL
-  command: awk '$1 == "deb" {print $2; exit}' /etc/apt/sources.list
+  command: awk '$1 == "URIs:" {print $2; exit}' /etc/apt/sources.list.d/ubuntu.sources
   register: archive_mirror_parsed
   changed_when: false
 
@@ -11,8 +11,8 @@
 
 - name: enable -proposed
   template:
-    src=templates/proposed.list.j2
-    dest=/etc/apt/sources.list.d/proposed.list
+    src=templates/ubuntu_proposed.sources.j2
+    dest=/etc/apt/sources.list.d/ubuntu_proposed.sources
 
 - name: apt update
   apt:

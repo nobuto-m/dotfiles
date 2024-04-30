@@ -24,9 +24,9 @@ An example with ThinkPad.
    or [the latest daily-live image](http://cdimage.ubuntu.com/daily-live/current/)
 
 1. create a USB startup disk
-   ([Ubuntu](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-ubuntu),
-   [Windows](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows),
-   [macOS](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-macos))
+   ([Ubuntu](https://ubuntu.com/tutorials/create-a-usb-stick-on-ubuntu),
+   [Windows](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows),
+   [macOS](https://ubuntu.com/tutorials/create-a-usb-stick-on-macos))
 
    or
 
@@ -57,7 +57,7 @@ An example with ThinkPad.
    ```
 
 1. choose a mirror server(optional) and enroll fingerprints(optional)
-   - replace the default mirror URL in `/etc/apt/sources.list`
+   - replace the default mirror URL in `/etc/apt/sources.list.d/ubuntu.sources`
    - enroll fingerprints and update pam configuration with `sudo pam-auth-update --enable fprintd`
 
 1. install git, make and ansible
