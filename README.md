@@ -165,6 +165,7 @@ An example with ThinkPad.
   - Trusted sites
     + `google.com`
     + `amazon.co.jp`
+    + `youtube.com`
 
 #### Disabled
 
