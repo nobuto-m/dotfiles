@@ -148,11 +148,15 @@ An example with ThinkPad.
 * https://addons.mozilla.org/firefox/addon/most-recent-tab/
 * https://addons.mozilla.org/firefox/addon/tab-session-manager/
 * https://addons.mozilla.org/firefox/addon/ublock-origin/
-  - `dynamicFilteringString` -> `no-cosmetic-filtering: *`
-  - `userSettings` -> `contextMenuEnabled: false`
+  - `userSettings` -> `contextMenuEnabled: false` (Uncheck `Make use of context menu where appropriate`)
+  - `dynamicFilteringString` -> `no-cosmetic-filtering: *` (Uncheck `Disable cosmetic filtering`)
   - with the following [filters](https://adguard.com/kb/general/ad-filtering/adguard-filters/#adguard-filters):
-    + `adguard-widgets` to suppress live support chats
-    + `adguard-cookies`, `ublock-cookies-adguard` to suppress cookie notices
+    + `adguard-widgets` (`AdGuard – Widgets`) to suppress live support chats
+    + `adguard-cookies`, `ublock-cookies-adguard` (`AdGuard/uBO – Cookie Notices`) to suppress cookie notices
+  - `userFilters` -> `@@||www.googletagmanager.com^$script` not to break or slow down page loadings
+  - `Trusted sites`
+    + `google.com`
+    + `amazon.co.jp`
 
 #### Disabled
 
