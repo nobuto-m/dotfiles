@@ -3,6 +3,10 @@
   command: snap set system refresh.metered=hold
   changed_when: False
 
+- name: purge thunderbird snap
+  command: snap remove --purge thunderbird
+  changed_when: False
+
 - name: install snaps
   community.general.snap:
     name: "{{ item.name }}"
