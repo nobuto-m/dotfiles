@@ -149,7 +149,7 @@ An example with ThinkPad.
 * https://addons.mozilla.org/firefox/addon/tab-session-manager/
 * https://addons.mozilla.org/firefox/addon/ublock-origin/
   - `userSettings` -> `contextMenuEnabled: false` (Uncheck `Make use of context menu where appropriate`)
-  - `dynamicFilteringString` -> `no-cosmetic-filtering: *` (Uncheck `Disable cosmetic filtering`)
+  - `dynamicFilteringString` -> `no-cosmetic-filtering: *` (Check `Disable cosmetic filtering`)
   - with the following [filters](https://adguard.com/kb/general/ad-filtering/adguard-filters/#adguard-filters):
     + `adguard-widgets` (`AdGuard – Widgets`) to suppress live support chats
     + `adguard-cookies`, `ublock-cookies-adguard` (`AdGuard/uBO – Cookie Notices`) to suppress cookie notices
