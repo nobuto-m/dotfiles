@@ -161,7 +161,7 @@ An example with ThinkPad.
     + `adguard-widgets` ("AdGuard – Widgets") to suppress live support chats
     + `adguard-cookies`, `ublock-cookies-adguard` ("AdGuard/uBO – Cookie Notices") to suppress cookie notices
   - userFilters
-    + `@@||www.googletagmanager.com^$script` not to break or slow down page loadings
+    + `@@||googletagmanager.com^$script` not to break or slow down page loadings
   - Trusted sites
     + `google.com`
     + `amazon.co.jp`
