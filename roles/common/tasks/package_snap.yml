@@ -3,10 +3,6 @@
   command: snap set system refresh.metered=hold
   changed_when: False
 
-- name: "keep more revisions (default is 2)"
-  command: snap set system refresh.retain=4
-  changed_when: False
-
 - name: install snaps
   community.general.snap:
     name: "{{ item.name }}"
