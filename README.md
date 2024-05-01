@@ -56,9 +56,10 @@ An example with ThinkPad.
    gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps']"
    ```
 
-1. choose a mirror server(optional) and enroll fingerprints(optional)
+1. Optional steps
    - replace the default mirror URL in `/etc/apt/sources.list.d/ubuntu.sources`
-   - enroll fingerprints and update pam configuration with `sudo pam-auth-update --enable fprintd`
+   - enroll fingerprints with `fprintd-enroll -f right-thumb`
+   - and update pam configuration for fingerprints with `sudo pam-auth-update --enable fprintd`
 
 1. install git, make and ansible
 
