@@ -4,6 +4,11 @@
     src: files/listchanges.conf
     dest: /etc/apt/listchanges.conf
 
+- name: disable unattended-upgrades
+  copy:
+    src: files/99disable-unattended-upgrades
+    dest: /etc/apt/apt.conf.d/99disable-unattended-upgrades
+
 - name: try not to load zfs module
   copy:
     src: files/blacklist-zfs.conf

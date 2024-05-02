@@ -42,12 +42,6 @@
     state: present
   environment: "{{ eatmydata }}"
 
-- name: disable unattended-upgrades
-  apt:
-    name: unattended-upgrades
-    state: absent
-    purge: yes
-
 - name: check language support
   command: check-language-support
   register: language_support
