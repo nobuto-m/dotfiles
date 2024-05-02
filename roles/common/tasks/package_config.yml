@@ -4,6 +4,11 @@
     src: files/listchanges.conf
     dest: /etc/apt/listchanges.conf
 
+- name: try not to load zfs module
+  copy:
+    src: files/blacklist-zfs.conf
+    dest: /etc/modprobe.d/blacklist-zfs.conf
+
 - name: add the user in i2c group set up by i2c-tools for ddcutil
   user:
     name: '{{ ansible_user_id }}'
