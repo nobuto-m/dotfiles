@@ -1,18 +1,10 @@
 ---
-- name: get archive mirror URL
-  command: awk '$1 == "URIs:" {print $2; exit}' /etc/apt/sources.list.d/ubuntu.sources
-  register: archive_mirror_parsed
-  changed_when: false
-
-- name: set archive mirror URL
-  set_fact:
-    archive_mirror: "{{ archive_mirror_parsed.stdout }}"
-  changed_when: false
-
 - name: enable -proposed
-  template:
-    src=templates/ubuntu_proposed.sources.j2
-    dest=/etc/apt/sources.list.d/ubuntu_proposed.sources
+  lineinfile:
+    dest: /etc/apt/sources.list.d/ubuntu.sources
+    regexp: "^Suites: .* {{ ansible_distribution_release }}-updates"
+    line: 'Suites: {{ ansible_distribution_release }} {{ ansible_distribution_release }}-updates {{ ansible_distribution_release }}-backports {{ ansible_distribution_release }}-proposed'
+    state: present
 
 - name: apt update
   apt:
