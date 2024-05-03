@@ -58,9 +58,18 @@ An example with ThinkPad.
    ```
 
 1. Optional steps
-   - replace the default mirror URL in `/etc/apt/sources.list.d/ubuntu.sources`
-   - enroll fingerprints with `fprintd-enroll -f right-thumb`
-   - and update pam configuration for fingerprints with `sudo pam-auth-update --enable fprintd`
+   - replace the default mirror URL in
+     ```bash
+     /etc/apt/sources.list.d/ubuntu.sources
+     ```
+   - enroll fingerprints with
+     ```bash
+     fprintd-enroll -f right-thumb
+     ```
+   - and update pam configuration for fingerprints with
+     ```bash
+     sudo pam-auth-update --enable fprintd
+     ```
 
 1. install git, make and ansible
 
