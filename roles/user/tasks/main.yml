@@ -217,7 +217,7 @@
 
 - name: vscode plugins
   command: code --install-extension {{ item }}
-  with_items:
+  loop:
     - ms-python.python
     - ms-python.black-formatter
     - ms-python.flake8
@@ -232,6 +232,8 @@
     - njpwerner.autodocstring
     - pomdtr.excalidraw-editor
     - usernamehw.errorlens
+  loop_control:
+    pause: 3
   changed_when: False
   when: vscode_plugin.matched == 0
 
