@@ -42,10 +42,9 @@ An example with ThinkPad.
 1. boot up with the USB stick
 
 1. install Ubuntu Desktop with the options below
-   * Full installation (not to remove LibreOffice, Remmina, Shotwell, Simple Scan, etc.)
+   * Extended selection (not to remove LibreOffice, Remmina, Shotwell, Simple Scan, etc.)
    * Advanced features
-     - Use LVM with the new Ubuntu installation
-     - Encrypt the new Ubuntu installation for security (dm-crypt with LUKS)
+     - Use LVM and encryption (dm-crypt with LUKS)
 
 1. reboot
 
