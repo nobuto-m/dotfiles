@@ -5,6 +5,8 @@ git_repos:
   - { type: work, name: openstack-bundles, repo: 'https://github.com/openstack-charmers/openstack-bundles.git' }
   - { type: work, name: bundle-canonical-kubernetes, repo: 'https://github.com/juju-solutions/bundle-canonical-kubernetes.git' }
 
+  - { type: misc, name: unite-shell, repo: 'https://github.com/hardpixel/unite-shell' }
+
   - { type: misc, name: greasemonkey-scripts, repo: 'https://github.com/nobuto-m/greasemonkey-scripts.git' }
   - { type: misc, name: quick-maas, repo: 'https://github.com/nobuto-m/quick-maas.git' }
   - { type: misc, name: vps-setup, repo: 'https://github.com/nobuto-m/vps-setup.git' }
