@@ -45,5 +45,16 @@
     state: present
   environment: "{{ eatmydata }}"
 
+- name: check language support - ja
+  command: check-language-support -l ja
+  register: language_support_ja
+  changed_when: False
+
+- name: install missing language support - ja
+  apt:
+    name: '{{ language_support_ja.stdout.split() }}'
+    state: present
+  environment: "{{ eatmydata }}"
+
 - name: purge thunderbird
   apt: name=thunderbird state=absent purge=yes

@@ -6,7 +6,14 @@
     line: 'en_US.UTF-8 UTF-8'
     state: present
 
-- name: make sure en_US locale is generated
+- name: make sure ja_JP locale is enabled
+  lineinfile:
+    dest: /etc/locale.gen
+    regexp: '^# ja_JP.UTF-8 UTF-8$'
+    line: 'ja_JP.UTF-8 UTF-8'
+    state: present
+
+- name: make sure locales are generated
   command: locale-gen
   changed_when: false
 
