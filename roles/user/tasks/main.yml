@@ -11,6 +11,11 @@
     ssh_key_type: ed25519
     ssh_key_comment: "{{ ansible_user_id }}-default@{{ ansible_hostname }}"
 
+- name: create ~/Downloads/os_images/ directory
+  file:
+    path: ~/Downloads/os_images
+    state: directory
+
 - name: make sure ~/.local/bin/ exists
   file:
     path: ~/.local/bin
