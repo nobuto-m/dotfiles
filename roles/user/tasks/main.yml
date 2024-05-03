@@ -238,7 +238,7 @@
     - pomdtr.excalidraw-editor
     - usernamehw.errorlens
   loop_control:
-    pause: 3
+    pause: 5
   changed_when: False
   when: vscode_plugin.matched == 0
 
