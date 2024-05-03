@@ -58,11 +58,11 @@ An example with ThinkPad.
    ```
 
 1. Optional steps
-   - replace the default mirror URL in
+   - replace the default mirror URL with a preferred one in
      ```bash
      /etc/apt/sources.list.d/ubuntu.sources
      ```
-   - enroll fingerprints with
+   - enroll a fingerprint, e.g.
      ```bash
      fprintd-enroll -f right-thumb
      ```
