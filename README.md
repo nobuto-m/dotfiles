@@ -60,7 +60,7 @@ An example with ThinkPad.
 1. Optional steps
    - replace the default mirror URL with a preferred one in
      ```bash
-     /etc/apt/sources.list.d/ubuntu.sources
+     sudo editor /etc/apt/sources.list.d/ubuntu.sources
      ```
    - enroll a fingerprint, e.g.
      ```bash
@@ -113,8 +113,14 @@ An example with ThinkPad.
 ### Remaining manual steps
 
 * login with X session
-* Add another key to LUKS with `sudo cryptsetup luksAddKey /dev/nvme0n1p3`
-* check firmware updates - `fwupdmgr refresh; fwupdmgr get-updates`
+* Add another key to LUKS with
+  ```bash
+  sudo cryptsetup luksAddKey /dev/nvme0n1p3
+  ```
+* check firmware updates with
+  ```bash
+  fwupdmgr refresh; fwupdmgr get-updates
+  ```
 * select color profile from gnome-control-center
 * Firefox
   - login to Firefox Sync
@@ -124,29 +130,54 @@ An example with ThinkPad.
 * setup an OTP device
 * override NetworkManager configuration
   - Tethering AP
-    - `nmcli device wifi connect "<SSID>" password "<password>"`
-  - Shared to other computers
-    - `nmcli connection add type ethernet con-name Wired` (default)
-    - `nmcli connection add type ethernet con-name Shared autoconnect no ipv4.method shared ipv6.method disabled`
-* disable Dropbox LAN sync by `dropbox lansync n`
+    ```bash
+    nmcli device wifi connect '<SSID>' password '<password>'
+    ```
+  - Shared connection to other computers
+    ```bash
+    nmcli connection add type ethernet con-name Wired  # make sure the default wired connection exists
+    nmcli connection add type ethernet con-name Shared autoconnect no ipv4.method shared ipv6.method disabled
+    ```
+* disable Dropbox LAN sync by
+  ```bash
+  dropbox lansync n
+  ```
 * git
-  - set git `user.name` and `user.email` with `git config --global`
-  - create `~/.gitconfig_corporate` with `[user] email = EMAIL` and include it from `~/.gitconfig` by:
-    - `git config --global includeIf.'gitdir:~/src/work/'.path ~/.gitconfig_corporate`
-    - `git config --global includeIf.'gitdir:~/src/corporate_private/'.path ~/.gitconfig_corporate`
-    - `git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate`
-  - set launchpad username with `git config --global gitubuntu.lpuser "USER"`
-  - set gerrit username with `git config --global --add gitreview.username "USER"`
-* add `export DEBEMAIL=` into `~/.bashrc`
+  - set git `user.name` and `user.email` with
+    ```bash
+    git config --global user.name
+    git config --global user.email
+    ```
+  - create `~/.gitconfig_corporate` with `[user] email = '<EMAIL>'` and include it from `~/.gitconfig` by:
+    ```bash
+    git config --global includeIf.'gitdir:~/src/work/'.path ~/.gitconfig_corporate
+    git config --global includeIf.'gitdir:~/src/corporate_private/'.path ~/.gitconfig_corporate
+    git config --global includeIf.'gitdir:~/src/openstack/'.path ~/.gitconfig_corporate
+    ```
+  - set launchpad username with
+    ```bash
+    git config --global gitubuntu.lpuser '<USER>'
+    ```
+  - set gerrit username with
+    ```bash
+    git config --global --add gitreview.username '<USER>'
+    ```
+* add `export DEBEMAIL='<EMAIL>'` into `~/.bashrc`
 * configure Chromium with:
   - set `https://meet.google.com/` as a start-up page
   - set `Show home bottun` to true and set `https://meet.google.com/`
   - `Use Google Translate` - off
-* install tailscale and activate it with `sudo tailscale up --shields-up --accept-routes`
+* install tailscale and activate it with
+  ```bash
+  sudo tailscale up --shields-up --accept-routes
+  ```
 * Restore those files manually if necessary:
   - ~/.config/hub
   - ~/.local/share/juju/credentials.yaml
 * install [unite-shell](https://github.com/hardpixel/unite-shell) extension by hand
+  ```bash
+  rsync --dry-run -auv --delete ~/src/misc/unite-shell/unite@hardpixel.eu/ ~/.local/share/gnome-shell/extensions/unite@hardpixel.eu/
+  ```
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 
 ### Firefox add-ons
