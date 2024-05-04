@@ -178,7 +178,7 @@ An example with ThinkPad.
   ```bash
   rsync --dry-run -av --delete ~/src/misc/unite-shell/unite@hardpixel.eu/ ~/.local/share/gnome-shell/extensions/unite@hardpixel.eu/
   ```
-* install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
+* install [Greasemonkey / Tampermonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 
 ### Firefox add-ons
 
