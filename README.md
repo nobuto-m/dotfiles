@@ -203,9 +203,11 @@ An example with ThinkPad.
   - userFilters
     + `@@||googletagmanager.com^$script` not to break or slow down page loadings
   - Trusted sites
-    + `google.com`
-    + `amazon.co.jp`
-    + `youtube.com`
+    ```
+    amazon.co.jp
+    google.com
+    youtube.com
+    ```
 
 #### Disabled
 
