@@ -176,7 +176,7 @@ An example with ThinkPad.
   - ~/.local/share/juju/credentials.yaml
 * install [unite-shell](https://github.com/hardpixel/unite-shell) extension by hand
   ```bash
-  rsync --dry-run -auv --delete ~/src/misc/unite-shell/unite@hardpixel.eu/ ~/.local/share/gnome-shell/extensions/unite@hardpixel.eu/
+  rsync --dry-run -av --delete ~/src/misc/unite-shell/unite@hardpixel.eu/ ~/.local/share/gnome-shell/extensions/unite@hardpixel.eu/
   ```
 * install [greasemonkey scripts](https://github.com/nobuto-m/greasemonkey-scripts)
 
