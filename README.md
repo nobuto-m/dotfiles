@@ -145,8 +145,8 @@ An example with ThinkPad.
 * git
   - set git `user.name` and `user.email` with
     ```bash
-    git config --global user.name
-    git config --global user.email
+    git config --global user.name '<NAME>'
+    git config --global user.email '<EMAIL>'
     ```
   - create `~/.gitconfig_corporate` with `[user] email = '<EMAIL>'` and include it from `~/.gitconfig` by:
     ```bash
