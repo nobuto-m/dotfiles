@@ -13,6 +13,7 @@
 * Kazam's menu is grayed out to stop recording
 * mouse cursor is not captured with gnome-shell recording
   https://gitlab.gnome.org/GNOME/mutter/-/issues/3182
+* Automatic timezone is not working and reverted in GNOME config
 * gnome-tweak-tool-lid-inhibitor doesn't lock, it might be possible to use Logind.conf again but with "ingore" in the following options without UPower.conf
 ```
 $ gsettings list-recursively | grep lid-close
