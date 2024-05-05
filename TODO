@@ -13,6 +13,13 @@
 * Kazam's menu is grayed out to stop recording
 * mouse cursor is not captured with gnome-shell recording
   https://gitlab.gnome.org/GNOME/mutter/-/issues/3182
+* gnome-tweak-tool-lid-inhibitor doesn't lock, it might be possible to use Logind.conf again but with "ingore" in the following options without UPower.conf
+```
+$ gsettings list-recursively | grep lid-close
+org.gnome.settings-daemon.plugins.power lid-close-ac-action 'suspend'
+org.gnome.settings-daemon.plugins.power lid-close-battery-action 'suspend'
+org.gnome.settings-daemon.plugins.power lid-close-suspend-with-external-monitor false
+```
 * wayland migration
   - Firefox title bar is not merged into the top bar
   - xdotool: Super+Shift doesn't work somehow whlie Shift+Super works
