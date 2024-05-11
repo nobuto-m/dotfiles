@@ -30,7 +30,7 @@ while true; do
     if [ -n "$invalid_misc_p" ] && [ -n "$invalid_misc" ]; then
         count_invalid=$((invalid_misc - invalid_misc_p))
         count_retries=$((retries - retries_p))
-        if [ "$count_invalid" -gt 0 ]; then
+        if [ "$count_invalid" -gt 1 ]; then
             notify-send \
                 -i network-wireless-hardware-disabled-symbolic \
                 -h int:transient:1 \
@@ -39,7 +39,7 @@ while true; do
 
             echo "${count_invalid} invalid packets in ${interval}s" >&2
             echo "$wireless" >&2
-        elif [ "$count_retries" -gt 0 ]; then
+        elif [ "$count_retries" -gt 1 ]; then
             notify-send \
                 -i network-wireless-hardware-disabled-symbolic \
                 -h int:transient:1 \
