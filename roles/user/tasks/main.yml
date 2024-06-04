@@ -117,7 +117,6 @@
   - ~/.local/bin/toggle-mute-unmute
   - ~/.local/bin/xclips-browser
   - ~/.local/lib/notify-send-wireless-packet-loss
-  - ~/.local/lib/gnome-tweak-tool-lid-inhibitor
 
 - name: enable notify-send-wireless-packet-loss service
   systemd:

@@ -1,4 +1,14 @@
 ---
+- name: disable lid-close suspend, but lock
+  blockinfile:
+    dest: /etc/systemd/logind.conf
+    block: |
+      LidSwitchIgnoreInhibited=yes
+      HandleLidSwitch=lock
+      HandleLidSwitchExternalPower=lock
+      HandleLidSwitchDocked=ignore
+  become: yes
+
 - name: disable IR camera
   copy:
     src: files/99-local-disable-ir-camera.rules
