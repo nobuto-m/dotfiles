@@ -191,6 +191,7 @@ packages:
   - jnettop
   - iputils-arping
   - wireshark
+  - avahi-utils
   - wavemon
   - sysstat
   - stress-ng
