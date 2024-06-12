@@ -33,3 +33,4 @@ ddc-volume() { ddcutil --display 1 setvcp 62 "$1"; }
 ddc-mute() { ddcutil --display 1 setvcp 8d "$1"; }
 spd-say-stdin() { cat - | fmt -u -w 2500 | sed -e 's/  /\n/g' | spd-say -e -w; }
 spd-pdf() { pdftotext "$1" - | fmt -u -w 2500 | sed -e 's/  /\n/g' | spd-say -e -w; }
+until-then() { until "$@"; do sleep 1; done; }
