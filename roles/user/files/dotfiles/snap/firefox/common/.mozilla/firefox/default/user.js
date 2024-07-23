@@ -29,6 +29,8 @@ user_pref("browser.startup.page", 3);  // Resume the previous browser session
 
 // Top sites and Highlights
 user_pref("browser.urlbar.suggest.topsites", false);
+user_pref("browser.urlbar.suggest.trending", false);
+user_pref("browser.urlbar.suggest.recentsearches", false);
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
 
