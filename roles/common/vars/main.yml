@@ -191,6 +191,7 @@ packages:
   - tcpflow
   - jnettop
   - iputils-arping
+  - ldnsutils
   - wireshark
   - avahi-utils
   - wavemon
