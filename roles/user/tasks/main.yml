@@ -192,8 +192,8 @@
 - name: 'workaround for LP: #1422290 - UNZIP'
   lineinfile:
     dest: ~/.profile
-    regexp: "^{{ item }}="
-    line: "{{ item }}='-O CP932 -I CP932'"
+    regexp: "^export {{ item }}="
+    line: "export {{ item }}='-O CP932 -I CP932'"
     state: present
   with_items:
     - UNZIP
