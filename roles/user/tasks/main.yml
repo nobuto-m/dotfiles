@@ -193,7 +193,7 @@
   lineinfile:
     dest: ~/.profile
     regexp: "^export {{ item }}="
-    line: "export {{ item }}='-O CP932 -I CP932'"
+    line: "export {{ item }}='-O CP932'"
     state: present
   with_items:
     - UNZIP
