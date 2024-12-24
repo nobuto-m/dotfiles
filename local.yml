@@ -18,3 +18,6 @@
 
     - role: laptop_t14gen3amd
       when: "ansible_product_name == '21CFCTO1WW'"
+
+    - role: laptop_t14gen5amd
+      when: "ansible_product_name == '21MCCTO1WW'"
