@@ -1,8 +1,0 @@
-[Unit]
-Description=Reset Trackpoint periodically
-
-[Timer]
-OnUnitActiveSec=30s
-
-[Install]
-WantedBy=timers.target

@@ -1,6 +1,0 @@
-[Unit]
-Description=Reset Trackpoint
-
-[Service]
-Type=oneshot
-ExecStart=/bin/sh -c 'rmmod psmouse; modprobe psmouse'
