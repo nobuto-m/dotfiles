@@ -6,6 +6,7 @@
   - when power source is connected, etc.
 * losing fingerprint reader
   - failed to claim device: GDBus.Error:net.reactivated.Fprint.Error.Internal: Open failed with error: Device 06cb:00f9 is already open
+  - failed to claim device: GDBus.Error:net.reactivated.Fprint.Error.Internal: Open failed with error: endpoint stalled or request not supported
   - Impossible to verify: GDBus.Error:net.reactivated.Fprint.Error.NoSuchDevice: No devices available
 * general font size in UI
 * console font to prioritize ja glyphs
@@ -28,8 +29,3 @@
 * check-language-support doesn't work unless the lang is explicitly specified
   https://bugs.launchpad.net/ubuntu/+source/language-selector/+bug/2070278
 * git config --global --edit
-* nanorc
-  https://nano-editor.org/manual.html#Introduction
-  > Since version 8.0, ^F starts a forward search, ^B starts a backward search, M-F searches the next occurrence forward, and 
-  > M-B searches the next occurrence backward. If you want those keystrokes to do what they did before version 8.0, see the 
-  > rebindings in the sample nanorc file.
