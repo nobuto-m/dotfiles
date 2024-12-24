@@ -1,3 +1,5 @@
+bind ^F forward main
+bind ^B back main
 set autoindent
 set fill 72
 set smarthome
