@@ -8,11 +8,9 @@ for setting up my laptop
 An example with ThinkPad.
 
 * Restart
-  - OS Opmimized Defaults - On
-  - Load Setup Defaults - Yes
+  - Load Factory Defaults - Yes
 * Config
   - Keyboard/Mouse
-    - Fn and Ctrl Key swap - On
     - F1-F12 as Primary Function - On
   - Display
     - UMA Frame buffer Size - 4G
