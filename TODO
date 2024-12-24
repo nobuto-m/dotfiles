@@ -4,6 +4,9 @@
 * frequent wakeup from s2idle
   - when trackpoint or mouse button is touched
   - when power source is connected, etc.
+* losing fingerprint reader
+  - failed to claim device: GDBus.Error:net.reactivated.Fprint.Error.Internal: Open failed with error: Device 06cb:00f9 is already open
+  - Impossible to verify: GDBus.Error:net.reactivated.Fprint.Error.NoSuchDevice: No devices available
 * general font size in UI
 * console font to prioritize ja glyphs
 * cannot select color profiles
@@ -14,6 +17,7 @@
 * mouse cursor is not captured with gnome-shell recording
   https://gitlab.gnome.org/GNOME/mutter/-/issues/3182
 * Automatic timezone is not working and reverted in GNOME config
+  https://bugs.launchpad.net/ubuntu/+source/gnome-control-center/+bug/2073430
 * wayland migration
   - Firefox title bar is not merged into the top bar
   - xdotool: Super+Shift doesn't work somehow whlie Shift+Super works
@@ -22,23 +26,10 @@
   - replace xkeysnail
   - screen sharing in a video call
 * check-language-support doesn't work unless the lang is explicitly specified
-```
-$ locale ; check-language-support; check-language-support -l ja
-LANG=ja_JP.UTF-8
-LANGUAGE=
-LC_CTYPE="ja_JP.UTF-8"
-LC_NUMERIC="ja_JP.UTF-8"
-LC_TIME="ja_JP.UTF-8"
-LC_COLLATE="ja_JP.UTF-8"
-LC_MONETARY="ja_JP.UTF-8"
-LC_MESSAGES="ja_JP.UTF-8"
-LC_PAPER="ja_JP.UTF-8"
-LC_NAME="ja_JP.UTF-8"
-LC_ADDRESS="ja_JP.UTF-8"
-LC_TELEPHONE="ja_JP.UTF-8"
-LC_MEASUREMENT="ja_JP.UTF-8"
-LC_IDENTIFICATION="ja_JP.UTF-8"
-LC_ALL=
-
-fonts-noto-cjk-extra gimp-help-ja gnome-user-docs-ja ibus-mozc language-pack-gnome-ja language-pack-ja libreoffice-help-ja libreoffice-l10n-ja mozc-utils-gui
-```
+  https://bugs.launchpad.net/ubuntu/+source/language-selector/+bug/2070278
+* git config --global --edit
+* nanorc
+  https://nano-editor.org/manual.html#Introduction
+  > Since version 8.0, ^F starts a forward search, ^B starts a backward search, M-F searches the next occurrence forward, and 
+  > M-B searches the next occurrence backward. If you want those keystrokes to do what they did before version 8.0, see the 
+  > rebindings in the sample nanorc file.
