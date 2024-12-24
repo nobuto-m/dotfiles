@@ -36,9 +36,9 @@
   set_fact:
     extensions:
       - id: system-monitor-next@paradoxxx.zero.gmail.com
-        file: system-monitor-nextparadoxxx.zero.gmail.com.v68.shell-extension.zip
+        file: system-monitor-nextparadoxxx.zero.gmail.com.v75.shell-extension.zip
       - id: Bluetooth-Battery-Meter@maniacx.github.com
-        file: Bluetooth-Battery-Metermaniacx.github.com.v14.shell-extension.zip
+        file: Bluetooth-Battery-Metermaniacx.github.com.v22.shell-extension.zip
 
 - name: download extension
   get_url:
