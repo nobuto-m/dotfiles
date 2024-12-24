@@ -3,6 +3,8 @@
   copy:
     src: /usr/share/systemd/tmp.mount
     dest: /etc/systemd/system/tmp.mount
+  # https://discourse.ubuntu.com/t/oracular-oriole-release-notes/44878#p-112442-systemd-v2565
+  when: ansible_facts['distribution_version'] is version('24.10', '<')
 
 - name: set swappiness
   sysctl:
