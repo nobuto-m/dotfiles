@@ -18,3 +18,13 @@ KERNEL=="i2c-ELAN0678:00", SUBSYSTEM=="i2c", DRIVERS=="i2c_hid_acpi", ATTR{power
 # all wakeup events from input devices including the TrackPoint and the
 # keyboard.
 KERNEL=="PNP0C0E:00", SUBSYSTEM=="acpi", DRIVERS=="button", ATTRS{path}=="\_SB_.SLPB", ATTR{power/wakeup}="disabled"
+
+# more devices
+# ATTRS{firmware_id}=="PNP: LEN0071 PNP0303"
+KERNELS=="serio0", SUBSYSTEMS=="serio", DRIVERS=="atkbd", ATTRS{description}=="i8042 KBD port", ATTR{power/wakeup}="disabled"
+KERNELS=="LNXPWRBN:00", SUBSYSTEMS=="acpi", DRIVERS=="button", ATTR{power/wakeup}="disabled"
+KERNELS=="PNP0C0C:00", SUBSYSTEMS=="acpi", DRIVERS=="button", ATTR{power/wakeup}="disabled"
+KERNELS=="mhi0", SUBSYSTEMS=="mhi", ATTR{power/wakeup}="disabled"
+KERNELS=="PNP0C0A:00", SUBSYSTEMS=="acpi", DRIVERS=="battery", ATTR{power/wakeup}="disabled"
+KERNELS=="alarmtimer.0.auto", SUBSYSTEMS=="platform", DRIVERS=="alarmtimer", ATTR{power/wakeup}="disabled"
+KERNELS=="00:01", SUBSYSTEMS=="pnp", DRIVERS=="rtc_cmos", ATTR{power/wakeup}="disabled"
