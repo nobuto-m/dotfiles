@@ -31,3 +31,4 @@
 * check-language-support doesn't work unless the lang is explicitly specified
   https://bugs.launchpad.net/ubuntu/+source/language-selector/+bug/2070278
 * git config --global --edit
+* toggle-mute-unmute can be 0.1s instead of 0.7s
