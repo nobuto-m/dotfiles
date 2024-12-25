@@ -1,2 +1,2 @@
-KERNEL=="i2c-ELAN0676:00", SUBSYSTEM=="i2c", ATTR{power/wakeup}="disabled"
-KERNEL=="PNP0C0E:00", SUBSYSTEM=="acpi", ATTR{power/wakeup}="disabled"
+KERNEL=="i2c-ELAN0676:00", SUBSYSTEM=="i2c", DRIVERS=="i2c_hid_acpi", ATTR{power/wakeup}="disabled"
+KERNEL=="PNP0C0E:00", SUBSYSTEM=="acpi", DRIVERS=="button", ATTR{power/wakeup}="disabled"
