@@ -1,6 +1,6 @@
 ---
-- name: disable wakeup by touchpad
+- name: disable wakeup events from input devices
   copy:
-    src: files/99-disable-touchpad-wakeup.rules
-    dest: /etc/udev/rules.d/99-disable-touchpad-wakeup.rules
+    src: files/99-disable-wakeup-events-from-input-dev.rules
+    dest: /etc/udev/rules.d/99-disable-wakeup-events-from-input-dev.rules
   become: yes
