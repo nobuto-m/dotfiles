@@ -193,15 +193,18 @@ An example with ThinkPad.
 * https://addons.mozilla.org/firefox/addon/ublock-origin/
   - userSettings
     + contextMenuEnabled: `false` (Uncheck "Make use of context menu where appropriate")
-  - dynamicFilteringString
-    + no-cosmetic-filtering: `*` (Check "Disable cosmetic filtering")
+  - hostnameSwitchesString
+    + no-cosmetic-filtering: `* true` (Check "Disable cosmetic filtering")
   - with the following [filters](https://adguard.com/kb/general/ad-filtering/adguard-filters/#adguard-filters):
-    + `adguard-widgets` ("AdGuard – Widgets") to suppress live support chats
+    + `adguard-widgets` ("AdGuard – Widgets" under "AdGuard - Annoyances") to suppress live support chats
     + `adguard-cookies`, `ublock-cookies-adguard` ("AdGuard/uBO – Cookie Notices") to suppress cookie notices
+    + `JPN-1` ("jp: AdGuard Japanese")
   - userFilters
     + `@@||googletagmanager.com^$script` not to break or slow down page loadings
   - Trusted sites
     ```
+    chrome-extension-scheme
+    moz-extension-scheme
     amazon.co.jp
     google.com
     youtube.com
