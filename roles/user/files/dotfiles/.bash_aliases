@@ -27,6 +27,7 @@ alias code-use-tox='test ! -e .vscode/ && (mkdir -p $_; echo "{\"python.defaultI
 alias v4l2-ctl-zoom='v4l2-ctl --device /dev/video4 -c zoom_absolute=105'
 alias v4l2-ctl-zoom-reset='v4l2-ctl --device /dev/video4 -c zoom_absolute=100'
 alias sudo-apt-always-include='sudo apt -o APT::Get::Always-Include-Phased-Updates=true'
+alias usbreset-synaptics-fp-reader='sudo usbreset 06cb:00f9'
 git-clone-openstack() { git clone "https://opendev.org/openstack/$1.git" && cd "$1"; }
 ddc-brightness() { ddcutil --display 1 setvcp 10 "$1"; }
 ddc-volume() { ddcutil --display 1 setvcp 62 "$1"; }
