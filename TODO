@@ -32,3 +32,5 @@
   https://bugs.launchpad.net/ubuntu/+source/language-selector/+bug/2070278
 * git config --global --edit
 * toggle-mute-unmute can be 0.1s instead of 0.7s
+* trackpoint double tapping
+  https://github.com/torvalds/linux/commit/a9b0b1ee59a79d0d3853cba9a4b7376ea15be21f
