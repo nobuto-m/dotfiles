@@ -10,14 +10,14 @@
 
     # laptop specific
     - role: laptop
-      when: "ansible_form_factor == 'Notebook'"
+      when: ansible_facts['form_factor'] == 'Notebook'
 
     # hardware specific
     - role: laptop_fmvs90tb
-      when: "ansible_product_name == 'FMVS90TB'"
+      when: ansible_facts['product_name'] == 'FMVS90TB'
 
     - role: laptop_t14gen3amd
-      when: "ansible_product_name == '21CF21CFT1'"
+      when: ansible_facts['product_name'] == '21CF21CFT1'
 
     - role: laptop_t14gen5amd
-      when: "ansible_product_name == '21MCCTO1WW'"
+      when: ansible_facts['product_name'] == '21MCCTO1WW'
