@@ -170,6 +170,20 @@
     - { delta.max-line-length: "4096" }
   changed_when: False
 
+- name: get X-axis resolusion of eDP
+  set_fact:
+      x_axis_resolution: "{{ lookup('file', '/sys/class/drm/card1/card1-eDP-1/modes', errors='warn') | regex_search('^[0-9]+') }}"
+
+- name: calculate relative scaling factor to full-HD displays
+  set_fact:
+    scaling_factor: "{{ (x_axis_resolution|int / 1920) | round(2) }}"
+  when: x_axis_resolution
+
+- name: render firefox user.js
+  template:
+    src: templates/firefox_user.js
+    dest: ~/snap/firefox/common/.mozilla/firefox/default/user.js
+
 - name: render dconf
   template:
     src: templates/dconf.ini.j2

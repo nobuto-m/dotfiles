@@ -14,11 +14,13 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 user_pref("browser.uidensity", 1);  // Density as Compact
 user_pref("browser.tabs.drawInTitlebar", false);  // Show the titlebar instead of CSD
 user_pref("browser.toolbars.bookmarks.visibility", "never");
-user_pref("ui.textScaleFactor", 160);  // HiDPI tweak
 user_pref("browser.ctrlTab.recentlyUsedOrder", false);
 user_pref("findbar.highlightAll", true);
 user_pref("accessibility.typeaheadfind.timeout", 300000);
 user_pref("middlemouse.paste", false);
+{% if scaling_factor is defined %}
+user_pref("ui.textScaleFactor", {{ (scaling_factor|float * 100)|round|int }});  // HiDPI tweak
+{% endif %}
 
 // Startup and exit
 user_pref("browser.sessionstore.warnOnQuit", true);

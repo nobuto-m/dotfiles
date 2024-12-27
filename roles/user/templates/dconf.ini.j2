@@ -14,7 +14,9 @@ clock-show-weekday=true
 clock-show-seconds=true
 cursor-size=48
 scaling-factor=uint32 1
-text-scaling-factor=1.4
+{% if scaling_factor is defined %}
+text-scaling-factor={{ scaling_factor }}
+{% endif %}
 
 [org/gnome/settings-daemon/plugins/xsettings]
 antialiasing='grayscale'
