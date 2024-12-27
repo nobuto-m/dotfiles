@@ -20,4 +20,5 @@
       when: ansible_facts['product_name'] == '21CF21CFT1'
 
     - role: laptop_t14gen5amd
+      # "product_version" is "ThinkPad T14 Gen 5" without "AMD"
       when: ansible_facts['product_name'] == '21MCCTO1WW'
