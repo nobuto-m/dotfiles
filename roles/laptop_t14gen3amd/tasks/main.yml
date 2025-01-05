@@ -4,3 +4,15 @@
     src: files/99-local-disable-wakeup-events-from-input-dev.rules
     dest: /etc/udev/rules.d/99-local-disable-wakeup-events-from-input-dev.rules
   become: yes
+
+- name: ignore interrupts from GPIO controller Pin 0
+  copy:
+    src=files/local-ignore-interrupt.cfg
+    dest=/etc/default/grub.d/local-ignore-interrupt.cfg
+  become: yes
+  register: t14g3a_ignore_interrupts
+
+- name: update-grub
+  command: update-grub
+  become: yes
+  when: t14g3a_ignore_interrupts is changed

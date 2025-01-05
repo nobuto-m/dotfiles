@@ -1,2 +1,6 @@
 # ELAN0678:00 04F3:3195 Touchpad's parent device
-KERNEL=="i2c-ELAN0678:00", SUBSYSTEM=="i2c", DRIVERS=="i2c_hid_acpi", ATTR{power/wakeup}="disabled"
+#KERNEL=="i2c-ELAN0678:00", SUBSYSTEM=="i2c", DRIVERS=="i2c_hid_acpi", ATTR{power/wakeup}="disabled"
+# explicitly enable wakeup with touchpad, otherwise there is no way to
+# wake up the system after disabling unintentional wakeup from GPIO 0
+# (power source, TrackPoint, power button, etc.)
+KERNEL=="i2c-ELAN0678:00", SUBSYSTEM=="i2c", DRIVERS=="i2c_hid_acpi", ATTR{power/wakeup}="enabled"
