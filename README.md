@@ -209,6 +209,8 @@ An example with ThinkPad.
     google.com
     youtube.com
     ```
+* https://addons.mozilla.org/firefox/addon/url2clipboard/
+
 
 #### Disabled
 
