@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "$1" = 'post' ] && [ "$2" = 'suspend' ]; then
+    lid_closed="$(busctl get-property org.freedesktop.login1 /org/freedesktop/login1 org.freedesktop.login1.Manager LidClosed)"
+    if [ "$lid_closed" = 'b true' ]; then
+        logger -t "$0" -p warning 'resuming somehow even if the lid is closed.'
+        logger -t "$0" -p warning 'waiting for 10 secods.'
+        sleep 10
+        logger -t "$0" -p warning 'going back to sleep.'
+        # give some time to save the log
+        sleep 2
+        # systemctl suspend cannot be used - Call to Suspend failed: There's already a shutdown or sleep operation in progress
+        echo mem > /sys/power/state
+        # However, once systemd-sleep is by-passed with /sys/power/state directly, /lib/systemd/system-sleep/ won't be called in the next resume
+    fi
+fi
