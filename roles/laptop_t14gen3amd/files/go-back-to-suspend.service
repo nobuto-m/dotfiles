@@ -1,0 +1,11 @@
+[Unit]
+After=suspend.target
+
+[Service]
+Type=oneshot
+ExecCondition=/usr/bin/grep -q -w closed /proc/acpi/button/lid/LID/state
+ExecStartPre=/usr/bin/logger -t %n -p warning 'Suspending again as the system woke up with lid closed'
+ExecStart=/usr/bin/systemctl --no-block suspend
+
+[Install]
+WantedBy=suspend.target
