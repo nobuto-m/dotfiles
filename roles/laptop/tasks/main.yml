@@ -3,7 +3,6 @@
   blockinfile:
     dest: /etc/systemd/logind.conf
     block: |
-      LidSwitchIgnoreInhibited=yes
       HandleLidSwitch=lock
       HandleLidSwitchExternalPower=lock
       HandleLidSwitchDocked=ignore
