@@ -119,6 +119,10 @@ An example with ThinkPad.
   ```bash
   fwupdmgr refresh; fwupdmgr get-updates
   ```
+* snap refresh
+  ```bash
+  sudo snap refresh
+  ```
 * select color profile from gnome-control-center
 * Firefox
   - login to Firefox Sync
