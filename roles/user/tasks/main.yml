@@ -149,8 +149,9 @@
     block: "{{ lookup('file', 'files/profile_block') }}"
 
 - name: install viddy
-  command: go install github.com/sachaos/viddy@v1.3.0
-  changed_when: False
+  community.general.cargo:
+    name: viddy
+    locked: true
 
 - name: git config
   command: git config --global "{{ item.key }}" "{{ item.value }}"

@@ -58,6 +58,7 @@ packages:
   - libxml2-dev
   - libxslt1-dev
   - jsonnet
+  - cargo
 
   # dev - docs
   - zeal
