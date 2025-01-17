@@ -28,7 +28,7 @@
 
 - name: download plain wallpaper
   get_url:
-    url: "https://drive.google.com/uc?export=download&id=1ZzKzRfaq4SWlrWg5tKZbJ0CxTfcVfXHx"
+    url: "{{ wallpaper_url }}"
     dest: ~/.local/share/backgrounds/blank.png
   register: wallpaper
 
@@ -181,8 +181,14 @@
 
 - name: render firefox user.js
   template:
-    src: templates/firefox_user.js
+    src: templates/firefox_user.js.j2
     dest: ~/snap/firefox/common/.mozilla/firefox/default/user.js
+
+- name: render .chromium-browser.init
+  template:
+    src: templates/chromium-browser.init.j2
+    dest: ~/.chromium-browser.init
+  when: scaling_factor
 
 - name: render dconf
   template:

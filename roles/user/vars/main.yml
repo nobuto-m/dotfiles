@@ -1,4 +1,7 @@
 ---
+# numbat_wallpaper_color_3480x2160.png
+wallpaper_url: 'https://drive.google.com/uc?export=download&id=1ZzKzRfaq4SWlrWg5tKZbJ0CxTfcVfXHx'
+
 git_repos:
   - { type: work, name: juju, repo: 'https://github.com/juju/juju.git' }
   - { type: work, name: charm-helpers, repo: 'https://github.com/juju/charm-helpers.git' }
