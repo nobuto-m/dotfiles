@@ -17,6 +17,7 @@
       when: ansible_facts['product_name'] == 'FMVS90TB'
 
     - role: laptop_t14gen3amd
+      # it was "21CFCTO1WW" initially
       when: ansible_facts['product_name'] == '21CF21CFT1'
 
     - role: laptop_t14gen5amd
