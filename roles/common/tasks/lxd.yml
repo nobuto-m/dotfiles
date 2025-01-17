@@ -24,7 +24,7 @@
 - name: init squid-deb-proxy container
   shell: |
     echo "{{ lookup('file', 'files/squid-deb-proxy_user-data.yml') }}" \
-        | lxc init ubuntu:focal \
+        | lxc init ubuntu:noble \
             --config=boot.autostart=true \
             --config=user.vendor-data="$(printf '#cloud-config\n{}\n')" \
             --config=user.user-data="$(cat -)" \

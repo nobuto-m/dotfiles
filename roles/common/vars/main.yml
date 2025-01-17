@@ -110,7 +110,7 @@ packages:
 
   # utils - terminal
   - byobu
-  - moreutils
+  - moreutils  # ts
   - fzf
   - ranger
   - colordiff
