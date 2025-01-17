@@ -38,7 +38,7 @@
       - id: system-monitor-next@paradoxxx.zero.gmail.com
         file: system-monitor-nextparadoxxx.zero.gmail.com.v75.shell-extension.zip
       - id: Bluetooth-Battery-Meter@maniacx.github.com
-        file: Bluetooth-Battery-Metermaniacx.github.com.v22.shell-extension.zip
+        file: Bluetooth-Battery-Metermaniacx.github.com.v26.shell-extension.zip
 
 - name: download extension
   get_url:
@@ -149,7 +149,7 @@
     block: "{{ lookup('file', 'files/profile_block') }}"
 
 - name: install viddy
-  command: go install github.com/sachaos/viddy@v0.4.0
+  command: go install github.com/sachaos/viddy@v1.3.0
   changed_when: False
 
 - name: git config
@@ -218,6 +218,8 @@
   with_items:
     - UNZIP
     - ZIPINFO
+  # LP: #2066389
+  when: ansible_facts['distribution_version'] is version('24.10', '<')
 
 - name: check if Dropbox is running
   command: dropbox running
