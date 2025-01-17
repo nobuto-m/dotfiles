@@ -1,7 +1,4 @@
-* flaky trackpoint - running xeyes can prevent this issue somehow?
-  Oct 15 10:50:43 t480 kernel: psmouse serio2: TrackPoint at rmi4-00.fn03/serio0/input0 lost synchronization, throwing 2 bytes away.
-  https://wiki.archlinux.org/title/Touchpad_Synaptics#Touchpad_synchronization_issues
-* frequent wakeup from s2idle
+* frequent wakeup from s2idle on t14g3a
   - when trackpoint or mouse button is touched
   - when power source is connected, etc.
   - acpi.ec_no_wakeup=1
@@ -10,17 +7,14 @@
   - failed to claim device: GDBus.Error:net.reactivated.Fprint.Error.Internal: Open failed with error: Device 06cb:00f9 is already open
   - failed to claim device: GDBus.Error:net.reactivated.Fprint.Error.Internal: Open failed with error: endpoint stalled or request not supported
   - Impossible to verify: GDBus.Error:net.reactivated.Fprint.Error.NoSuchDevice: No devices available
-* general font size in UI
 * console font to prioritize ja glyphs
-* cannot select color profiles
 * async snap installation
 * refresh squid-deb-proxy to noble
 * revisit conflict between tlp and power-profiles-daemon
 * Kazam's menu is grayed out to stop recording
-* mouse cursor is not captured with gnome-shell recording
+* cannot select color profiles on X
+* mouse cursor is not captured with gnome-shell recording on X
   https://gitlab.gnome.org/GNOME/mutter/-/issues/3182
-* Automatic timezone is not working and reverted in GNOME config
-  https://bugs.launchpad.net/ubuntu/+source/gnome-control-center/+bug/2073430
 * wayland migration
   - Firefox title bar is not merged into the top bar
   - xdotool: Super+Shift doesn't work somehow whlie Shift+Super works
