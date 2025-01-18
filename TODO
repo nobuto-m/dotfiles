@@ -13,7 +13,6 @@
 * refresh squid-deb-proxy to noble
 * revisit conflict between tlp and power-profiles-daemon
 * Kazam's menu is grayed out to stop recording
-* cannot select color profiles on X
 * mouse cursor is not captured with gnome-shell recording on X
   https://gitlab.gnome.org/GNOME/mutter/-/issues/3182
 * wayland migration
