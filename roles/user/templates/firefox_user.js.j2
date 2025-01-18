@@ -19,7 +19,7 @@ user_pref("findbar.highlightAll", true);
 user_pref("accessibility.typeaheadfind.timeout", 300000);
 user_pref("middlemouse.paste", false);
 {% if scaling_factor is defined %}
-user_pref("ui.textScaleFactor", {{ (scaling_factor|float * 100)|round|int }});  // HiDPI tweak
+//user_pref("ui.textScaleFactor", {{ (scaling_factor|float * 100)|round|int }});  // HiDPI tweak
 {% endif %}
 
 // Startup and exit
