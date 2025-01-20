@@ -7,6 +7,7 @@ git_repos:
   - { type: work, name: charm-helpers, repo: 'https://github.com/juju/charm-helpers.git' }
   - { type: work, name: openstack-bundles, repo: 'https://github.com/openstack-charmers/openstack-bundles.git' }
   - { type: work, name: bundle-canonical-kubernetes, repo: 'https://github.com/juju-solutions/bundle-canonical-kubernetes.git' }
+  - { type: work, name: snap-openstack, repo: 'https://github.com/canonical/snap-openstack.git' }
 
   - { type: misc, name: unite-shell, repo: 'https://github.com/hardpixel/unite-shell' }
 
