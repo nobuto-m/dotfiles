@@ -190,8 +190,8 @@ An example with ThinkPad.
   - Manage Extension Shortcuts
     + "Activate the extension": `Alt+Z`
 * https://addons.mozilla.org/firefox/addon/most-recent-tab/
-  - Manage Extension Shortcuts
-    + "Main: Jump to the previously viewed tab, the most recent tab": `Alt+0`
+  - Preferences
+    + Keyboard shortcut: `Alt+0`
 * https://addons.mozilla.org/firefox/addon/tab-session-manager/
   - "Auto save" - "Interval (minutes)": `4320` (3 days)
 * https://addons.mozilla.org/firefox/addon/ublock-origin/
