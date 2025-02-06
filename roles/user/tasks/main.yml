@@ -254,6 +254,7 @@
     - ms-python.python
     - ms-python.black-formatter
     - ms-python.flake8
+    - GitHub.vscode-github-actions
     - redhat.vscode-yaml
     - samuelcolvin.jinjahtml
     - golang.Go
