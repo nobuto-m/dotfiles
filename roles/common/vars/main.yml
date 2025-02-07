@@ -86,7 +86,6 @@ packages:
   #- network-manager-iodine-gnome
   #- network-manager-l2tp-gnome
   - network-manager-openconnect-gnome
-  - network-manager-openvpn-gnome
   #- network-manager-vpnc-gnome
   #- network-manager-strongswan
   #- ike-scan
@@ -119,10 +118,8 @@ packages:
   - git-delta
   - lnav
   - ccze
-  - python3-pygments
   - tree
   - oathtool
-  - jq
   - yq
   - libxml-xpath-perl
   - pwgen
