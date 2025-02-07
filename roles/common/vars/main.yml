@@ -121,6 +121,7 @@ packages:
   - tree
   - oathtool
   - yq
+  - j2cli
   - libxml-xpath-perl
   - pwgen
   - pv
