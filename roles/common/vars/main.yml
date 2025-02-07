@@ -194,7 +194,6 @@ packages:
   - wireshark
   - avahi-utils
   - wavemon
-  - sysstat
   - stress-ng
   - fio
   - iperf
