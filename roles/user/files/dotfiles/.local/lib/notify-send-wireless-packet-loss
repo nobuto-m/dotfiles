@@ -17,7 +17,22 @@ retries_p=$(echo "$wireless" | grep -m1 ^wl | awk '{print $9}')
 
 while true; do
     sleep "$interval"
-    wireless=$(cat /proc/net/wireless)
+
+    # /proc/net/wireless gets wedged sometimes after a resume. It's
+    # possibly a firmware issue.
+    ret=0
+    wireless=$(timeout 0.5 cat /proc/net/wireless) || ret=$?
+    if [ "$ret" = 124 ] && (rfkill list wlan | grep -q 'Soft blocked: no'); then
+        notify-send \
+            -i network-wireless-hardware-disabled-symbolic \
+            -h int:transient:1 \
+            'Timeout in wireless status' \
+            'Resetting the connection'
+        rfkill block wlan
+        rfkill unblock wlan
+        continue
+    fi
+
     iface=$(echo "$wireless" | grep -m1 ^wl || true)
     invalid_misc=$(echo "$iface" | awk '{print $10}')
     retries=$(echo "$iface" | awk '{print $9}')
