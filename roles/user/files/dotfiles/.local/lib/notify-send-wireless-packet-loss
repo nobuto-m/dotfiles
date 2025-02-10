@@ -11,18 +11,14 @@ interval=10
 #link_quality_threshold=49
 link_quality_threshold=34
 
-invalid_misc_p=
-retries_p=
+wireless=$(cat /proc/net/wireless)
+invalid_misc_p=$(echo "$wireless" | grep -m1 ^wl | awk '{print $10}')
+retries_p=$(echo "$wireless" | grep -m1 ^wl | awk '{print $9}')
+
 while true; do
-    if [ -n "$invalid_misc_p" ]; then
-        invalid_misc_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $10}')
-    fi
-    if [ -n "$retries_p" ]; then
-        retries_p=$(tail -n -1 /proc/net/wireless | grep : | awk '{print $9}')
-    fi
     sleep "$interval"
     wireless=$(cat /proc/net/wireless)
-    iface=$(echo "$wireless" | tail -n -1 | grep : || true)
+    iface=$(echo "$wireless" | grep -m1 ^wl || true)
     invalid_misc=$(echo "$iface" | awk '{print $10}')
     retries=$(echo "$iface" | awk '{print $9}')
     link_quality=$(echo "$iface" | awk '{print $3}' | tr -d .)
