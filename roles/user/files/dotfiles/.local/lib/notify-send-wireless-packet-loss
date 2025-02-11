@@ -26,7 +26,7 @@ while true; do
         notify-send \
             -i network-wireless-hardware-disabled-symbolic \
             -h int:transient:1 \
-            'Timeout in wireless status' \
+            'Wireless status timed out' \
             'Resetting the connection'
         rfkill block wlan
         rfkill unblock wlan
