@@ -201,6 +201,7 @@ packages:
   - iperf3
   - sysprof
   - apparmor-utils
+  - squashfs-tools-ng
 
   # backward compatibility
   - pulseaudio-utils
