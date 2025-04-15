@@ -129,6 +129,7 @@ packages:
   - libsecret-tools
   - asciinema
   - qrencode
+  - zbar-tools
 
   # utils - network
   - curl
