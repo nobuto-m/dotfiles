@@ -210,6 +210,7 @@ An example with ThinkPad.
     chrome-extension-scheme
     moz-extension-scheme
     amazon.co.jp
+    github.com
     google.com
     youtube.com
     ```
