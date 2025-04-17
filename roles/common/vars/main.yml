@@ -90,6 +90,7 @@ packages:
   #- network-manager-strongswan
   #- ike-scan
   - wireguard-tools
+  - openvpn-systemd-resolved
 
   # virt
   - uvtool
