@@ -18,7 +18,7 @@ alias vpn-canonical='(cd ~/.sesame/; sed -e "s|/scripts/|/|" /usr/share/doc/open
 alias vpn-canonical-global='(cd ~/.sesame/; sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-global.conf)'
 alias vpn-canonical-tcp443='(cd ~/.sesame/; sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-tcp443.conf)'
 alias vpn-canonical-tcp443-global='(cd ~/.sesame/; sudo openvpn --mute-replay-warnings --config ~/.sesame/us-nobuto-tcp443-global.conf)'
-alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" localhost localhost'
+alias juju-local-bootstrap='juju bootstrap --model-default apt-http-proxy="http://squid-deb-proxy.lxd:8000/" --model-default logging-config="<root>=INFO;unit=DEBUG" localhost localhost'
 alias juju-aws-bootstrap='juju bootstrap aws/ap-northeast-1'
 alias watch-juju-status='watch -c juju status --color'
 alias kubectl-wait-deployment='kubectl wait deployment --all --for condition=Available=True --timeout=1h'
