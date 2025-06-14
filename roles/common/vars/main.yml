@@ -131,6 +131,7 @@ packages:
   - asciinema
   - qrencode
   - zbar-tools
+  - libarchive-tools  # bsdtar
 
   # utils - network
   - curl
