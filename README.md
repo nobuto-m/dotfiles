@@ -215,6 +215,7 @@ An example with ThinkPad.
     youtube.com
     ```
 * https://addons.mozilla.org/firefox/addon/url2clipboard/
+* https://addons.mozilla.org/firefox/addon/read-aloud/
 
 
 #### Disabled
