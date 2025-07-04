@@ -144,6 +144,8 @@ An example with ThinkPad.
   ```bash
   dropbox lansync n
   ```
+* add bookmarks in Nautilus (`~/.config/gtk-3.0/bookmarks`)
+  - `~/Documents/Pictures/Screenshots`
 * git
   - set git `user.name` and `user.email` with
     ```bash
