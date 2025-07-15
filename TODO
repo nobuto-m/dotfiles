@@ -1,9 +1,4 @@
 * text-scaling-factor=1.5 is somehow reflected as 1.25
-* losing fingerprint reader (Bus 001 Device 004: ID 06cb:00f9 Synaptics, Inc.)
-  - https://gitlab.freedesktop.org/libfprint/libfprint/-/issues/596
-  - failed to claim device: GDBus.Error:net.reactivated.Fprint.Error.Internal: Open failed with error: Device 06cb:00f9 is already open
-  - failed to claim device: GDBus.Error:net.reactivated.Fprint.Error.Internal: Open failed with error: endpoint stalled or request not supported
-  - Impossible to verify: GDBus.Error:net.reactivated.Fprint.Error.NoSuchDevice: No devices available
 * console font to prioritize ja glyphs
 * async snap installation
 * refresh squid-deb-proxy to noble
