@@ -168,8 +168,8 @@ An example with ThinkPad.
     ```
 * add `export DEBEMAIL='<EMAIL>'` into `~/.bashrc`
 * configure Chromium with:
-  - set `https://meet.google.com/` as a start-up page
-  - set `Show home bottun` to true and set `https://meet.google.com/`
+  - set `https://meet.google.com/landing` as a start-up page
+  - set `Show home bottun` to true and set `https://meet.google.com/landing`
   - `Use Google Translate` - off
 * install tailscale and activate it with
   ```bash
