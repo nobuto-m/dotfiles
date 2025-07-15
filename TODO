@@ -2,7 +2,6 @@
 * console font to prioritize ja glyphs
 * async snap installation
 * revisit conflict between tlp and power-profiles-daemon
-* Kazam's menu is grayed out to stop recording
 * mouse cursor is not captured with gnome-shell recording on X
   https://gitlab.gnome.org/GNOME/mutter/-/issues/3182
 * wayland migration
