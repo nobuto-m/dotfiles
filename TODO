@@ -16,4 +16,3 @@
 * git config --global --edit
 * trackpoint double tapping
   https://github.com/torvalds/linux/commit/a9b0b1ee59a79d0d3853cba9a4b7376ea15be21f
-* de-saturated color profile for OLED
