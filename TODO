@@ -1,7 +1,3 @@
-* frequent wakeup from s2idle on t14g3a
-  - when trackpoint or mouse button is touched
-  - when power source is connected, etc.
-  - acpi.ec_no_wakeup=1
 * text-scaling-factor=1.5 is somehow reflected as 1.25
 * losing fingerprint reader (Bus 001 Device 004: ID 06cb:00f9 Synaptics, Inc.)
   - https://gitlab.freedesktop.org/libfprint/libfprint/-/issues/596
