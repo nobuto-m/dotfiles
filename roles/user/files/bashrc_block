@@ -14,7 +14,7 @@ export RIPGREP_CONFIG_PATH=~/.config/ripgrep/.ripgreprc
 # [ -r ~/.byobu/prompt ] && . ~/.byobu/prompt
 
 . /usr/share/doc/fzf/examples/key-bindings.bash
-. /usr/share/bash-completion/completions/fzf
+. /usr/share/doc/fzf/examples/completion.bash
 
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
