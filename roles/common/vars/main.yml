@@ -8,7 +8,6 @@ snaps:
   - {name: juju,                classic: no,   channel: null}
   - {name: juju-crashdump,      classic: yes,  channel: null}
   - {name: juju-wait,           classic: yes,  channel: null}
-  - {name: charm,               classic: yes,  channel: null}
   - {name: charmcraft,          classic: yes,  channel: null}
   - {name: snapcraft,           classic: yes,  channel: null}
   - {name: kubectl,             classic: yes,  channel: null}
@@ -17,7 +16,6 @@ snaps:
   - {name: go,                  classic: yes,  channel: null}
   - {name: git-ubuntu,          classic: yes,  channel: null}
   - {name: vault,               classic: no,   channel: null}
-  - {name: hugo,                classic: no,   channel: null}
 
 packages:
 
@@ -61,7 +59,6 @@ packages:
   - cargo
 
   # dev - docs
-  - zeal
   - python3-doc
   - python3-examples
   - linux-doc
