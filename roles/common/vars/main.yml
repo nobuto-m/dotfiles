@@ -129,6 +129,7 @@ packages:
   - qrencode
   - zbar-tools
   - libarchive-tools  # bsdtar
+  - easy-rsa
 
   # utils - network
   - curl
