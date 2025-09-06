@@ -163,7 +163,6 @@ packages:
   # other
   - dconf-editor
   - yubikey-manager
-  - yubikey-manager-qt
   - gstreamer1.0-libav
   - gstreamer1.0-plugins-bad
   - v4l-utils
