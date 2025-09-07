@@ -1,0 +1,4 @@
+# Technologic Laserpointer Neo
+# Remap the up button long click (Shift+F5) to Ctrl+F5
+evdev:input:b0003v2312p863D*
+ KEYBOARD_KEY_700e1=leftctrl

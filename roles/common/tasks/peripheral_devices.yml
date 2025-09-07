@@ -4,6 +4,11 @@
     src: files/99-local-remap-usb-volume-control.hwdb
     dest: /etc/udev/hwdb.d/99-local-remap-usb-volume-control.hwdb
 
+- name: Remap a key on Technologic Laserpointer Neo
+  copy:
+    src: files/99-local-remap-technologic-laserpointer.hwdb
+    dest: /etc/udev/hwdb.d/99-local-remap-technologic-laserpointer.hwdb
+
 - name: Activate remapping
   command: systemd-hwdb update
   changed_when: False
