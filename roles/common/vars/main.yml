@@ -175,6 +175,7 @@ packages:
   - gddrescue
   - tidy
   - meld
+  - showtime
 
   # investigation
   - htop
