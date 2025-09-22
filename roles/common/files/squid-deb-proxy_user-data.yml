@@ -10,6 +10,8 @@ write_files:
       ppa.launchpadcontent.net
 
       esm.ubuntu.com
+      snapshot.ubuntu.com
+      snapshot.ppa.launchpadcontent.net
 
       ## apt-add-repository
       launchpad.net
