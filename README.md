@@ -224,6 +224,5 @@ An example with ThinkPad.
 
 * https://addons.mozilla.org/firefox/addon/multi-account-containers/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
-* https://addons.mozilla.org/firefox/addon/text-fragment/
 * https://addons.mozilla.org/firefox/addon/user-agent-switcher-revived/
 * https://addons.mozilla.org/firefox/addon/wappalyzer/
