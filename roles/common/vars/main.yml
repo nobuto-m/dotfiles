@@ -176,8 +176,6 @@ packages:
   - tidy
   - meld
   - showtime
-  - skopeo
-  - umoci
 
   # investigation
   - htop
@@ -209,6 +207,8 @@ packages:
   - squashfs-tools-ng
   - libinput-tools
   - evemu-tools
+  - skopeo
+  - umoci
 
   # backward compatibility
   - pulseaudio-utils
