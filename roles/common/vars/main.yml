@@ -176,6 +176,7 @@ packages:
   - tidy
   - meld
   - showtime
+  - skopeo
 
   # investigation
   - htop
