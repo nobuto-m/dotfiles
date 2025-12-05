@@ -177,6 +177,7 @@ packages:
   - meld
   - showtime
   - skopeo
+  - umoci
 
   # investigation
   - htop
