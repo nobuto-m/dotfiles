@@ -13,7 +13,7 @@ An example with ThinkPad.
   - Keyboard/Mouse
     - F1-F12 as Primary Function - On
   - Display
-    - UMA Frame buffer Size - 4G
+    - UMA Frame buffer Size - 8G
 * Security
   - Secure Boot
     - Allow Microsoft 3rd Party UEFI CA - On
