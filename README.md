@@ -212,6 +212,7 @@ An example with ThinkPad.
     chrome-extension-scheme
     moz-extension-scheme
     amazon.co.jp
+    atlassian.net
     github.com
     google.com
     youtube.com
