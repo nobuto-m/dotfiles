@@ -4,3 +4,15 @@
     src: files/99-local-disable-wakeup-events-from-input-dev.rules
     dest: /etc/udev/rules.d/99-local-disable-wakeup-events-from-input-dev.rules
   become: yes
+
+- name: AMDGPU workaround - DC_DISABLE_PSR(0x10)
+  copy:
+    src=files/amdgpu-workaround.cfg
+    dest=/etc/default/grub.d/amdgpu-workaround.cfg
+  become: yes
+  register: t14g5a_amdgpu_workaround
+
+- name: update-grub
+  command: update-grub
+  become: yes
+  when: t14g5a_amdgpu_workaround is changed
