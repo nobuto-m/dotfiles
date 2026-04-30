@@ -209,6 +209,7 @@ packages:
   - evemu-tools
   - skopeo
   - umoci
+  - hyperfine
 
   # backward compatibility
   - pulseaudio-utils
