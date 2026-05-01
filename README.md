@@ -12,8 +12,6 @@ An example with ThinkPad.
 * Config
   - Keyboard/Mouse
     - F1-F12 as Primary Function - On
-  - Display
-    - UMA Frame buffer Size - 4G
 * Security
   - Secure Boot
     - Allow Microsoft 3rd Party UEFI CA - On
