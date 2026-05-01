@@ -107,7 +107,6 @@ An example with ThinkPad.
 
 ### Remaining manual steps
 
-* login with X session
 * Add another key to LUKS with
   ```bash
   sudo cryptsetup luksAddKey /dev/nvme0n1p3
@@ -120,7 +119,6 @@ An example with ThinkPad.
   ```bash
   sudo snap refresh
   ```
-* select color profile from gnome-control-center
 * Firefox
   - login to Firefox Sync
   - pin tabs in Firefox including e-mails, calendar, messengers, task-management,
@@ -166,7 +164,7 @@ An example with ThinkPad.
 * add `export DEBEMAIL='<EMAIL>'` into `~/.bashrc`
 * configure Chromium with:
   - set `https://meet.google.com/landing` as a start-up page
-  - set `Show home bottun` to true and set `https://meet.google.com/landing`
+  - set `Show home button` to true and set `https://meet.google.com/landing`
   - `Use Google Translate` - off
 * install tailscale and activate it with
   ```bash
