@@ -212,12 +212,17 @@ An example with ThinkPad.
     youtube.com
     ```
 * https://addons.mozilla.org/firefox/addon/url2clipboard/
+  - `HTML (text/plain)`
+  - `Markdown`
+  - `Jira`
+  - `Text & URL`
 * https://addons.mozilla.org/firefox/addon/read-aloud/
+  - Download `hfc_male[medium]`
+* https://addons.mozilla.org/firefox/addon/multi-account-containers/
 
 
 #### Disabled
 
-* https://addons.mozilla.org/firefox/addon/multi-account-containers/
 * https://addons.mozilla.org/firefox/addon/markdown-here/
 * https://addons.mozilla.org/firefox/addon/user-agent-switcher-revived/
 * https://addons.mozilla.org/firefox/addon/wappalyzer/
