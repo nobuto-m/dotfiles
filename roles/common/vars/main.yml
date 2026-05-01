@@ -26,11 +26,6 @@ packages:
   - gnome-shell-extension-prefs
   - gir1.2-gtop-2.0  # gnome-shell-extension-system-monitor
 
-  # xkeysnail deps
-  - python3-xlib
-  - python3-evdev
-  - python3-appdirs
-
   # dev - minimal
   - build-essential
   - devscripts
