@@ -16,6 +16,6 @@
 
 - name: add the user in i2c group set up by i2c-tools for ddcutil
   user:
-    name: '{{ ansible_user_id }}'
+    name: '{{ ansible_facts["user_id"] }}'
     groups: i2c
     append: yes

@@ -2,8 +2,8 @@
 - name: enable -proposed
   lineinfile:
     dest: /etc/apt/sources.list.d/ubuntu.sources
-    regexp: "^Suites: .* {{ ansible_distribution_release }}-updates"
-    line: 'Suites: {{ ansible_distribution_release }} {{ ansible_distribution_release }}-updates {{ ansible_distribution_release }}-backports {{ ansible_distribution_release }}-proposed'
+    regexp: '^Suites: .* {{ ansible_facts["distribution_release"] }}-updates'
+    line: 'Suites: {{ ansible_facts["distribution_release"] }} {{ ansible_facts["distribution_release"] }}-updates {{ ansible_facts["distribution_release"] }}-backports {{ ansible_facts["distribution_release"] }}-proposed'
     state: present
 
 - name: apt update

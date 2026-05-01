@@ -32,7 +32,8 @@ packages:
   - python3-appdirs
 
   # dev - minimal
-  - packaging-dev  # build-essential, devscripts
+  - build-essential
+  - devscripts
   - ubuntu-dev-tools
   - pbuilder
   - debian-goodies  # dman

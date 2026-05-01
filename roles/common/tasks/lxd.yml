@@ -1,7 +1,7 @@
 ---
 - name: make sure the user is in lxd group
   user:
-    name: '{{ ansible_user_id }}'
+    name: '{{ ansible_facts["user_id"] }}'
     groups: lxd
     append: yes
 

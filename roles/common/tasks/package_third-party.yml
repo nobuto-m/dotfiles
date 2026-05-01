@@ -10,29 +10,29 @@
 - name: download vscode
   get_url:
     url: 'https://go.microsoft.com/fwlink/?LinkID=760868'
-    dest: "{{ ansible_user_dir }}/Downloads/code.deb"
+    dest: '{{ ansible_facts["user_dir"] }}/Downloads/code.deb'
   register: vscode
 
 - name: install vscode
   apt:
-    deb: "{{ ansible_user_dir }}/Downloads/code.deb"
+    deb: '{{ ansible_facts["user_dir"] }}/Downloads/code.deb'
   when: vscode is changed
 
 - name: download steam
   get_url:
     url: https://repo.steampowered.com/steam/archive/stable/steam_latest.deb
-    dest: "{{ ansible_user_dir }}/Downloads/steam_latest.deb"
+    dest: '{{ ansible_facts["user_dir"] }}/Downloads/steam_latest.deb'
   register: steam
 
 - name: install steam
   apt:
-    deb: "{{ ansible_user_dir }}/Downloads/steam_latest.deb"
+    deb: '{{ ansible_facts["user_dir"] }}/Downloads/steam_latest.deb'
   when: steam is changed
 
 - name: download speedtest cli
   get_url:
     url: https://install.speedtest.net/app/cli/ookla-speedtest-1.2.0-linux-x86_64.tgz
-    dest: "{{ ansible_user_dir }}/Downloads/ookla-speedtest-linux-x86_64.tgz"
+    dest: '{{ ansible_facts["user_dir"] }}/Downloads/ookla-speedtest-linux-x86_64.tgz'
   register: speedtest
 
 - name: make sure speedtest directory exists
@@ -42,7 +42,7 @@
 
 - name: extract speedteset cli
   unarchive:
-    src: "{{ ansible_user_dir }}/Downloads/ookla-speedtest-linux-x86_64.tgz"
+    src: '{{ ansible_facts["user_dir"] }}/Downloads/ookla-speedtest-linux-x86_64.tgz'
     dest: /usr/local/lib/ookla-speedtest/
     remote_src: yes
     owner: root

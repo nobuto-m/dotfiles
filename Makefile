@@ -1,3 +1,6 @@
+# https://bugs.launchpad.net/ubuntu/+source/ansible-core/+bug/2122414
+export ANSIBLE_BECOME_EXE := /usr/bin/sudo.ws
+
 .PHONY: setup
 setup:
 	@ansible-playbook -vv --ask-become-pass \
