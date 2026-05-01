@@ -170,7 +170,7 @@
 - name: calculate relative scaling factor to full-HD displays
   set_fact:
     scaling_factor: "{{ (x_axis_resolution|int / 1920) | round(2) }}"
-  when: x_axis_resolution
+  when: x_axis_resolution | length > 0
 
 - name: render firefox user.js
   template:
@@ -181,7 +181,7 @@
   template:
     src: templates/chromium-browser.init.j2
     dest: ~/.chromium-browser.init
-  when: scaling_factor
+  when: scaling_factor > 0
 
 - name: render dconf
   template:
