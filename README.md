@@ -39,8 +39,7 @@ An example with ThinkPad.
 
 1. install Ubuntu Desktop with the options below
    * Extended selection (not to remove LibreOffice, Remmina, Shotwell, Simple Scan, etc.)
-   * Advanced features
-     - Use LVM and encryption (dm-crypt with LUKS)
+   * Encrypt with a passphrase (dm-crypt with LUKS)
 
 1. reboot
 
