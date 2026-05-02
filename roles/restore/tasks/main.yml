@@ -6,11 +6,11 @@
     mode: "go-rwx"
     backup: yes
   with_fileglob:
-    - "~/backup{{ ansible_env.HOME }}/*"
+    - '~/backup{{ ansible_facts["user_dir"] }}/*'
 
 - name: restore some dot directories
   copy:
-    src: ~/backup{{ ansible_env.HOME }}/{{ item }}
+    src: ~/backup{{ ansible_facts["user_dir"] }}/{{ item }}
     dest: ~/{{ item }}
     mode: 'go-rwx'
     backup: yes

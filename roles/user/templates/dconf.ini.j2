@@ -1,10 +1,10 @@
 #### UI ####
 
 [org/gnome/desktop/background]
-picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/blank.png'
+picture-uri='file://{{ ansible_facts["user_dir"] }}/.local/share/backgrounds/blank.png'
 
 [org/gnome/desktop/screensaver]
-picture-uri='file://{{ ansible_env.HOME }}/.local/share/backgrounds/blank.png'
+picture-uri='file://{{ ansible_facts["user_dir"] }}/.local/share/backgrounds/blank.png'
 
 [org/gnome/desktop/interface]
 gtk-enable-primary-paste=false
