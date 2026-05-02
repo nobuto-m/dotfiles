@@ -1,0 +1,7 @@
+/* https://github.com/hardpixel/unite-shell/issues/340 */
+:root[sizemode="maximized"] .titlebar-buttonbox-container {
+    display: none;
+}
+:root[sizemode="maximized"] .titlebar-spacer {
+    display: none;
+}
