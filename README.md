@@ -161,7 +161,6 @@ An example with ThinkPad.
     ```bash
     git config --global --add gitreview.username '<USER>'
     ```
-* add `export DEBEMAIL='<EMAIL>'` into `~/.bashrc`
 * configure Chromium with:
   - set `https://meet.google.com/landing` as a start-up page
   - set `Show home button` to true and set `https://meet.google.com/landing`
