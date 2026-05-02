@@ -162,6 +162,7 @@
     - { "url.https://opendev.org/.insteadOf": "opendev:" }
     - { delta.color-only: "true" }
     - { delta.diff-highlight: "true" }
+    - { delta.hyperlinks: "true" }
     - { delta.max-line-length: "4096" }
   changed_when: False
 
