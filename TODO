@@ -16,7 +16,7 @@
 * tlp gnome shell extension
 * /var/lib/upower/charging-threshold-status
 * xremap
-  - https://github.com/xremap/xremap/releases/download/v0.15.4/xremap-linux-x86_64-gnome.zip
+  - https://github.com/xremap/xremap/releases/download/v0.15.5/xremap-linux-x86_64-socket.zip
   - `sudo useradd --no-create-home --shell /bin/false --user-group --groups input --system xremap`
   - `sudo mkdir -p /etc/xremap`
   - `sudo chown xremap:xremap /etc/xremap/config.yml`
@@ -25,6 +25,7 @@
   - `sudo usermod --append --groups xremap-$USER $USER`
   - `/etc/systemd/system/xremap.service`
   - `sudo systemctl enable xremap.service`
+  - `echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess", MODE:="0660", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules`
 * Preserve working directory for Ptyxis
 ```
 if [ -f /etc/profile.d/vte-2.91.sh ]; then
