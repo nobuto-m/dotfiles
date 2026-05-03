@@ -25,3 +25,9 @@
   - `sudo usermod --append --groups xremap-$USER $USER`
   - `/etc/systemd/system/xremap.service`
   - `sudo systemctl enable xremap.service`
+* Preserve working directory for Ptyxis
+```
+if [ -f /etc/profile.d/vte-2.91.sh ]; then
+    . /etc/profile.d/vte-2.91.sh
+fi
+```
