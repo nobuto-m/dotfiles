@@ -99,6 +99,7 @@ packages:
 
   # utils - apt
   - apt-listchanges
+  - apt-file
   - dlocate
   - ppa-purge
 
