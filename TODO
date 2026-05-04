@@ -26,9 +26,3 @@
   - `/etc/systemd/system/xremap.service`
   - `sudo systemctl enable xremap.service`
   - `echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess", MODE:="0660", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules`
-* Preserve working directory for Ptyxis
-```
-if [ -f /etc/profile.d/vte-2.91.sh ]; then
-    . /etc/profile.d/vte-2.91.sh
-fi
-```
