@@ -173,6 +173,7 @@ packages:
   - tidy
   - meld
   - showtime
+  - gnome-power-manager
 
   # investigation
   - htop
