@@ -14,8 +14,8 @@ clock-show-weekday=true
 clock-show-seconds=true
 cursor-size=48
 scaling-factor=uint32 1
-{% if scaling_factor is defined %}
-text-scaling-factor={{ scaling_factor }}
+{% if user_scaling_factor is defined %}
+text-scaling-factor={{ user_scaling_factor }}
 {% endif %}
 
 [org/gnome/settings-daemon/plugins/xsettings]

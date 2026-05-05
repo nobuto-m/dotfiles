@@ -28,13 +28,12 @@
 
 - name: download plain wallpaper
   get_url:
-    url: "{{ wallpaper_url }}"
+    url: "{{ user_wallpaper_url }}"
     dest: ~/.local/share/backgrounds/blank.png
-  register: wallpaper
 
 - name: set the list of extensions
   set_fact:
-    extensions:
+    user_extensions:
       - id: system-monitor-next@paradoxxx.zero.gmail.com
         file: system-monitor-nextparadoxxx.zero.gmail.com.v75.shell-extension.zip
       - id: Bluetooth-Battery-Meter@maniacx.github.com
@@ -46,23 +45,23 @@
   get_url:
     url: https://extensions.gnome.org/extension-data/{{ item.file }}
     dest: ~/Downloads/{{ item.file }}
-  register: extension
-  with_items: "{{ extensions }}"
+  register: user_extension
+  with_items: "{{ user_extensions }}"
 
 - name: make sure extension dir exists
   file:
     path: ~/.local/share/gnome-shell/extensions/{{ item.id}}
     state: directory
-  with_items: "{{ extensions }}"
-  when: extension is changed
+  with_items: "{{ user_extensions }}"
+  when: user_extension is changed
 
 - name: extract extension
   unarchive:
     src: ~/Downloads/{{ item.file }}
     dest: ~/.local/share/gnome-shell/extensions/{{ item.id }}
     remote_src: true
-  with_items: "{{ extensions }}"
-  when: extension is changed
+  with_items: "{{ user_extensions }}"
+  when: user_extension is changed
 
 - name: create ssh controlmasters directory
   file:
@@ -78,7 +77,7 @@
     - ~/Documents/Music
     - ~/Documents/Pictures
     - ~/Documents/Videos
-  register: xdg_dir
+  register: user_xdg_dir
 
 - name: clean up old XDG directories
   command: rmdir "{{ item }}"
@@ -86,19 +85,19 @@
     - ~/Music
     - ~/Pictures
     - ~/Videos
-  when: xdg_dir is changed
+  when: user_xdg_dir is changed
 
 - name: clear gtk bookmarks
   file:
     path: ~/.config/gtk-3.0/bookmarks
     state: absent
-  when: xdg_dir is changed
+  when: user_xdg_dir is changed
 
 - name: copy dotfiles
   copy:
     src: files/dotfiles/
     dest: ~/
-  register: dotfiles
+  register: user_dotfiles
 
 - name: make .lessfilter and ~/.local/* executable
   file:
@@ -125,7 +124,7 @@
     cd-create-profile \
       --output ~/.local/share/icc/{{ item }}.icc \
       ~/.local/share/icc/{{ item }}.xml
-  when: dotfiles is changed
+  when: user_dotfiles is changed
   with_items:
     - D63
     - D64
@@ -168,12 +167,12 @@
 
 - name: get X-axis resolusion of eDP
   set_fact:
-      x_axis_resolution: "{{ lookup('file', '/sys/class/drm/card1/card1-eDP-1/modes', errors='warn') | regex_search('^[0-9]+') }}"
+      user_x_axis_resolution: "{{ lookup('file', '/sys/class/drm/card1/card1-eDP-1/modes', errors='warn') | regex_search('^[0-9]+') }}"
 
 - name: calculate relative scaling factor to full-HD displays
   set_fact:
-    scaling_factor: "{{ (x_axis_resolution|int / 1920) | round(2) }}"
-  when: x_axis_resolution | length > 0
+    user_scaling_factor: "{{ (user_x_axis_resolution|int / 1920) | round(2) }}"
+  when: user_x_axis_resolution | length > 0
 
 - name: render firefox user.js
   template:
@@ -184,26 +183,26 @@
   template:
     src: templates/chromium-browser.init.j2
     dest: ~/.chromium-browser.init
-  when: scaling_factor > 0
+  when: user_scaling_factor > 0
 
 - name: render dconf
   template:
     src: templates/dconf.ini.j2
     dest: ~/.config/dconf/user.ini
-  register: dconf
+  register: user_dconf
 
 - name: reset dconf
   command: dconf reset -f /
-  when: dconf is changed
+  when: user_dconf is changed
 
 - name: pause to prevent dconf race conditions
   pause:
     seconds: 5
-  when: dconf is changed
+  when: user_dconf is changed
 
 - name: import dconf
   shell: dconf load / < ~/.config/dconf/user.ini
-  when: dconf is changed
+  when: user_dconf is changed
 
 - name: 'workaround for LP: #1422290 - UNZIP'
   lineinfile:
@@ -219,7 +218,7 @@
 
 - name: check if Dropbox is running
   command: dropbox running
-  register: dropbox
+  register: user_dropbox
   changed_when: false
   ignore_errors: true
 
@@ -227,7 +226,7 @@
   command: dropbox start -i
   environment:
     DISPLAY: ''
-  when: dropbox is success
+  when: user_dropbox is success
 
 - name: check vscode plugins
   find:
@@ -235,7 +234,7 @@
     recurse: false
     file_type: directory
     patterns: 'ms-python.python-*'
-  register: vscode_plugin
+  register: user_vscode_plugin
 
 - name: vscode plugins
   command: code --install-extension {{ item }}
@@ -258,7 +257,7 @@
   loop_control:
     pause: 5
   changed_when: false
-  when: vscode_plugin.matched == 0
+  when: user_vscode_plugin.matched == 0
 
 - name: create src directory
   file:
@@ -279,11 +278,11 @@
   file:
     path: ~/src/{{ item.type }}
     state: directory
-  with_items: "{{ git_repos }}"
+  with_items: "{{ user_git_repos }}"
 
 - name: clone git repos
   git:
     repo: "{{ item.repo }}"
     dest: "~/src/{{ item.type }}/{{ item.name }}"
     update: false
-  with_items: "{{ git_repos }}"
+  with_items: "{{ user_git_repos }}"
