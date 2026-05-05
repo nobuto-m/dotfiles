@@ -17,6 +17,4 @@ KERNEL=="i2c-ELAN0676:00", SUBSYSTEM=="i2c", DRIVERS=="i2c_hid_acpi", ATTR{power
 # Somehow disabling wakeup events from the sleep button works to stop
 # all wakeup events from input devices including the TrackPoint and the
 # keyboard.
-KERNEL=="PNP0C0E:00", SUBSYSTEM=="acpi", DRIVERS=="button", ATTRS{path}=="\_SB_.SLPB", ATTR{power/wakeup}="disabled"
-# somehow on up-to-date system with resolute, I have to disable it for the platform subsystem
 KERNEL=="PNP0C0E:00", SUBSYSTEM=="platform", DRIVERS=="acpi-button", ATTR{power/wakeup}="disabled"
