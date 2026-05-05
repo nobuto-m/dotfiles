@@ -1,5 +1,4 @@
 * text-scaling-factor=1.5 is somehow reflected as 1.25
-* console font to prioritize ja glyphs
 * async snap installation
 * revisit conflict between tlp and power-profiles-daemon
 * wayland migration
