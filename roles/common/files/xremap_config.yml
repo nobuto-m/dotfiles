@@ -1,0 +1,29 @@
+modmap:
+  - name: Global
+    remap:
+      CapsLock: Ctrl_L
+
+keymap:
+  - name: Global
+    remap:
+      KatakanaHiragana: Shift-F10  # as MENU key
+
+  - name: Web browser
+    application:
+      only: [firefox_firefox, chromium, code]
+    remap:
+      C-n: down  # override Firefox "New Window"
+      C-b: left  # override Gmail, Google Docs "Bold"
+      C-p: up  # override Google Docs "Print"
+      C-f: right  # override Google Docs "Find"
+
+      C-a: home  # For Google Docs
+      C-e: end  # For Google Docs
+
+      C-h: backspace  # override Google Docs "Find and replace"
+      C-d: delete  # For Google Docs
+
+      C-Shift-f: C-f  # Replacement of the original C-f
+      C-Shift-e: C-e  # Replacement of the original C-e
+      C-Shift-d: C-d  # Replacement of the original C-d
+      C-Shift-b: C-b  # Replacement of the original C-b
