@@ -8,7 +8,7 @@
 
 - name: apt update
   apt:
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 3600
 
 - name: install eatmydata
@@ -37,7 +37,7 @@
 - name: check language support
   command: check-language-support
   register: language_support
-  changed_when: False
+  changed_when: false
 
 - name: install missing language support
   apt:
@@ -48,7 +48,7 @@
 - name: check language support - ja
   command: check-language-support -l ja
   register: language_support_ja
-  changed_when: False
+  changed_when: false
 
 - name: install missing language support - ja
   apt:
@@ -57,4 +57,4 @@
   environment: "{{ eatmydata }}"
 
 - name: purge thunderbird
-  apt: name=thunderbird state=absent purge=yes
+  apt: name=thunderbird state=absent purge=true

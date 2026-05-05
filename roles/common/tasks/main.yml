@@ -1,27 +1,27 @@
 ---
 - import_tasks: package_apt.yml
-  become: yes
+  become: true
 
 - import_tasks: package_config.yml
-  become: yes
+  become: true
 
 - import_tasks: package_snap.yml
-  become: yes
+  become: true
 
 - import_tasks: locale.yml
-  become: yes
+  become: true
 
 - import_tasks: filesystem.yml
-  become: yes
+  become: true
 
 - import_tasks: package_third-party.yml
-  become: yes
+  become: true
 
 - import_tasks: lxd.yml
-  become: yes
+  become: true
 
 - import_tasks: vpn.yml
-  become: yes
+  become: true
 
 - import_tasks: peripheral_devices.yml
-  become: yes
+  become: true

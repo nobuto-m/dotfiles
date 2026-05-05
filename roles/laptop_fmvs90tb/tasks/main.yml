@@ -3,16 +3,16 @@
   copy:
     src=files/lp1500504.cfg
     dest=/etc/default/grub.d/lp1500504.cfg
-  become: yes
+  become: true
   register: lp_1500504
 
 - name: 'workaround for LP: #1500504 - update-grub'
   command: update-grub
-  become: yes
+  become: true
   when: lp_1500504 is changed
 
 - name: disable IR camera
   copy:
     src: files/99-local-disable-ir-camera.rules
     dest: /etc/udev/rules.d/99-local-disable-ir-camera.rules
-  become: yes
+  become: true

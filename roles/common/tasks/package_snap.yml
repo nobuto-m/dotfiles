@@ -1,11 +1,11 @@
 ---
 - name: disable auto refresh on a metered network
   command: snap set system refresh.metered=hold
-  changed_when: False
+  changed_when: false
 
 - name: purge thunderbird snap
   command: snap remove --purge thunderbird
-  changed_when: False
+  changed_when: false
 
 - name: install snaps
   community.general.snap:

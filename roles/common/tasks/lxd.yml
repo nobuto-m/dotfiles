@@ -3,12 +3,12 @@
   user:
     name: '{{ ansible_facts["user_id"] }}'
     groups: lxd
-    append: yes
+    append: true
 
 - name: check lxd config status
   command: lxc network show lxdbr0
-  changed_when: False
-  ignore_errors: True
+  changed_when: false
+  ignore_errors: true
   register: lxd_config_status
 
 - name: lxd init
@@ -17,8 +17,8 @@
 
 - name: check squid-deb-proxy
   command: lxc info squid-deb-proxy
-  changed_when: False
-  ignore_errors: True
+  changed_when: false
+  ignore_errors: true
   register: squid_deb_proxy
 
 - name: init squid-deb-proxy container
@@ -42,4 +42,4 @@
         || true
   with_items:
     - { container: squid-deb-proxy, ipv4: 10.0.8.2 }
-  changed_when: False
+  changed_when: false

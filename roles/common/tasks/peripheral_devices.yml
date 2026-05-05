@@ -11,4 +11,4 @@
 
 - name: Activate remapping
   command: systemd-hwdb update
-  changed_when: False
+  changed_when: false

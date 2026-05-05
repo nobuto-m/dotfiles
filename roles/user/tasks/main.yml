@@ -7,7 +7,7 @@
 - name: generate ssh key
   user:
     name: '{{ ansible_facts["user_id"] }}'
-    generate_ssh_key: yes
+    generate_ssh_key: true
     ssh_key_type: ed25519
     ssh_key_comment: '{{ ansible_facts["user_id"] }}-default@{{ ansible_facts["hostname"] }}'
 
@@ -60,7 +60,7 @@
   unarchive:
     src: ~/Downloads/{{ item.file }}
     dest: ~/.local/share/gnome-shell/extensions/{{ item.id }}
-    remote_src: yes
+    remote_src: true
   with_items: "{{ extensions }}"
   when: extension is changed
 
@@ -164,7 +164,7 @@
     - { delta.diff-highlight: "true" }
     - { delta.hyperlinks: "true" }
     - { delta.max-line-length: "4096" }
-  changed_when: False
+  changed_when: false
 
 - name: get X-axis resolusion of eDP
   set_fact:
@@ -220,8 +220,8 @@
 - name: check if Dropbox is running
   command: dropbox running
   register: dropbox
-  changed_when: False
-  ignore_errors: True
+  changed_when: false
+  ignore_errors: true
 
 - name: Dropbox start
   command: dropbox start -i
@@ -232,7 +232,7 @@
 - name: check vscode plugins
   find:
     paths: ~/.vscode/extensions/
-    recurse: no
+    recurse: false
     file_type: directory
     patterns: 'ms-python.python-*'
   register: vscode_plugin
@@ -257,7 +257,7 @@
     - usernamehw.errorlens
   loop_control:
     pause: 5
-  changed_when: False
+  changed_when: false
   when: vscode_plugin.matched == 0
 
 - name: create src directory

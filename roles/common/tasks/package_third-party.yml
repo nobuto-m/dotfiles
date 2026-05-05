@@ -36,7 +36,7 @@
   unarchive:
     src: '{{ ansible_facts["user_dir"] }}/Downloads/ookla-speedtest-linux-x86_64.tgz'
     dest: /usr/local/lib/ookla-speedtest/
-    remote_src: yes
+    remote_src: true
     owner: root
     group: root
   when: speedtest is changed
