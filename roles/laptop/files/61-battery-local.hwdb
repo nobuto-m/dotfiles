@@ -1,0 +1,13 @@
+# [Maximize Charge - /var/lib/upower/charging-threshold-status = 0]
+# /sys/class/power_supply/BAT0/charge_control_start_threshold =      0 [%]
+# /sys/class/power_supply/BAT0/charge_control_end_threshold   =    100 [%]
+#
+# [Preserve Battery Health - /var/lib/upower/charging-threshold-status = 1]
+# /sys/class/power_supply/BAT0/charge_control_start_threshold =     75 [%]
+# /sys/class/power_supply/BAT0/charge_control_end_threshold   =     80 [%]
+#
+# [Preserve Battery Health - customized]
+# /sys/class/power_supply/BAT0/charge_control_start_threshold =     80 [%]
+# /sys/class/power_supply/BAT0/charge_control_end_threshold   =    100 [%]
+battery:*:*:dmi:*
+ CHARGE_LIMIT=80,100

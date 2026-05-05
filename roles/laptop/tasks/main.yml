@@ -8,6 +8,26 @@
       HandleLidSwitchDocked=ignore
   become: yes
 
+- name: custom charging threshold for "Preserve Battery Health"
+  copy:
+    src: files/61-battery-local.hwdb
+    dest: /etc/udev/hwdb.d/61-battery-local.hwdb
+  register: custom_charging_threshold
+  become: yes
+
+- name: load custom charging threshold
+  command: systemd-hwdb update
+  when: custom_charging_threshold is changed
+  changed_when: false
+  become: yes
+
+- name: enable "Preserve Battery Health"
+  copy:
+    content: '1'
+    dest: /var/lib/upower/charging-threshold-status
+  changed_when: false
+  become: yes
+
 - name: install TLP
   apt:
     name: tlp
