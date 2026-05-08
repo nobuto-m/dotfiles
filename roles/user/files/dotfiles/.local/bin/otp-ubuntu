@@ -4,7 +4,7 @@ set -e
 set -u
 
 # To be invoked by a GNOME keyboard shortcut, in my case "Super + o"
-# https://help.gnome.org/users/gnome-help/stable/keyboard-shortcuts-set.html#custom
+# https://help.gnome.org/gnome-help/keyboard-shortcuts-set.html#custom
 
 sec_attribute='application'
 sec_value='otp-ubuntu'
@@ -27,12 +27,38 @@ fi
 
 otp=$(oathtool --totp --base32 "$otp_secret")
 
-if [ ! -t 0 ] && which xdotool > /dev/null; then
-    # "xdotool type" doesn't work in Wayland.
-    # "--clearmodifiers" will press Super at the end.
-    echo "$otp" | sed -e 's/./key \0\n/g' \
-        | xargs xdotool keyup super+ctrl+shift+alt
-    xdotool key Return
+if [ ! -t 0 ] && which ydotool > /dev/null; then
+    # From /usr/include/linux/input-event-codes.h, e.g.
+    # #define KEY_LEFTCTRL  29
+    # #define KEY_RIGHTCTRL 97
+    keys_up_ctrl='29:0 97:0'
+    keys_up_shift='42:0 54:0'
+    keys_up_alt='56:0 100:0'
+    keys_up_super='125:0 126:0'
+    keys_clear_modifiers="$keys_up_ctrl $keys_up_shift $keys_up_alt $keys_up_super"
+    keys_enter='28:1 28:0'
+    keys_otp=
+    while read -r -n 1 c; do
+        case "$c" in
+            [1-9])
+                # KEY_1 2
+                ec=$((c+1))
+            ;;
+            0)
+                # KEY_0 11
+                ec=11
+            ;;
+            *)
+                break
+            ;;
+        esac
+        keys_otp="$keys_otp $ec:1 $ec:0"
+    done <<<"$otp"
+
+    # Without quoting variables, it looks dangerous. However, $keys_otp
+    # only contains predictable content as above.
+    # shellcheck disable=SC2086
+    ydotool key $keys_clear_modifiers $keys_otp $keys_enter
     exit
 elif which xclip > /dev/null; then
     echo "$otp" | xclip -selection clip
