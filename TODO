@@ -1,9 +1,9 @@
 * text-scaling-factor=1.5 is somehow reflected as 1.25
 * async snap installation
 * revisit conflict between tlp and power-profiles-daemon
+  - tlp gnome shell extension
 * wayland migration
   - xdotool: Super+Shift doesn't work somehow whlie Shift+Super works
-  - xdotool: type doesn't work, wtype or ydotool?
   - diodon: keyboard operation doesn't work
   - replace xkeysnail
   - screen sharing in a video call
@@ -12,7 +12,6 @@
 * git config --global --edit
 * trackpoint double tapping
   https://github.com/torvalds/linux/commit/a9b0b1ee59a79d0d3853cba9a4b7376ea15be21f
-* tlp gnome shell extension
 * xremap
   - https://github.com/xremap/xremap/releases/download/v0.15.5/xremap-linux-x86_64-socket.zip
   - `sudo useradd --no-create-home --shell /bin/false --user-group --groups input --system xremap`
