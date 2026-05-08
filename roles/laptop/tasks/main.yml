@@ -27,26 +27,3 @@
     dest: /var/lib/upower/charging-threshold-status
   changed_when: false
   become: true
-
-- name: install TLP
-  apt:
-    name: tlp
-  become: true
-
-- name: update TLP config
-  copy:
-    src: files/tlp-99-local.conf
-    dest: /etc/tlp.d/99-local.conf
-  become: true
-
-- name: control wifi.powersave by TLP
-  copy:
-    src: files/default-wifi-powersave-on.conf
-    dest: /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-  become: true
-
-- name: enable TLP
-  systemd:
-    name: tlp
-    enabled: true
-  become: true
