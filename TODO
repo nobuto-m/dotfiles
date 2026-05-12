@@ -25,3 +25,5 @@
   # similar with /usr/lib/udev/rules.d/80-uinput.rules by ydotool
   # or /lib/udev/rules.d/60-steam-input.rules
   - `echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess", MODE:="0660", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules`
+* /etc/bluetooth/main.conf
+  - AutoEnable=false
