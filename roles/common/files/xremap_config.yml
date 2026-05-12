@@ -12,6 +12,9 @@ keymap:
     application:
       only: [firefox_firefox, chromium, code]
     remap:
+      C-Alt-b: C-Alt-b  # workaround
+      C-Shift-p: C-Shift-p  # workaround
+
       C-n: down  # override Firefox "New Window"
       C-b: left  # override Gmail, Google Docs "Bold"
       C-p: up  # override Google Docs "Print"
