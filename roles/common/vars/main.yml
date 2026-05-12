@@ -208,6 +208,7 @@ packages:
   - skopeo
   - umoci
   - hyperfine
+  - libxrt-utils-npu
 
   # backward compatibility
   - pulseaudio-utils
