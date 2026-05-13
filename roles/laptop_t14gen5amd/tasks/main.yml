@@ -11,10 +11,11 @@
   become: true
   changed_when: false
 
-- name: enable Adjust GPU dynamic power management
-  command: powerprofilesctl configure-action --enable amdgpu_dpm
-  become: true
-  changed_when: false
+# It may be causing instability including choppy sound
+#- name: enable Adjust GPU dynamic power management
+#  command: powerprofilesctl configure-action --enable amdgpu_dpm
+#  become: true
+#  changed_when: false
 
 - name: AMDGPU workaround - DC_DISABLE_PSR(0x10)
   copy:
