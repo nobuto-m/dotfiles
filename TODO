@@ -27,3 +27,14 @@
   - `echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess", MODE:="0660", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules`
 * /etc/bluetooth/main.conf
   - AutoEnable=false
+* choppy sound from time to time - power saving related?
+```
+t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (0 suppressed) out of buffers on port 0 2
+t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (1 suppressed) out of buffers on port 0 2
+t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (2 suppressed) out of buffers on port 0 2
+t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (11 suppressed) out of buffers on port 0 2
+t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (16 suppressed) out of buffers on port 0 2
+t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (19 suppressed) out of buffers on port 0 2
+t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (28 suppressed) out of buffers on port 0 2
+t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input node for loopback-8198-13 found
+```
