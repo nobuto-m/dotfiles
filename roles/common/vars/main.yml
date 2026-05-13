@@ -208,6 +208,7 @@ packages:
   - skopeo
   - umoci
   - hyperfine
+  - rocm-smi
   - libxrt-utils-npu
 
   # backward compatibility
