@@ -58,6 +58,8 @@ __show_openstack() {
         printf ' (OS_USERNAME:\\[\\e[96m\\]%s\\[\\e[0m\\])' "$OS_USERNAME"
     fi
 }
+
+# PROMPT_COMMAND='__vte_prompt_command' may be there from /etc/profile.d/vte-*.sh
 if [ -n "$PROMPT_COMMAND" ]; then
     PROMPT_COMMAND+=';'
 fi
