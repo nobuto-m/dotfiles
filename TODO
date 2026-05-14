@@ -39,4 +39,5 @@ t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (28 suppressed) o
 t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input node for loopback-8198-13 found
 ```
 * ath11k_pci 0000:02:00.0: firmware crashed: MHI_CB_EE_RDDM
-* new window position
+* xdg-desktop-portal-gnome window position
+  - /org/gnome/mutter/center-new-windows=false doesn't help
