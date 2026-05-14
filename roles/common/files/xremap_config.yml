@@ -5,16 +5,15 @@ modmap:
 
 keymap:
   - name: Global
+    exact_match: true
     remap:
       KatakanaHiragana: Shift-F10  # as MENU key
 
   - name: Web browser
     application:
       only: [firefox_firefox, chromium, code]
+    exact_match: true
     remap:
-      C-Alt-b: C-Alt-b  # workaround
-      C-Shift-p: C-Shift-p  # workaround
-
       C-n: down  # override Firefox "New Window"
       C-b: left  # override Gmail, Google Docs "Bold"
       C-p: up  # override Google Docs "Print"
