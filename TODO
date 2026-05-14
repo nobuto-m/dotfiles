@@ -1,12 +1,9 @@
 * text-scaling-factor=1.5 is somehow reflected as 1.25
 * async snap installation
-* revisit conflict between tlp and power-profiles-daemon
-  - tlp gnome shell extension
 * wayland migration
   - xdotool: Super+Shift doesn't work somehow whlie Shift+Super works
   - diodon: keyboard operation doesn't work
   - replace xkeysnail
-  - screen sharing in a video call
 * check-language-support doesn't work unless the lang is explicitly specified
   https://bugs.launchpad.net/ubuntu/+source/language-selector/+bug/2070278
 * git config --global --edit
