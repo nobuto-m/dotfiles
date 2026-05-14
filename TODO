@@ -25,8 +25,6 @@
   # similar with /usr/lib/udev/rules.d/80-uinput.rules by ydotool
   # or /lib/udev/rules.d/60-steam-input.rules
   - `echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess", MODE:="0660", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules`
-* /etc/bluetooth/main.conf
-  - AutoEnable=false
 * choppy sound from time to time - power saving related?
 ```
 t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (0 suppressed) out of buffers on port 0 2

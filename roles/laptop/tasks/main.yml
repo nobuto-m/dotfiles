@@ -8,6 +8,14 @@
       HandleLidSwitchDocked=ignore
   become: true
 
+- name: disable bluetooth on boot
+  community.general.ini_file:
+    path: /etc/bluetooth/main.conf
+    section: Policy
+    option: AutoEnable
+    value: 'false'
+  become: true
+
 - name: custom charging threshold for "Preserve Battery Health"
   copy:
     src: files/61-battery-local.hwdb
