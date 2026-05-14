@@ -6,10 +6,11 @@
   become: true
 
 # https://gitlab.freedesktop.org/upower/power-profiles-daemon#operations-on-amd-based-machines
-- name: enable Panel Power Savings (may affect color quality)
-  command: powerprofilesctl configure-action --enable amdgpu_panel_power
-  become: true
-  changed_when: false
+# It may be causing instability including choppy sound
+#- name: enable Panel Power Savings (may affect color quality)
+#  command: powerprofilesctl configure-action --enable amdgpu_panel_power
+#  become: true
+#  changed_when: false
 
 # It may be causing instability including choppy sound
 #- name: enable Adjust GPU dynamic power management
