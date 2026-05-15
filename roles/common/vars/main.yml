@@ -209,6 +209,7 @@ packages:
   - umoci
   - hyperfine
   - rocm-smi
+  - rocminfo
   - libxrt-utils-npu
 
   # backward compatibility
