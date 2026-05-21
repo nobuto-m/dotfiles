@@ -4,6 +4,7 @@ set -e
 set -u
 
 LATENCY_MSEC=25
+ADJUST_TIME=0
 
 # pactl is used mostly due to:
 #   $ pw-cli unload-module libpipewire-module-loopback
@@ -36,7 +37,7 @@ if [ "$route_output_mute" = false ] && echo "$route_output_description" | grep -
     exit
 fi
 
-pactl load-module module-loopback latency_msec=$LATENCY_MSEC >/dev/null
+pactl load-module module-loopback latency_msec=$LATENCY_MSEC adjust_time=$ADJUST_TIME >/dev/null
 default_source_name=$(echo "$pw_metadata" | jq -r 'select(.key=="default.audio.source").value.name')
 default_source_id=$(echo "$pw_dump" | jq -r ".[] | select(.info.props.\"node.name\"==\"$default_source_name\") | .info.props.\"device.id\"")
 
