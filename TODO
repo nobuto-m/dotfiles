@@ -37,5 +37,6 @@ t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input 
 * ath11k_pci 0000:02:00.0: msdu_done bit in attention is not set
 * xdg-desktop-portal-gnome window position
   - /org/gnome/mutter/center-new-windows=false doesn't help
+* xdg-desktop-portal-gnome doesn't accept double-clicking when selecting screens to share
 * new window will be open on a monitor with a mouse cursor instead of a monitor where the application was running
 * Firefox cursor position inconsistency on "back" menu
