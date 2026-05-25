@@ -36,6 +36,45 @@
   changed_when: false
   become: true
 
+- name: Add TLP PPA for tlp-pd with TLP 1.9+
+  ansible.builtin.deb822_repository:
+    name: "linrunner-ubuntu-tlp-{{ ansible_facts['distribution_release'] }}"
+    types: deb
+    uris: https://ppa.launchpadcontent.net/linrunner/tlp/ubuntu/
+    suites: "{{ ansible_facts['distribution_release'] }}"
+    components:
+      - main
+    signed_by: |
+      -----BEGIN PGP PUBLIC KEY BLOCK-----
+      .
+      mQINBGYzdwsBEAC9bjh27vxzBxNJ9cBZPdvZ7J5yr9eg28nB6yogGvABwqgy4p5q
+      oh34B1hCZNPCM+35Lub+uMGQU6x6OCRfMu81UCvclph1DCNbmPnEW0XDrrhgSE2q
+      AOwYLWBXd7xZ/siTOq7MEOjSUdu64VXKm7hSXRMYFpyfcytrZ2n9xwnzCtYCY4BR
+      Xv/xR+HJdbdhubWra5uX+oKcYqkc3LsRssDswX0BC+4L9jO+20mGACJuMcS6+CAT
+      KVDICbekFyhCHgXYQZrPiQFpt6anueXGYsUmGc0sna25iQP4HD9Bb8laHnueFl1r
+      HozrHate98TMhyM2updzk2hK3kkoMUZ8W13Ze0rgN93Rnan0Li6tVOZNv4kCzV7C
+      8j0cfNYYddw872pxuf8i1kjitisiAzOTNTzTMbq2lD8v/FqzxfoCAWVrN1qJaAe3
+      0q8XJ+nKjEzhEg+YNwF5OdsWhKfDZEr3TyZ2Ifv4tJzTPyL7j/RCN2rRZWtwHc93
+      hWuQa5n3Cg2+XsYwe6BP/GQ62zyLOtXCTgCBGIaD333c76vbo8qQNg70uRjAmnx7
+      cM7X98xs8i4ukeBVS0K6lm0KNKfm73N2FG4Cf+e5RKA0/5bCTCetzLJ1esz1E5IN
+      JgAd/iFI5Z0Z6pSftcWg37TyJg6mItsaeDvg7o3z4DS4YBqGAz0MW+LwRQARAQAB
+      tBtMYXVuY2hwYWQgUFBBIGZvciBsaW5ydW5uZXKJAk4EEwEKADgWIQRtWtTZqrIt
+      KSYj2wcwkwdG8yk18gUCZjN3CwIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAK
+      CRAwkwdG8yk18h22EACHOQyrFhgqZo1rRhc3G79J8pLSUiUrVov0dfsKF3Jw2437
+      PjEVV0D0z+u6ut6SqeobTJ0RGuT4insZFGVlpTfsvSyxA5zTWw91wcHnbIQBWXZI
+      wzZUUC8BL6akNh7izYSUDuwp/XcTS14CMaeROs6O5oAJobqWH3oPsRyAuQ3+jzSA
+      HFJoNyirzk9buCM3Apv0t4j5oEhVYBXS5Cu8uc9n/vINVTeluAOtEahOCsIJf6L3
+      QK5HIPgibTnIrHmlvkQw9fGCdG3PrCtdm7ax8KswJnS1swtZvXsBFrZ9UXZK8HUP
+      HbJGXNS3h2cyYGFDoyLKJDKJFuEAoSsNFMhETj3Lvqtr00+1XJdbzzAPO+4himPH
+      yWk9RidK5ftr9DFXJmFP5YnDrvcawGOipxSLdnQKMcF8d2wwWLx/Oj44UEt8N7gz
+      WxR0kxROF7e5QfEjsoUZkvsmidSr1iZteK60hfIbRPusUsYTi0P+NfW57QuSh70k
+      xw1EJmV3BmrXrBkZ/jTsoySpjbzS1noszXheAxOUwBAdnldUchnVesXDeuSQVRcT
+      hErxMPPTu5WGBIUduwHpERAJG+8yDqbt9/PwKA8CeLdU63DX51EG94vtJvLCxhaD
+      psjNAddZvM6ZdBzClB4pKjbm1KaM9HEUMlurHz8ANMNR4clmwXSftmNvV+G4mg==
+      =IW5P
+      -----END PGP PUBLIC KEY BLOCK-----
+  become: true
+
 - name: install TLP
   apt:
     name: tlp
@@ -43,8 +82,8 @@
 
 - name: update TLP config
   copy:
-    src: files/tlp-99-local.conf
-    dest: /etc/tlp.d/99-local.conf
+    src: files/tlp-90-local.conf
+    dest: /etc/tlp.d/90-local.conf
   become: true
 
 - name: control wifi.powersave by TLP
