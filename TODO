@@ -41,3 +41,4 @@ t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input 
 * new window will be open on a monitor with a mouse cursor instead of a monitor where the application was running
 * Firefox cursor position inconsistency on "back" menu
 * WiFi powersaving instability
+* laggy sudo fingerpring prompt
