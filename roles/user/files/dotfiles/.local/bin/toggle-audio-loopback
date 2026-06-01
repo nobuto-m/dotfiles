@@ -3,7 +3,7 @@
 set -e
 set -u
 
-LATENCY_MSEC=50
+LATENCY_MSEC=32
 ADJUST_TIME=0
 
 # pactl is used mostly due to:
