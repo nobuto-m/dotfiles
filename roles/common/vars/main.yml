@@ -30,6 +30,7 @@ packages:
   - build-essential
   - devscripts
   - ubuntu-dev-tools
+  - ppa-dev-tools
   - pbuilder
   - debian-goodies  # dman
   - nullmailer  # not to install other MTA accidentally
