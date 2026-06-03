@@ -47,3 +47,4 @@ t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input 
   - https://github.com/pop-os/cosmic-epoch/issues/2192
   - https://www.reddit.com/r/kde/comments/osjt3p/firefox_wayland_pip_workaround_or_how_i_learned/
   - https://extensions.gnome.org/extension/4691/pip-on-top/
+* "transpose" paste in Google Sheets with Firefox and Clipboard API
