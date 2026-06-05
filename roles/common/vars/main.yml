@@ -132,6 +132,7 @@ packages:
   # utils - network
   - curl
   - sshuttle
+  - mosh
   - nmap
   - sipcalc
   - ipcalc
