@@ -41,10 +41,12 @@ t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input 
 * new window will be open on a monitor with a mouse cursor instead of a monitor where the application was running
 * Firefox cursor position inconsistency on "back" menu
 * WiFi powersaving instability
-* laggy sudo fingerpring prompt
+* laggy sudo-rs fingerpring prompt
 * double check the power saving setting for audio device including USB webcam
 * Firefox PinP is not always on top
   - https://github.com/pop-os/cosmic-epoch/issues/2192
   - https://www.reddit.com/r/kde/comments/osjt3p/firefox_wayland_pip_workaround_or_how_i_learned/
   - https://extensions.gnome.org/extension/4691/pip-on-top/
 * "transpose" paste in Google Sheets with Firefox and Clipboard API
+* choppy sound unless switching the microphone device or restarting pipewire
+  - `pw-metadata -n settings 0 clock.min-quantum 512` helps on some levels but it doesn't elimite the issue completely
