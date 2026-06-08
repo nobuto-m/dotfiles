@@ -172,7 +172,6 @@ An example with ThinkPad.
   sudo tailscale up --shields-up --accept-routes
   ```
 * Restore those files manually if necessary:
-  - ~/.config/hub
   - ~/.local/share/juju/credentials.yaml
 * install [unite-shell](https://github.com/hardpixel/unite-shell) extension by hand
   ```bash
