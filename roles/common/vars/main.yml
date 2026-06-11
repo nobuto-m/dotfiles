@@ -169,6 +169,7 @@ packages:
   - ddcutil
   - xclip
   - xdotool
+  - wl-clipboard
   - wmctrl
   - gddrescue
   - tidy
