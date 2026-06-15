@@ -53,3 +53,4 @@ t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input 
 * instability can be boiled down to the following and 7.0.0-26.26/resolute-proposed has "clockevents: Add missing resets of the next_event_forced flag"
   - https://bugs.launchpad.net/ubuntu/+source/linux/+bug/2149877
   - https://github.com/torvalds/linux/commit/9401b593fa48218d2667df1610b0ebc518554880
+* ydotool doesn't start from time to time with `failed to open uinput device: Permission denied`
