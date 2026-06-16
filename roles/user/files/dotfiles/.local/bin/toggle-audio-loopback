@@ -3,7 +3,7 @@
 set -e
 set -u
 
-LATENCY_MSEC=32
+LATENCY_MSEC=25
 
 # pactl is used mostly due to:
 #   $ pw-cli unload-module libpipewire-module-loopback
