@@ -22,17 +22,6 @@
   # similar with /usr/lib/udev/rules.d/80-uinput.rules by ydotool
   # or /lib/udev/rules.d/60-steam-input.rules
   - `echo 'KERNEL=="uinput", GROUP="input", TAG+="uaccess", MODE:="0660", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.d/99-input.rules`
-* choppy sound from time to time - power saving related?
-```
-t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (0 suppressed) out of buffers on port 0 2
-t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (1 suppressed) out of buffers on port 0 2
-t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (2 suppressed) out of buffers on port 0 2
-t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (11 suppressed) out of buffers on port 0 2
-t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (16 suppressed) out of buffers on port 0 2
-t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (19 suppressed) out of buffers on port 0 2
-t14g5a pipewire-pulse[8198]: spa.audioconvert: 0x64d5d5a4e5d0: (28 suppressed) out of buffers on port 0 2
-t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input node for loopback-8198-13 found
-```
 * ath11k_pci 0000:02:00.0: firmware crashed: MHI_CB_EE_RDDM
 * ath11k_pci 0000:02:00.0: msdu_done bit in attention is not set
 * xdg-desktop-portal-gnome window position
@@ -48,9 +37,4 @@ t14g5a wireplumber[8183]: s-linking: <WpSiAudioAdapter:0x63e46807cd30> No input 
   - https://www.reddit.com/r/kde/comments/osjt3p/firefox_wayland_pip_workaround_or_how_i_learned/
   - https://extensions.gnome.org/extension/4691/pip-on-top/
 * "transpose" paste in Google Sheets with Firefox and Clipboard API
-* choppy sound unless switching the microphone device or restarting pipewire
-  - `pw-metadata -n settings 0 clock.min-quantum 512` helps on some levels but it doesn't elimite the issue completely
-* instability can be boiled down to the following and 7.0.0-26.26/resolute-proposed has "clockevents: Add missing resets of the next_event_forced flag"
-  - https://bugs.launchpad.net/ubuntu/+source/linux/+bug/2149877
-  - https://github.com/torvalds/linux/commit/9401b593fa48218d2667df1610b0ebc518554880
 * ydotool doesn't start from time to time with `failed to open uinput device: Permission denied`
