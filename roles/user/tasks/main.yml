@@ -40,6 +40,8 @@
         file: Bluetooth-Battery-Metermaniacx.github.com.v45.shell-extension.zip
       - id: xremap@k0kubun.com
         file: xremapk0kubun.com.v15.shell-extension.zip
+      - id: nightthemeswitcher@romainvigier.fr
+        file: nightthemeswitcherromainvigier.fr.v83.shell-extension.zip
 
 - name: download extension
   get_url:
