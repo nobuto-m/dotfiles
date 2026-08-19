@@ -116,6 +116,11 @@ manual-schedule=true
 sunrise=9.5
 sunset=18.5
 
+[org/gnome/shell/extensions/nightthemeswitcher/commands]
+enabled=true
+sunrise="gsettings set org.gnome.desktop.interface gtk-theme 'Yaru'; gsettings set org.gnome.desktop.interface icon-theme 'Yaru'"
+sunset="gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-dark'; gsettings set org.gnome.desktop.interface icon-theme 'Yaru-dark'"
+
 [org/gnome/desktop/search-providers]
 disabled=['org.gnome.Software.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Calendar.desktop']
 
