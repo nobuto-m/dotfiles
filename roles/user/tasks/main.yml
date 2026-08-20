@@ -31,6 +31,11 @@
     url: "{{ user_wallpaper_url }}"
     dest: ~/.local/share/backgrounds/blank.png
 
+- name: download plain dark wallpaper
+  get_url:
+    url: "{{ user_wallpaper_url_dark }}"
+    dest: ~/.local/share/backgrounds/blank_dark.png
+
 - name: set the list of extensions
   set_fact:
     user_extensions:

@@ -1,6 +1,8 @@
 ---
 # Resolute_Raccoon_Wallpaper_Color_3840x2160.png
 user_wallpaper_url: 'https://drive.google.com/uc?export=download&id=1h1_qlpdHFBAHNABiHDe5CIFGke6noR1Y'
+# Resolute_Raccoon_Wallpaper_Dark_3840x2160.png
+user_wallpaper_url_dark: 'https://drive.google.com/uc?export=download&id=13wo4J84GcTcHQ8UpziUvVCgCjp04uxfx'
 
 user_git_repos:
   - { type: work, name: juju, repo: 'https://github.com/juju/juju.git' }

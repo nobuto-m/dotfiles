@@ -38,4 +38,3 @@
   - https://extensions.gnome.org/extension/4691/pip-on-top/
 * "transpose" paste in Google Sheets with Firefox and Clipboard API
 * ydotool doesn't start from time to time with `failed to open uinput device: Permission denied`
-* /org/gnome/desktop/background/picture-uri-dark
