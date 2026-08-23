@@ -218,7 +218,6 @@ An example with ThinkPad.
   - `Text & URL`
 * https://addons.mozilla.org/firefox/addon/read-aloud/
   - Download `hfc_male[medium]`
-* https://addons.mozilla.org/firefox/addon/multi-account-containers/
 
 
 #### Disabled
