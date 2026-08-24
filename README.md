@@ -218,8 +218,8 @@ An example with ThinkPad.
   - `Text & URL`
 * https://addons.mozilla.org/firefox/addon/read-aloud/
   - Download `hfc_male[medium]`
-* https://addons.mozilla.org/firefox/addon/auto-tab-group/
-  - "Auto-name groups by": `Tab title`
+* https://addons.mozilla.org/firefox/addon/smart-tab-groups/
+  - "Smartly name groups:": `No name`
 
 
 #### Disabled
