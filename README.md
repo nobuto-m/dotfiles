@@ -219,6 +219,7 @@ An example with ThinkPad.
 * https://addons.mozilla.org/firefox/addon/read-aloud/
   - Download `hfc_male[medium]`
 * https://addons.mozilla.org/firefox/addon/smart-tab-groups/
+  - "Smartly ungroup tabs": `No`
   - "Smartly name groups:": `No name`
 
 
