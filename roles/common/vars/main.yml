@@ -130,6 +130,7 @@ packages:
 
   # utils - network
   - curl
+  - opkssh
   - sshuttle
   - mosh
   - nmap
