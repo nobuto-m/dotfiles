@@ -157,6 +157,7 @@ packages:
   - gimp
   - inkscape
   - gnome-color-manager
+  - gnome-decoder
 
   # other
   - dconf-editor
