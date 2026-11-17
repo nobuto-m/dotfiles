@@ -164,8 +164,8 @@ An example with ThinkPad.
     git config --global --add gitreview.username '<USER>'
     ```
 * configure Chromium with:
-  - set `https://meet.google.com/landing` as a start-up page
-  - set `Show home button` to true and set `https://meet.google.com/landing`
+  - set `https://meet.google.com/home` as a start-up page
+  - set `Show home button` to true and set `https://meet.google.com/home`
   - `Use Google Translate` - off
 * install tailscale and activate it with
   ```bash
